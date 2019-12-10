@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'members',
     'team',
     'events',
+    'projects',
     'django_cleanup'
 ]
 
