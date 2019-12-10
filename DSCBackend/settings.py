@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'events',
     'projects',
     'faq',
+    'sponsor',
     'django_cleanup'
 ]
 
