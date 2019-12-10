@@ -12,5 +12,5 @@ class TeamSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Team
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'heads', 'members')
         read_only_fields = ('id', )
