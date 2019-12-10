@@ -24,6 +24,9 @@ admin.site.index_title = "DSC-TIET"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/members/', include('members.urls')),
+    path('api/team/', include('team.urls'))
+
 ]
 
 if settings.DEBUG:

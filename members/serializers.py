@@ -3,10 +3,12 @@ from . import models
 
 
 class MemberSerializer(serializers.ModelSerializer):
-    """Serialize Department model"""
+    """Serialize Member model"""
+
+    image = serializers.ImageField()
 
     class Meta:
-        model = models.Department
-        fields = ('id', 'department_name',
-                  'department_description', 'department_head_name', 'department_head_phone', 'department_email')
+        model = models.Member
+        fields = ('id', 'name',
+                  'role', 'github_url', 'linkedin_url', 'twitter_url', 'medium_url', 'dev_url', 'image')
         read_only_fields = ('id', )
