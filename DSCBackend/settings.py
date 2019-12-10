@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'members',
     'team',
+    'events',
     'django_cleanup'
 ]
 
