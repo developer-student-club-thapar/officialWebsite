@@ -23,13 +23,14 @@ admin.site.site_title = "DSC-TIET"
 admin.site.index_title = "DSC-TIET"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', admin.site.urls),
     path('api/members/', include('members.urls')),
     path('api/team/', include('team.urls')),
     path('api/events/', include('events.urls')),
     path('api/projects/', include('projects.urls')),
     path('api/faq/', include('faq.urls')),
     path('api/sponsor/', include('sponsor.urls')),
+    path('api/contactus/', include('contact.urls')),
 
 ]
 
