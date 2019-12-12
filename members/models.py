@@ -4,6 +4,8 @@ from django.db import models
 class Member(models.Model):
 
     name = models.CharField(max_length=255)
+    team = models.ForeignKey(
+        'team.Team', on_delete=models.CASCADE, blank=True, null=True)
     role = models.CharField(max_length=255)
     github_url = models.URLField()
     linkedin_url = models.URLField()

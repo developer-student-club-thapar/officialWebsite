@@ -8,9 +8,7 @@ class TeamSerializer(serializers.ModelSerializer):
 
     heads = MemberSerializer(read_only=True, many=True)
 
-    members = MemberSerializer(read_only=True, many=True)
-
     class Meta:
         model = models.Team
-        fields = ('id', 'name', 'heads', 'members')
+        fields = ('id', 'name', 'heads')
         read_only_fields = ('id', )
