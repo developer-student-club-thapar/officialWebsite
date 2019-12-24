@@ -6,9 +6,10 @@ from members.serializers import MemberSerializer
 class TeamSerializer(serializers.ModelSerializer):
     """Serialize Team model"""
 
+    members = MemberSerializer(read_only=True, many=True)
     heads = MemberSerializer(read_only=True, many=True)
 
     class Meta:
         model = models.Team
-        fields = ('id', 'name', 'members')
+        fields = ('id', 'name', 'heads','members')
         read_only_fields = ('id', )

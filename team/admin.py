@@ -6,22 +6,31 @@ from . import models
 class MembershipInline(admin.TabularInline):
     model = models.Team.members.through
 
+    verbose_name = "Member"
+    verbose_name_plural = "Members"
+
     def get_queryset(self, request):
         qs = super(MembershipInline, self).get_queryset(request)
         return qs
 
 
-class HeadAdmin(admin.ModelAdmin):
-    inlines = [
-        MembershipInline,
-    ]
+class HeadInline(admin.TabularInline):
+    model = models.Team.heads.through
+
+    verbose_name = "Head"
+    verbose_name_plural = "Heads"
+
+    def get_queryset(self, request):
+        qs = super(HeadInline, self).get_queryset(request)
+        return qs
 
 
 class TeamAdmin(admin.ModelAdmin):
     inlines = [
+        HeadInline,
         MembershipInline,
     ]
-    exclude = ('members',)
+    exclude = ('heads', 'members',)
 
 
 admin.site.register(models.Team, TeamAdmin)
