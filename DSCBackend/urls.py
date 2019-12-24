@@ -26,6 +26,7 @@ admin.site.index_title = "DSC-TIET"
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('register/', views.register, name='register'),
     path('admin/', admin.site.urls),
     path('api/members/', include('members.urls')),
     path('api/team/', include('team.urls')),
