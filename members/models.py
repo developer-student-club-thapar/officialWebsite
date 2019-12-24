@@ -9,6 +9,7 @@ class Member(models.Model):
 
     name = models.CharField(max_length=255)
     role = models.CharField(max_length=255, blank=True)
+    email = models.EmailField(blank=True)
     github_url = models.URLField(blank=True)
     linkedin_url = models.URLField(blank=True)
     twitter_url = models.URLField(blank=True)
