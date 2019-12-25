@@ -22,7 +22,7 @@ class ContactRequest(models.Model):
             'New Contact request',
             f'A new contact request has been received from {self.name} ({self.email}). Please check out at https://dsctiet.pythonanywhere.com/admin',
             'noreplydsctiet@gmail.com',
-            [f''],
+            [f'dsctiet@gmail.com'],
             fail_silently=False,
         )
 
