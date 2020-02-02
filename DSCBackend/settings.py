@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'faq',
     'sponsor',
     'contact',
+    'achievement',
     'django_cleanup'
 ]
 
