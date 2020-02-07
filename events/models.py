@@ -10,9 +10,11 @@ class Topic(models.Model):
 
 class Event(models.Model):
 
-    date_time = models.DateTimeField()
+    date = models.DateField()
+    time = models.TimeField()
     venue = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
+    info = models.TextField()
     topics = models.ManyToManyField(
         Topic, related_name='topics', blank=True)
     link = models.URLField(blank=True)
