@@ -6,9 +6,10 @@ class Project(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     members = models.ManyToManyField(Member)
-    funding = models.CharField(max_length=255)
-    faculty = models.CharField(max_length=255)
-    extra = models.TextField()
+    github_link = models.URLField()
+    funding = models.CharField(max_length=255, blank=True)
+    faculty = models.CharField(max_length=255, blank=True)
+    extra = models.TextField(blank=True)
 
     def __str__(self):
         return self.name
