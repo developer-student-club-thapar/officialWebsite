@@ -2,7 +2,8 @@ from django.shortcuts import render
 from . import models
 from . import serializers
 from rest_framework import viewsets, status, mixins, generics
-
+from .models import Project
+from .forms import NewProjectForm
 
 class ProjectViewSet(viewsets.ModelViewSet):
     """Manage projects in the database"""
@@ -12,19 +13,37 @@ class ProjectViewSet(viewsets.ModelViewSet):
 
 def NewProject(request):
     if request.method =='POST':
-        if request.POST.get('name')and request.POST.get('description') and request.POST.get('members') and request.POST.get('github') and request.POST.get('funding') and request.POST.get('faculty') and request.POST.get('extra'):
-            project = Project()
-            project.name = request.POST.get('name')
-            project.description = request.POST.get('description')
-            project.members = request.POST.get('members')
-            project.github_link = request.POST.get('github')
-            project.funding = request.POST.get('funding')
-            project.faculty = request.POST.get('faculty')
-            project.extra = request.POST.get('extra')
-            project.save()
+        form = NewProjectForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data["name"]
+            description = form.cleaned_data["description"]
+            members = form.cleaned_data["members"]
+            github_link = form.cleaned_data["github_link"]
+            funding = form.cleaned_data["funding"]
+            faculty = form.cleaned_data["faculty"]
+            extra = form.cleaned_data["extra"]
+
+            t1 = Project(name=name)
+            t1.save()
+            t2 = Project(description=description)
+            t2.save()
+            t3 = Project(members=members)
+            t3.save()
+            t4 = Project(github_link=github_link)
+            t4.save()
+            t5 = Project(funding=funding)
+            t5.save()
+            t6 = Project(faculty=faculty)
+            t6.save()
+            t7 = Project(extra=extra)
+            t7.save()
 
             return render(request,'templates/newproject.html')
 
         else:
             return render(request,'templates/newproject.html')
             
+    else:
+        form = NewProjectForm()
+
+    return render(request, 'newproject.html', {'form': form})

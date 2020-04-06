@@ -6,19 +6,12 @@
     <title>Project</title>
 </head>
 <body>
-    <h1>Create a Post </h1>
-    <form action="" method="POST">
-    <input type="hidden" id="csrf_token" value='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
-    Name: <input type="text" name="name"/><br/>
-    Description: <br/>
-    <textarea cols="35" rows="8" name="description">
-    </textarea><br/>
-    Members: <input type="text" name="members"/><br/>
-    Github Link: <input type="url" name="github"/><br/>
-    Funding: <input type="text" name="funding"/><br/>
-    Faculty: <input type="text" name="faculty"/><br/>
-    Extra Remarks: <input type="text" name="extra"/><br/>
-    <input type="submit" value="Post"/>
+    <h1>Enter details about your Project</h1>
+    <form action="/newproject/" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+    
+    <button type="submit", name="save">Add the Project</button>
     </form>
 </body>
 </html>
