@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+</head>
+<body>
+    <h1>Create a Post </h1>
+    <form action="" method="POST">
+    <input type="hidden" id="csrf_token" value='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+    Name: <input type="text" name="name"/><br/>
+    Description: <br/>
+    <textarea cols="35" rows="8" name="description">
+    </textarea><br/>
+    Members: <input type="text" name="members"/><br/>
+    Github Link: <input type="url" name="github"/><br/>
+    Funding: <input type="text" name="funding"/><br/>
+    Faculty: <input type="text" name="faculty"/><br/>
+    Extra Remarks: <input type="text" name="extra"/><br/>
+    <input type="submit" value="Post"/>
+    </form>
+</body>
+</html>
