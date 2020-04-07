@@ -10,4 +10,5 @@ router.register('', views.ProjectViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('newproject/',views.NewProject, name="newproject"),
+    path('allprojects/',views.showProjects, name="AllProjects"),
 ]

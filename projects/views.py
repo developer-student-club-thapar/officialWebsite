@@ -47,3 +47,8 @@ def NewProject(request):
         form = NewProjectForm()
 
     return render(request, 'newproject.html', {'form': form})
+
+def showProjects(request):
+    allProjects = Project.objects.all()
+    context = {'allProjects': allProjects}
+    return render(request,'templates/allProjects.html',context)
