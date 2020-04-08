@@ -51,4 +51,4 @@ def NewProject(request):
 def showProjects(request):
     allProjects = Project.objects.all()
     context = {'allProjects': allProjects}
-    return render(request,'templates/allProjects.html',context)
+    return render(request,'allProjects.html',context)
