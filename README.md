@@ -1,4 +1,4 @@
 ## Backend code for Developer Students Club TIET website
 
-Kindly Check Contributions file on how to start contributing to this project.
+Kindly Check Contributions file on how to start contributing to this project.<br />
 Happy Contributing!
