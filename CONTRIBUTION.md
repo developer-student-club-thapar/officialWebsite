@@ -13,3 +13,6 @@ This will create a virtualenv for you to install and manage the entire project
 ``` pip install -r requirements.txt ```
 
 5. What is the entry point command?
+``` python manage.py makemigrations ```
+``` python manage.py migrate ```
+``` python manage.py runserver ```
