@@ -25,7 +25,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = 'yiy6=kpoj7v5_6n%1muiqms-co1-)!t7x0p=)z1uc(7*6&2%%('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -146,7 +146,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'noreplydsctiet@gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-EMAIL_HOST_PASSWORD = 'dsctietbot'
+EMAIL_HOST_PASSWORD = 'dsctietrocks'
 
 
 CORS_ORIGIN_ALLOW_ALL = True
