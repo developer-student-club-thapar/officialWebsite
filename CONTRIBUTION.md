@@ -1,6 +1,6 @@
 ## Welcome to Contribute on the Backend code of DSC TIET Website
 
-1. Create a virtualenv on your system using the following command
+1. Create a virtualenv on your system using the following command <br />
 ``` virtualenv -p python3.7 dsctiet_backend ``` <br />
 This will create a virtualenv for you to install and manage the entire project
 
