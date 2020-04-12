@@ -12,7 +12,7 @@ This will create a virtualenv for you to install and manage the entire project
 4. Change the working directory to the cloned repository and install all the requirements
 ``` pip install -r requirements.txt ```
 
-5. What is the entry point command?
-``` python manage.py makemigrations ```
-``` python manage.py migrate ```
-``` python manage.py runserver ```
+5. Run the following commands to run the backend server
+``` python manage.py makemigrations ``` <br />
+``` python manage.py migrate ``` <br />
+``` python manage.py runserver ``` <br />
