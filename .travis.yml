@@ -15,8 +15,10 @@ jobs:
         - python manage.py migrate
 
     #This test helps us to check standard linting of the codebase
-    - language: system
+    - language: python
+      python: '3.7'
+      cache: pip
       install:
-        pip3 install pre-commit
+        pip install pre-commit
       script:
         - pre-commit run --all-files
