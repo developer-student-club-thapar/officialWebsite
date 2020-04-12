@@ -12,7 +12,7 @@ This will create a virtualenv for you to install and manage the entire project
 4. Change the working directory to the cloned repository and install all the requirements
 ``` pip install -r requirements.txt ```
 
-5. Run the following commands to run the backend server
+5. Run the following commands to run the backend server <br />
 ``` python manage.py makemigrations ``` <br />
 ``` python manage.py migrate ``` <br />
-``` python manage.py runserver ``` <br />
+``` python manage.py runserver ```
