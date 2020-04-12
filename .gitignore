@@ -1,0 +1,5 @@
+# Ignore local VSCode files
+.vscode
+
+#Ignore mysql db of Django
+*.sqlite3
