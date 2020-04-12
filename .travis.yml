@@ -3,6 +3,7 @@ dist: xenial
 group: edge
 jobs:
     include:
+    #This test helps us to check integrity of the backend code
     - language: python
       python: '3.7'
       cache: pip
@@ -12,3 +13,12 @@ jobs:
       script:
         - python manage.py makemigrations
         - python manage.py migrate
+
+    #This test helps us to check standard linting of the codebase
+    - language: python
+      python: '3.7'
+      cache: pip
+      install:
+        pip install pre-commit
+      script:
+        - pre-commit run --all-files
