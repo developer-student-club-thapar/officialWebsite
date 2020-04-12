@@ -1,0 +1,14 @@
+dist: xenial
+# Use the latest Travis images since they are more up to date than the stable release.
+group: edge
+jobs:
+    include:
+    - language: python
+      python: '3.7'
+      cache: pip
+      install:
+        # Initialize installments 
+        - pip install -r requirements.txt
+      script:
+        - python manage.py makemigrations
+        - python manage.py migrate
