@@ -17,6 +17,6 @@ jobs:
     #This test helps us to check standard linting of the codebase
     - language: system
       install:
-        pip install pre-commit
+        pip3 install pre-commit
       script:
         - pre-commit run --all-files
