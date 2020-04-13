@@ -1,10 +1,11 @@
 [tool.black]
 line-length = 200
 target-version = ['py36', 'py37', 'py38']
+skip-string-normalization = true
 include = '\.pyi?$'
 exclude = '''
 /(
-    .*
+    *
   | \.git
   | \.mypy_cache
   | \.venv
