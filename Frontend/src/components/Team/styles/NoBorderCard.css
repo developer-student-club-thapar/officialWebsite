@@ -1,0 +1,33 @@
+/** @format */
+
+.imageProfile {
+  overflow: hidden;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.iconContainer {
+  display: flex;
+  background-color: "#f3f3f3";
+  justify-content: space-between;
+  width: fit-content;
+  /* margin: auto; */
+  margin-top: 1em;
+  align-items: center;
+}
+.icons {
+  margin-right: 1em;
+  font-size: 1.5em;
+}
+.nameNoBorder {
+  margin: 0;
+  font-weight: 300;
+}
+.titleNoBorder {
+  margin: 0;
+  margin-top: 0.5em;
+  font-weight: 400;
+  background-color: black;
+  color: #f3f3f3;
+  padding: 0 4px 0 4px;
+  width: fit-content;
+}

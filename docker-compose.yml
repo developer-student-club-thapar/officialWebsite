@@ -1,0 +1,20 @@
+version: '3.7'
+services: 
+        dsc_website: 
+                build: 
+                        context: .
+                        dockerfile: dev.Dockerfile
+                ports:
+                - "3000:3000"
+                volumes: 
+                - /app/node_modules
+                - ./Frontend/:/app
+        test: 
+                build:
+                        context: .
+                        dockerfile: dev.Dockerfile
+                volumes: 
+                - /app/node_modules
+                - ./Frontend/:/app
+                command: ["npm","test"]
+

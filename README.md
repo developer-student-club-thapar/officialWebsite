@@ -1,4 +1,2 @@
-## Backend code for Developer Students Club TIET website
-
-Kindly Check Contributions file on how to start contributing to this project.<br />
-Happy Contributing!
+# officialWebsite
+This is the repo for the offiicial Website of DSC Thapar Institute of Engineering and Technology, Patiala , Punjab

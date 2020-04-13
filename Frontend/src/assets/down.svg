@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25px" height="57px" viewBox="0 0 24.99 56.76">
+    <defs>
+        <style>
+            .a{fill:none;stroke:#EA4335;stroke-miterlimit:10;stroke-width:3px;}.b{fill:#EA4335;}
+        </style>
+    </defs>
+    <title>
+        arrow-down
+    </title>
+    <line x1="12.34" x2="12.34" y1="45.97" y2="1.45" class="a"/>
+    <polygon points="21.88 28.24 19.06 27.21 12.34 45.68 5.62 27.21 2.8 28.24 12.34 54.45 21.88 28.24" class="b"/>
+</svg>
