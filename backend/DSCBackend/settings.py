@@ -39,18 +39,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 3rd Party Applications
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
-    'members',
-    'team',
-    'events',
-    'projects',
-    'faq',
-    'sponsor',
-    'contact',
-    'achievement',
     'django_cleanup',
+
+    # Backend Apps
+    'backend.achievement',
+    'backend.contact',
+    'backend.events',
+    'backend.faq',
+    'backend.members',
+    'backend.projects',
+    'backend.sponsor',
+    'backend.team',
 ]
 
 MIDDLEWARE = [
