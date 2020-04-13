@@ -69,7 +69,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-ROOT_URLCONF = 'DSCBackend.urls'
+ROOT_URLCONF = 'backend.DSCBackend.urls'
 
 TEMPLATES = [
     {
@@ -87,7 +87,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'DSCBackend.wsgi.application'
+WSGI_APPLICATION = 'backend.DSCBackend.wsgi.application'
 
 
 # Database

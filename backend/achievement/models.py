@@ -1,5 +1,5 @@
 from django.db import models
-from members.models import Member
+from backend.members.models import Member
 
 
 class Achievement(models.Model):
