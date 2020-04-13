@@ -5,7 +5,7 @@ skip-string-normalization = true
 include = '\.pyi?$'
 exclude = '''
 /(
-    *
+    \.*
   | \.git
   | \.mypy_cache
   | \.venv
