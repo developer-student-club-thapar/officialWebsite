@@ -8,7 +8,8 @@ class TopicSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Topic
         fields = ('id', 'name')
-        read_only_fields = ('id', )
+        read_only_fields = ('id',)
+
 
 class EventSerializer(serializers.ModelSerializer):
     """Serialize Event model"""
@@ -17,6 +18,5 @@ class EventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Event
-        fields = ('id', 'date','time',
-                  'venue', 'title', 'info','topics', 'link', 'docs', 'headline_event')
-        read_only_fields = ('id', )
+        fields = ('id', 'date', 'time', 'venue', 'title', 'info', 'topics', 'link', 'docs', 'headline_event')
+        read_only_fields = ('id',)

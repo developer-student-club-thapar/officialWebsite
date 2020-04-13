@@ -8,4 +8,4 @@ class FAQSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.FAQ
         fields = ('id', 'question', 'answer')
-        read_only_fields = ('id', )
+        read_only_fields = ('id',)
