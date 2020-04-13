@@ -1,0 +1,6 @@
+static
+templates
+.vscode
+README.md
+*.yml
+*.yaml

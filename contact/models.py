@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.mail import send_mail
+
 # Create your models here.
 
 
@@ -11,11 +12,7 @@ class ContactRequest(models.Model):
 
     def save(self, *args, **kwargs):
         send_mail(
-            'Contact Request',
-            f'Hi, {self.name}. We have received your request. You will be contacted shortly',
-            'noreplydsctiet@gmail.com',
-            [f'{self.email}'],
-            fail_silently=True,
+            'Contact Request', f'Hi, {self.name}. We have received your request. You will be contacted shortly', 'noreplydsctiet@gmail.com', [f'{self.email}'], fail_silently=True,
         )
 
         send_mail(

@@ -15,8 +15,7 @@ class Event(models.Model):
     venue = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
     info = models.TextField()
-    topics = models.ManyToManyField(
-        Topic, related_name='topics', blank=True)
+    topics = models.ManyToManyField(Topic, related_name='topics', blank=True)
     link = models.URLField(blank=True)
     docs = models.URLField(blank=True)
     headline_event = models.BooleanField(default=False)

@@ -1,6 +1,7 @@
 dist: xenial
 # Use the latest Travis images since they are more up to date than the stable release.
 group: edge
+sudo: false
 jobs:
     include:
     #This test helps us to check integrity of the backend code

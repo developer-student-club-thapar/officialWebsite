@@ -1,5 +1,6 @@
 from django.contrib import admin
 from . import models
+
 # Register your models here.
 
 
@@ -30,7 +31,10 @@ class TeamAdmin(admin.ModelAdmin):
         HeadInline,
         MembershipInline,
     ]
-    exclude = ('heads', 'members',)
+    exclude = (
+        'heads',
+        'members',
+    )
 
 
 admin.site.register(models.Team, TeamAdmin)
