@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="812" viewBox="0 0 375 812">
+  <defs>
+    <clipPath id="clip-Menu-Screen">
+      <rect width="375" height="812"/>
+    </clipPath>
+  </defs>
+  <g id="Menu-Screen" clip-path="url(#clip-Menu-Screen)">
+    <rect width="375" height="812"/>
+    <g id="Menu-hamburger-open" transform="translate(-7 114)">
+      <circle id="Ellipse_88" data-name="Ellipse 88" cx="12.82" cy="12.82" r="12.82" transform="translate(156.278 45)" fill="#ea4335"/>
+      <circle id="Ellipse_89" data-name="Ellipse 89" cx="12.82" cy="12.82" r="12.82" transform="translate(258.835 45)" fill="#34a853"/>
+      <circle id="Ellipse_90" data-name="Ellipse 90" cx="12.82" cy="12.82" r="12.82" transform="translate(207.557 45)" fill="#fbbc05"/>
+      <path id="Path_430" data-name="Path 430" d="M12.82,0A12.82,12.82,0,1,1,0,12.82,12.82,12.82,0,0,1,12.82,0Z" transform="translate(105 45)" fill="#4285f4"/>
+    </g>
+    <text id="HOME" transform="translate(138 309)" fill="#fff" font-size="32" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600" letter-spacing="0.059em"><tspan x="0" y="0">HOME</tspan></text>
+    <text id="TEAM" transform="translate(142 382)" fill="#fff" font-size="32" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600" letter-spacing="0.059em" opacity="0.5"><tspan x="0" y="0">TEAM</tspan></text>
+    <text id="EVENTS" transform="translate(126 455)" fill="#fff" font-size="32" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600" letter-spacing="0.059em" opacity="0.5"><tspan x="0" y="0">EVENTS</tspan></text>
+    <text id="CONTACT" transform="translate(111 528)" fill="#fff" font-size="32" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600" letter-spacing="0.059em" opacity="0.5"><tspan x="0" y="0">CONTACT</tspan></text>
+    <text id="FORUM" transform="translate(128 601)" fill="#fff" font-size="32" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600" letter-spacing="0.059em" opacity="0.5"><tspan x="0" y="0">FORUM</tspan></text>
+  </g>
+</svg>

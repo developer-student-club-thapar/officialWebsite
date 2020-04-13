@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f52316fd.chunk.css",
+    "main.js": "/static/js/main.02a170a1.chunk.js",
+    "main.js.map": "/static/js/main.02a170a1.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5c3b97f9.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5c3b97f9.js.map",
+    "static/js/2.6c054184.chunk.js": "/static/js/2.6c054184.chunk.js",
+    "static/js/2.6c054184.chunk.js.map": "/static/js/2.6c054184.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.9caa5b8f3fa491d21f130173c97c5a30.js": "/precache-manifest.9caa5b8f3fa491d21f130173c97c5a30.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.f52316fd.chunk.css.map": "/static/css/main.f52316fd.chunk.css.map",
+    "static/js/2.6c054184.chunk.js.LICENSE": "/static/js/2.6c054184.chunk.js.LICENSE",
+    "static/media/1200px-Google_Assistant_logo.svg.png": "/static/media/1200px-Google_Assistant_logo.svg.e2ff2fe8.png",
+    "static/media/community.webp": "/static/media/community.97f874d5.webp",
+    "static/media/eventimage.webp": "/static/media/eventimage.2975ff97.webp",
+    "static/media/linkedin.png": "/static/media/linkedin.f52c24cb.png",
+    "static/media/projects.webp": "/static/media/projects.0ebe5a7a.webp",
+    "static/media/team.webp": "/static/media/team.31c7575f.webp",
+    "static/media/tom-morel-hkbQnC7FAqU-unsplash.jpg": "/static/media/tom-morel-hkbQnC7FAqU-unsplash.d0895b02.jpg",
+    "static/media/undraw_3d_modeling_h60h.svg": "/static/media/undraw_3d_modeling_h60h.8607670f.svg",
+    "static/media/undraw_Firmware_jw6u.svg": "/static/media/undraw_Firmware_jw6u.193e040e.svg",
+    "static/media/undraw_Growing_qwt2.svg": "/static/media/undraw_Growing_qwt2.6ba16243.svg",
+    "static/media/undraw_about_us_page_ee1k.svg": "/static/media/undraw_about_us_page_ee1k.4728e06d.svg",
+    "static/media/undraw_contact_us_15o2.svg": "/static/media/undraw_contact_us_15o2.b5af09c2.svg",
+    "static/media/undraw_dev_productivity_umsq.svg": "/static/media/undraw_dev_productivity_umsq.1a521c8f.svg",
+    "static/media/undraw_positive_attitude_xaae.svg": "/static/media/undraw_positive_attitude_xaae.50b4ab69.svg",
+    "static/media/undraw_programming_2svr.svg": "/static/media/undraw_programming_2svr.b6c19d0b.svg",
+    "static/media/undraw_progressive_app_m9ms.svg": "/static/media/undraw_progressive_app_m9ms.8ff16d16.svg",
+    "static/media/undraw_social_girl_562b.svg": "/static/media/undraw_social_girl_562b.03a67961.svg",
+    "static/media/undraw_team_spirit_hrr4.svg": "/static/media/undraw_team_spirit_hrr4.7ac333f0.svg",
+    "static/media/unnamed.png": "/static/media/unnamed.c2c5f62d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5c3b97f9.js",
+    "static/js/2.6c054184.chunk.js",
+    "static/css/main.f52316fd.chunk.css",
+    "static/js/main.02a170a1.chunk.js"
+  ]
+}
