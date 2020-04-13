@@ -39,13 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     # 3rd Party Applications
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'django_cleanup',
-
     # Backend Apps
     'backend.achievement',
     'backend.contact',
@@ -69,7 +67,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-ROOT_URLCONF = 'DSCBackend.urls'
+ROOT_URLCONF = 'backend.DSCBackend.urls'
 
 TEMPLATES = [
     {
@@ -87,7 +85,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'DSCBackend.wsgi.application'
+WSGI_APPLICATION = 'backend.DSCBackend.wsgi.application'
 
 
 # Database
