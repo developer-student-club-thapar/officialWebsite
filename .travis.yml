@@ -16,10 +16,8 @@ jobs:
       install:
         - yarn install --frozen-lockfile
       script:
-        # `yarn build` is tested as part of the Heroku build job
+        # `yarn build` tests js/jsx files
         - yarn lint
-        # `yarn lint` only checks the formatting of JS/JSX, this will also check CSS/HTML/JSON/Markdown/YAML.
-        - yarn format:check
 
       #This test helps us to check integrity of the backend code
     - language: python
