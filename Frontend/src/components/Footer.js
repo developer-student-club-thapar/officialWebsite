@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Logo from "../assets/unnamed.png";
+import Logo from '../assets/unnamed.png';
 
 export default class Footer extends Component {
   render() {
@@ -8,9 +8,9 @@ export default class Footer extends Component {
       <div
         className="LogoFooterContainer"
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          width: "90%"
+          display: 'flex',
+          justifyContent: 'space-between',
+          width: '90%',
         }}
       >
         <img src={Logo} className="LogoFooter"></img>

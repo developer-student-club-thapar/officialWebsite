@@ -1,46 +1,46 @@
 /** @format */
 
-import React, { Component } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
   faTwitter,
   faYoutube,
   faMedium,
   faInstagram,
-  faLinkedin
-} from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
-import axios from "axios";
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-import Nav from "../components/Nav";
-import GoogleAssBg from "../assets/1200px-Google_Assistant_logo.svg.png";
-import Logo from "../assets/unnamed.png";
-import undrawAbout from "../assets/undraw_dev_productivity_umsq.svg";
-import TeamPic from "../assets/undraw_team_spirit_hrr4.svg";
-import ContactPic from "../assets/undraw_contact_us_15o2.svg";
-import Gallery from "../components/Gallery";
-import styled from "styled-components";
-import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
-import Footer from "../components/Footer";
-import "./styles/Home.css";
+import Nav from '../components/Nav';
+import GoogleAssBg from '../assets/1200px-Google_Assistant_logo.svg.png';
+import Logo from '../assets/unnamed.png';
+import undrawAbout from '../assets/undraw_dev_productivity_umsq.svg';
+import TeamPic from '../assets/undraw_team_spirit_hrr4.svg';
+import ContactPic from '../assets/undraw_contact_us_15o2.svg';
+import Gallery from '../components/Gallery';
+import styled from 'styled-components';
+import Lazy from '../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg';
+import Footer from '../components/Footer';
+import './styles/Home.css';
 
-axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
+axios.defaults.baseURL = 'https://dsctiet.pythonanywhere.com/api';
 
 const URL =
-  "https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing";
+  'https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing';
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: "",
-      email: "",
-      message: "",
+      name: '',
+      email: '',
+      message: '',
       loading: false,
-      btnText: "Submit",
-      isTop: true
+      btnText: 'Submit',
+      isTop: true,
     };
   }
 
@@ -51,20 +51,20 @@ export default class Home extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    this.setState({ loading: true, btnText: "Sending...." });
+    this.setState({ loading: true, btnText: 'Sending....' });
     // get our form data out of state
     const { name, email, message } = this.state;
 
     axios
-      .post("/contactus/", { name, email, message })
+      .post('/contactus/', { name, email, message })
 
       .then(res => {
         this.setState({
           loading: false,
-          name: "",
-          email: "",
-          message: "",
-          btnText: "Submit"
+          name: '',
+          email: '',
+          message: '',
+          btnText: 'Submit',
         });
       })
 
@@ -72,10 +72,10 @@ export default class Home extends Component {
         console.log(err);
         this.setState({
           loading: false,
-          name: "",
-          email: "",
-          message: "",
-          btnText: "Error"
+          name: '',
+          email: '',
+          message: '',
+          btnText: 'Error',
         });
       });
   };
@@ -99,7 +99,7 @@ export default class Home extends Component {
   `;
   HoverText3 = styled.button`
     :hover {
-      ${"" /* box-shadow: 6px 6px #ff9999; */}
+      ${'' /* box-shadow: 6px 6px #ff9999; */}
       transition: .3s;
       background: #ea4335;
       color: #ffffff;
@@ -108,7 +108,7 @@ export default class Home extends Component {
 
   render() {
     const url =
-      "https://docs.google.com/document/d/1bbpf78aMSH2ntSZEWR09Q05OVDHFp6IoFlVHtcvC0eQ/edit?usp=sharing";
+      'https://docs.google.com/document/d/1bbpf78aMSH2ntSZEWR09Q05OVDHFp6IoFlVHtcvC0eQ/edit?usp=sharing';
     return (
       <MainContainer>
         <ResponsiveDiv>
@@ -116,7 +116,7 @@ export default class Home extends Component {
             src={Lazy}
             height="30%"
             width="50%"
-            style={{ alignSelf: "center", marginTop: "2em" }}
+            style={{ alignSelf: 'center', marginTop: '2em' }}
           ></img>
           <h1>
             Our Designers and Developers were quite lazy while making the mobile
@@ -131,8 +131,8 @@ export default class Home extends Component {
             <br />
             <a
               style={{
-                cursor: "pointer",
-                textDecoration: "none"
+                cursor: 'pointer',
+                textDecoration: 'none',
               }}
               href="https://github.com/developer-student-club-thapar/officialWebsite"
             >
@@ -145,8 +145,8 @@ export default class Home extends Component {
           <div
             className="div1"
             style={{
-              height: "100vh",
-              overflow: "hidden"
+              height: '100vh',
+              overflow: 'hidden',
             }}
           >
             <div>
@@ -161,9 +161,9 @@ export default class Home extends Component {
           </div>
           <div
             style={{
-              height: "100vh",
-              overflow: "hidden",
-              position: "relative"
+              height: '100vh',
+              overflow: 'hidden',
+              position: 'relative',
             }}
           >
             <div className="AboutTextContainer">
@@ -177,7 +177,7 @@ export default class Home extends Component {
             <img src={undrawAbout} className="imgAboutUndraw"></img>
             <this.HoverText
               onClick={() => {
-                window.open(URL, "_blank");
+                window.open(URL, '_blank');
               }}
               className="AboutButton1"
             >
@@ -189,7 +189,7 @@ export default class Home extends Component {
               onClick={event => {
                 event.preventDefault();
                 window.open(
-                  "https://join.slack.com/t/dscthapar-gspatiala/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M"
+                  'https://join.slack.com/t/dscthapar-gspatiala/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M',
                 );
               }}
             >
@@ -201,21 +201,21 @@ export default class Home extends Component {
 
           <div
             style={{
-              height: "100vh",
-              width: "100%",
-              overflow: "hidden",
-              position: "relative"
+              height: '100vh',
+              width: '100%',
+              overflow: 'hidden',
+              position: 'relative',
               // background: "red",
               // display: "flex",
             }}
           >
             <div className="TeamTextContainer">
               <h2 className="AboutText">
-                We have a strong <span style={{ fontWeight: "600" }}>team</span>{" "}
-                filled with{" "}
-                <span style={{ fontWeight: "600" }}>innovators</span> and people
-                who want to make this{" "}
-                <span style={{ fontWeight: "600" }}>world a better place</span>
+                We have a strong <span style={{ fontWeight: '600' }}>team</span>{' '}
+                filled with{' '}
+                <span style={{ fontWeight: '600' }}>innovators</span> and people
+                who want to make this{' '}
+                <span style={{ fontWeight: '600' }}>world a better place</span>
               </h2>
             </div>
             <img src={TeamPic} className="TeamImage"></img>
@@ -228,42 +228,42 @@ export default class Home extends Component {
 
           <div
             style={{
-              height: "100vh",
-              width: "auto",
+              height: '100vh',
+              width: 'auto',
               // display: "flex",
               // alignItems: "center",
-              overflow: "hidden"
+              overflow: 'hidden',
             }}
           >
             <Gallery />
           </div>
           <div
             style={{
-              height: "100vh",
-              alignItems: "center",
-              display: "flex",
-              flexDirection: "column"
+              height: '100vh',
+              alignItems: 'center',
+              display: 'flex',
+              flexDirection: 'column',
             }}
           >
             <h1
               style={{
-                fontSize: "4.5em",
-                fontWeight: "400",
-                color: "#676C72"
+                fontSize: '4.5em',
+                fontWeight: '400',
+                color: '#676C72',
               }}
             >
               Connect With Us!
             </h1>
             <div
               style={{
-                display: "flex",
-                justifyContent: "space-between",
-                width: "80%"
+                display: 'flex',
+                justifyContent: 'space-between',
+                width: '80%',
               }}
             >
               <div class="Form">
                 <form
-                  style={{ height: "100%", width: "100%" }}
+                  style={{ height: '100%', width: '100%' }}
                   onSubmit={this.onSubmit}
                 >
                   <ul>
@@ -299,96 +299,96 @@ export default class Home extends Component {
                     </li>
                   </ul>
                   <this.HoverText2 className="FormButton">
-                    {this.state.loading ? "Sending...." : this.state.btnText}
+                    {this.state.loading ? 'Sending....' : this.state.btnText}
                   </this.HoverText2>
                 </form>
               </div>
               <div
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  width: "50%"
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '50%',
                 }}
               >
                 <img
                   src={ContactPic}
                   style={{
-                    height: "65%",
-                    marginTop: "5%",
-                    height: "60%"
+                    height: '65%',
+                    marginTop: '5%',
+                    height: '60%',
                   }}
                 ></img>
                 <div
                   style={{
-                    display: "flex",
-                    width: "70%",
-                    margin: "auto",
-                    justifyContent: "space-around",
-                    fontSize: "2em"
+                    display: 'flex',
+                    width: '70%',
+                    margin: 'auto',
+                    justifyContent: 'space-around',
+                    fontSize: '2em',
                   }}
                 >
                   <FontAwesomeIcon
                     onClick={() =>
                       window.open(
-                        "https://www.facebook.com/dscthapar/",
-                        "_blank"
+                        'https://www.facebook.com/dscthapar/',
+                        '_blank',
                       )
                     }
                     icon={faFacebook}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: 'pointer' }}
                   />
                   <FontAwesomeIcon
                     onClick={() =>
                       window.open(
-                        "https://www.instagram.com/hacktiet/",
-                        "_blank"
+                        'https://www.instagram.com/hacktiet/',
+                        '_blank',
                       )
                     }
                     icon={faInstagram}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: 'pointer' }}
                   />
                   <FontAwesomeIcon
                     onClick={() =>
                       window.open(
-                        "https://www.twitter.com/dsctiet?s=09",
-                        "_blank"
+                        'https://www.twitter.com/dsctiet?s=09',
+                        '_blank',
                       )
                     }
                     icon={faTwitter}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: 'pointer' }}
                   />
                   <FontAwesomeIcon
                     onClick={() =>
                       window.open(
-                        "https://www.youtube.com/channel/UCl235NVnbWqqCT7NQAIUzVQ",
-                        "_blank"
+                        'https://www.youtube.com/channel/UCl235NVnbWqqCT7NQAIUzVQ',
+                        '_blank',
                       )
                     }
                     icon={faYoutube}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: 'pointer' }}
                   />
                   <FontAwesomeIcon
                     onClick={() =>
-                      window.open("https://medium.com/@dsc.tiet", "_blank")
+                      window.open('https://medium.com/@dsc.tiet', '_blank')
                     }
                     icon={faMedium}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: 'pointer' }}
                   />
                   <FontAwesomeIcon
                     onClick={() =>
                       window.open(
-                        "https://www.linkedin.com/company/developer-student-club-thapar/?viewAsMember=true",
-                        "_blank"
+                        'https://www.linkedin.com/company/developer-student-club-thapar/?viewAsMember=true',
+                        '_blank',
                       )
                     }
                     icon={faLinkedin}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: 'pointer' }}
                   />
                 </div>
               </div>
             </div>
             <br></br>
-            <hr style={{ width: "100%" }}></hr>
+            <hr style={{ width: '100%' }}></hr>
             <Footer />
           </div>
         </SubMainContainer>

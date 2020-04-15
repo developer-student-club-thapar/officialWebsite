@@ -190,7 +190,7 @@ ul {
 }
 
 .LogoFooter {
-  display: "flex";
+  display: 'flex';
   height: 5vh;
 }
 

@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import "./styles/About.css";
-import styled from "styled-components";
-import AboutImage from "../assets/undraw_about_us_page_ee1k.svg";
-import Nav from "../components/Nav";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import './styles/About.css';
+import styled from 'styled-components';
+import AboutImage from '../assets/undraw_about_us_page_ee1k.svg';
+import Nav from '../components/Nav';
+import { Link } from 'react-router-dom';
 export default class About extends Component {
   render() {
     return (
@@ -29,9 +29,9 @@ export default class About extends Component {
               <ButtonAbout>
                 <Link
                   style={{
-                    width: "fit-content",
-                    textDecoration: "none",
-                    color: "#f3f3f3"
+                    width: 'fit-content',
+                    textDecoration: 'none',
+                    color: '#f3f3f3',
                   }}
                   to="/team"
                 >

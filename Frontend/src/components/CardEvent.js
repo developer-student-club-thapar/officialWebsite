@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import "../pages/styles/Events.css";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import '../pages/styles/Events.css';
 
 export default class CardEvent extends Component {
   state = {
-    topics: []
+    topics: [],
   };
 
   componentDidMount() {
@@ -22,22 +22,22 @@ export default class CardEvent extends Component {
       <Container>
         <SubContainer>
           <Heading bg={this.props.bg}>
-            <p style={{ margin: "0", textAlign: "center" }}>
+            <p style={{ margin: '0', textAlign: 'center' }}>
               {this.props.title}
             </p>
           </Heading>
           <SubHeading bg={this.props.bg}>{this.props.info}</SubHeading>
           <About>
             <p>
-              <bold style={{ fontWeight: "700", color: "black" }}>
+              <bold style={{ fontWeight: '700', color: 'black' }}>
                 Topics Covered:
               </bold>
-              <ul style={{ marginTop: "0" }}>{topicsToBeRendered}</ul>
-              <bold style={{ fontWeight: "600", color: "black" }}>
+              <ul style={{ marginTop: '0' }}>{topicsToBeRendered}</ul>
+              <bold style={{ fontWeight: '600', color: 'black' }}>
                 Date
               </bold>: {this.props.date}
               <br />
-              <bold style={{ fontWeight: "600", color: "black" }}>
+              <bold style={{ fontWeight: '600', color: 'black' }}>
                 Venue
               </bold>: {this.props.venue}
             </p>

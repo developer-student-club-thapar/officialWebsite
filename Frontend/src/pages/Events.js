@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import Card from "../components/Card";
-import Nav from "../components/Nav";
-import CardEvent from "../components/CardEvent";
-import axios from "axios";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import Card from '../components/Card';
+import Nav from '../components/Nav';
+import CardEvent from '../components/CardEvent';
+import axios from 'axios';
 
-axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
+axios.defaults.baseURL = 'https://dsctiet.pythonanywhere.com/api';
 
 function getRandomColor() {
-  var letters = "0123456789ABCDEF";
-  var color = "#";
+  var letters = '0123456789ABCDEF';
+  var color = '#';
   for (var i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
@@ -19,11 +19,11 @@ function getRandomColor() {
 export default class Events extends Component {
   state = {
     events: [],
-    isLoading: true
+    isLoading: true,
   };
 
   fetchEvents = () => {
-    axios.get("/events/").then(res => {
+    axios.get('/events/').then(res => {
       let data = res.data;
       this.setState({ events: data, isLoading: false });
     });
@@ -48,28 +48,28 @@ export default class Events extends Component {
           venue={item.venue}
           link={item.link}
           topics={item.topics}
-        />
+        />,
       );
     }
 
     return (
-      <div style={{ overflowX: "hidden" }}>
+      <div style={{ overflowX: 'hidden' }}>
         <Nav active="events"></Nav>
         <Container>
           <h1
             style={{
-              textAlign: "center",
-              marginBottom: "2em",
-              fontWeight: "700",
-              textDecoration: "underline"
+              textAlign: 'center',
+              marginBottom: '2em',
+              fontWeight: '700',
+              textDecoration: 'underline',
             }}
           >
             We have a history of conducting successful and useful events!
           </h1>
           <h1
             style={{
-              fontWeight: "500",
-              marginLeft: "2em"
+              fontWeight: '500',
+              marginLeft: '2em',
             }}
           >
             Upcoming Events:

@@ -1,42 +1,42 @@
 /** @format */
 
-import React, { Component } from "react";
-import "./Gallery.css";
-import DscFamily from "../assets/team.webp";
-import EventsImage from "../assets/eventimage.webp";
-import ProjectsImage from "../assets/projects.webp";
-import CommunityImage from "../assets/community.webp";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import './Gallery.css';
+import DscFamily from '../assets/team.webp';
+import EventsImage from '../assets/eventimage.webp';
+import ProjectsImage from '../assets/projects.webp';
+import CommunityImage from '../assets/community.webp';
+import { Link } from 'react-router-dom';
 
 const slideData = [
   {
     index: 0,
-    headline: "DSC Tiet Family",
-    button: "View More",
-    link: "/team",
-    src: DscFamily
+    headline: 'DSC Tiet Family',
+    button: 'View More',
+    link: '/team',
+    src: DscFamily,
   },
   {
     index: 1,
-    headline: "Events at full Throttle",
-    button: "Know More",
-    link: "/events",
-    src: EventsImage
+    headline: 'Events at full Throttle',
+    button: 'Know More',
+    link: '/events',
+    src: EventsImage,
   },
   {
     index: 2,
-    headline: "Our Projects!",
-    button: "See them all",
-    link: "/home",
-    src: ProjectsImage
+    headline: 'Our Projects!',
+    button: 'See them all',
+    link: '/home',
+    src: ProjectsImage,
   },
   {
     index: 3,
-    headline: "Community Bonding",
-    button: "Join Community!",
-    link: "/communityJoin",
-    src: CommunityImage
-  }
+    headline: 'Community Bonding',
+    button: 'Join Community!',
+    link: '/communityJoin',
+    src: CommunityImage,
+  },
 ];
 
 // =========================
@@ -59,18 +59,18 @@ class Slide extends React.Component {
     const r = el.getBoundingClientRect();
 
     el.style.setProperty(
-      "--x",
-      event.clientX - (r.left + Math.floor(r.width / 2))
+      '--x',
+      event.clientX - (r.left + Math.floor(r.width / 2)),
     );
     el.style.setProperty(
-      "--y",
-      event.clientY - (r.top + Math.floor(r.height / 2))
+      '--y',
+      event.clientY - (r.top + Math.floor(r.height / 2)),
     );
   }
 
   handleMouseLeave(event) {
-    this.slide.current.style.setProperty("--x", 0);
-    this.slide.current.style.setProperty("--y", 0);
+    this.slide.current.style.setProperty('--x', 0);
+    this.slide.current.style.setProperty('--y', 0);
   }
 
   handleSlideClick(event) {
@@ -84,11 +84,11 @@ class Slide extends React.Component {
   render() {
     const { src, button, headline, index } = this.props.slide;
     const current = this.props.current;
-    let classNames = "slide";
+    let classNames = 'slide';
 
-    if (current === index) classNames += " slide--current";
-    else if (current - 1 === index) classNames += " slide--previous";
-    else if (current + 1 === index) classNames += " slide--next";
+    if (current === index) classNames += ' slide--current';
+    else if (current - 1 === index) classNames += ' slide--previous';
+    else if (current + 1 === index) classNames += ' slide--next';
 
     return (
       <li
@@ -149,30 +149,30 @@ class Slider extends React.Component {
   leftFunction(event) {
     if (event.keyCode === 37) {
       //Do whatever when esc is pressed
-      console.log("Pressed Left");
+      console.log('Pressed Left');
       this.handlePreviousClick();
     }
   }
   rightFunction(event) {
     if (event.keyCode === 39) {
-      console.log("Pressed Right");
+      console.log('Pressed Right');
       this.handleNextClick();
     }
   }
   componentDidMount() {
-    document.addEventListener("keydown", this.leftFunction, false);
-    document.addEventListener("keydown", this.rightFunction, false);
+    document.addEventListener('keydown', this.leftFunction, false);
+    document.addEventListener('keydown', this.rightFunction, false);
   }
   componentWillUnmount() {
-    document.removeEventListener("keydown", this.leftFunction, false);
-    document.removeEventListener("keydown", this.rightFunction, false);
+    document.removeEventListener('keydown', this.leftFunction, false);
+    document.removeEventListener('keydown', this.rightFunction, false);
   }
 
   handlePreviousClick() {
     const previous = this.state.current - 1;
 
     this.setState({
-      current: previous < 0 ? this.props.slides.length - 1 : previous
+      current: previous < 0 ? this.props.slides.length - 1 : previous,
     });
   }
 
@@ -180,14 +180,14 @@ class Slider extends React.Component {
     const next = this.state.current + 1;
 
     this.setState({
-      current: next === this.props.slides.length ? 0 : next
+      current: next === this.props.slides.length ? 0 : next,
     });
   }
 
   handleSlideClick(index) {
     if (this.state.current !== index) {
       this.setState({
-        current: index
+        current: index,
       });
     }
   }
@@ -196,10 +196,10 @@ class Slider extends React.Component {
     const { current, direction } = this.state;
     const { slides, heading } = this.props;
     const headingId = `slider-heading__${heading
-      .replace(/\s+/g, "-")
+      .replace(/\s+/g, '-')
       .toLowerCase()}`;
     const wrapperTransform = {
-      transform: `translateX(-${current * (100 / slides.length)}%)`
+      transform: `translateX(-${current * (100 / slides.length)}%)`,
     };
 
     return (
@@ -211,7 +211,7 @@ class Slider extends React.Component {
 
           {slides.map(slide => {
             return (
-              <Link to={slide.link} style={{ textDecoration: "none " }}>
+              <Link to={slide.link} style={{ textDecoration: 'none ' }}>
                 <Slide
                   key={slide.index}
                   slide={slide}

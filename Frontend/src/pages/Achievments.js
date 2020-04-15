@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import Card from "../components/Card";
-import Nav from "../components/Nav";
-import axios from "axios";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import Card from '../components/Card';
+import Nav from '../components/Nav';
+import axios from 'axios';
 
-axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
+axios.defaults.baseURL = 'https://dsctiet.pythonanywhere.com/api';
 
 function getRandomColor() {
-  var letters = "0123456789ABCDEF";
-  var color = "#";
+  var letters = '0123456789ABCDEF';
+  var color = '#';
   for (var i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
@@ -18,11 +18,11 @@ function getRandomColor() {
 export default class Achievments extends Component {
   state = {
     achievements: [],
-    isLoading: true
+    isLoading: true,
   };
 
   fetchAchievements = () => {
-    axios.get("/achievements/").then(res => {
+    axios.get('/achievements/').then(res => {
       let data = res.data;
       this.setState({ achievements: data, isLoading: false });
     });
@@ -52,7 +52,7 @@ export default class Achievments extends Component {
           heading={item.title}
           sub_heading={item.sub_title}
           content={item.content}
-        />
+        />,
       );
     }
 
@@ -60,7 +60,7 @@ export default class Achievments extends Component {
       <div>
         <Nav active="achievments"></Nav>
         <Container>
-          <h1 style={{ textAlign: "center", marginBottom: "2em" }}>
+          <h1 style={{ textAlign: 'center', marginBottom: '2em' }}>
             We are proud of our achievments
           </h1>
           <SubContainer>{achievements}</SubContainer>

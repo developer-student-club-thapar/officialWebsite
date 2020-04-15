@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
 export default class Card extends Component {
   render() {
@@ -8,7 +8,7 @@ export default class Card extends Component {
         <Image bg={this.props.bg}></Image>
         <SubContainer>
           <Heading bg={this.props.bg}>
-            <p style={{ margin: "0" }}>{this.props.heading}</p>
+            <p style={{ margin: '0' }}>{this.props.heading}</p>
           </Heading>
           <SubHeading bg={this.props.bg}>{this.props.sub_heading}</SubHeading>
           <About>{this.props.content}</About>

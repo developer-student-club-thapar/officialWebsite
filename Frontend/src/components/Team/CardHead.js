@@ -1,10 +1,10 @@
 /** @format */
 
-import React, { Component } from "react";
-import linkedin from "./../../assets/linkedin.jpg";
-import github from "./../../assets/github.png";
-import "./styles/CardHead.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { Component } from 'react';
+import linkedin from './../../assets/linkedin.jpg';
+import github from './../../assets/github.png';
+import './styles/CardHead.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   fab,
   faLinkedin,
@@ -13,8 +13,8 @@ import {
   faGithubSquare,
   faLinkedinIn,
   faTwitter,
-  faMedium
-} from "@fortawesome/free-brands-svg-icons";
+  faMedium,
+} from '@fortawesome/free-brands-svg-icons';
 export default class CardHead extends Component {
   render() {
     return (
@@ -28,10 +28,10 @@ export default class CardHead extends Component {
           ></img>
         </div>
         <div style={styles.textContainer}>
-          <h1 style={{ fontWeight: "500" }} className="title">
+          <h1 style={{ fontWeight: '500' }} className="title">
             {this.props.title}
           </h1>
-          <h2 style={{ fontWeight: "300" }} className="name">
+          <h2 style={{ fontWeight: '300' }} className="name">
             {this.props.name}
           </h2>
           <div className="iconContainer">
@@ -56,32 +56,32 @@ export default class CardHead extends Component {
 
 const styles = {
   container: {
-    fontFamily: "Poppins",
-    display: "flex",
-    borderStyle: "solid",
-    borderWidth: "1px",
-    borderColor: "#524e4e",
-    flexDirection: "row",
-    width: "400px",
-    alignItems: "center",
-    height: "200px",
+    fontFamily: 'Poppins',
+    display: 'flex',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    borderColor: '#524e4e',
+    flexDirection: 'row',
+    width: '400px',
+    alignItems: 'center',
+    height: '200px',
     margin: 60,
-    backgroundColor: "white"
+    backgroundColor: 'white',
   },
   circle: {
-    display: "flex",
-    borderStyle: "solid",
-    borderWidth: "1px",
-    borderColor: "#000000",
-    width: "100px",
-    height: "100px",
-    borderRadius: "50%",
-    justifyContent: "center",
-    alignItems: "center",
-    marginLeft: "5%",
-    marginRight: "10%"
+    display: 'flex',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    borderColor: '#000000',
+    width: '100px',
+    height: '100px',
+    borderRadius: '50%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: '5%',
+    marginRight: '10%',
   },
   textContainer: {
     // paddingVertical: "50%"
-  }
+  },
 };

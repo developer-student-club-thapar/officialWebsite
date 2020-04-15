@@ -3,7 +3,7 @@ dist: xenial
 group: edge
 sudo: false
 jobs:
-    include:
+  include:
     # Run JS tests
     - language: node_js
       # The Node version here must be kept in sync with that in `package.json`.
@@ -26,7 +26,7 @@ jobs:
       python: '3.7'
       cache: pip
       install:
-        # Initialize installments 
+        # Initialize installments
         - pip install -r requirements.txt
       script:
         - python manage.py makemigrations

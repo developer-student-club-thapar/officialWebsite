@@ -1,14 +1,14 @@
 /** @format */
 
-import React from "react";
-import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
-import TestAxios from "./pages/TestAxios";
-import Home from "./pages/Home";
-import Nav from "./components/Nav";
-import Team from "./pages/Team";
-import About from "./pages/About";
-import Achievments from "./pages/Achievments";
-import Events from "./pages/Events";
+import React from 'react';
+import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import TestAxios from './pages/TestAxios';
+import Home from './pages/Home';
+import Nav from './components/Nav';
+import Team from './pages/Team';
+import About from './pages/About';
+import Achievments from './pages/Achievments';
+import Events from './pages/Events';
 
 function App() {
   return (

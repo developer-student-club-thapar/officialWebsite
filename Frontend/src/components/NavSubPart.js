@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 export default class NavSubPart extends Component {
   state = {
-    active: this.props.active
+    active: this.props.active,
   };
   render() {
     return (
       <Container>
         <div>
-          {this.state.active === "home" ? (
+          {this.state.active === 'home' ? (
             <Link
               to="/"
-              style={(styles.noDec, { textDecoration: "underline" })}
+              style={(styles.noDec, { textDecoration: 'underline' })}
             >
               Home
             </Link>
@@ -24,10 +24,10 @@ export default class NavSubPart extends Component {
           )}
         </div>
         <div>
-          {this.state.active === "about" ? (
+          {this.state.active === 'about' ? (
             <Link
               to="/about"
-              style={(styles.noDec, { textDecoration: "underline" })}
+              style={(styles.noDec, { textDecoration: 'underline' })}
             >
               About
             </Link>
@@ -38,10 +38,10 @@ export default class NavSubPart extends Component {
           )}
         </div>
         <div>
-          {this.state.active === "team" ? (
+          {this.state.active === 'team' ? (
             <Link
               to="/team"
-              style={(styles.noDec, { textDecoration: "underline" })}
+              style={(styles.noDec, { textDecoration: 'underline' })}
             >
               Team
             </Link>
@@ -52,10 +52,10 @@ export default class NavSubPart extends Component {
           )}
         </div>
         <div>
-          {this.state.active === "events" ? (
+          {this.state.active === 'events' ? (
             <Link
               to="/events"
-              style={(styles.noDec, { textDecoration: "underline" })}
+              style={(styles.noDec, { textDecoration: 'underline' })}
             >
               Events
             </Link>
@@ -66,10 +66,10 @@ export default class NavSubPart extends Component {
           )}
         </div>
         <div>
-          {this.state.active === "contact" ? (
+          {this.state.active === 'contact' ? (
             <Link
               to="/contact"
-              style={(styles.noDec, { textDecoration: "underline" })}
+              style={(styles.noDec, { textDecoration: 'underline' })}
             >
               Contact
             </Link>
@@ -80,10 +80,10 @@ export default class NavSubPart extends Component {
           )}
         </div>
         <div>
-          {this.state.active === "achievments" ? (
+          {this.state.active === 'achievments' ? (
             <Link
               to="/achievments"
-              style={(styles.noDec, { textDecoration: "underline" })}
+              style={(styles.noDec, { textDecoration: 'underline' })}
             >
               Achievements
             </Link>
@@ -100,9 +100,9 @@ export default class NavSubPart extends Component {
 
 const styles = {
   noDec: {
-    textDecoration: "none",
-    color: "black"
-  }
+    textDecoration: 'none',
+    color: 'black',
+  },
 };
 
 const Container = styled.nav`

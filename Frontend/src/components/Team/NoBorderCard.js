@@ -1,10 +1,10 @@
 /** @format */
 
-import React, { Component } from "react";
-import linkedin from "./../../assets/linkedin.png";
-import github from "./../../assets/github.png";
-import "./styles/NoBorderCard.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { Component } from 'react';
+import linkedin from './../../assets/linkedin.png';
+import github from './../../assets/github.png';
+import './styles/NoBorderCard.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   fab,
   faLinkedin,
@@ -13,8 +13,8 @@ import {
   faGithubSquare,
   faLinkedinIn,
   faMedium,
-  faTwitter
-} from "@fortawesome/free-brands-svg-icons";
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 export default class CardHead extends Component {
   render() {
     return (
@@ -53,38 +53,38 @@ export default class CardHead extends Component {
 
 const styles = {
   container: {
-    display: "flex",
-    fontFamily: "Poppins",
-    flexDirection: "row",
-    width: "400px",
-    alignItems: "center",
-    height: "200px"
+    display: 'flex',
+    fontFamily: 'Poppins',
+    flexDirection: 'row',
+    width: '400px',
+    alignItems: 'center',
+    height: '200px',
   },
   circle: {
-    display: "flex",
-    borderStyle: "solid",
-    borderWidth: "1px",
-    borderColor: "#000000",
-    width: "100px",
-    height: "100px",
-    borderRadius: "50%",
-    justifyContent: "center",
-    alignItems: "center",
-    marginLeft: "5%",
-    marginRight: "10%"
+    display: 'flex',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    borderColor: '#000000',
+    width: '100px',
+    height: '100px',
+    borderRadius: '50%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: '5%',
+    marginRight: '10%',
   },
   textContainer: {
     // paddingVertical: "50%"
   },
   imageContainer: {
-    display: "flex",
-    alignItems: "center",
-    backgroundColor: "#f3f3f3"
+    display: 'flex',
+    alignItems: 'center',
+    backgroundColor: '#f3f3f3',
   },
   image: {
-    display: "flex",
+    display: 'flex',
     height: 25,
     width: 25,
-    margin: 10
-  }
+    margin: 10,
+  },
 };
