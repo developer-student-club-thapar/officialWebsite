@@ -22,7 +22,10 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "format": "node ./node_modules/prettier/bin-prettier.js --write \"**/*.{css,html,js,jsx,json,md,yaml,yml}\"",
+    "format:check": "node ./node_modules/prettier/bin-prettier.js --check \"**/*.{css,html,js,jsx,json,md,yaml,yml}\"",
+    "lint": "node ./node_modules/eslint/bin/eslint.js"
   },
   "eslintConfig": {
     "extends": "react-app"
