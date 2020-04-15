@@ -4,7 +4,24 @@ group: edge
 sudo: false
 jobs:
     include:
-    #This test helps us to check integrity of the backend code
+    # Run JS tests
+    - language: node_js
+      # The Node version here must be kept in sync with that in `package.json`.
+      node_js: '12.13.0'
+      cache: yarn
+      before_install:
+        # Try to keep version in sync with `package.json`
+        - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.19.1
+        - export PATH="$HOME/.yarn/bin:$PATH"
+      install:
+        - yarn install --frozen-lockfile
+      script:
+        # `yarn build` is tested as part of the Heroku build job
+        - yarn lint
+        # `yarn lint` only checks the formatting of JS/JSX, this will also check CSS/HTML/JSON/Markdown/YAML.
+        - yarn format:check
+
+      #This test helps us to check integrity of the backend code
     - language: python
       python: '3.7'
       cache: pip
