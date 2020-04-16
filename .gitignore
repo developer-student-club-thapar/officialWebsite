@@ -2,6 +2,8 @@
 /Frontend/node_modules/**/*
 node_modules
 
+venv/
+
 # Logs
 logs
 *.log
