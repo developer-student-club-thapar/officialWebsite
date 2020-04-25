@@ -19,6 +19,7 @@ class Event(models.Model):
     link = models.URLField(blank=True)
     docs = models.URLField(blank=True)
     headline_event = models.BooleanField(default=False)
+    image = models.ImageField(upload_to='event-images/', blank=True)
 
     def __str__(self):
         return self.title
