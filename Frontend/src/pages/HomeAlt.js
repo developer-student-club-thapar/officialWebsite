@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 /** @format */
 
 import React, { Component } from "react";
@@ -16,16 +15,15 @@ import axios from "axios";
 
 import Nav from "../components/Nav";
 import GoogleAssBg from "../assets/1200px-Google_Assistant_logo.svg.png";
-import DSC_home from "../assets/dsc_home.png";
 import Logo from "../assets/unnamed.png";
 import undrawAbout from "../assets/undraw_dev_productivity_umsq.svg";
 import TeamPic from "../assets/undraw_team_spirit_hrr4.svg";
 import ContactPic from "../assets/undraw_contact_us_15o2.svg";
 import Gallery from "../components/Gallery";
 import styled from "styled-components";
+import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
 import Footer from "../components/Footer";
 import "./styles/Home.css";
-import Typography from "@material-ui/core/Typography";
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
@@ -113,47 +111,55 @@ export default class Home extends Component {
       "https://docs.google.com/document/d/1bbpf78aMSH2ntSZEWR09Q05OVDHFp6IoFlVHtcvC0eQ/edit?usp=sharing";
     return (
       <MainContainer>
+        {/* <ResponsiveDiv>
+          <img
+            src={Lazy}
+            height="30%"
+            width="50%"
+            style={{ alignSelf: "center", marginTop: "2em" }}
+          ></img>
+          <h1>
+            Our Designers and Developers were quite lazy while making the mobile
+            site! Please prefer to use our app(coming soon) or open it up on
+            desktop!
+            <br />
+            -Lazy Developer
+            <br />
+            <br />
+            P.S. We feel like Brad 1 here, and if you can help us get out of the
+            burden, make us the responsive version..
+            <br />
+            <a
+              style={{
+                cursor: "pointer",
+                textDecoration: "none"
+              }}
+              href="https://github.com/developer-student-club-thapar/officialWebsite"
+            >
+              Github
+            </a>
+          </h1>
+        </ResponsiveDiv> */}
+        {/* <Nav active="home" /> */}
         <SubMainContainer>
           <div
-            className="row"
+            className="div1"
             style={{
-              //   height: "80vh",
+              height: "100vh",
               overflow: "hidden"
             }}
           >
-            <div className="col s1">
-              <img
-                src={DSC_home}
-                style={{
-                  height: "100vh"
-                }}
-              ></img>
+            <div>
+              <img src={GoogleAssBg} className="imgBg1"></img>
+              <img src={Logo} className="Logo"></img>
             </div>
-            <div
-              className="col s11"
-              style={
-                {
-                  // paddingRight:'50px'
-                }
-              }
-            >
-              <img
-                src={Logo}
-                className="Logo"
-                style={{
-                  height: "9vh"
-
-                  //   marginLeft: '40vw',
-                  // paddingRight: '500px'
-                  // marginTop: '18vw'
-                }}
-              ></img>
-              <Typography variant="h4" align="right">
+            <div>
+              <p className="HomeText">
                 Thapar Institute of Engineering and Technology
-              </Typography>
+              </p>
             </div>
           </div>
-          {/* <div
+          <div
             style={{
               height: "100vh",
               overflow: "hidden",
@@ -162,16 +168,9 @@ export default class Home extends Component {
           >
             <div className="AboutTextContainer">
               <h2 className="AboutText">
-                Google DSC is a Developer Student Club which is a
-                technical community that combines all the university
-                students, and all the other students who learn,
-                share ideas and come up with viable projects that
-                are likely to solve day to day universe problems.
-                Additionally, it aims for university students to
-                help them build their mobile, web, machine learning,
-                cloud skills. The clubs are intended as a space for
-                students to try out new ideas and collaborate to
-                solve mobile and web development problems.
+                At DSC TIET, our aim is to spread awareness and teach.
+                Developers, come together under one roof to create a community
+                which inspires thousands. Join Us!
               </h2>
             </div>
             <img src={GoogleAssBg} className="imgBg2"></img>
@@ -184,11 +183,19 @@ export default class Home extends Component {
             >
               Code of Conduct
             </this.HoverText>
-            <Link to="/communityJoin" target="_blank" onClick={event => {
-              event.preventDefault()
-              window.open('https://join.slack.com/t/dscthapar-gspatiala/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M');
-            }}>
-              <this.HoverText3 className="AboutButton2">Join our Slack!</this.HoverText3>
+            <Link
+              to="/communityJoin"
+              target="_blank"
+              onClick={event => {
+                event.preventDefault();
+                window.open(
+                  "https://join.slack.com/t/dscthapar-gspatiala/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M"
+                );
+              }}
+            >
+              <this.HoverText3 className="AboutButton2">
+                Join our Slack!
+              </this.HoverText3>
             </Link>
           </div>
 
@@ -212,7 +219,11 @@ export default class Home extends Component {
               </h2>
             </div>
             <img src={TeamPic} className="TeamImage"></img>
-            <Link to='/team'><this.HoverText1 className="TeamButton">Meet the Team</this.HoverText1></Link>
+            <Link to="/team">
+              <this.HoverText1 className="TeamButton">
+                Meet the Team
+              </this.HoverText1>
+            </Link>
           </div>
 
           <div
@@ -379,7 +390,7 @@ export default class Home extends Component {
             <br></br>
             <hr style={{ width: "100%" }}></hr>
             <Footer />
-          </div> */}
+          </div>
         </SubMainContainer>
       </MainContainer>
     );

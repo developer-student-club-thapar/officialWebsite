@@ -1,44 +1,181 @@
-/** @format */
-import React, { useEffect, useState } from "react";
-import { animated, useSpring, interpolate } from "react-spring";
+import React, { Fragment } from "react";
+import clsx from "clsx";
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import List from "@material-ui/core/List";
+import Divider from "@material-ui/core/Divider";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import MailIcon from "@material-ui/icons/Mail";
 
-import NavSubPart from "./NavSubPart";
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+    // overflowX: 'auto',
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  title: {
+    flexGrow: 1
+  },
+  appbar: {
+    // alignItems: 'center',
+    // justifyContent: 'space-around',
+    // display: 'flex',
+    //  margin: 'auto',
+    // width: '70%',
+    // paddingTop: '1%',
+    // paddingBottom: '1%',
+    // fontSize: '1.3em',
+    // fontWeight: '300'
+  },
+  toolbar: {
+    display: "flex"
+    // paddingRight:'50%',
+    // paddingLeft:'20%'
+  },
+  button: {
+    justifyContent: "space-around",
+    display: "flex",
+    margin: "auto",
+    // width: '70%',
+    // paddingTop: '1%',
+    // paddingBottom: '1%',
+    fontSize: "1.5em",
+    fontWeight: "300",
+    // paddingRight:'20%',
+    textDecoration: "none",
+    color: "black"
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  list: {
+    width: 250
+  },
+  fullList: {
+    width: "auto"
+  }
+}));
 
-function Nav(props) {
-  const [Top, setisTop] = useState(true);
-  const [scroll, setScroll] = useState(0);
-  document.addEventListener("scroll", () => {
-    const isTop = window.scrollY < 50;
-    if (isTop !== Top) {
-      setisTop(isTop);
+const Nav = () => {
+  const classes = useStyles();
+
+  const [sideDrawer, setSideDrawer] = React.useState(false);
+
+  const toggleDrawer = open => event => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
     }
-    setScroll(window.scrollY);
-  });
 
-  const { o } = useSpring({
-    from: { o: 0 },
-    o: scroll / 10 < 1 ? scroll / 100 : 1
-  });
+    setSideDrawer(open);
+  };
+
+  const list = () => (
+    <div
+      className={clsx(classes.list, {
+        [classes.fullList]: false
+      })}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      <List>
+        {["Home", "Events", "Resources", "Projects", "Team", "Blog"].map(
+          (text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          )
+        )}
+      </List>
+    </div>
+  );
 
   return (
-    <React.Fragment>
-      {/* {Top ? ( */}
-      <animated.div
-        style={{
-          position: "sticky",
-          top: "0",
-          zIndex: 100,
-          background: o.interpolate(o => `rgba(255, 255, 255, ${o}`),
-          boxShadow: o.interpolate(
-            o =>
-              `0 ${o * 4}px ${o * 8}px 0 rgba(0,0,0,${o * 0.2}),0 ${o *
-                6}px ${o * 20}px 0 rgba(0,0,0,${o * 0.2})`
-          )
-        }}
-      >
-        <NavSubPart active={props.active} />
-      </animated.div>
-    </React.Fragment>
+    <Fragment>
+      <div className={classes.root}>
+        <ResponsiveDiv>
+          <AppBar position="static" color="white" className={classes.appbar}>
+            <Toolbar className={classes.toolbar}>
+              <Link to="/" className={classes.button}>
+                Home
+              </Link>
+              <Link to="/events" className={classes.button}>
+                Events
+              </Link>
+              <Link to="#" className={classes.button}>
+                Resources
+              </Link>
+              <Link to="/projects" className={classes.button}>
+                Projects
+              </Link>
+              <Link to="/team" className={classes.button}>
+                Team
+              </Link>
+              {/* <Link to='/achievements' className={classes.button}>Achievements</Link> */}
+              <Link to="#" className={classes.button}>
+                Blog
+              </Link>
+            </Toolbar>
+          </AppBar>
+        </ResponsiveDiv>
+        <MobileDiv>
+          <AppBar position="static" color="white">
+            <Toolbar>
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="menu"
+                onClick={toggleDrawer(true)}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6" className={classes.title}>
+                DSC TIET
+              </Typography>
+            </Toolbar>
+          </AppBar>
+          <SwipeableDrawer
+            anchor={"left"}
+            open={sideDrawer}
+            onClose={toggleDrawer(false)}
+          >
+            {list()}
+          </SwipeableDrawer>
+        </MobileDiv>
+      </div>
+    </Fragment>
   );
-}
+};
+
+const ResponsiveDiv = styled.div`
+  @media only screen and (max-width: 1000px) {
+    display: none;
+  }
+`;
+const MobileDiv = styled.div`
+  @media only screen and (min-width: 1000px) {
+    display: none;
+  }
+`;
+
 export default Nav;

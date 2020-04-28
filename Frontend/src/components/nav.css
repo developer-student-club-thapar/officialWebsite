@@ -1,3 +1,10 @@
-.active {
-  background-color: black;
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, "Arial";
 }
