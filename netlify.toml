@@ -1,0 +1,4 @@
+[build]
+  language = "node"
+  publish = "dist"
+  command = "yarn build"
