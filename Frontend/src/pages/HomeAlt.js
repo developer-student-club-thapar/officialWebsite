@@ -24,6 +24,7 @@ import styled from "styled-components";
 import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
 import Footer from "../components/Footer";
 import "./styles/Home.css";
+import Dark from "../components/darkmode.js"
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
@@ -154,6 +155,7 @@ export default class Home extends Component {
               <img src={Logo} className="Logo"></img>
             </div>
             <div>
+            <Dark />
               <p className="HomeText">
                 Thapar Institute of Engineering and Technology
               </p>
