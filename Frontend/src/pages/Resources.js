@@ -20,43 +20,43 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: "center",
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
   },
 
   button: {
     backgroundColor: "#746B6B",
-    color: "white"
+    color: "white",
   },
   rootCard: {
     maxWidth: 350,
-    height: 400
+    height: 400,
   },
   media: {
-    height: 230
+    height: 230,
   },
   grid: {
-    height: 550
+    height: 550,
   },
   modal: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     width: 400,
-    margin: "auto"
+    margin: "auto",
   },
   paperModal: {
     backgroundColor: theme.palette.background.paper,
     // border: '2px solid #000',
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3)
-  }
+    padding: theme.spacing(2, 4, 3),
+  },
 }));
 
 const ResourcesAlt = () => {
@@ -73,19 +73,20 @@ const ResourcesAlt = () => {
   const [events, setEvents] = useState([]);
   const [key, setKey] = useState(null);
 
+
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get("/events/");
-      setEvents(result.data);
-      console.log(events);
-    };
+      setEvents(result.data)
+      console.log(events)
+    }
     fetchData();
-  }, []);
+  }, [])
 
   return (
     <Fragment>
       <CssBaseline />
-      <Container fixed>
+      <Container fixed >
         <Grid container spacing={2} className={classes.grid}>
           <Grid
             item
@@ -98,46 +99,45 @@ const ResourcesAlt = () => {
           >
             <Typography variant="h3" style={{ fontWeight: "bold" }}>
               Resources
-            </Typography>
+                        </Typography>
             <Typography
               variant="h6"
               style={{ color: "grey", paddingTop: "20px" }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Typography>
+              Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco laboris nisi ut aliquip
+              ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore
+              eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+                        </Typography>
           </Grid>
           <Hidden smDown>
-            <Grid
-              item
-              xs={false}
-              sm={false}
-              md={6}
-              lg={6}
-              xl={6}
-              style={{ paddingTop: "120px", paddingLeft: "150px" }}
-            >
-              <img src={Events} alt="event_img" height="60%" width="100%" />
-            </Grid>
+          <Grid
+            item
+            xs={false}
+            sm={false}
+            md={6}
+            lg={6}
+            xl={6}
+            style={{ paddingTop: "120px", paddingLeft:'150px' }}
+          >
+            <img
+              src={Events}
+              alt="event_img"
+              height="60%"
+              width="100%"
+            />
+          </Grid>
           </Hidden>
         </Grid>
         <Grid container spacing={2}>
+
           {events.map((item, index) => (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              lg={4}
-              xl={4}
-              style={{}}
-              key={item.id}
-            >
+            <Grid item xs={12} sm={6} md={4} lg={4} xl={4} style={{}} key={item.id}>
               <Slide bottom>
                 <Card className={classes.rootCard}>
                   <CardActionArea>
@@ -147,7 +147,11 @@ const ResourcesAlt = () => {
                       title="Event"
                     />
                     <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="h2"
+                      >
                         {item.title}
                       </Typography>
                       <Typography
@@ -157,10 +161,7 @@ const ResourcesAlt = () => {
                       >
                         Venue: {item.venue} <br />
                         Time: {item.time} <br />
-                        Link :{" "}
-                        <a href={item.link} target="_blank">
-                          Link
-                        </a>
+                        Link : <a href={item.link} target="_blank">Link</a>
                       </Typography>
                     </CardContent>
                   </CardActionArea>
@@ -169,17 +170,18 @@ const ResourcesAlt = () => {
                       size="small"
                       color="primary"
                       onClick={() => {
-                        setKey(index);
-                        setOpen(true);
+                        setKey(index)
+                        setOpen(true)
                       }}
                     >
                       Learn More
-                    </Button>
+                                    </Button>
                   </CardActions>
                 </Card>
               </Slide>
             </Grid>
           ))}
+
         </Grid>
         <Modal
           aria-labelledby="transition-modal-title"
@@ -190,17 +192,17 @@ const ResourcesAlt = () => {
           closeAfterTransition
           BackdropComponent={Backdrop}
           BackdropProps={{
-            timeout: 500
+            timeout: 500,
           }}
         >
           <Fade in={open}>
             <div className={classes.paperModal}>
-              <h2 id="transition-modal-title">Know More</h2>
+              <h2 id="transition-modal-title">
+                Know More
+              </h2>
               <p id="transition-modal-description">
                 <ol>
-                  {key != null
-                    ? events[key].topics.map(item => <li>{item.name}</li>)
-                    : ""}
+                  {key != null ? events[key].topics.map(item => (<li>{item.name}</li>)) : ""}
                 </ol>
                 <br />
                 {key != null ? events[key].info : ""}

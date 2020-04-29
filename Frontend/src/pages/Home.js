@@ -16,7 +16,7 @@ import axios from "axios";
 
 import Nav from "../components/Nav";
 import GoogleAssBg from "../assets/1200px-Google_Assistant_logo.svg.png";
-import DSC_home from "../assets/dsc_home.png";
+import DSC_home from '../assets/dsc_home.png';
 import Logo from "../assets/unnamed.png";
 import undrawAbout from "../assets/undraw_dev_productivity_umsq.svg";
 import TeamPic from "../assets/undraw_team_spirit_hrr4.svg";
@@ -25,7 +25,7 @@ import Gallery from "../components/Gallery";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import "./styles/Home.css";
-import Typography from "@material-ui/core/Typography";
+import Typography from '@material-ui/core/Typography';
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
@@ -82,31 +82,38 @@ export default class Home extends Component {
       });
   };
   HoverText = styled.button`
-    :hover {
-      box-shadow: 7px 7px #ff9999;
-      transition: 0.3s;
-    }
-  `;
-  HoverText1 = styled.button`
-    :hover {
-      box-shadow: 7px 7px #cfd968;
-      transition: 0.3s;
-    }
-  `;
-  HoverText2 = styled.button`
-    :hover {
-      box-shadow: 5px 5px #39c44e;
-      transition: 0.3s;
-    }
-  `;
-  HoverText3 = styled.button`
-    :hover {
-      ${"" /* box-shadow: 6px 6px #ff9999; */}
-      transition: .3s;
-      background: #ea4335;
-      color: #ffffff;
-    }
-  `;
+	:hover{
+    box-shadow: 7px 7px #ff9999;
+    transition: .3s;
+  }
+  
+`
+HoverText1 = styled.button`
+:hover{
+  box-shadow: 7px 7px #cfd968;
+  transition: .3s;
+}
+
+`
+HoverText2 = styled.button`
+:hover{
+  box-shadow: 5px 5px #39c44e;
+  transition: .3s;
+}
+
+`
+HoverText3 = styled.button`
+:hover{
+  ${'' /* box-shadow: 6px 6px #ff9999; */}
+  transition: .3s;
+  background: #ea4335;
+  color: #ffffff;
+}
+
+
+`
+
+
 
   render() {
     const url =
@@ -114,41 +121,26 @@ export default class Home extends Component {
     return (
       <MainContainer>
         <SubMainContainer>
-          <div
-            className="row"
-            style={{
-              //   height: "80vh",
+          <div className="row" style={{
+            //   height: "80vh",
               overflow: "hidden"
-            }}
-          >
-            <div className="col s1">
-              <img
-                src={DSC_home}
-                style={{
-                  height: "100vh"
-                }}
-              ></img>
+            }}>
+            <div className="col s1" >
+              <img src={DSC_home} style={{
+                  height:'100vh'
+            }}></img>
             </div>
-            <div
-              className="col s11"
-              style={
-                {
-                  // paddingRight:'50px'
-                }
-              }
-            >
-              <img
-                src={Logo}
-                className="Logo"
-                style={{
-                  height: "9vh"
-
-                  //   marginLeft: '40vw',
-                  // paddingRight: '500px'
-                  // marginTop: '18vw'
-                }}
-              ></img>
-              <Typography variant="h4" align="right">
+            <div className="col s11" style={{
+                // paddingRight:'50px'
+            }}>
+            <img src={Logo} className="Logo" style={{
+              height: "9vh",
+            
+            //   marginLeft: '40vw',
+                // paddingRight: '500px'
+    // marginTop: '18vw'
+            }}></img>
+              <Typography variant="h4"  align='right'>
                 Thapar Institute of Engineering and Technology
               </Typography>
             </div>
@@ -388,7 +380,7 @@ export default class Home extends Component {
 
 const MainContainer = styled.div``;
 const SubMainContainer = styled.div`
-  ${"" /* @media only screen and (max-width: 1000px) {
+  ${'' /* @media only screen and (max-width: 1000px) {
     display: none;
   } */}
 `;
