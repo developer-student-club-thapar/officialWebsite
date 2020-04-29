@@ -25,12 +25,10 @@ import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
 import Footer from "../components/Footer";
 import "./styles/Home.css";
 
-
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
 const URL =
   "https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing";
-
 
 export default class Home extends Component {
   constructor(props) {
@@ -82,38 +80,31 @@ export default class Home extends Component {
       });
   };
   HoverText = styled.button`
-	:hover{
-    box-shadow: 7px 7px #ff9999;
-    transition: .3s;
-  }
-  
-`
-HoverText1 = styled.button`
-:hover{
-  box-shadow: 7px 7px #cfd968;
-  transition: .3s;
-}
-
-`
-HoverText2 = styled.button`
-:hover{
-  box-shadow: 5px 5px #39c44e;
-  transition: .3s;
-}
-
-`
-HoverText3 = styled.button`
-:hover{
-  ${'' /* box-shadow: 6px 6px #ff9999; */}
-  transition: .3s;
-  background: #ea4335;
-  color: #ffffff;
-}
-
-
-`
-
-
+    :hover {
+      box-shadow: 7px 7px #ff9999;
+      transition: 0.3s;
+    }
+  `;
+  HoverText1 = styled.button`
+    :hover {
+      box-shadow: 7px 7px #cfd968;
+      transition: 0.3s;
+    }
+  `;
+  HoverText2 = styled.button`
+    :hover {
+      box-shadow: 5px 5px #39c44e;
+      transition: 0.3s;
+    }
+  `;
+  HoverText3 = styled.button`
+    :hover {
+      ${"" /* box-shadow: 6px 6px #ff9999; */}
+      transition: .3s;
+      background: #ea4335;
+      color: #ffffff;
+    }
+  `;
 
   render() {
     const url =
@@ -192,11 +183,19 @@ HoverText3 = styled.button`
             >
               Code of Conduct
             </this.HoverText>
-            <Link to="/communityJoin" target="_blank" onClick={event => {
-              event.preventDefault()
-              window.open('https://join.slack.com/t/dscthapar-gspatiala/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M');
-            }}>
-              <this.HoverText3 className="AboutButton2">Join our Slack!</this.HoverText3>
+            <Link
+              to="/communityJoin"
+              target="_blank"
+              onClick={event => {
+                event.preventDefault();
+                window.open(
+                  "https://join.slack.com/t/dscthapar-gspatiala/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M"
+                );
+              }}
+            >
+              <this.HoverText3 className="AboutButton2">
+                Join our Slack!
+              </this.HoverText3>
             </Link>
           </div>
 
@@ -220,7 +219,11 @@ HoverText3 = styled.button`
               </h2>
             </div>
             <img src={TeamPic} className="TeamImage"></img>
-            <Link to='/team'><this.HoverText1 className="TeamButton">Meet the Team</this.HoverText1></Link>
+            <Link to="/team">
+              <this.HoverText1 className="TeamButton">
+                Meet the Team
+              </this.HoverText1>
+            </Link>
           </div>
 
           <div
@@ -396,7 +399,7 @@ HoverText3 = styled.button`
 
 const MainContainer = styled.div``;
 const SubMainContainer = styled.div`
-  ${'' /* @media only screen and (max-width: 1000px) {
+  ${"" /* @media only screen and (max-width: 1000px) {
     display: none;
   } */}
 `;

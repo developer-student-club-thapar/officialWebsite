@@ -1,5 +1,5 @@
 import React from "react";
-import {Switch, HashRouter as Router, Route} from "react-router-dom";
+import { Switch, HashRouter as Router, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import HomeAlt from "./pages/HomeAlt";
@@ -11,22 +11,22 @@ import Resources from "./pages/Resources";
 import Team from "./pages/Team";
 
 const App = () => {
-    return (
-        <Router>
-            <div className="App">
-                <Nav />
-                <Switch>
-                    <Route exact path="/" component={HomeAlt} />
-                    <Route exact path="/about" component={About} />
-                    <Route exact path="/events" component={Events} />
-                    <Route exact path="/projects" component={Project} />
-                    <Route exact path="/resources" component={Resources} />
-                    {/* <Route exact path='/achievements' component={Achievements} /> */}
-                    <Route exact path="/team" component={Team} />
-                </Switch>
-            </div>
-        </Router>
-    );
+  return (
+    <Router>
+      <div className="App">
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={HomeAlt} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/events" component={Events} />
+          <Route exact path="/projects" component={Project} />
+          <Route exact path="/resources" component={Resources} />
+          {/* <Route exact path='/achievements' component={Achievements} /> */}
+          <Route exact path="/team" component={Team} />
+        </Switch>
+      </div>
+    </Router>
+  );
 };
 
 export default App;
