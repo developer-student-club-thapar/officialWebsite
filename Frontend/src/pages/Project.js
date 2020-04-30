@@ -151,7 +151,7 @@ const ProjectsAlt = () => {
                         image={item.image === null ? Test : item.image}
                         title="Project"
                       />
-                      <CardContent>
+                      <CardContent style={{ height: "125px" }}>
                         <Typography gutterBottom variant="h5" component="h2">
                           {item.name}
                         </Typography>

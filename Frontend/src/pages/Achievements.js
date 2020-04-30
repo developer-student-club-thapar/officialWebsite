@@ -145,7 +145,7 @@ const EventsAlt = () => {
                       image={Winner}
                       title="Achievements"
                     />
-                    <CardContent>
+                    <CardContent style={{ height: "125px" }}>
                       <Typography gutterBottom variant="h5" component="h2">
                         {item.title}
                       </Typography>
