@@ -151,7 +151,7 @@ const EventsAlt = () => {
                         image={item.image === null ? Test : item.image}
                         title="Event"
                       />
-                      <CardContent>
+                      <CardContent style={{ height: "125px" }}>
                         <Typography gutterBottom variant="h5" component="h2">
                           {item.title}
                         </Typography>
