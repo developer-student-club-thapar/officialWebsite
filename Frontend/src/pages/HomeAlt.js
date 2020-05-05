@@ -1,422 +1,804 @@
-/** @format */
-
-import React, { Component } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faTwitter,
-  faYoutube,
-  faMedium,
-  faInstagram,
-  faLinkedin
-} from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
-import axios from "axios";
-
-import Nav from "../components/Nav";
-import GoogleAssBg from "../assets/1200px-Google_Assistant_logo.svg.png";
-import Logo from "../assets/unnamed.png";
-import undrawAbout from "../assets/undraw_dev_productivity_umsq.svg";
-import TeamPic from "../assets/undraw_team_spirit_hrr4.svg";
-import ContactPic from "../assets/undraw_contact_us_15o2.svg";
-import Gallery from "../components/Gallery";
+import React, { Fragment, useEffect, useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import Slide from "react-reveal/Slide";
+import { Container, CssBaseline, Hidden } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import Events from "../assets/events.svg";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardMedia from "@material-ui/core/CardMedia";
+import Test from "../assets/undraw_scrum_board_cesn.svg";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+import dsclogo from "../assets/dsc_logo.png";
+import header from "../assets/header.png";
+import Paper from "@material-ui/core/Paper";
+import GestureIcon from "@material-ui/icons/Gesture";
+import Avatar from "@material-ui/core/Avatar";
+import Team from "../assets/team.webp";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import Flip from "react-reveal/Flip";
 import styled from "styled-components";
-import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
-import Footer from "../components/Footer";
-import "./styles/Home.css";
+import Projects from "../assets/projects.webp";
+import Bounce from "react-reveal/Bounce";
+import EventCardImg from "../assets/events-colorful-typography-banner-260nw-1356206768.webp";
+import Sponsorships from "../assets/sponsorships.jpeg";
+import ProjectImg from "../assets/project-planning-header@2x.png";
+import WhatshotIcon from "@material-ui/icons/Whatshot";
+import Slack from "../assets/slack.png";
+import ThaparImg from "../assets/ThaparUniversity_1.jpg";
+import Roll from "react-reveal/Roll";
+import Maps from "../components/Maps";
 
-axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
+const useStyles = makeStyles(theme => ({
+  root: {
+    maxWidth: 380,
+    height: 450,
+    marginLeft: "-25px",
+    [theme.breakpoints.down("md")]: {
+      width: "auto",
+      marginLeft: "0px"
+    }
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: "center",
+    color: theme.palette.text.secondary
+  },
 
-const URL =
-  "https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing";
-
-export default class Home extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: "",
-      email: "",
-      message: "",
-      loading: false,
-      btnText: "Submit",
-      isTop: true
-    };
+  button: {
+    backgroundColor: "#746B6B",
+    color: "white"
+  },
+  rootCard: {
+    maxWidth: 350,
+    height: 400
+  },
+  rootCardMobile: {
+    width: "auto",
+    height: 400
+  },
+  media: {
+    height: 270
+  },
+  grid: {
+    height: 350,
+    overflowY: "hidden",
+    overflowX: "hidden"
+  },
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: 400,
+    margin: "auto"
+  },
+  paperModal: {
+    backgroundColor: theme.palette.background.paper,
+    // border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3)
+  },
+  item: {
+    width: 200
+  },
+  map: {
+    width: 400
+  },
+  gridImg: {
+    textAlign: "center",
+    [theme.breakpoints.down("md")]: {
+      textAlign: "left",
+      marginTop: "40px"
+    }
+  },
+  TeamImg: {
+    height: "80%",
+    width: "90%",
+    borderRadius: "4px",
+    [theme.breakpoints.down("md")]: {
+      height: "80%",
+      width: "100%",
+      borderRadius: "4px"
+    }
+  },
+  TeamImg2: {
+    height: "80%",
+    width: "90%",
+    borderRadius: "4px",
+    [theme.breakpoints.down("sm")]: {
+      height: "80%",
+      width: "90%",
+      borderRadius: "4px"
+    },
+    [theme.breakpoints.only("md")]: {
+      height: "80%",
+      width: "100%",
+      borderRadius: "4px"
+    }
+  },
+  gridImg2: {
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center"
+    }
+  },
+  TeamGrid: {
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "20px"
+    }
+  },
+  main: {
+    overflowX: "hidden"
+  },
+  CardGrid: {
+    [theme.breakpoints.down("md")]: {
+      marginTop: "40px"
+    }
+  },
+  ThaparImgGrid: {
+    height: "100%",
+    width: "90%",
+    borderRadius: "4px",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%"
+    },
+    [theme.breakpoints.only("md")]: {
+      width: "140%"
+    }
   }
+}));
 
-  onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-  onSubmit = e => {
-    e.preventDefault();
-
-    this.setState({ loading: true, btnText: "Sending...." });
-    // get our form data out of state
-    const { name, email, message } = this.state;
-
-    axios
-      .post("/contactus/", { name, email, message })
-
-      .then(res => {
-        this.setState({
-          loading: false,
-          name: "",
-          email: "",
-          message: "",
-          btnText: "Submit"
-        });
-      })
-
-      .catch(err => {
-        console.log(err);
-        this.setState({
-          loading: false,
-          name: "",
-          email: "",
-          message: "",
-          btnText: "Error"
-        });
-      });
-  };
-  HoverText = styled.button`
-    :hover {
-      box-shadow: 7px 7px #ff9999;
-      transition: 0.3s;
-    }
-  `;
-  HoverText1 = styled.button`
-    :hover {
-      box-shadow: 7px 7px #cfd968;
-      transition: 0.3s;
-    }
-  `;
-  HoverText2 = styled.button`
-    :hover {
-      box-shadow: 5px 5px #39c44e;
-      transition: 0.3s;
-    }
-  `;
-  HoverText3 = styled.button`
-    :hover {
-      ${"" /* box-shadow: 6px 6px #ff9999; */}
-      transition: .3s;
-      background: #ea4335;
-      color: #ffffff;
-    }
-  `;
-
-  render() {
-    const url =
-      "https://docs.google.com/document/d/1bbpf78aMSH2ntSZEWR09Q05OVDHFp6IoFlVHtcvC0eQ/edit?usp=sharing";
-    return (
-      <MainContainer>
-        {/* <ResponsiveDiv>
-          <img
-            src={Lazy}
-            height="30%"
-            width="50%"
-            style={{ alignSelf: "center", marginTop: "2em" }}
-          ></img>
-          <h1>
-            Our Designers and Developers were quite lazy while making the mobile
-            site! Please prefer to use our app(coming soon) or open it up on
-            desktop!
-            <br />
-            -Lazy Developer
-            <br />
-            <br />
-            P.S. We feel like Brad 1 here, and if you can help us get out of the
-            burden, make us the responsive version..
-            <br />
-            <a
-              style={{
-                cursor: "pointer",
-                textDecoration: "none"
-              }}
-              href="https://github.com/developer-student-club-thapar/officialWebsite"
-            >
-              Github
-            </a>
-          </h1>
-        </ResponsiveDiv> */}
-        {/* <Nav active="home" /> */}
-        <SubMainContainer>
-          <div
-            className="div1"
-            style={{
-              height: "100vh",
-              overflow: "hidden"
-            }}
+const HomeAlt = props => {
+  const classes = useStyles();
+  return (
+    <Fragment>
+      <CssBaseline />
+      <Container fixed className={classes.main}>
+        <Grid container spacing={2} className={classes.grid}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            lg={4}
+            xl={4}
+            style={{ textAlign: "center" }}
           >
-            <div>
-              <img src={GoogleAssBg} className="imgBg1"></img>
-              <img src={Logo} className="Logo"></img>
-            </div>
-            <div>
-              <p className="HomeText">
-                Thapar Institute of Engineering and Technology
-              </p>
-            </div>
-          </div>
-          <div
-            style={{
-              height: "100vh",
-              overflow: "hidden",
-              position: "relative"
-            }}
-          >
-            <div className="AboutTextContainer">
-              <h2 className="AboutText">
-                At DSC TIET, our aim is to spread awareness and teach.
-                Developers, come together under one roof to create a community
-                which inspires thousands. Join Us!
-              </h2>
-            </div>
-            <img src={GoogleAssBg} className="imgBg2"></img>
-            <img src={undrawAbout} className="imgAboutUndraw"></img>
-            <this.HoverText
-              onClick={() => {
-                window.open(URL, "_blank");
-              }}
-              className="AboutButton1"
-            >
-              Code of Conduct
-            </this.HoverText>
-            <Link
-              to="/communityJoin"
-              target="_blank"
-              onClick={event => {
-                event.preventDefault();
-                window.open(
-                  "https://join.slack.com/t/dscthapar-gspatiala/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M"
-                );
-              }}
-            >
-              <this.HoverText3 className="AboutButton2">
-                Join our Slack!
-              </this.HoverText3>
-            </Link>
-          </div>
-
-          <div
-            style={{
-              height: "100vh",
-              width: "100%",
-              overflow: "hidden",
-              position: "relative"
-              // background: "red",
-              // display: "flex",
-            }}
-          >
-            <div className="TeamTextContainer">
-              <h2 className="AboutText">
-                We have a strong <span style={{ fontWeight: "600" }}>team</span>{" "}
-                filled with{" "}
-                <span style={{ fontWeight: "600" }}>innovators</span> and people
-                who want to make this{" "}
-                <span style={{ fontWeight: "600" }}>world a better place</span>
-              </h2>
-            </div>
-            <img src={TeamPic} className="TeamImage"></img>
-            <Link to="/team">
-              <this.HoverText1 className="TeamButton">
-                Meet the Team
-              </this.HoverText1>
-            </Link>
-          </div>
-
-          <div
-            style={{
-              height: "100vh",
-              width: "auto",
-              // display: "flex",
-              // alignItems: "center",
-              overflow: "hidden"
-            }}
-          >
-            <Gallery />
-          </div>
-          <div
-            style={{
-              height: "100vh",
-              alignItems: "center",
-              display: "flex",
-              flexDirection: "column"
-            }}
-          >
-            <h1
-              style={{
-                fontSize: "4.5em",
-                fontWeight: "400",
-                color: "#676C72"
-              }}
-            >
-              Connect With Us!
-            </h1>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                width: "80%"
-              }}
-            >
-              <div class="Form">
-                <form
-                  style={{ height: "100%", width: "100%" }}
-                  onSubmit={this.onSubmit}
-                >
-                  <ul>
-                    <li>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Name"
-                        value={this.state.name}
-                        onChange={this.onChange}
-                      />
-                    </li>
-                    <li>
-                      <input
-                        type="email"
-                        id="mail"
-                        name="email"
-                        placeholder="Email"
-                        value={this.state.email}
-                        onChange={this.onChange}
-                      />
-                    </li>
-                    <li className="li">
-                      <textarea
-                        className="textArea"
-                        id="msg"
-                        placeholder="Message"
-                        name="message"
-                        value={this.state.message}
-                        onChange={this.onChange}
-                      ></textarea>
-                    </li>
-                  </ul>
-                  <this.HoverText2 className="FormButton">
-                    {this.state.loading ? "Sending...." : this.state.btnText}
-                  </this.HoverText2>
-                </form>
-              </div>
-              <div
+            <img
+              src={dsclogo}
+              alt="logo"
+              height="20%"
+              width="40%"
+              style={{ display: "inline-block", marginTop: "50px" }}
+            />
+            <h4 style={{ display: "inline-block", color: "#5A5A5A" }}>
+              Developer Students Club
+            </h4>
+            <h6 style={{ display: "inline-block", color: "#5A5A5A" }}>
+              Thapar Institute of Engineering and Technology
+            </h6>
+          </Grid>
+          <Hidden only="xs">
+            <Grid item xs={false} sm={6} md={8} lg={8} xl={8}>
+              <img src={header} alt="header" width="100%" height="95%" />
+            </Grid>
+          </Hidden>
+        </Grid>
+      </Container>
+      <Paper elevation={4} style={{ position: "relative", top: "-20px" }}>
+        <Container fixed>
+          <Grid container spacing={2} style={{ paddingTop: "40px" }}>
+            <Grid item xs={12}>
+              <h4 style={{ color: "#3C4858", fontWeight: "500" }}>
+                About The Program
+              </h4>
+            </Grid>
+          </Grid>
+          <br />
+          <br />
+          <Grid container spacing={0} style={{}}>
+            <Grid item xs={12} lg={6} xl={6} style={{}}>
+              <Paper
+                elevation={0}
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  width: "50%"
+                  backgroundColor: "#414346",
+                  width: "50px",
+                  height: "50px",
+                  borderRadius: "50%",
+                  textAlign: "center",
+                  display: "inline-block"
                 }}
               >
-                <img
-                  src={ContactPic}
+                <GestureIcon style={{ color: "white", marginTop: "14px" }} />
+              </Paper>
+              <h5
+                style={{
+                  display: "inline-block",
+                  marginLeft: "10px",
+                  color: "#363535"
+                }}
+              >
+                What we do?
+              </h5>
+              <br />
+              <br />
+              <p>
+                <h6 style={{ color: "#565656" }}>
+                  Google collaborates with university students who are
+                  passionate about growing developer communities.
+                </h6>
+              </p>
+              <p>
+                <h6 style={{ color: "#565656" }}>
+                  Developer Student Club powered by Google Developers is an
+                  initiative to grow their knowledge on developer technologies
+                  and more through peer to peer workshops and events, and gain
+                  relevant industry experience.
+                </h6>
+              </p>
+              <br />
+              <br />
+              <Button variant="contained" color="primary">
+                {" "}
+                Sign up
+              </Button>
+              <br />
+              <br />
+              <h6
+                style={{ color: "#0066FF", cursor: "pointer" }}
+                onClick={() => {
+                  window.open("https://developers.google.com/community/dsc");
+                }}
+              >
+                Learn more about the program
+              </h6>
+            </Grid>
+            <Grid item xs={12} lg={6} xl={6} className={classes.gridImg}>
+              <img src={Team} alt="img" className={classes.TeamImg} />
+            </Grid>
+          </Grid>
+          <Grid container spacing={5}>
+            <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+              <h5 style={{ color: "#3C4858", fontWeight: "500" }}>
+                What DSC TIET does?
+              </h5>
+              <br />
+              <p>
+                <h6 style={{ color: "#565656" }}>
+                  Developer Student Club TIET is inspired by the Google
+                  Developers' Family.
+                </h6>
+              </p>
+              <p>
+                <h6 style={{ color: "#565656" }}>
+                  The motive is to create a local ecosystem of Developers in and
+                  around the Campus. And having fun doing it.
+                </h6>
+              </p>
+              <br />
+              <br />
+
+              <Paper
+                elevation={0}
+                style={{
+                  color: "white",
+                  backgroundColor: "#3F51B5",
+                  height: "40px",
+                  width: "40px",
+                  borderRadius: "50%",
+                  textAlign: "center",
+                  display: "inline-block",
+                  marginRight: "10px",
+                  cursor: "pointer"
+                }}
+                onClick={() => {
+                  window.open("https://www.facebook.com/dscthapar/");
+                }}
+              >
+                <i
+                  class="fab fa-facebook-f fa-lg"
+                  style={{ marginTop: "14px" }}
+                ></i>
+              </Paper>
+              <Paper
+                elevation={0}
+                style={{
+                  color: "white",
+                  backgroundColor: "#3F51B5",
+                  height: "40px",
+                  width: "40px",
+                  borderRadius: "50%",
+                  textAlign: "center",
+                  display: "inline-block",
+                  marginRight: "10px",
+                  cursor: "pointer"
+                }}
+                onClick={() => {
+                  window.open("https://www.instagram.com/dsc.tiet/");
+                }}
+              >
+                <i
+                  class="fab fa-instagram fa-lg"
+                  style={{ marginTop: "14px" }}
+                ></i>
+              </Paper>
+              <Paper
+                elevation={0}
+                style={{
+                  color: "white",
+                  backgroundColor: "#3F51B5",
+                  height: "40px",
+                  width: "40px",
+                  borderRadius: "50%",
+                  textAlign: "center",
+                  display: "inline-block",
+                  marginRight: "10px",
+                  cursor: "pointer"
+                }}
+                onClick={() => {
+                  window.open("https://twitter.com/dsctiet?s=09");
+                }}
+              >
+                <i
+                  class="fab fa-twitter fa-lg"
+                  style={{ marginTop: "14px" }}
+                ></i>
+              </Paper>
+              <Paper
+                elevation={0}
+                style={{
+                  color: "white",
+                  backgroundColor: "#3F51B5",
+                  height: "40px",
+                  width: "40px",
+                  borderRadius: "50%",
+                  textAlign: "center",
+                  display: "inline-block",
+                  marginRight: "10px",
+                  cursor: "pointer"
+                }}
+                onClick={() => {
+                  window.open(
+                    "https://www.youtube.com/channel/UCl235NVnbWqqCT7NQAIUzVQ"
+                  );
+                }}
+              >
+                <i
+                  class="fab fa-youtube fa-lg"
+                  style={{ marginTop: "14px" }}
+                ></i>
+              </Paper>
+              <Paper
+                elevation={0}
+                style={{
+                  color: "white",
+                  backgroundColor: "#3F51B5",
+                  height: "40px",
+                  width: "40px",
+                  borderRadius: "50%",
+                  textAlign: "center",
+                  display: "inline-block",
+                  marginRight: "10px",
+                  cursor: "pointer"
+                }}
+                onClick={() => {
+                  window.open("https://medium.com/@dsc.tiet");
+                }}
+              >
+                <i
+                  class="fab fa-medium-m fa-lg"
+                  style={{ marginTop: "14px" }}
+                ></i>
+              </Paper>
+              <Paper
+                elevation={0}
+                style={{
+                  color: "white",
+                  backgroundColor: "#3F51B5",
+                  height: "40px",
+                  width: "40px",
+                  borderRadius: "50%",
+                  textAlign: "center",
+                  display: "inline-block",
+                  marginRight: "10px",
+                  cursor: "pointer"
+                }}
+                onClick={() => {
+                  window.open(
+                    "https://www.linkedin.com/company/developer-student-club-thapar/?viewAsMember=true"
+                  );
+                }}
+              >
+                <i
+                  class="fab fa-linkedin-in fa-lg"
+                  style={{ marginTop: "14px" }}
+                ></i>
+              </Paper>
+            </Grid>
+            <Grid item xs={6} style={{}}>
+              <Grid container spacing={2}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  lg={6}
+                  xl={6}
+                  className={classes.item}
+                >
+                  <Paper
+                    elevation={0}
+                    style={{
+                      backgroundColor: "#FBFBC4",
+                      color: "#E4B419",
+                      width: "100px",
+                      height: "40px",
+                      borderRadius: "8px"
+                    }}
+                  >
+                    <h6
+                      style={{
+                        fontWeight: "500",
+                        fontSize: "20px",
+                        paddingTop: "8px",
+                        paddingLeft: "6px"
+                      }}
+                    >
+                      Seminars
+                    </h6>
+                  </Paper>
+                  <h6 style={{ width: "200px", color: "#565656" }}>
+                    Get updated with the latest news and announcements.
+                  </h6>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  lg={6}
+                  xl={6}
+                  className={classes.item}
+                >
+                  <Paper
+                    elevation={0}
+                    style={{
+                      backgroundColor: "#C4CEFB",
+                      color: "#0c50b6",
+                      width: "125px",
+                      height: "40px",
+                      borderRadius: "8px"
+                    }}
+                  >
+                    <h6
+                      style={{
+                        fontWeight: "500",
+                        fontSize: "20px",
+                        paddingTop: "8px",
+                        paddingLeft: "8px"
+                      }}
+                    >
+                      Study Jams
+                    </h6>
+                  </Paper>
+                  <h6 style={{ width: "200px", color: "#565656" }}>
+                    Hands-on experience with the community members.
+                  </h6>
+                </Grid>
+              </Grid>
+              <Grid container spacing={2}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  lg={6}
+                  xl={6}
+                  className={classes.item}
+                >
+                  <Paper
+                    elevation={0}
+                    style={{
+                      backgroundColor: "#FDD2D3",
+                      color: "#DF4D13",
+                      width: "90px",
+                      height: "40px",
+                      borderRadius: "8px"
+                    }}
+                  >
+                    <h6
+                      style={{
+                        fontWeight: "500",
+                        fontSize: "20px",
+                        paddingTop: "8px",
+                        paddingLeft: "6px"
+                      }}
+                    >
+                      Projects
+                    </h6>
+                  </Paper>
+                  <h6 style={{ width: "200px", color: "#565656" }}>
+                    Projects with a social impact that help a lot of people.
+                  </h6>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  lg={6}
+                  xl={6}
+                  className={classes.item}
+                >
+                  <Paper
+                    elevation={0}
+                    style={{
+                      backgroundColor: "#D8FDD2",
+                      color: "#0BB853",
+                      width: "125px",
+                      height: "40px",
+                      borderRadius: "8px"
+                    }}
+                  >
+                    <h6
+                      style={{
+                        fontWeight: "500",
+                        fontSize: "20px",
+                        paddingTop: "8px",
+                        paddingLeft: "8px"
+                      }}
+                    >
+                      Hackathons
+                    </h6>
+                  </Paper>
+                  <h6 style={{ width: "200px", color: "#565656" }}>
+                    Dream. Explore. Wonder. Build it Together.
+                  </h6>
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid container spacing={3} style={{ marginTop: "50px" }}>
+              <Grid item xs={12} lg={6} xl={6} className={classes.gridImg2}>
+                <img src={Projects} alt="img" className={classes.TeamImg2} />
+              </Grid>
+              <Grid item xs={12} lg={6} xl={6} className={classes.TeamGrid}>
+                <Paper
+                  elevation={0}
                   style={{
-                    height: "65%",
-                    marginTop: "5%",
-                    height: "60%"
-                  }}
-                ></img>
-                <div
-                  style={{
-                    display: "flex",
-                    width: "70%",
-                    margin: "auto",
-                    justifyContent: "space-around",
-                    fontSize: "2em"
+                    backgroundColor: "#414346",
+                    width: "50px",
+                    height: "50px",
+                    borderRadius: "50%",
+                    textAlign: "center",
+                    display: "inline-block"
                   }}
                 >
-                  <FontAwesomeIcon
-                    onClick={() =>
-                      window.open(
-                        "https://www.facebook.com/dscthapar/",
-                        "_blank"
-                      )
-                    }
-                    icon={faFacebook}
-                    style={{ cursor: "pointer" }}
-                  />
-                  <FontAwesomeIcon
-                    onClick={() =>
-                      window.open(
-                        "https://www.instagram.com/hacktiet/",
-                        "_blank"
-                      )
-                    }
-                    icon={faInstagram}
-                    style={{ cursor: "pointer" }}
-                  />
-                  <FontAwesomeIcon
-                    onClick={() =>
-                      window.open(
-                        "https://www.twitter.com/dsctiet?s=09",
-                        "_blank"
-                      )
-                    }
-                    icon={faTwitter}
-                    style={{ cursor: "pointer" }}
-                  />
-                  <FontAwesomeIcon
-                    onClick={() =>
-                      window.open(
-                        "https://www.youtube.com/channel/UCl235NVnbWqqCT7NQAIUzVQ",
-                        "_blank"
-                      )
-                    }
-                    icon={faYoutube}
-                    style={{ cursor: "pointer" }}
-                  />
-                  <FontAwesomeIcon
-                    onClick={() =>
-                      window.open("https://medium.com/@dsc.tiet", "_blank")
-                    }
-                    icon={faMedium}
-                    style={{ cursor: "pointer" }}
-                  />
-                  <FontAwesomeIcon
-                    onClick={() =>
-                      window.open(
-                        "https://www.linkedin.com/company/developer-student-club-thapar/?viewAsMember=true",
-                        "_blank"
-                      )
-                    }
-                    icon={faLinkedin}
-                    style={{ cursor: "pointer" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <br></br>
-            <hr style={{ width: "100%" }}></hr>
-            <Footer />
-          </div>
-        </SubMainContainer>
-      </MainContainer>
-    );
-  }
-}
+                  <WhatshotIcon style={{ color: "white", marginTop: "14px" }} />
+                </Paper>
+                <h5
+                  style={{
+                    display: "inline-block",
+                    marginLeft: "10px",
+                    color: "#363535"
+                  }}
+                >
+                  The Team
+                </h5>
+                <br />
+                <br />
+                <p>
+                  <h6 style={{ color: "#565656" }}>
+                    These are the amazing bunch of people who make the community
+                    what it is. Who are the Backbone of Developer Student Club,
+                    TIET and ensure that we can forge ahead
+                    <span style={{ color: "#3F51B5" }}> #WhateverItTakes!</span>
+                  </h6>
+                </p>
+                <p>
+                  <h6 style={{ color: "#565656" }}>
+                    They take the time out from their daily grind to give back
+                    to the members and empower them to become bigger
+                    (Metaphorically). And Better.
+                  </h6>
+                </p>
+                <br />
 
-const MainContainer = styled.div``;
-const SubMainContainer = styled.div`
-  ${"" /* @media only screen and (max-width: 1000px) {
-    display: none;
-  } */}
-`;
+                <h6
+                  style={{ color: "#0066FF", cursor: "pointer" }}
+                  onClick={() => {
+                    props.history.push("/team");
+                  }}
+                >
+                  Meet the Team
+                </h6>
+              </Grid>
+            </Grid>
+          </Grid>
 
-const ResponsiveDiv = styled.div`
-  overflow: hidden;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  font-size: 0.5em;
-  justify-content: center;
-  @media only screen and (max-width: 1000px) {
-    background-color: #f3f3f3;
-    height: 100vh;
-    width: 100vw;
-  }
-  @media only screen and (min-width: 1000px) {
-    display: none;
-  }
-`;
+          <Grid container spacing={3} className={classes.CardGrid}>
+            <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+              <Card className={classes.root}>
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image={EventCardImg}
+                    title="Events"
+                  />
+                  <CardContent style={{ height: "120px" }}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Events
+                    </Typography>
+                    <br />
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      Attend Study Jams/ Hackathons/ Developer Conferences to
+                      learn more about the latest technologies.
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    onClick={() => {
+                      props.history.push("/events");
+                    }}
+                  >
+                    Learn More
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+              <Card className={classes.root}>
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image={Sponsorships}
+                    title="Sponsorships"
+                  />
+                  <CardContent style={{ height: "120px" }}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Sponsorships
+                    </Typography>
+                    <br />
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      Get Brand exposure and elevate your business identity
+                      within the Community.
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button variant="outlined" color="primary">
+                    Send Proposal
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+              <Card className={classes.root}>
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image={ProjectImg}
+                    title="Projects"
+                  />
+                  <CardContent style={{ height: "120px" }}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Projects
+                    </Typography>
+                    <br />
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      Help us make some really cool projects by funding us.
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button variant="outlined" color="primary">
+                    Send Proposal
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          </Grid>
+
+          <br />
+          <br />
+          <Grid container spacing={2}>
+            <Grid item lg={6} xl={6}>
+              <h5 style={{ color: "#3C4858", fontWeight: "500" }}>
+                Join the conversation
+              </h5>
+              <br />
+              <p>
+                <h6 style={{ color: "#565656" }}>
+                  Join our Slack Channel to know more about the Activities,
+                  Sessions and other fun stuff.
+                </h6>
+              </p>
+              <br />
+              <Button
+                variant="contained"
+                style={{ backgroundColor: "#4A154B", color: "white" }}
+                onClick={() => {
+                  window.open(
+                    "https://join.slack.com/t/dscthapar-gspatiala/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M"
+                  );
+                }}
+              >
+                Join us on <img src={Slack} height="30px" />
+              </Button>
+            </Grid>
+          </Grid>
+          <br />
+          <br />
+          <br />
+          <br />
+          <Grid container spacing={2}>
+            <Grid item lg={6} xl={6}>
+              {/* <img src={ThaparImg} alt='img' height='100%' width='90%' style={{borderRadius:'4px'}}/> */}
+              <img
+                src={ThaparImg}
+                alt="img"
+                className={classes.ThaparImgGrid}
+              />
+            </Grid>
+            <Grid item lg={6} xl={6}>
+              <h5 style={{ color: "#3C4858", fontWeight: "500" }}>
+                About TIET
+              </h5>
+              <br />
+              <p>
+                <h6 style={{ color: "#565656" }}>
+                  Thapar Institute of Engineering and Technology, previously
+                  known as Thapar University, is a private institute deemed to
+                  be university, in Patiala. It was founded in 1956 by Karam
+                  Chand Thapar. The institute has been granted full autonomy and
+                  the status of deemed-to-be-university by the University Grants
+                  Commission.
+                </h6>
+              </p>
+              <br />
+              <h6
+                style={{ color: "#0066FF", cursor: "pointer" }}
+                onClick={() => {
+                  window.open("http://www.thapar.edu/");
+                }}
+              >
+                Learn More
+              </h6>
+            </Grid>
+          </Grid>
+          <br />
+          <br />
+          <br />
+          <br />
+        </Container>
+      </Paper>
+      <Grid container spacing={0} style={{ marginTop: "-10px" }}>
+        <Grid item xs={12}>
+          <Maps />
+        </Grid>
+      </Grid>
+      {/* <Container fixed> */}
+    </Fragment>
+  );
+};
+
+export default HomeAlt;
