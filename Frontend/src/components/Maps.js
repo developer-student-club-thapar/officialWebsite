@@ -72,7 +72,7 @@ class Maps extends Component {
     );
   }
 }
-
+const GoogleAPI = process.env.GOOGLE_MAPS_API_KEY;
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyB3JAqF0AMxgbfnGtt0R5Yk0MaBe9p1P5s"
+  apiKey: `${GoogleAPI}`
 })(Maps);
