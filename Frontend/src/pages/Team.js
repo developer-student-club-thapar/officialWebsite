@@ -13,6 +13,8 @@ import softwareImage from "../assets/undraw_programming_2svr.svg";
 import mlImage from "../assets/undraw_Growing_qwt2.svg";
 import blockchainImage from "../assets/undraw_digital_currency_qpak.svg";
 import axios from "axios";
+import Loader from "./Loader";
+import FooterAlt from "../components/FooterAlt";
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 const useStyles = makeStyles(theme => ({
@@ -1723,368 +1725,18 @@ const Team = () => {
       }
     }
   }
-  return (
-    <Fragment>
-      <CssBaseline />
-      <Container fixed>
-        <Grid
-          container
-          spacing={2}
-          className={classes.grid}
-          style={{ height: "230px" }}
-        >
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            xl={12}
-            style={{ paddingTop: "100px" }}
-          >
-            <Typography
-              variant="h2"
-              style={{ fontWeight: "bold", textAlign: "center" }}
-            >
-              Meet the Team
-            </Typography>
-          </Grid>
-        </Grid>
-        <Hidden mdDown>
+  if (loading) {
+    return <Loader />;
+  } else {
+    return (
+      <Fragment>
+        <CssBaseline />
+        <Container fixed>
           <Grid
             container
             spacing={2}
             className={classes.grid}
-            style={{ height: "auto", justifyContent: "space-around" }}
-          >
-            <Grid item xs={12} sm={12} md={6} lg={4} xl={4} style={{}}>
-              <Paper
-                className={classes.paper}
-                style={{ width: "340px", height: "130px" }}
-                elevation={4}
-              >
-                <div style={{ paddingBottom: "100px" }}>
-                  <h5
-                    style={{
-                      marginBottom: "-24px",
-                      marginTop: "0px",
-                      marginLeft: "110px",
-                      width: "200px",
-                      fontWeight: "bold"
-                    }}
-                  >
-                    Shubhank Saxena
-                  </h5>
-                  <h6
-                    style={{
-                      marginBottom: "-60px",
-                      marginTop: "30px",
-                      marginLeft: "110px",
-                      width: "200px"
-                    }}
-                  >
-                    Lead
-                  </h6>
-                  <div
-                    style={{
-                      marginBottom: "-85px",
-                      marginTop: "70px",
-                      marginLeft: "110px",
-                      width: "200px"
-                    }}
-                  >
-                    <span>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-linkedin fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-github-square fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-medium fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-twitter-square fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                    </span>
-                  </div>
-                  <div style={{ paddingBottom: "100px" }}>
-                    <Avatar
-                      alt="Shubhank Saxena"
-                      src="https://picsum.photos/seed/picsum/200/300"
-                      className={classes.large}
-                      style={{ paddingBottom: "0px" }}
-                    />
-                  </div>
-                </div>
-              </Paper>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={4} xl={4} style={{}}>
-              <Paper
-                className={classes.paper}
-                style={{ width: "340px", height: "130px" }}
-                elevation={4}
-              >
-                <div style={{ paddingBottom: "100px" }}>
-                  <h5
-                    style={{
-                      marginBottom: "-24px",
-                      marginTop: "0px",
-                      marginLeft: "110px",
-                      width: "200px",
-                      fontWeight: "bold"
-                    }}
-                  >
-                    Aman Arora
-                  </h5>
-                  <h6
-                    style={{
-                      marginBottom: "-60px",
-                      marginTop: "30px",
-                      marginLeft: "110px",
-                      width: "200px"
-                    }}
-                  >
-                    Co-Lead
-                  </h6>
-                  <div
-                    style={{
-                      marginBottom: "-85px",
-                      marginTop: "70px",
-                      marginLeft: "110px",
-                      width: "200px"
-                    }}
-                  >
-                    <span>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-linkedin fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-github-square fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-medium fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-twitter-square fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                    </span>
-                  </div>
-                  <div style={{ paddingBottom: "100px" }}>
-                    <Avatar
-                      alt="Aman Arora"
-                      src="https://picsum.photos/seed/picsum/200/300"
-                      className={classes.large}
-                      style={{ paddingBottom: "0px" }}
-                    />
-                  </div>
-                </div>
-              </Paper>
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid container spacing={2} className={classes.gridMobile}>
-            <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
-              <Paper
-                className={classes.paper}
-                style={{ height: "130px" }}
-                elevation={4}
-              >
-                <div style={{ paddingBottom: "100px" }}>
-                  <h6
-                    style={{
-                      marginBottom: "-24px",
-                      marginTop: "0px",
-                      marginLeft: "110px",
-                      width: "200px",
-                      fontWeight: "bold"
-                    }}
-                  >
-                    Shubhank Saxena
-                  </h6>
-                  <h6
-                    style={{
-                      marginBottom: "-60px",
-                      marginTop: "30px",
-                      marginLeft: "110px",
-                      width: "200px"
-                    }}
-                  >
-                    Lead
-                  </h6>
-                  <div
-                    style={{
-                      marginBottom: "-85px",
-                      marginTop: "70px",
-                      marginLeft: "110px",
-                      width: "200px"
-                    }}
-                  >
-                    <span>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-linkedin fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-github-square fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-medium fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-twitter-square fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                    </span>
-                  </div>
-                  <div style={{ paddingBottom: "100px" }}>
-                    <Avatar
-                      alt="Shubhank Saxena"
-                      src="https://picsum.photos/seed/picsum/200/300"
-                      className={classes.large}
-                      style={{ paddingBottom: "0px" }}
-                    />
-                  </div>
-                </div>
-              </Paper>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
-              <Paper
-                className={classes.paper}
-                style={{ height: "130px" }}
-                elevation={4}
-              >
-                <div style={{ paddingBottom: "100px" }}>
-                  <h6
-                    style={{
-                      marginBottom: "-24px",
-                      marginTop: "0px",
-                      marginLeft: "110px",
-                      width: "200px",
-                      fontWeight: "bold"
-                    }}
-                  >
-                    Aman Arora
-                  </h6>
-                  <h6
-                    style={{
-                      marginBottom: "-60px",
-                      marginTop: "30px",
-                      marginLeft: "110px",
-                      width: "200px"
-                    }}
-                  >
-                    Co-Lead
-                  </h6>
-                  <div
-                    style={{
-                      marginBottom: "-85px",
-                      marginTop: "70px",
-                      marginLeft: "110px",
-                      width: "200px"
-                    }}
-                  >
-                    <span>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-linkedin fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-github-square fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-medium fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                      <a href="#" style={{ paddingRight: "8px" }}>
-                        <i
-                          class="fab fa-twitter-square fa-2x"
-                          style={{ color: "grey" }}
-                        />
-                      </a>
-                    </span>
-                  </div>
-                  <div style={{ paddingBottom: "100px" }}>
-                    <Avatar
-                      alt="Aman Arora"
-                      src="https://picsum.photos/seed/picsum/200/300"
-                      className={classes.large}
-                      style={{ paddingBottom: "0px" }}
-                    />
-                  </div>
-                </div>
-              </Paper>
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{ height: "500px", paddingTop: "50px" }}
-          >
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={12}
-              lg={6}
-              xl={6}
-              style={{ paddingTop: "0px", paddingLeft: "250px" }}
-            >
-              <img src={image} style={{ height: "375px", width: "800px" }} />
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{ height: "100px" }}
+            style={{ height: "230px" }}
           >
             <Grid
               item
@@ -2093,513 +1745,881 @@ const Team = () => {
               md={12}
               lg={12}
               xl={12}
+              style={{ paddingTop: "100px" }}
+            >
+              <Typography
+                variant="h2"
+                style={{ fontWeight: "bold", textAlign: "center" }}
+              >
+                Meet the Team
+              </Typography>
+            </Grid>
+          </Grid>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{ height: "auto", justifyContent: "space-around" }}
+            >
+              <Grid item xs={12} sm={12} md={6} lg={4} xl={4} style={{}}>
+                <Paper
+                  className={classes.paper}
+                  style={{ width: "340px", height: "130px" }}
+                  elevation={4}
+                >
+                  <div style={{ paddingBottom: "100px" }}>
+                    <h5
+                      style={{
+                        marginBottom: "-24px",
+                        marginTop: "0px",
+                        marginLeft: "110px",
+                        width: "200px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      Shubhank Saxena
+                    </h5>
+                    <h6
+                      style={{
+                        marginBottom: "-60px",
+                        marginTop: "30px",
+                        marginLeft: "110px",
+                        width: "200px"
+                      }}
+                    >
+                      Lead
+                    </h6>
+                    <div
+                      style={{
+                        marginBottom: "-85px",
+                        marginTop: "70px",
+                        marginLeft: "110px",
+                        width: "200px"
+                      }}
+                    >
+                      <span>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-linkedin fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-github-square fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-medium fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-twitter-square fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                      </span>
+                    </div>
+                    <div style={{ paddingBottom: "100px" }}>
+                      <Avatar
+                        alt="Shubhank Saxena"
+                        src="https://picsum.photos/seed/picsum/200/300"
+                        className={classes.large}
+                        style={{ paddingBottom: "0px" }}
+                      />
+                    </div>
+                  </div>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} sm={12} md={12} lg={4} xl={4} style={{}}>
+                <Paper
+                  className={classes.paper}
+                  style={{ width: "340px", height: "130px" }}
+                  elevation={4}
+                >
+                  <div style={{ paddingBottom: "100px" }}>
+                    <h5
+                      style={{
+                        marginBottom: "-24px",
+                        marginTop: "0px",
+                        marginLeft: "110px",
+                        width: "200px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      Aman Arora
+                    </h5>
+                    <h6
+                      style={{
+                        marginBottom: "-60px",
+                        marginTop: "30px",
+                        marginLeft: "110px",
+                        width: "200px"
+                      }}
+                    >
+                      Co-Lead
+                    </h6>
+                    <div
+                      style={{
+                        marginBottom: "-85px",
+                        marginTop: "70px",
+                        marginLeft: "110px",
+                        width: "200px"
+                      }}
+                    >
+                      <span>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-linkedin fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-github-square fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-medium fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-twitter-square fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                      </span>
+                    </div>
+                    <div style={{ paddingBottom: "100px" }}>
+                      <Avatar
+                        alt="Aman Arora"
+                        src="https://picsum.photos/seed/picsum/200/300"
+                        className={classes.large}
+                        style={{ paddingBottom: "0px" }}
+                      />
+                    </div>
+                  </div>
+                </Paper>
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid container spacing={2} className={classes.gridMobile}>
+              <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+                <Paper
+                  className={classes.paper}
+                  style={{ height: "130px" }}
+                  elevation={4}
+                >
+                  <div style={{ paddingBottom: "100px" }}>
+                    <h6
+                      style={{
+                        marginBottom: "-24px",
+                        marginTop: "0px",
+                        marginLeft: "110px",
+                        width: "200px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      Shubhank Saxena
+                    </h6>
+                    <h6
+                      style={{
+                        marginBottom: "-60px",
+                        marginTop: "30px",
+                        marginLeft: "110px",
+                        width: "200px"
+                      }}
+                    >
+                      Lead
+                    </h6>
+                    <div
+                      style={{
+                        marginBottom: "-85px",
+                        marginTop: "70px",
+                        marginLeft: "110px",
+                        width: "200px"
+                      }}
+                    >
+                      <span>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-linkedin fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-github-square fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-medium fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-twitter-square fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                      </span>
+                    </div>
+                    <div style={{ paddingBottom: "100px" }}>
+                      <Avatar
+                        alt="Shubhank Saxena"
+                        src="https://picsum.photos/seed/picsum/200/300"
+                        className={classes.large}
+                        style={{ paddingBottom: "0px" }}
+                      />
+                    </div>
+                  </div>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+                <Paper
+                  className={classes.paper}
+                  style={{ height: "130px" }}
+                  elevation={4}
+                >
+                  <div style={{ paddingBottom: "100px" }}>
+                    <h6
+                      style={{
+                        marginBottom: "-24px",
+                        marginTop: "0px",
+                        marginLeft: "110px",
+                        width: "200px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      Aman Arora
+                    </h6>
+                    <h6
+                      style={{
+                        marginBottom: "-60px",
+                        marginTop: "30px",
+                        marginLeft: "110px",
+                        width: "200px"
+                      }}
+                    >
+                      Co-Lead
+                    </h6>
+                    <div
+                      style={{
+                        marginBottom: "-85px",
+                        marginTop: "70px",
+                        marginLeft: "110px",
+                        width: "200px"
+                      }}
+                    >
+                      <span>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-linkedin fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-github-square fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-medium fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                        <a href="#" style={{ paddingRight: "8px" }}>
+                          <i
+                            class="fab fa-twitter-square fa-2x"
+                            style={{ color: "grey" }}
+                          />
+                        </a>
+                      </span>
+                    </div>
+                    <div style={{ paddingBottom: "100px" }}>
+                      <Avatar
+                        alt="Aman Arora"
+                        src="https://picsum.photos/seed/picsum/200/300"
+                        className={classes.large}
+                        style={{ paddingBottom: "0px" }}
+                      />
+                    </div>
+                  </div>
+                </Paper>
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{ height: "500px", paddingTop: "50px" }}
+            >
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={6}
+                xl={6}
+                style={{ paddingTop: "0px", paddingLeft: "250px" }}
+              >
+                <img src={image} style={{ height: "375px", width: "800px" }} />
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{ height: "100px" }}
+            >
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
+                style={{ paddingTop: "0px" }}
+              >
+                <Typography
+                  variant="h3"
+                  style={{ fontWeight: "bold", textAlign: "center" }}
+                >
+                  Web and App Team
+                </Typography>
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid
+              container
+              spacing={2}
+              className={classes.gridMobile}
+              style={{ height: "120px", paddingTop: "10px" }}
+            >
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
+                <Typography
+                  variant="h3"
+                  style={{ fontWeight: "bold", textAlign: "center" }}
+                >
+                  Web and App Team
+                </Typography>
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{ height: "auto", justifyContent: "space-around" }}
+            >
+              {webHeads}
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid container spacing={2} className={classes.gridMobile}>
+              {webHeadsMobile}
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{ height: "420px", paddingTop: "50px" }}
+            >
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={6}
+                xl={6}
+                style={{ paddingTop: "0px", paddingLeft: "250px" }}
+              >
+                <img src={image2} style={{ height: "300px", width: "800px" }} />
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{
+                height: "auto",
+                paddingTop: "0px",
+                justifyContent: "space-around"
+              }}
+            >
+              {webMembers}
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid
+              container
+              spacing={2}
+              className={classes.gridMobile}
+              style={{ height: "auto" }}
+            >
+              {webMembersMobile}
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{ height: "150px", paddingTop: "50px" }}
+            >
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
+                style={{ paddingTop: "0px" }}
+              >
+                <Typography
+                  variant="h3"
+                  style={{ fontWeight: "bold", textAlign: "center" }}
+                >
+                  IOT Team
+                </Typography>
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid
+              container
+              spacing={2}
+              className={classes.gridMobile}
+              style={{ height: "120px", paddingTop: "10px" }}
+            >
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
+                <Typography
+                  variant="h3"
+                  style={{ fontWeight: "bold", textAlign: "center" }}
+                >
+                  IOT Team
+                </Typography>
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{
+                height: "auto",
+                paddingTop: "0px",
+                justifyContent: "space-around"
+              }}
+            >
+              {iotHeads}
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid
+              container
+              spacing={2}
+              className={classes.gridMobile}
+              style={{ paddingTop: "00px" }}
+            >
+              {iotHeadsMobile}
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{ height: "420px", paddingTop: "50px" }}
+            >
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={6}
+                xl={6}
+                style={{ paddingLeft: "250px" }}
+              >
+                <img
+                  src={iotImage}
+                  style={{ height: "300px", width: "800px" }}
+                />
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{
+                height: "auto",
+                paddingTop: "0px",
+                justifyContent: "space-around"
+              }}
+            >
+              {iotMembers}
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid
+              container
+              spacing={2}
+              className={classes.gridMobile}
+              style={{ height: "auto", paddingTop: "10px" }}
+            >
+              {iotMembersMobile}
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{ height: "180px", paddingTop: "50px" }}
+            >
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
+                <Typography
+                  variant="h3"
+                  style={{ fontWeight: "bold", textAlign: "center" }}
+                >
+                  Software Team
+                </Typography>
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid
+              container
+              spacing={2}
+              className={classes.gridMobile}
+              style={{ height: "120px", paddingTop: "0px" }}
+            >
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
+                <Typography
+                  variant="h3"
+                  style={{ fontWeight: "bold", textAlign: "center" }}
+                >
+                  Software Team
+                </Typography>
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{
+                height: "auto",
+                paddingTop: "0px",
+                justifyContent: "space-around"
+              }}
+            >
+              {softwareHeads}
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid
+              container
+              spacing={2}
+              className={classes.gridMobile}
+              style={{ paddingTop: "10px" }}
+            >
+              {softwareHeadsMobile}
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{ height: "420px", paddingTop: "50px" }}
+            >
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={6}
+                xl={6}
+                style={{ paddingLeft: "250px" }}
+              >
+                <img
+                  src={softwareImage}
+                  style={{ height: "300px", width: "800px" }}
+                />
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{
+                height: "auto",
+                paddingTop: "0px",
+                justifyContent: "space-around"
+              }}
+            >
+              {softwareMembers}
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid
+              container
+              spacing={2}
+              className={classes.gridMobile}
+              style={{ height: "auto", paddingTop: "10px" }}
+            >
+              {softwareMembersMobile}
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{ paddingTop: "50px", height: "180px" }}
+            >
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
+                <Typography
+                  variant="h3"
+                  style={{ fontWeight: "bold", textAlign: "center" }}
+                >
+                  Machine Learning Team
+                </Typography>
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid
+              container
+              spacing={2}
+              className={classes.gridMobile}
+              style={{ height: "120px", paddingTop: "10px" }}
+            >
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
+                <Typography
+                  variant="h3"
+                  style={{ fontWeight: "bold", textAlign: "center" }}
+                >
+                  Machine Learning Team
+                </Typography>
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{
+                height: "auto",
+                paddingTop: "10px",
+                justifyContent: "space-around"
+              }}
+            >
+              {mlHeads}
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid
+              container
+              spacing={2}
+              className={classes.gridMobile}
+              style={{}}
+            >
+              {mlHeadsMobile}
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{ height: "420px", paddingTop: "50px" }}
+            >
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={6}
+                xl={6}
+                style={{ paddingLeft: "250px" }}
+              >
+                <img
+                  src={mlImage}
+                  style={{ height: "300px", width: "800px" }}
+                />
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{
+                height: "auto",
+                paddingTop: "0px",
+                justifyContent: "space-around"
+              }}
+            >
+              {mlMembers}
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid
+              container
+              spacing={2}
+              className={classes.gridMobile}
+              style={{ height: "auto", paddingTop: "10px" }}
+            >
+              {mlMembersMobile}
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{ paddingTop: "50px", height: "180px" }}
+            >
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
+                <Typography
+                  variant="h3"
+                  style={{ fontWeight: "bold", textAlign: "center" }}
+                >
+                  Blockchain Team
+                </Typography>
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid
+              container
+              spacing={2}
+              className={classes.gridMobile}
+              style={{ paddingTop: "10px", height: "120px" }}
+            >
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
+                <Typography
+                  variant="h3"
+                  style={{ fontWeight: "bold", textAlign: "center" }}
+                >
+                  Blockchain Team
+                </Typography>
+              </Grid>
+            </Grid>
+          </Hidden>
+          <Hidden mdDown>
+            <Grid
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{
+                height: "auto",
+                paddingTop: "0px",
+                justifyContent: "space-around"
+              }}
+            >
+              {blockchainHeads}
+            </Grid>
+          </Hidden>
+          <Hidden lgUp>
+            <Grid
+              container
+              spacing={2}
+              className={classes.gridMobile}
               style={{ paddingTop: "0px" }}
             >
-              <Typography
-                variant="h3"
-                style={{ fontWeight: "bold", textAlign: "center" }}
-              >
-                Web and App Team
-              </Typography>
+              {blockchainHeadsMobile}
             </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid
-            container
-            spacing={2}
-            className={classes.gridMobile}
-            style={{ height: "120px", paddingTop: "10px" }}
-          >
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
-              <Typography
-                variant="h3"
-                style={{ fontWeight: "bold", textAlign: "center" }}
-              >
-                Web and App Team
-              </Typography>
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{ height: "auto", justifyContent: "space-around" }}
-          >
-            {webHeads}
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid container spacing={2} className={classes.gridMobile}>
-            {webHeadsMobile}
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{ height: "420px", paddingTop: "50px" }}
-          >
+          </Hidden>
+          <Hidden mdDown>
             <Grid
-              item
-              xs={12}
-              sm={12}
-              md={12}
-              lg={6}
-              xl={6}
-              style={{ paddingTop: "0px", paddingLeft: "250px" }}
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{ height: "420px", paddingTop: "50px" }}
             >
-              <img src={image2} style={{ height: "300px", width: "800px" }} />
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={6}
+                xl={6}
+                style={{ paddingLeft: "250px" }}
+              >
+                <img
+                  src={blockchainImage}
+                  style={{ height: "300px", width: "800px" }}
+                />
+              </Grid>
             </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{
-              height: "auto",
-              paddingTop: "0px",
-              justifyContent: "space-around"
-            }}
-          >
-            {webMembers}
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid
-            container
-            spacing={2}
-            className={classes.gridMobile}
-            style={{ height: "auto" }}
-          >
-            {webMembersMobile}
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{ height: "150px", paddingTop: "50px" }}
-          >
+          </Hidden>
+          <Hidden mdDown>
             <Grid
-              item
-              xs={12}
-              sm={12}
-              md={12}
-              lg={12}
-              xl={12}
-              style={{ paddingTop: "0px" }}
+              container
+              spacing={2}
+              className={classes.grid}
+              style={{
+                height: "auto",
+                paddingTop: "0px",
+                justifyContent: "space-around"
+              }}
             >
-              <Typography
-                variant="h3"
-                style={{ fontWeight: "bold", textAlign: "center" }}
-              >
-                IOT Team
-              </Typography>
+              {blockchainMembers}
             </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid
-            container
-            spacing={2}
-            className={classes.gridMobile}
-            style={{ height: "120px", paddingTop: "10px" }}
-          >
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
-              <Typography
-                variant="h3"
-                style={{ fontWeight: "bold", textAlign: "center" }}
-              >
-                IOT Team
-              </Typography>
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{
-              height: "auto",
-              paddingTop: "0px",
-              justifyContent: "space-around"
-            }}
-          >
-            {iotHeads}
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid
-            container
-            spacing={2}
-            className={classes.gridMobile}
-            style={{ paddingTop: "00px" }}
-          >
-            {iotHeadsMobile}
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{ height: "420px", paddingTop: "50px" }}
-          >
+          </Hidden>
+          <Hidden lgUp>
             <Grid
-              item
-              xs={12}
-              sm={12}
-              md={12}
-              lg={6}
-              xl={6}
-              style={{ paddingLeft: "250px" }}
+              container
+              spacing={2}
+              className={classes.gridMobile}
+              style={{ height: "auto", paddingTop: "00px" }}
             >
-              <img src={iotImage} style={{ height: "300px", width: "800px" }} />
+              {blockchainMembersMobile}
             </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{
-              height: "auto",
-              paddingTop: "0px",
-              justifyContent: "space-around"
-            }}
-          >
-            {iotMembers}
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid
-            container
-            spacing={2}
-            className={classes.gridMobile}
-            style={{ height: "auto", paddingTop: "10px" }}
-          >
-            {iotMembersMobile}
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{ height: "180px", paddingTop: "50px" }}
-          >
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
-              <Typography
-                variant="h3"
-                style={{ fontWeight: "bold", textAlign: "center" }}
-              >
-                Software Team
-              </Typography>
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid
-            container
-            spacing={2}
-            className={classes.gridMobile}
-            style={{ height: "120px", paddingTop: "0px" }}
-          >
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
-              <Typography
-                variant="h3"
-                style={{ fontWeight: "bold", textAlign: "center" }}
-              >
-                Software Team
-              </Typography>
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{
-              height: "auto",
-              paddingTop: "0px",
-              justifyContent: "space-around"
-            }}
-          >
-            {softwareHeads}
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid
-            container
-            spacing={2}
-            className={classes.gridMobile}
-            style={{ paddingTop: "10px" }}
-          >
-            {softwareHeadsMobile}
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{ height: "420px", paddingTop: "50px" }}
-          >
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={12}
-              lg={6}
-              xl={6}
-              style={{ paddingLeft: "250px" }}
-            >
-              <img
-                src={softwareImage}
-                style={{ height: "300px", width: "800px" }}
-              />
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{
-              height: "auto",
-              paddingTop: "0px",
-              justifyContent: "space-around"
-            }}
-          >
-            {softwareMembers}
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid
-            container
-            spacing={2}
-            className={classes.gridMobile}
-            style={{ height: "auto", paddingTop: "10px" }}
-          >
-            {softwareMembersMobile}
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{ paddingTop: "50px", height: "180px" }}
-          >
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
-              <Typography
-                variant="h3"
-                style={{ fontWeight: "bold", textAlign: "center" }}
-              >
-                Machine Learning Team
-              </Typography>
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid
-            container
-            spacing={2}
-            className={classes.gridMobile}
-            style={{ height: "120px", paddingTop: "10px" }}
-          >
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
-              <Typography
-                variant="h3"
-                style={{ fontWeight: "bold", textAlign: "center" }}
-              >
-                Machine Learning Team
-              </Typography>
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{
-              height: "auto",
-              paddingTop: "10px",
-              justifyContent: "space-around"
-            }}
-          >
-            {mlHeads}
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid container spacing={2} className={classes.gridMobile} style={{}}>
-            {mlHeadsMobile}
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{ height: "420px", paddingTop: "50px" }}
-          >
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={12}
-              lg={6}
-              xl={6}
-              style={{ paddingLeft: "250px" }}
-            >
-              <img src={mlImage} style={{ height: "300px", width: "800px" }} />
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{
-              height: "auto",
-              paddingTop: "0px",
-              justifyContent: "space-around"
-            }}
-          >
-            {mlMembers}
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid
-            container
-            spacing={2}
-            className={classes.gridMobile}
-            style={{ height: "auto", paddingTop: "10px" }}
-          >
-            {mlMembersMobile}
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{ paddingTop: "50px", height: "180px" }}
-          >
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
-              <Typography
-                variant="h3"
-                style={{ fontWeight: "bold", textAlign: "center" }}
-              >
-                Blockchain Team
-              </Typography>
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid
-            container
-            spacing={2}
-            className={classes.gridMobile}
-            style={{ paddingTop: "10px", height: "120px" }}
-          >
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{}}>
-              <Typography
-                variant="h3"
-                style={{ fontWeight: "bold", textAlign: "center" }}
-              >
-                Blockchain Team
-              </Typography>
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{
-              height: "auto",
-              paddingTop: "0px",
-              justifyContent: "space-around"
-            }}
-          >
-            {blockchainHeads}
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid
-            container
-            spacing={2}
-            className={classes.gridMobile}
-            style={{ paddingTop: "0px" }}
-          >
-            {blockchainHeadsMobile}
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{ height: "420px", paddingTop: "50px" }}
-          >
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={12}
-              lg={6}
-              xl={6}
-              style={{ paddingLeft: "250px" }}
-            >
-              <img
-                src={blockchainImage}
-                style={{ height: "300px", width: "800px" }}
-              />
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          <Grid
-            container
-            spacing={2}
-            className={classes.grid}
-            style={{
-              height: "auto",
-              paddingTop: "0px",
-              justifyContent: "space-around"
-            }}
-          >
-            {blockchainMembers}
-          </Grid>
-        </Hidden>
-        <Hidden lgUp>
-          <Grid
-            container
-            spacing={2}
-            className={classes.gridMobile}
-            style={{ height: "auto", paddingTop: "00px" }}
-          >
-            {blockchainMembersMobile}
-          </Grid>
-        </Hidden>
-      </Container>
-    </Fragment>
-  );
+          </Hidden>
+        </Container>
+        <br />
+        <br />
+        <FooterAlt />
+      </Fragment>
+    );
+  }
 };
 
 export default Team;

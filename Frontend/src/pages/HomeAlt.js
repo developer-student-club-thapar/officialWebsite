@@ -34,6 +34,7 @@ import Slack from "../assets/slack.png";
 import ThaparImg from "../assets/ThaparUniversity_1.jpg";
 import Roll from "react-reveal/Roll";
 import Maps from "../components/Maps";
+import FooterAlt from "../components/FooterAlt";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -791,11 +792,23 @@ const HomeAlt = props => {
           <br />
         </Container>
       </Paper>
-      <Grid container spacing={0} style={{ marginTop: "-10px" }}>
+      <Grid
+        container
+        spacing={0}
+        style={{ marginTop: "-10px", height: "400px" }}
+      >
         <Grid item xs={12}>
-          <Maps />
+          <iframe
+            width="100%"
+            height="400"
+            frameborder="0"
+            style={{ border: "0" }}
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJxbWHSlMvEDkRs4LjN9M-Hdo&key=AIzaSyB3JAqF0AMxgbfnGtt0R5Yk0MaBe9p1P5s"
+            allowfullscreen
+          ></iframe>
         </Grid>
       </Grid>
+      <FooterAlt />
       {/* <Container fixed> */}
     </Fragment>
   );

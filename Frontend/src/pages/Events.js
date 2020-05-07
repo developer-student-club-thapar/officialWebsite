@@ -15,8 +15,9 @@ import Test from "../assets/undraw_scrum_board_cesn.svg";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-
+import Loader from "./Loader";
 import axios from "axios";
+import FooterAlt from "../components/FooterAlt";
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
@@ -76,16 +77,19 @@ const EventsAlt = () => {
 
   const [events, setEvents] = useState([]);
   const [key, setKey] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get("/events/");
       setEvents(result.data);
-      console.log(events);
+      setLoading(false);
     };
     fetchData();
   }, []);
-
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <Fragment>
       <CssBaseline />
@@ -262,6 +266,9 @@ const EventsAlt = () => {
           </Fade>
         </Modal>
       </Container>
+      <br />
+      <br />
+      <FooterAlt />
     </Fragment>
   );
 };
