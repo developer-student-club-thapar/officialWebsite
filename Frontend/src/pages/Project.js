@@ -6,7 +6,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Slide from "react-reveal/Slide";
-import { Container, CssBaseline, Hidden } from "@material-ui/core";
+import { Switch, Container, CssBaseline, Hidden,FormControlLabel } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Events from "../assets/events.svg";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -19,6 +19,7 @@ import ProjectImg from "../assets/undraw_code_typing_7jnv.svg";
 import Loader from "./Loader";
 import axios from "axios";
 import FooterAlt from "../components/FooterAlt";
+import { ThemeProvider ,createMuiTheme } from '@material-ui/core/styles';
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
@@ -79,6 +80,13 @@ const ProjectsAlt = () => {
   const [projects, setProjects] = useState([]);
   const [key, setKey] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
+  
+  const darkTheme = createMuiTheme({
+    palette: {
+      type: darkMode ? 'dark' : 'light',
+    },
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -93,6 +101,7 @@ const ProjectsAlt = () => {
   } else {
     return (
       <Fragment>
+        <ThemeProvider theme = {darkTheme}>
         <CssBaseline />
         <Container fixed>
           <Grid container spacing={2} className={classes.grid}>
@@ -105,6 +114,7 @@ const ProjectsAlt = () => {
               xl={6}
               style={{ paddingTop: "100px" }}
             >
+              <FormControlLabel control ={<Switch checked = {darkMode} onChange = {() => setDarkMode(!darkMode)}></Switch>} />
               <Typography variant="h3" style={{ fontWeight: "bold" }}>
                 Projects
               </Typography>
@@ -278,6 +288,7 @@ const ProjectsAlt = () => {
         <br />
         <br />
         <FooterAlt />
+        </ThemeProvider>
       </Fragment>
     );
   }
