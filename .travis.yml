@@ -19,8 +19,8 @@ jobs:
       script:
         - yarn lint
         # `yarn lint` only checks the formatting of JS/JSX, this will also check CSS/HTML/JSON/Markdown/YAML.
-        - yarn format:check
-        - yarn test:coverage
+        - yarn format
+        - yarn test
     
     #This test helps us to check integrity of the backend code
     - language: python
