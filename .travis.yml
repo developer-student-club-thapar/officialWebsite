@@ -18,7 +18,6 @@ jobs:
         - yarn install --frozen-lockfile
       script:
         - yarn format
-        - yarn test
     
     #This test helps us to check integrity of the backend code
     - language: python
