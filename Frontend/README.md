@@ -1,5 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1b59ea05-cea6-4285-ae3b-a0306b6ddec0/deploy-status)](https://app.netlify.com/sites/ui-overhaul-dsc/deploys)
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
