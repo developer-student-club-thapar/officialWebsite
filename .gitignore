@@ -6,6 +6,9 @@ env/
 **/*.pyc
 **/__pycache__
 
+# Ignore coverage files
+Frontend/coverage
+
 # Logs
 logs
 *.log
