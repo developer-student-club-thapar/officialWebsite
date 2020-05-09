@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -21,6 +21,7 @@ import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import CodeIcon from "@material-ui/icons/Code";
 import GroupIcon from "@material-ui/icons/Group";
 import BookIcon from "@material-ui/icons/Book";
+import { ThemeContext } from "../ThemeProvider";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -77,6 +78,7 @@ const Nav = props => {
   const classes = useStyles();
 
   const [sideDrawer, setSideDrawer] = React.useState(false);
+  const setThemeName = useContext(ThemeContext);
 
   const toggleDrawer = open => event => {
     if (
@@ -132,6 +134,20 @@ const Nav = props => {
         <ResponsiveDiv>
           <AppBar position="static" color="white" className={classes.appbar}>
             <Toolbar className={classes.toolbar}>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => setThemeName("lightTheme")}
+              >
+                Light Mode{" "}
+              </Button>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={() => setThemeName("darkTheme")}
+              >
+                Dark Mode
+              </Button>
               <Link to="/" className={classes.button}>
                 Home
               </Link>

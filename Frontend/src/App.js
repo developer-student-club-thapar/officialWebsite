@@ -9,7 +9,6 @@ import Achievements from "./pages/Achievements";
 import Project from "./pages/Project";
 import Resources from "./pages/Resources";
 import Team from "./pages/Team";
-
 const App = () => {
   return (
     <Router>
