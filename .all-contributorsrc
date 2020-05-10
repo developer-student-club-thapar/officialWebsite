@@ -1,6 +1,6 @@
 {
   "projectName": "officialWebsite",
-  "projectOwner": "DSC TIET",
+  "projectOwner": "developer-student-club-thapar",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -9,6 +9,19 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "gitmoji",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "jsparmani",
+      "name": "Jay Parmani",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/41769747?v=4",
+      "profile": "https://linkedin.com/in/jsparmani",
+      "contributions": [
+        "code",
+        "design",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
