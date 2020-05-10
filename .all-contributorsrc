@@ -11,11 +11,25 @@
   "commitConvention": "gitmoji",
   "contributors": [
     {
+all-contributors/add-shubhank-saxena
       "login": "shubhank-saxena",
       "name": "Shubhank Saxena",
       "avatar_url": "https://avatars3.githubusercontent.com/u/29003047?v=4",
       "profile": "http://shubhank-saxena.github.io",
       "contributions": [
+
+      "login": "aniketbiswas21",
+      "name": "Aniket Biswas",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/51146347?v=4",
+      "profile": "https://www.linkedin.com/in/aniket-biswas-59394b191/",
+
+      "login": "jsparmani",
+      "name": "Jay Parmani",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/41769747?v=4",
+      "profile": "https://linkedin.com/in/jsparmani",
+
+      "contributions": [
+        "code",
         "design",
         "maintenance"
       ]
