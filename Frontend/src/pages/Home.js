@@ -16,8 +16,8 @@ import axios from "axios";
 
 import Nav from "../components/Nav";
 import GoogleAssBg from "../assets/1200px-Google_Assistant_logo.svg.png";
-import DSC_home from "../assets/dsc_home.png";
-import Logo from "../assets/unnamed.png";
+import DSC_home from "../assets/dsc_home.webp";
+import Logo from "../assets/unnamed.webp";
 import undrawAbout from "../assets/undraw_dev_productivity_umsq.svg";
 import TeamPic from "../assets/undraw_team_spirit_hrr4.svg";
 import ContactPic from "../assets/undraw_contact_us_15o2.svg";
