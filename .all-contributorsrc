@@ -1,6 +1,6 @@
 {
   "projectName": "officialWebsite",
-  "projectOwner": "DSC TIET",
+  "projectOwner": "developer-student-club-thapar",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -9,6 +9,18 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "gitmoji",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "shubhank-saxena",
+      "name": "Shubhank Saxena",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/29003047?v=4",
+      "profile": "http://shubhank-saxena.github.io",
+      "contributions": [
+        "design",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
