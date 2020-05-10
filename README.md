@@ -12,6 +12,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://shubhank-saxena.github.io"><img src="https://avatars3.githubusercontent.com/u/29003047?v=4" width="100px;" alt=""/><br /><sub><b>Shubhank Saxena</b></sub></a><br /><a href="#design-shubhank-saxena" title="Design">🎨</a> <a href="#maintenance-shubhank-saxena" title="Maintenance">🚧</a></td>
+  </tr>
+</table>
+
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
