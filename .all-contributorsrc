@@ -1,6 +1,6 @@
 {
   "projectName": "officialWebsite",
-  "projectOwner": "DSC TIET",
+  "projectOwner": "developer-student-club-thapar",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -9,6 +9,19 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "gitmoji",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "aniketbiswas21",
+      "name": "Aniket Biswas",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/51146347?v=4",
+      "profile": "https://www.linkedin.com/in/aniket-biswas-59394b191/",
+      "contributions": [
+        "code",
+        "design",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
