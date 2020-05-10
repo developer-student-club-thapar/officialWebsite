@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "animesh-007",
+      "name": "Animesh Gupta",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/53366877?v=4",
+      "profile": "https://sourcerer.io/animesh-007",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "officialWebsite",
+  "projectOwner": "developer-student-club-thapar",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
