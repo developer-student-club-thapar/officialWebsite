@@ -15,22 +15,27 @@ import Test from "../assets/undraw_scrum_board_cesn.svg";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import dsclogo from "../assets/dsc_logo.png";
-import header from "../assets/header.png";
+import dsclogo from "../assets/dsc_logo.webp";
+import dsclogo_png from "../assets/dsc_logo.png";
+import header_png from "../assets/header.png";
+import header from "../assets/header.webp";
 import Paper from "@material-ui/core/Paper";
 import GestureIcon from "@material-ui/icons/Gesture";
 import Avatar from "@material-ui/core/Avatar";
 import Team from "../assets/team.webp";
+import Team_jpg from "../assets/team.jpg";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import Flip from "react-reveal/Flip";
 import styled from "styled-components";
 import Projects from "../assets/projects.webp";
+import Projects_jpg from "../assets/projects.jpg";
 import Bounce from "react-reveal/Bounce";
 import EventCardImg from "../assets/events-colorful-typography-banner-260nw-1356206768.webp";
 import Sponsorships from "../assets/sponsorships.jpeg";
-import ProjectImg from "../assets/project-planning-header@2x.png";
+import ProjectImg from "../assets/project-planning-header@2x.webp";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
-import Slack from "../assets/slack.png";
+import Slack from "../assets/slack.webp";
+import Slack_png from "../assets/slack.png";
 import ThaparImg from "../assets/ThaparUniversity_1.jpg";
 import Roll from "react-reveal/Roll";
 import Maps from "../components/Maps";
@@ -170,13 +175,22 @@ const HomeAlt = props => {
             xl={4}
             style={{ textAlign: "center" }}
           >
-            <img
-              src={dsclogo}
-              alt="logo"
-              height="20%"
-              width="40%"
-              style={{ display: "inline-block", marginTop: "50px" }}
-            />
+            <picture>
+              <source
+                srcset={dsclogo}
+                type="image/webp"
+                height="20%"
+                width="40%"
+                style={{ display: "inline-block", marginTop: "50px" }}
+              />
+              <img
+                src={dsclogo_png}
+                alt="logo"
+                height="20%"
+                width="40%"
+                style={{ display: "inline-block", marginTop: "50px" }}
+              />
+            </picture>
             <h4 style={{ display: "inline-block", color: "#5A5A5A" }}>
               Developer Students Club
             </h4>
@@ -186,7 +200,15 @@ const HomeAlt = props => {
           </Grid>
           <Hidden only="xs">
             <Grid item xs={false} sm={6} md={8} lg={8} xl={8}>
-              <img src={header} alt="header" width="100%" height="95%" />
+              <picture>
+                <source
+                  srcset={header}
+                  type="image/webp"
+                  height="95%"
+                  width="100%"
+                />
+                <img src={header_png} alt="header" height="95%" width="100%" />
+              </picture>
             </Grid>
           </Hidden>
         </Grid>
@@ -260,7 +282,14 @@ const HomeAlt = props => {
               </h6>
             </Grid>
             <Grid item xs={12} lg={6} xl={6} className={classes.gridImg}>
-              <img src={Team} alt="img" className={classes.TeamImg} />
+              <picture>
+                <source
+                  srcset={Team}
+                  className={classes.TeamImg}
+                  type="image/webp"
+                />
+                <img src={Team_jpg} className={classes.TeamImg} alt="Team" />
+              </picture>
             </Grid>
           </Grid>
           <Grid container spacing={5}>
@@ -565,7 +594,18 @@ const HomeAlt = props => {
             </Grid>
             <Grid container spacing={3} style={{ marginTop: "50px" }}>
               <Grid item xs={12} lg={6} xl={6} className={classes.gridImg2}>
-                <img src={Projects} alt="img" className={classes.TeamImg2} />
+                <picture>
+                  <source
+                    srcset={Projects}
+                    className={classes.TeamImg2}
+                    type="image/webp"
+                  />
+                  <img
+                    src={Projects_jpg}
+                    className={classes.TeamImg2}
+                    alt="img"
+                  />
+                </picture>
               </Grid>
               <Grid item xs={12} lg={6} xl={6} className={classes.TeamGrid}>
                 <Paper
@@ -743,7 +783,11 @@ const HomeAlt = props => {
                   );
                 }}
               >
-                Join us on <img src={Slack} height="30px" />
+                Join us on
+                <picture>
+                  <source srcset={Slack} height="30px" type="image/webp" />
+                  <img src={Slack_png} height="30px" alt="slack" />
+                </picture>
               </Button>
             </Grid>
           </Grid>
