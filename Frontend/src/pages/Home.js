@@ -13,11 +13,11 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import Image from 'react-image-webp';
+
 import Nav from "../components/Nav";
 import GoogleAssBg from "../assets/1200px-Google_Assistant_logo.svg.png";
 import DSC_home from "../assets/dsc_home.png";
-import Logo from "../assets/unnamed.webp";
+import Logo from "../assets/unnamed.png";
 import undrawAbout from "../assets/undraw_dev_productivity_umsq.svg";
 import TeamPic from "../assets/undraw_team_spirit_hrr4.svg";
 import ContactPic from "../assets/undraw_contact_us_15o2.svg";
@@ -122,28 +122,12 @@ export default class Home extends Component {
             }}
           >
             <div className="col s1">
-              {/* <Image
+              <img
                 src={DSC_home}
                 style={{
                   height: "100vh"
                 }}
-              /> */}
-              <picture>
-                <source
-                  srcset="../assets/dsc_home.webp"
-                  type="image/webp"
-                  style={{
-                    height: "100vh"
-                  }}
-                />
-                <img
-                  src={DSC_home}
-                  alt="logo"
-                  style={{
-                    height: "100vh"
-                  }}
-                />
-              </picture>
+              ></img>
             </div>
             <div
               className="col s11"
