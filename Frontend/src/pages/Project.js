@@ -8,7 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import Slide from "react-reveal/Slide";
 import { Container, CssBaseline, Hidden } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
-import Events from "../assets/events.svg";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
 import Test from "../assets/undraw_scrum_board_cesn.svg";
@@ -18,7 +17,7 @@ import Fade from "@material-ui/core/Fade";
 import ProjectImg from "../assets/undraw_code_typing_7jnv.svg";
 import Loader from "./Loader";
 import axios from "axios";
-import FooterAlt from "../components/FooterAlt";
+import Footer from "../components/Footer";
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
@@ -68,9 +67,6 @@ const useStyles = makeStyles(theme => ({
 const ProjectsAlt = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
   const handleClose = () => {
     setOpen(false);
@@ -171,10 +167,7 @@ const ProjectsAlt = () => {
                             component="p"
                           >
                             Project Lead: {item.project_lead.name} <br />
-                            Github Link :
-                            <a href={item.github_link} target="_blank">
-                              Link
-                            </a>
+                            Github Link :<a href={item.github_link}>Link</a>
                             <br />
                             <br />
                           </Typography>
@@ -214,10 +207,7 @@ const ProjectsAlt = () => {
                             component="p"
                           >
                             Project Lead: {item.project_lead.name} <br />
-                            Github Link :
-                            <a href={item.github_link} target="_blank">
-                              Link
-                            </a>
+                            Github Link :<a href={item.github_link}>Link</a>
                             <br />
                             <br />
                           </Typography>
@@ -263,10 +253,7 @@ const ProjectsAlt = () => {
                   {key != null
                     ? projects[key].members.map(item => (
                         <li>
-                          <span>
-                            <i class="fas fa-long-arrow-alt-right" />{" "}
-                            {item.name}
-                          </span>
+                          <span> {item.name}</span>
                         </li>
                       ))
                     : ""}
@@ -277,7 +264,7 @@ const ProjectsAlt = () => {
         </Container>
         <br />
         <br />
-        <FooterAlt />
+        <Footer />
       </Fragment>
     );
   }
