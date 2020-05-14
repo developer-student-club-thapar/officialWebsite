@@ -7,7 +7,9 @@
 # [officialWebsite](https://dsctiet-community.tech)
 
 [![Build Status](https://travis-ci.com/developer-student-club-thapar/officialWebsite.svg?branch=master)](https://travis-ci.com/github/developer-student-club-thapar/officialWebsite)  [![Slack Status](https://img.shields.io/badge/slack-chat-purple.svg?logo=slack)](https://dscthapar-gspatiala.slack.com/join/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M) [![GitHub issues](https://img.shields.io/github/issues/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/issues)
+
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/TezRomacH/python-package-template/blob/master/.pre-commit-config.yaml)
+[![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/developer-student-club-thapar/officialWebsite/blob/master/LICENSE)
 </div>
 
 This is the repo for the official Website of DSC Thapar Institute of Engineering and Technology, Patiala , Punjab.
