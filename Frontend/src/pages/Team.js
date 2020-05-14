@@ -14,7 +14,7 @@ import mlImage from "../assets/undraw_Growing_qwt2.svg";
 import blockchainImage from "../assets/undraw_digital_currency_qpak.svg";
 import axios from "axios";
 import Loader from "./Loader";
-import FooterAlt from "../components/FooterAlt";
+import Footer from "../components/Footer";
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 const useStyles = makeStyles(theme => ({
@@ -81,6 +81,7 @@ const Team = () => {
       console.log(team);
     };
     fetchData();
+    //eslint-disable-next-line
   }, []);
   const webMembers = [];
   const webHeads = [];
@@ -1799,25 +1800,25 @@ const Team = () => {
                       }}
                     >
                       <span>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-linkedin fa-2x"
                             style={{ color: "grey" }}
                           />
                         </a>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-github-square fa-2x"
                             style={{ color: "grey" }}
                           />
                         </a>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-medium fa-2x"
                             style={{ color: "grey" }}
                           />
                         </a>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-twitter-square fa-2x"
                             style={{ color: "grey" }}
@@ -1873,25 +1874,25 @@ const Team = () => {
                       }}
                     >
                       <span>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-linkedin fa-2x"
                             style={{ color: "grey" }}
                           />
                         </a>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-github-square fa-2x"
                             style={{ color: "grey" }}
                           />
                         </a>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-medium fa-2x"
                             style={{ color: "grey" }}
                           />
                         </a>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-twitter-square fa-2x"
                             style={{ color: "grey" }}
@@ -1951,25 +1952,25 @@ const Team = () => {
                       }}
                     >
                       <span>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-linkedin fa-2x"
                             style={{ color: "grey" }}
                           />
                         </a>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-github-square fa-2x"
                             style={{ color: "grey" }}
                           />
                         </a>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-medium fa-2x"
                             style={{ color: "grey" }}
                           />
                         </a>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-twitter-square fa-2x"
                             style={{ color: "grey" }}
@@ -2025,25 +2026,25 @@ const Team = () => {
                       }}
                     >
                       <span>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-linkedin fa-2x"
                             style={{ color: "grey" }}
                           />
                         </a>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-github-square fa-2x"
                             style={{ color: "grey" }}
                           />
                         </a>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-medium fa-2x"
                             style={{ color: "grey" }}
                           />
                         </a>
-                        <a href="#" style={{ paddingRight: "8px" }}>
+                        <a href="#!" style={{ paddingRight: "8px" }}>
                           <i
                             class="fab fa-twitter-square fa-2x"
                             style={{ color: "grey" }}
@@ -2080,7 +2081,11 @@ const Team = () => {
                 xl={6}
                 style={{ paddingTop: "0px", paddingLeft: "250px" }}
               >
-                <img src={image} style={{ height: "375px", width: "800px" }} />
+                <img
+                  src={image}
+                  style={{ height: "375px", width: "800px" }}
+                  alt="img"
+                />
               </Grid>
             </Grid>
           </Hidden>
@@ -2157,7 +2162,11 @@ const Team = () => {
                 xl={6}
                 style={{ paddingTop: "0px", paddingLeft: "250px" }}
               >
-                <img src={image2} style={{ height: "300px", width: "800px" }} />
+                <img
+                  src={image2}
+                  style={{ height: "300px", width: "800px" }}
+                  alt="img2"
+                />
               </Grid>
             </Grid>
           </Hidden>
@@ -2270,6 +2279,7 @@ const Team = () => {
                 <img
                   src={iotImage}
                   style={{ height: "300px", width: "800px" }}
+                  alt="iotImg"
                 />
               </Grid>
             </Grid>
@@ -2375,6 +2385,7 @@ const Team = () => {
                 <img
                   src={softwareImage}
                   style={{ height: "300px", width: "800px" }}
+                  alt="softwareImg"
                 />
               </Grid>
             </Grid>
@@ -2480,6 +2491,7 @@ const Team = () => {
                 <img
                   src={mlImage}
                   style={{ height: "300px", width: "800px" }}
+                  alt="mlImg"
                 />
               </Grid>
             </Grid>
@@ -2585,6 +2597,7 @@ const Team = () => {
                 <img
                   src={blockchainImage}
                   style={{ height: "300px", width: "800px" }}
+                  alt="blockchainImg"
                 />
               </Grid>
             </Grid>
@@ -2616,7 +2629,11 @@ const Team = () => {
         </Container>
         <br />
         <br />
-        <FooterAlt />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Footer />
       </Fragment>
     );
   }

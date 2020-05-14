@@ -17,7 +17,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Loader from "./Loader";
 import axios from "axios";
-import FooterAlt from "../components/FooterAlt";
+import Footer from "../components/Footer";
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
@@ -63,9 +63,6 @@ const useStyles = makeStyles(theme => ({
 const ResourcesAlt = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
   const handleClose = () => {
     setOpen(false);
@@ -161,10 +158,7 @@ const ResourcesAlt = () => {
                       >
                         Venue: {item.venue} <br />
                         Time: {item.time} <br />
-                        Link :{" "}
-                        <a href={item.link} target="_blank">
-                          Link
-                        </a>
+                        Link : <a href={item.link}>Link</a>
                       </Typography>
                     </CardContent>
                   </CardActionArea>
@@ -215,7 +209,7 @@ const ResourcesAlt = () => {
       </Container>
       <br />
       <br />
-      <FooterAlt />
+      <Footer />
     </Fragment>
   );
 };

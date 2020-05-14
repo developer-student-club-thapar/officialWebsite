@@ -17,7 +17,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Loader from "./Loader";
 import axios from "axios";
-import FooterAlt from "../components/FooterAlt";
+import Footer from "../components/Footer";
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
@@ -67,9 +67,6 @@ const useStyles = makeStyles(theme => ({
 const EventsAlt = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
   const handleClose = () => {
     setOpen(false);
@@ -166,10 +163,7 @@ const EventsAlt = () => {
                         >
                           Venue: {item.venue} <br />
                           Time: {item.time} <br />
-                          Link :{" "}
-                          <a href={item.link} target="_blank">
-                            Link
-                          </a>
+                          Link : <a href={item.link}>Link</a>
                         </Typography>
                       </CardContent>
                     </CardActionArea>
@@ -208,10 +202,7 @@ const EventsAlt = () => {
                         >
                           Venue: {item.venue} <br />
                           Time: {item.time} <br />
-                          Link :{" "}
-                          <a href={item.link} target="_blank">
-                            Link
-                          </a>
+                          Link : <a href={item.link}>Link</a>
                         </Typography>
                       </CardContent>
                     </CardActionArea>
@@ -252,9 +243,7 @@ const EventsAlt = () => {
                 {key != null
                   ? events[key].topics.map(item => (
                       <li>
-                        <span>
-                          <i class="fas fa-long-arrow-alt-right" /> {item.name}
-                        </span>
+                        <span>&nbsp;{item.name}</span>
                       </li>
                     ))
                   : ""}
@@ -268,7 +257,7 @@ const EventsAlt = () => {
       </Container>
       <br />
       <br />
-      <FooterAlt />
+      <Footer />
     </Fragment>
   );
 };
