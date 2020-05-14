@@ -10,6 +10,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 ![GitHub repo size](https://img.shields.io/github/repo-size/developer-student-club-thapar/officialWebsite)
 ![Website](https://img.shields.io/website?down_color=red&down_message=Error%21&up_message=It%27s%20up%21&url=https%3A%2F%2Fdsctiet-community.tech%2F)
+<a> <img src="https://badgen.net/dependabot/thepracticaldev/dev.to?icon=dependabot" alt="Dependabot Badge"></a>
 
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/TezRomacH/python-package-template/blob/master/.pre-commit-config.yaml)
 [![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/developer-student-club-thapar/officialWebsite/blob/master/LICENSE)
