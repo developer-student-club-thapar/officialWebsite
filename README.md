@@ -11,7 +11,7 @@
 
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/TezRomacH/python-package-template/blob/master/.pre-commit-config.yaml)
 [![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/developer-student-club-thapar/officialWebsite/blob/master/LICENSE)
-[![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/developer-student-club-thapar/officialWebsite/pulls/app%2Fdependabot-preview)
+[![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/developer-student-club-thapar/officialWebsite/pulls?q=is%3Apr+author%3Aapp%2Fdependabot-preview+)
 </div>
 
 This is the repo for the official Website of DSC Thapar Institute of Engineering and Technology, Patiala , Punjab.
