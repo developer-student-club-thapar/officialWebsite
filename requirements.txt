@@ -1,4 +1,4 @@
-asgiref==3.2.3
+asgiref==3.2.7
 autopep8==1.4.4
 certifi==2019.11.28
 Django==2.2.10
