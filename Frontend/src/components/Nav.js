@@ -19,6 +19,7 @@ import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import CodeIcon from "@material-ui/icons/Code";
 import GroupIcon from "@material-ui/icons/Group";
 import BookIcon from "@material-ui/icons/Book";
+import ChatIcon from "@material-ui/icons/Chat";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -76,29 +77,41 @@ const Nav = props => {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        {["Home", "Events", "Resources", "Projects", "Team", "Blog"].map(
-          (text, index) => (
-            <ListItem
-              button
-              key={text}
-              onClick={() => {
-                text !== "Home"
-                  ? props.history.push(`/${text.toLowerCase()}`)
-                  : props.history.push("/");
-              }}
-            >
-              <ListItemIcon>
-                {index === 0 && <HomeIcon />}
-                {index === 1 && <EventIcon />}
-                {index === 2 && <LibraryBooksIcon />}
-                {index === 3 && <CodeIcon />}
-                {index === 4 && <GroupIcon />}
-                {index === 5 && <BookIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          )
-        )}
+        {[
+          "Home",
+          "Events",
+          "Resources",
+          "Projects",
+          "Team",
+          "Blog",
+          "Podcast"
+        ].map((text, index) => (
+          <ListItem
+            button
+            key={text}
+            onClick={e => {
+              if (text === "Podcast") {
+                e.preventDefault();
+                window.location.href = "https://raw-talent.webflow.io/";
+                return null;
+              }
+              text !== "Home"
+                ? props.history.push(`/${text.toLowerCase()}`)
+                : props.history.push("/");
+            }}
+          >
+            <ListItemIcon>
+              {index === 0 && <HomeIcon />}
+              {index === 1 && <EventIcon />}
+              {index === 2 && <LibraryBooksIcon />}
+              {index === 3 && <CodeIcon />}
+              {index === 4 && <GroupIcon />}
+              {index === 5 && <BookIcon />}
+              {index === 6 && <ChatIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
       </List>
     </div>
   );
@@ -127,6 +140,16 @@ const Nav = props => {
               {/* <Link to='/achievements' className={classes.button}>Achievements</Link> */}
               <Link to="#" className={classes.button}>
                 Blog
+              </Link>
+              <Link
+                onClick={e => {
+                  e.preventDefault();
+                  window.location.href = "https://raw-talent.webflow.io/";
+                }}
+                target="_blank"
+                className={classes.button}
+              >
+                Podcast
               </Link>
             </Toolbar>
           </AppBar>
