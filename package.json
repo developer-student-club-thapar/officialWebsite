@@ -2,10 +2,6 @@
   "name": "dscwebapp",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "10.20.1",
-    "yarn": "1.19.1"
-  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
