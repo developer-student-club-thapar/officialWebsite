@@ -2629,6 +2629,10 @@ const Team = () => {
         </Container>
         <br />
         <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <Footer />
       </Fragment>
     );
