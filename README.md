@@ -8,10 +8,12 @@
 
 [![Build Status](https://travis-ci.com/developer-student-club-thapar/officialWebsite.svg?branch=master)](https://travis-ci.com/github/developer-student-club-thapar/officialWebsite)  [![Slack Status](https://img.shields.io/badge/slack-chat-purple.svg?logo=slack)](https://dscthapar-gspatiala.slack.com/join/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M) [![GitHub issues](https://img.shields.io/github/issues/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/issues)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![GitHub repo size](https://img.shields.io/github/repo-size/developer-student-club-thapar/officialWebsite)
 
+<img src="https://badgen.net/dependabot/thepracticaldev/dev.to?icon=dependabot" alt="Dependabot Badge">
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/TezRomacH/python-package-template/blob/master/.pre-commit-config.yaml)
 [![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/developer-student-club-thapar/officialWebsite/blob/master/LICENSE)
-[![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/developer-student-club-thapar/officialWebsite/pulls?q=is%3Apr+author%3Aapp%2Fdependabot-preview+)
+[![GitHub pull requests by-label](https://img.shields.io/github/issues-pr/developer-student-club-thapar/officialWebsite/dependencies?label=Dependencies%20Status)
 </div>
 
 This is the repo for the official Website of DSC Thapar Institute of Engineering and Technology, Patiala , Punjab.
