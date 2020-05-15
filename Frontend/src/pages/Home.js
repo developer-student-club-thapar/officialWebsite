@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { Fragment } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -98,6 +100,7 @@ const useStyles = makeStyles(theme => ({
   TeamImg2: {
     height: "80%",
     width: "90%",
+    objectFit: "contain",
     borderRadius: "4px",
     [theme.breakpoints.down("sm")]: {
       height: "80%",
