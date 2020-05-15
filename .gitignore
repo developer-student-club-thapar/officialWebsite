@@ -5,6 +5,8 @@ node_modules
 env/
 **/*.pyc
 **/__pycache__
+**/**/__pycache__
+**/**/*.pyc
 
 # Logs
 logs
