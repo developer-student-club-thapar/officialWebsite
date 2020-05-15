@@ -21,6 +21,9 @@ __pycache__
 
 #docker custom environment
 .env
+env/
 
 # Ignore tox installation
 .tox
+
+

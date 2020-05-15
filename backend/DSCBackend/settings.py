@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'backend.sponsor',
     'backend.team',
     'backend.resources',
+    'backend.podcast',
 ]
 
 MIDDLEWARE = [
