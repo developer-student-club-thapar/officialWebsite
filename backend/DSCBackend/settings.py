@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'backend.projects',
     'backend.sponsor',
     'backend.team',
+    'backend.resources',
 ]
 
 MIDDLEWARE = [
