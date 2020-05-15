@@ -128,7 +128,7 @@ const Nav = props => {
               <Link to="/events" className={classes.button}>
                 Events
               </Link>
-              <Link to="#" className={classes.button}>
+              <Link to="/resources" className={classes.button}>
                 Resources
               </Link>
               <Link to="/projects" className={classes.button}>
