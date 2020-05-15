@@ -1,5 +1,5 @@
 asgiref==3.2.3
-autopep8==1.4.4
+autopep8==1.5.2
 certifi==2019.11.28
 Django==2.2.10
 django-cleanup==4.0.0
