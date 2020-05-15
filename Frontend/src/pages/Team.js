@@ -181,7 +181,7 @@ const Team = () => {
                 <div style={{ paddingBottom: "100px" }}>
                   <Avatar
                     alt={item.name}
-                    src={`https://dsctiet.pythonanywhere.com/${item.image}`}
+                    src={`https://dsctiet.pythonanywhere.com${item.image}`}
                     className={classes.large}
                     style={{ paddingBottom: "0px" }}
                   />
