@@ -68,7 +68,6 @@ const useStyles = makeStyles(theme => ({
   },
   paperModal: {
     backgroundColor: theme.palette.background.paper,
-    // border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3)
   },
@@ -373,7 +372,9 @@ const Home = props => {
                   cursor: "pointer"
                 }}
                 onClick={() => {
-                  window.open("https://medium.com/@dsc.tiet");
+                  window.open(
+                    "https://medium.com/developer-student-clubs-tiet"
+                  );
                 }}
               >
                 <i
