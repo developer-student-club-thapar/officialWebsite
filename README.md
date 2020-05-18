@@ -22,7 +22,7 @@
 [![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/developer-student-club-thapar/officialWebsite/blob/master/LICENSE)
 ![GitHub pull requests by-label](https://img.shields.io/github/issues-pr/developer-student-club-thapar/officialWebsite/dependencies?label=Dependencies%20Status)
 </div>
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b118ec23-2d21-4dda-8f6b-ca56a9cb9f4b/deploy-status)](https://app.netlify.com/sites/dsctiet/deploys)
 This is the repo for the official Website of DSC Thapar Institute of Engineering and Technology, Patiala , Punjab.
 Kindly go through the entire README.md for getting familiar with contribution steps
 
