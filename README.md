@@ -11,6 +11,7 @@
 <a href="https://instagram.com/dsc.tiet"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
 
 # [officialWebsite](https://dsctiet-community.tech)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b118ec23-2d21-4dda-8f6b-ca56a9cb9f4b/deploy-status)](https://app.netlify.com/sites/dsctiet/deploys)
 
 [![Build Status](https://travis-ci.com/developer-student-club-thapar/officialWebsite.svg?branch=master)](https://travis-ci.com/github/developer-student-club-thapar/officialWebsite)  [![Slack Status](https://img.shields.io/badge/slack-chat-purple.svg?logo=slack)](https://dscthapar-gspatiala.slack.com/join/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M) [![GitHub issues](https://img.shields.io/github/issues/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/issues)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
@@ -22,7 +23,6 @@
 [![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/developer-student-club-thapar/officialWebsite/blob/master/LICENSE)
 ![GitHub pull requests by-label](https://img.shields.io/github/issues-pr/developer-student-club-thapar/officialWebsite/dependencies?label=Dependencies%20Status)
 </div>
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b118ec23-2d21-4dda-8f6b-ca56a9cb9f4b/deploy-status)](https://app.netlify.com/sites/dsctiet/deploys)
 This is the repo for the official Website of DSC Thapar Institute of Engineering and Technology, Patiala , Punjab.
 Kindly go through the entire README.md for getting familiar with contribution steps
 
