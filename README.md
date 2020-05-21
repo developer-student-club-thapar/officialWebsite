@@ -1,5 +1,5 @@
-<div align="center>
-            
+<div align = "center">
+
 <img height=200px src="./Frontend/src/assets/dsc_logo.png">
 
 <h1>DEVELOPER STUDENT CLUBS TIET</h1>
