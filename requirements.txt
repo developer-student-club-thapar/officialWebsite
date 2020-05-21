@@ -10,6 +10,6 @@ Markdown==3.2.2
 Pillow>=6.2.2
 pre-commit==2.2.0 
 pycodestyle==2.6.0
-pytz==2019.3
+pytz==2020.1
 sqlparse==0.3.0
 wincertstore==0.2
