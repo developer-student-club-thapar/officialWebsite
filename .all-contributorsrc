@@ -25,6 +25,16 @@
         "design",
         "maintenance"
       ]
+    },
+    {
+      "login": "animesh-007",
+      "name": "Animesh Gupta",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/53366877?v=4",
+      "profile": "https://sourcerer.io/animesh-007",
+      "contributions": [
+        "doc",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
