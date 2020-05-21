@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "aniketbiswas21",
+      "name": "Aniket Biswas",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/51146347?v=4",
+      "profile": "https://www.linkedin.com/in/aniket-biswas-59394b191/",
+      "contributions": [
+        "code",
+        "design"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "officialWebsite",
+  "projectOwner": "developer-student-club-thapar",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
