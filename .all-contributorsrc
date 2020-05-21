@@ -35,6 +35,16 @@
         "doc",
         "code"
       ]
+    },
+    {
+      "login": "kush-daga",
+      "name": "Kush Daga",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/40840079?v=4",
+      "profile": "http://kush-blog.netlify.com",
+      "contributions": [
+        "code",
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
