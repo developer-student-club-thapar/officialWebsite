@@ -18,6 +18,7 @@ jobs:
         - yarn install --frozen-lockfile
       script:
         - yarn format
+        - yarn build
     
     #This test helps us to check integrity of the backend code
     - language: python
@@ -38,3 +39,12 @@ jobs:
         - pip install pre-commit
       script:
         - pre-commit run --all-files
+
+# This deploys the codebase to the Github Pages
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: Frontend/build
+  on:
+    branch: master
