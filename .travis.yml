@@ -1,7 +1,6 @@
 dist: xenial
 # Use the latest Travis images since they are more up to date than the stable release.
 group: edge
-sudo: false
 jobs:
     include:
     
@@ -42,7 +41,7 @@ jobs:
 
 deploy:
   provider: pages
-  skip_cleanup: true
+  cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: Frontend/build
   on:
