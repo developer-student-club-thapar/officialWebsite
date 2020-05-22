@@ -46,4 +46,4 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: Frontend/build
   on:
-    branch: gh-pages
+    branch: master
