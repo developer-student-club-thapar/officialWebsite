@@ -26,7 +26,6 @@ jobs:
         on:
           branch: master
 
-    
     #This test helps us to check integrity of the backend code
     - language: python
       python: '3.7'
