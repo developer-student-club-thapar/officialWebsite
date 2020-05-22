@@ -18,6 +18,14 @@ jobs:
       script:
         - yarn format
         - yarn build
+      deploy:
+        provider: pages
+        cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: Frontend/build
+        on:
+          branch: master
+
     
     #This test helps us to check integrity of the backend code
     - language: python
@@ -38,11 +46,3 @@ jobs:
         - pip install pre-commit
       script:
         - pre-commit run --all-files
-
-deploy:
-  provider: pages
-  cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: Frontend/build
-  on:
-    branch: master
