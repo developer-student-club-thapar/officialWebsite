@@ -1,7 +1,11 @@
 {
-  "name": "dscwebapp",
-  "version": "0.1.0",
-  "private": true,
+  "name": "officialwebsite",
+  "description": "Official Website of DSC TIET",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/developer-student-club-thapar/officialWebsite.git"
+  },
+  "homepage": "http://developer-student-club-thapar.github.io/officialWebsite",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
