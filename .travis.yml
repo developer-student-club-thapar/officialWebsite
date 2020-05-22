@@ -39,12 +39,3 @@ jobs:
         - pip install pre-commit
       script:
         - pre-commit run --all-files
-
-# This deploys the codebase to the Github Pages
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $github-token
-  local_dir: Frontend/build
-  on:
-    branch: master
