@@ -17,7 +17,7 @@
     "gh-pages": "^2.2.0",
     "google-maps-react": "^2.0.6",
     "react": "^16.13.1",
-    "react-app-rewired": "^2.1.5",
+    "react-app-rewired": "^2.1.6",
     "react-dom": "^16.13.1",
     "react-fontawesome": "^1.7.1",
     "react-lottie": "^1.2.3",
