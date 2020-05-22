@@ -7,6 +7,8 @@ npm-error.log
 vagrant/env_local.sh
 __pycache__
 
+!.github
+
 # vi
 *.swp
 
