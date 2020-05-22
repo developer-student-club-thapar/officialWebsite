@@ -39,3 +39,11 @@ jobs:
         - pip install pre-commit
       script:
         - pre-commit run --all-files
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: Frontend/build
+  on:
+    branch: gh-pages
