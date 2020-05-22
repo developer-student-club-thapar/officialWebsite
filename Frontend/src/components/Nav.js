@@ -4,14 +4,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -21,11 +19,11 @@ import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import CodeIcon from "@material-ui/icons/Code";
 import GroupIcon from "@material-ui/icons/Group";
 import BookIcon from "@material-ui/icons/Book";
+import ChatIcon from "@material-ui/icons/Chat";
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
-    // overflowX: 'auto',
   },
   menuButton: {
     marginRight: theme.spacing(2)
@@ -33,37 +31,17 @@ const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1
   },
-  appbar: {
-    // alignItems: 'center',
-    // justifyContent: 'space-around',
-    // display: 'flex',
-    //  margin: 'auto',
-    // width: '70%',
-    // paddingTop: '1%',
-    // paddingBottom: '1%',
-    // fontSize: '1.3em',
-    // fontWeight: '300'
-  },
   toolbar: {
     display: "flex"
-    // paddingRight:'50%',
-    // paddingLeft:'20%'
   },
   button: {
     justifyContent: "space-around",
     display: "flex",
     margin: "auto",
-    // width: '70%',
-    // paddingTop: '1%',
-    // paddingBottom: '1%',
     fontSize: "1.5em",
     fontWeight: "300",
-    // paddingRight:'20%',
     textDecoration: "none",
     color: "black"
-  },
-  menuButton: {
-    marginRight: theme.spacing(2)
   },
   list: {
     width: 250
@@ -99,29 +77,41 @@ const Nav = props => {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        {["Home", "Events", "Resources", "Projects", "Team", "Blog"].map(
-          (text, index) => (
-            <ListItem
-              button
-              key={text}
-              onClick={() => {
-                text !== "Home"
-                  ? props.history.push(`/${text.toLowerCase()}`)
-                  : props.history.push("/");
-              }}
-            >
-              <ListItemIcon>
-                {index === 0 && <HomeIcon />}
-                {index === 1 && <EventIcon />}
-                {index === 2 && <LibraryBooksIcon />}
-                {index === 3 && <CodeIcon />}
-                {index === 4 && <GroupIcon />}
-                {index === 5 && <BookIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          )
-        )}
+        {[
+          "Home",
+          "Events",
+          "Resources",
+          "Projects",
+          "Team",
+          "Blog",
+          "Podcast"
+        ].map((text, index) => (
+          <ListItem
+            button
+            key={text}
+            onClick={e => {
+              if (text === "Podcast") {
+                e.preventDefault();
+                window.location.href = "https://raw-talent.webflow.io/";
+                return null;
+              }
+              text !== "Home"
+                ? props.history.push(`/${text.toLowerCase()}`)
+                : props.history.push("/");
+            }}
+          >
+            <ListItemIcon>
+              {index === 0 && <HomeIcon />}
+              {index === 1 && <EventIcon />}
+              {index === 2 && <LibraryBooksIcon />}
+              {index === 3 && <CodeIcon />}
+              {index === 4 && <GroupIcon />}
+              {index === 5 && <BookIcon />}
+              {index === 6 && <ChatIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
       </List>
     </div>
   );
@@ -150,6 +140,16 @@ const Nav = props => {
               {/* <Link to='/achievements' className={classes.button}>Achievements</Link> */}
               <Link to="#" className={classes.button}>
                 Blog
+              </Link>
+              <Link
+                onClick={e => {
+                  e.preventDefault();
+                  window.location.href = "https://raw-talent.webflow.io/";
+                }}
+                target="_blank"
+                className={classes.button}
+              >
+                Podcast
               </Link>
             </Toolbar>
           </AppBar>

@@ -21,5 +21,8 @@ class Event(models.Model):
     headline_event = models.BooleanField(default=False)
     image = models.ImageField(upload_to='event-images/', blank=True)
 
+    class Meta:
+        ordering = ['-date']
+
     def __str__(self):
         return self.title

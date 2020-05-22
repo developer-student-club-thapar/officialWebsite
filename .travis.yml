@@ -1,7 +1,6 @@
 dist: xenial
 # Use the latest Travis images since they are more up to date than the stable release.
 group: edge
-sudo: false
 jobs:
     include:
     
@@ -18,7 +17,15 @@ jobs:
         - yarn install --frozen-lockfile
       script:
         - yarn format
-    
+        - yarn build
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local-dir: Frontend/build
+        on:
+          branch: master
+
     #This test helps us to check integrity of the backend code
     - language: python
       python: '3.7'

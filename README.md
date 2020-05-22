@@ -4,11 +4,25 @@
 
 <h1>DEVELOPER STUDENT CLUBS TIET</h1>
 
+<a href="https://medium.com/developer-student-clubs-tiet"><img src="https://github.com/aritraroy/social-icons/blob/master/medium-icon.png?raw=true" width="60"></a>
+<a href="https://twitter.com/dsctiet"><img src="https://github.com/aritraroy/social-icons/blob/master/twitter-icon.png?raw=true" width="60"></a>
+<a href="https://www.linkedin.com/company/developer-student-club-thapar"><img src="https://github.com/aritraroy/social-icons/blob/master/linkedin-icon.png?raw=true" width="60"></a>
+<a href="https://facebook.com/dscthapar"><img src="https://github.com/aritraroy/social-icons/blob/master/facebook-icon.png?raw=true" width="60"></a>
+<a href="https://instagram.com/dsc.tiet"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
+
 # [officialWebsite](https://dsctiet-community.tech)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b118ec23-2d21-4dda-8f6b-ca56a9cb9f4b/deploy-status)](https://app.netlify.com/sites/dsctiet/deploys)
 
 [![Build Status](https://travis-ci.com/developer-student-club-thapar/officialWebsite.svg?branch=master)](https://travis-ci.com/github/developer-student-club-thapar/officialWebsite)  [![Slack Status](https://img.shields.io/badge/slack-chat-purple.svg?logo=slack)](https://dscthapar-gspatiala.slack.com/join/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M) [![GitHub issues](https://img.shields.io/github/issues/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/issues)
-</div>
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![GitHub repo size](https://img.shields.io/github/repo-size/developer-student-club-thapar/officialWebsite)
+![Website](https://img.shields.io/website?down_color=red&down_message=Error%21&up_message=It%27s%20up%21&url=https%3A%2F%2Fdsctiet-community.tech%2F)
+<a> <img src="https://badgen.net/dependabot/thepracticaldev/dev.to?icon=dependabot" alt="Dependabot Badge"></a>
 
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/TezRomacH/python-package-template/blob/master/.pre-commit-config.yaml)
+[![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/developer-student-club-thapar/officialWebsite/blob/master/LICENSE)
+![GitHub pull requests by-label](https://img.shields.io/github/issues-pr/developer-student-club-thapar/officialWebsite/dependencies?label=Dependencies%20Status)
+</div>
 This is the repo for the official Website of DSC Thapar Institute of Engineering and Technology, Patiala , Punjab.
 Kindly go through the entire README.md for getting familiar with contribution steps
 
@@ -84,12 +98,20 @@ Thanks goes to these wonderful people for helping us set up this project. Cheers
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/aniket-biswas-59394b191/"><img src="https://avatars2.githubusercontent.com/u/51146347?v=4" width="100px;" alt=""/><br /><sub><b>Aniket Biswas</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=aniketbiswas21" title="Code">💻</a> <a href="#design-aniketbiswas21" title="Design">🎨</a></td>
     <td align="center"><a href="https://linkedin.com/in/jsparmani"><img src="https://avatars3.githubusercontent.com/u/41769747?v=4" width="100px;" alt=""/><br /><sub><b>Jay Parmani</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=jsparmani" title="Code">💻</a> <a href="#design-jsparmani" title="Design">🎨</a> <a href="#maintenance-jsparmani" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/aniket-biswas-59394b191/"><img src="https://avatars2.githubusercontent.com/u/51146347?v=4" width="100px;" alt=""/><br /><sub><b>Aniket Biswas</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=aniketbiswas21" title="Code">💻</a> <a href="#design-aniketbiswas21" title="Design">🎨</a> <a href="#maintenance-aniketbiswas21" title="Maintenance">🚧</a></td>   
-    <td align="center"><a href="http://shubhank-saxena.github.io"><img src="https://avatars3.githubusercontent.com/u/29003047?v=4" width="100px;" alt=""/><br /><sub><b>Shubhank Saxena</b></sub></a><br /><a href="#design-shubhank-saxena" title="Design">🎨</a> <a href="#maintenance-shubhank-saxena" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://sourcerer.io/animesh-007"><img src="https://avatars0.githubusercontent.com/u/53366877?v=4" width="100px;" alt=""/><br /><sub><b>Animesh Gupta</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=animesh-007" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://sourcerer.io/animesh-007"><img src="https://avatars0.githubusercontent.com/u/53366877?v=4" width="100px;" alt=""/><br /><sub><b>Animesh Gupta</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=animesh-007" title="Documentation">📖</a> <a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=animesh-007" title="Code">💻</a></td>
+    <td align="center"><a href="http://kush-blog.netlify.com"><img src="https://avatars2.githubusercontent.com/u/40840079?v=4" width="100px;" alt=""/><br /><sub><b>Kush Daga</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=kush-daga" title="Code">💻</a> <a href="#design-kush-daga" title="Design">🎨</a></td>
+    <td align="center"><a href="http://shubhank-saxena.github.io"><img src="https://avatars3.githubusercontent.com/u/29003047?v=4" width="100px;" alt=""/><br /><sub><b>Shubhank Saxena</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=shubhank-saxena" title="Code">💻</a> <a href="#design-shubhank-saxena" title="Design">🎨</a> <a href="#maintenance-shubhank-saxena" title="Maintenance">🚧</a></td>
   </tr>
 </table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
