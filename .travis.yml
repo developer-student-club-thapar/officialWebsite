@@ -20,7 +20,7 @@ jobs:
         - yarn build
       deploy:
         provider: pages
-        cleanup: true
+        deploy.skip_cleanup: true
         github_token: $GITHUB_TOKEN
         local_dir: Frontend/build
         on:
