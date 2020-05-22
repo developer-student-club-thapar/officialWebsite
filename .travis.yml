@@ -44,7 +44,7 @@ jobs:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $github_token
+  github_token: $github-token
   local_dir: Frontend/build
   on:
     branch: master
