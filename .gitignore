@@ -1,11 +1,13 @@
 .*/
 node_modules/
 .DS_store
-*.pyc
 yarn-error.log
 npm-error.log
 vagrant/env_local.sh
-__pycache__
+**/*.pyc
+**/__pycache__
+
+
 
 !.github
 
