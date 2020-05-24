@@ -57,7 +57,8 @@ const useStyles = makeStyles(theme => ({
   grid: {
     height: 350,
     overflowY: "hidden",
-    overflowX: "hidden"
+    overflowX: "hidden",
+    marginTop: "20px"
   },
   modal: {
     display: "flex",
