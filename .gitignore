@@ -1,11 +1,13 @@
 .*/
 node_modules/
 .DS_store
-*.pyc
 yarn-error.log
 npm-error.log
 vagrant/env_local.sh
-__pycache__
+**/*.pyc
+**/__pycache__
+
+
 
 !.github
 
@@ -27,5 +29,11 @@ env/
 
 # Ignore tox installation
 .tox
+
+# Ignore db file
+*.sqlite3
+
+service-account.json
+media
 
 

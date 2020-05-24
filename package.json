@@ -18,10 +18,8 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
-    "gh-pages": "^2.2.0",
     "google-maps-react": "^2.0.6",
     "react": "^16.13.1",
-    "react-app-rewired": "^2.1.5",
     "react-dom": "^16.13.1",
     "react-fontawesome": "^1.7.1",
     "react-lottie": "^1.2.3",
@@ -32,12 +30,10 @@
     "styled-components": "^5.1.0"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d Frontend/build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "format": "node ./node_modules/prettier/bin-prettier.js --write \"**/*.{css,html,js,jsx,json,md,yaml,yml}\""
   },
   "eslintConfig": {
