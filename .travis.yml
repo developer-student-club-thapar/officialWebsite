@@ -22,7 +22,7 @@ jobs:
         provider: pages
         skip_cleanup: true
         github_token: $GITHUB_TOKEN
-        local-dir: Frontend/build
+        local-dir: build
         on:
           branch: master
 

@@ -28,4 +28,10 @@ env/
 # Ignore tox installation
 .tox
 
+# Ignore db file
+*.sqlite3
+
+service-account.json
+media
+
 
