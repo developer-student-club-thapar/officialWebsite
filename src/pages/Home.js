@@ -143,6 +143,7 @@ const useStyles = makeStyles(theme => ({
 
 const Home = props => {
   const classes = useStyles();
+
   return (
     <Fragment>
       <CssBaseline />
