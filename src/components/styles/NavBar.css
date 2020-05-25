@@ -1,0 +1,10 @@
+.fill a {
+  transition: 0.4s;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.fill a:hover {
+  background-color: #3c4858;
+  color: #ffffff;
+  padding: 24px 10px;
+}

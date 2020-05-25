@@ -15,10 +15,14 @@ We follow a systematic Git Workflow -
   `python -m virtualenv env`
 - Then activate the environment using <br>
   `source env/Scripts/activate` (Use only `env/Scripts/activate` if on cmd or powershell)
+- For Linux Users it will be `source env/bin/activate`
+
+- The project now uses `poetry` to manage dependencies.
+- Install [Poetry](https://python-poetry.org/docs/)
 - At the root of your project directory <br>
 
 ```bash
-pip install -r requirements.txt
+poetry install
 pre-commit install
 ```
 
@@ -42,9 +46,9 @@ Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
 #### Note
 
-- If you are adding any new requirements for the project, make sure that you are adding it to `requirements.txt`
+As the project now uses poetry to manage dependencies, you need to run `poetry add <package_name>` to install the new package.
+
 - Use only `yarn add package_name` to add new packages to the frontend part.
