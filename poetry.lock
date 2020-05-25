@@ -76,10 +76,10 @@ description = "django-cors-headers is a Django application for handling the serv
 name = "django-cors-headers"
 optional = false
 python-versions = ">=3.5"
-version = "3.2.0"
+version = "3.3.0"
 
 [package.dependencies]
-Django = ">=1.11"
+Django = ">=2.0"
 
 [[package]]
 category = "main"
@@ -465,7 +465,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "980a7c8516f1ec48d2e83619e386c30ac06f5f8ef5b331bee28a92554b02b697"
+content-hash = "08814e321f5db1770ed64a9938b3e3bef41d3cf71a7772295318868d6fc4998b"
 python-versions = "^3.7, <3.9"
 
 [metadata.files]
@@ -501,8 +501,8 @@ django-cleanup = [
     {file = "django_cleanup-4.0.0-py2.py3-none-any.whl", hash = "sha256:b2bdb590eccc1a8e0688d5c6224080d3bb4a77e5bad1688fbe452d8c3454d755"},
 ]
 django-cors-headers = [
-    {file = "django-cors-headers-3.2.0.tar.gz", hash = "sha256:84933651fbbde8f2bc084bef2f077b79db1ec1389432f21dd661eaae6b3d6a95"},
-    {file = "django_cors_headers-3.2.0-py3-none-any.whl", hash = "sha256:a8b2772582e8025412f4d4b54b617d8b707076ffd53a2b961bd24f10ec207a7c"},
+    {file = "django-cors-headers-3.3.0.tar.gz", hash = "sha256:73d654950b5f5e7e4f67c05183d2169d4f7518ceb87734eb0d68f9e43be59f1c"},
+    {file = "django_cors_headers-3.3.0-py3-none-any.whl", hash = "sha256:48d267c10d11d8e17805bf896071c0a3e8efb6f79f6634a90e6faac4c2f8a1a0"},
 ]
 django-environ = [
     {file = "django-environ-0.4.5.tar.gz", hash = "sha256:6c9d87660142608f63ec7d5ce5564c49b603ea8ff25da595fd6098f6dc82afde"},
