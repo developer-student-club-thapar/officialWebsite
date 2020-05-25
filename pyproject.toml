@@ -6,7 +6,7 @@ authors = ["DSC TIET"]
 
 [tool.poetry.dependencies]
 python = "^3.7, <3.9"
-Django = "2.2.10"
+Django = "3.0.6"
 django-cleanup = "4.0.0"
 django-cors-headers = "3.3.0"
 django-environ = "0.4.5"
