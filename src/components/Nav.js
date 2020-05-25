@@ -52,7 +52,9 @@ const useStyles = makeStyles(theme => ({
 
 const NavAlt = props => {
   window.onscroll = function() {
-    scrollFunction();
+    if (props.location.pathname === "/") {
+      scrollFunction();
+    }
   };
 
   function scrollFunction() {
@@ -67,10 +69,18 @@ const NavAlt = props => {
       document.getElementById("text").style.display = "none";
     }
   }
+  function noscrollfunction() {
+    document.getElementById("logo").style.display = "block";
+    document.getElementById("text").style.display = "block";
+  }
   const classes = useStyles();
   useEffect(() => {
-    scrollFunction();
-  }, []);
+    if (props.location.pathname === "/") {
+      scrollFunction();
+    } else {
+      noscrollfunction();
+    }
+  }, [props]);
 
   return (
     <div className={classes.grow}>
