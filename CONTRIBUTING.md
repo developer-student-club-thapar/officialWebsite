@@ -47,7 +47,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 
-#### Note
+### Note
 
 As the project now uses poetry to manage dependencies, you need to run `poetry add <package_name>` to install the new package.
 
