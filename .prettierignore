@@ -1,8 +1,7 @@
 static
 templates
 .vscode
-README.md
+*.md
 *.yml
 *.yaml
-CONTRIBUTION.md
 build
