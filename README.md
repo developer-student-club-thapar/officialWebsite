@@ -1,8 +1,8 @@
 <div align = "center">
 
-<img height=200px src="./Frontend/src/assets/dsc_logo.png">
+<img height=200px src="./src/assets/dsc_logo.png">
 
-<h1>DEVELOPER STUDENT CLUBS TIET</h1>
+# DEVELOPER STUDENT CLUBS TIET
 
 <a href="https://medium.com/developer-student-clubs-tiet"><img src="https://github.com/aritraroy/social-icons/blob/master/medium-icon.png?raw=true" width="60"></a>
 <a href="https://twitter.com/dsctiet"><img src="https://github.com/aritraroy/social-icons/blob/master/twitter-icon.png?raw=true" width="60"></a>
@@ -11,38 +11,46 @@
 <a href="https://instagram.com/dsc.tiet"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
 
 # [officialWebsite](https://dsctiet-community.tech)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b118ec23-2d21-4dda-8f6b-ca56a9cb9f4b/deploy-status)](https://app.netlify.com/sites/dsctiet/deploys)
 
 [![Build Status](https://travis-ci.com/developer-student-club-thapar/officialWebsite.svg?branch=master)](https://travis-ci.com/github/developer-student-club-thapar/officialWebsite)  [![Slack Status](https://img.shields.io/badge/slack-chat-purple.svg?logo=slack)](https://dscthapar-gspatiala.slack.com/join/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M) [![GitHub issues](https://img.shields.io/github/issues/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/issues)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-![GitHub repo size](https://img.shields.io/github/repo-size/developer-student-club-thapar/officialWebsite)
-![Website](https://img.shields.io/website?down_color=red&down_message=Error%21&up_message=It%27s%20up%21&url=https%3A%2F%2Fdsctiet-community.tech%2F)
-<a> <img src="https://badgen.net/dependabot/thepracticaldev/dev.to?icon=dependabot" alt="Dependabot Badge"></a>
+![Size](https://github-size-badge.herokuapp.com/developer-student-club-thapar/officialWebsite.svg)
+![Website](https://img.shields.io/website?down_color=red&down_message=Error%21&up_message=It%27s%20up%21&url=https%3A%2F%2Fdsctiet.tech%2F)
+<a> <img src="https://badgen.net/dependabot/developer-student-club-thapar/officialWebsite?icon=dependabot" alt="Dependabot Badge"></a>
 
-[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/TezRomacH/python-package-template/blob/master/.pre-commit-config.yaml)
-[![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/developer-student-club-thapar/officialWebsite/blob/master/LICENSE)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/developer-student-club-thapar/officialWebsite/blob/master/.pre-commit-config.yaml)
+[![License](https://img.shields.io/github/license/developer-student-club-thapar/officialWebsite)](https://github.com/developer-student-club-thapar/officialWebsite/blob/master/LICENSE)
 ![GitHub pull requests by-label](https://img.shields.io/github/issues-pr/developer-student-club-thapar/officialWebsite/dependencies?label=Dependencies%20Status)
 </div>
 This is the repo for the official Website of DSC Thapar Institute of Engineering and Technology, Patiala , Punjab.
 Kindly go through the entire README.md for getting familiar with contribution steps
 
-Installation and Setup
+# Installation and Setup
+
 ------------
-### Setup and running of project (Backend)
+
+## Setup and running of project (Backend)
 
 - Fork the repo and clone it.
 - Go in the repo and setup virtualenvironment using
   `python -m virtualenv env`
 - Then activate the environment using
   `source env/Scripts/activate` (Use only `env/Scripts/activate` if on cmd or powershell)
-- At the root of your project directory
+- For Linux Users it will be `source env/bin/activate`
+
+- The project now uses `poetry` to manage dependencies.
+- Install [Poetry](https://python-poetry.org/docs/)
+- At the root of your project directory <br>
+
 ```bash
- - pip install -r requirements.txt
- - pre-commit install
+poetry install
+pre-commit install
 ```
+
 - This will setup the project requirements and pre-commit test hooks!
 
 - After the above setup, run
+
 ```bash
  - python manage.py makemigrations
  - python manage.py migrate
@@ -54,7 +62,7 @@ Installation and Setup
 **This runs the backend server at default port `8000`.
   Open [http://localhost:8000](http://localhost:8000) to view it in the browser.**<br />
 
-### Setup and running of project (Frontend)
+## Setup and running of project (Frontend)
 
 - At your root directory run `yarn install` to install all the dependencies
 - To start react dev server `yarn start`
@@ -62,10 +70,12 @@ Installation and Setup
 This runs the app in the development mode.<br />
 **Open [http://localhost:3000](http://localhost:3000) to view it in the browser.**
 
-The page will reload if you make edits.You will also see any lint errors in the console.<br />
+The page will reload if you make edits.<br />
 
-Contribution to the project
+## Contribution to the project
+
 ------------
+
 <div align="center">
 
 [![GitHub issues](https://img.shields.io/github/issues/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/issues) ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/developer-student-club-thapar/officialWebsite?logo=git&logoColor=white) ![GitHub contributors](https://img.shields.io/github/contributors/developer-student-club-thapar/officialWebsite?logo=github)
@@ -79,15 +89,16 @@ We follow a systematic Git Workflow -
 - **Every change** that you do, it has to be on a branch. Commits on master would directly be closed.
 - Make sure that before you create a new branch for new changes,[syncing with upstream](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) is neccesary.
 
-**Commits**
-* Write clear meaningful git commit messages (Do read [this](http://chris.beams.io/posts/git-commit/)).
-* Make sure your PR's description contains GitHub's special keyword references that automatically close the related issue when the PR is merged. (Check [this](https://github.com/blog/1506-closing-issues-via-pull-requests) for more info)
-* When you make very very minor changes to a PR of yours (like for example fixing a failing Travis build or some small style corrections or minor changes requested by reviewers) make sure you squash your commits afterward so that you don't have an absurd number of commits for a very small fix. (Learn how to squash at [here](https://davidwalsh.name/squash-commits-git))
-* When you're submitting a PR for a UI-related issue, it would be really awesome if you add a screenshot of your change or a link to a deployment where it can be tested out along with your PR. It makes it very easy for the reviewers and you'll also get reviews quicker.
+## Commits
 
-#### Note
+- Write clear meaningful git commit messages (Do read [this](http://chris.beams.io/posts/git-commit/)).
+- Make sure your PR's description contains GitHub's special keyword references that automatically close the related issue when the PR is merged. (Check [this](https://github.com/blog/1506-closing-issues-via-pull-requests) for more info)
+- When you make very very minor changes to a PR of yours (like for example fixing a failing Travis build or some small style corrections or minor changes requested by reviewers) make sure you squash your commits afterward so that you don't have an absurd number of commits for a very small fix. (Learn how to squash at [here](https://davidwalsh.name/squash-commits-git))
+- When you're submitting a PR for a UI-related issue, it would be really awesome if you add a screenshot of your change or a link to a deployment where it can be tested out along with your PR. It makes it very easy for the reviewers and you'll also get reviews quicker.
 
-- If you are adding any new requirements for the project, make sure that you are adding it to `requirements.txt`
+### Note
+
+- As the project now uses poetry to manage dependencies, you need to run `poetry add <package_name>` to install the new package.
 - Use only `yarn add package_name` to add new packages to the frontend part.
 
 ## Contributors ✨
@@ -106,23 +117,15 @@ Thanks goes to these wonderful people for helping us set up this project. Cheers
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-<!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors)specification. Contributions of any kind welcome!
 
 ## Community
 
-[![GitHub forks](https://img.shields.io/github/forks/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/network) [![GitHub stars](https://img.shields.io/github/stars/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/stargazers)
+- [![GitHub forks](https://img.shields.io/github/forks/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/network) [![GitHub stars](https://img.shields.io/github/stars/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/stargazers)
 
 All feedback and suggestions are welcome!
 
-* 💬 Join the community on [Slack](https://dscthapar-gspatiala.slack.com/join/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M)
+- 💬 Join the community on [Slack](https://dscthapar-gspatiala.slack.com/join/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M)
