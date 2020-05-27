@@ -152,13 +152,13 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
@@ -233,25 +233,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -314,25 +314,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -395,25 +395,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -476,25 +476,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -557,25 +557,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -638,25 +638,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -719,25 +719,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -800,25 +800,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -881,25 +881,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -962,25 +962,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -1043,25 +1043,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -1124,25 +1124,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -1205,25 +1205,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -1286,25 +1286,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -1367,25 +1367,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -1448,25 +1448,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -1529,25 +1529,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -1610,25 +1610,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -1691,25 +1691,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -1772,25 +1772,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
@@ -1853,25 +1853,25 @@ const Team = () => {
                   }}
                 >
                   <span>
-                    <a href={item.linkedin_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.linkedin_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-linkedin fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.github_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.github_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-github-square fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.medium_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.medium_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-medium fa-2x"
                         style={{ color: "grey" }}
                       />
                     </a>
-                    <a href={item.twitter_url} style={{ paddingRight: "8px" }}>
+                    <a target="_blank" rel="noopener noreferrer" href={item.twitter_url} style={{ paddingRight: "8px" }}>
                       <i
                         class="fab fa-twitter-square fa-2x"
                         style={{ color: "grey" }}
