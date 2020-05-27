@@ -1,9 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Slide from "react-reveal/Slide";
 import { Container, CssBaseline, Hidden } from "@material-ui/core";
@@ -37,11 +35,11 @@ const useStyles = makeStyles(theme => ({
   },
   rootCard: {
     maxWidth: 350,
-    height: 400
+    height: 350
   },
   rootCardMobile: {
     width: "auto",
-    height: 400
+    height: 350
   },
   media: {
     height: 230
@@ -141,6 +139,10 @@ const ProjectsAlt = () => {
                 xl={4}
                 style={{}}
                 key={item.id}
+                onClick={() => {
+                  setKey(index);
+                  setOpen(true);
+                }}
               >
                 <Hidden smDown>
                   <Slide bottom>
@@ -167,24 +169,18 @@ const ProjectsAlt = () => {
                           </Typography>
                         </CardContent>
                       </CardActionArea>
-                      <CardActions>
-                        <Button
-                          size="small"
-                          color="primary"
-                          onClick={() => {
-                            setKey(index);
-                            setOpen(true);
-                          }}
-                        >
-                          Learn More
-                        </Button>
-                      </CardActions>
                     </Card>
                   </Slide>
                 </Hidden>
                 <Hidden mdUp>
                   <Slide bottom>
-                    <Card className={classes.rootCardMobile}>
+                    <Card
+                      className={classes.rootCardMobile}
+                      onClick={() => {
+                        setKey(index);
+                        setOpen(true);
+                      }}
+                    >
                       <CardActionArea>
                         <CardMedia
                           className={classes.media}
@@ -207,18 +203,6 @@ const ProjectsAlt = () => {
                           </Typography>
                         </CardContent>
                       </CardActionArea>
-                      <CardActions>
-                        <Button
-                          size="small"
-                          color="primary"
-                          onClick={() => {
-                            setKey(index);
-                            setOpen(true);
-                          }}
-                        >
-                          Learn More
-                        </Button>
-                      </CardActions>
                     </Card>
                   </Slide>
                 </Hidden>
