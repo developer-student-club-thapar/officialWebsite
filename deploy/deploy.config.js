@@ -11,7 +11,7 @@ module.exports = {
       "post-setup":
         "sudo pip3.7 install poetry && poetry install && python3.7 manage.py migrate 0.0.0.0:8000",
       "post-deploy":
-        "pm2 startOrRestart ./deploy/production.config.js"
+        "pm2 startOrRestart manage.py --interpreter python3.7 --name officialWebsite -- runserver -- 0.0.0.0:8000"
     }
   }
 };
