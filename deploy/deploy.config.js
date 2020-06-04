@@ -1,13 +1,13 @@
 module.exports = {
   deploy: {
     production: {
-      key: "./deploy/dsc-deploy",
+      key: "./deploy/ubuntu",
       user: "dsc-deploy",
-      host: ["35.213.186.79"],
+      host: ["library.dsctiet.tech"],
       ref: "origin/master",
       repo:
         "https://github.com/developer-student-club-thapar/officialWebsite.git",
-      path: "/home/dsc-deploy/officialWebsite-production",
+      path: "/home/ubuntu/officialWebsite-production",
       "post-setup":
         "pip3 install poetry && poetry install && python manage.py migrate",
       "post-deploy":
