@@ -9,7 +9,7 @@ module.exports = {
         "https://github.com/developer-student-club-thapar/officialWebsite.git",
       path: "/home/ubuntu/officialWebsite-production",
       "post-setup":
-        "pip3 install poetry && poetry install && python manage.py migrate",
+        "sudo pip3.7 install poetry && poetry install && python3.7 manage.py migrate",
       "post-deploy":
         "pm2 startOrRestart ./deploy/production.config.js"
     }
