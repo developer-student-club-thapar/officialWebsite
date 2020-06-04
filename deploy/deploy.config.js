@@ -3,7 +3,7 @@ module.exports = {
     production: {
       key: "./deploy/ubuntu",
       user: "ubuntu",
-      host: ["35.213.186.79"],
+      host: ["35.213.132.113"],
       ref: "origin/master",
       repo:
         "https://github.com/developer-student-club-thapar/officialWebsite.git",
