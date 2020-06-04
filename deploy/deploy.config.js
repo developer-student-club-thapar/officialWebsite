@@ -11,7 +11,7 @@ module.exports = {
       "post-setup":
         "pip3 install poetry && poetry install && python manage.py migrate",
       "post-deploy":
-        "authbind --deep pm2 startOrRestart ./deploy/production.config.js"
+        "pm2 startOrRestart ./deploy/production.config.js"
     }
   }
 };
