@@ -4,7 +4,7 @@ module.exports = {
       key: "./deploy/dsc-deploy",
       user: "dsc-deploy",
       host: ["35.213.186.79"],
-      ref: "upstream/master",
+      ref: "origin/master",
       repo: "https://github.com/developer-student-club-thapar/officialWebsite",
       path: "/home/dsc-deploy/officialWebsite-production",
       "post-setup":
