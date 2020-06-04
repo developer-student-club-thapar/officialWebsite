@@ -2,11 +2,11 @@ module.exports = {
   apps: [
     {
       name: "officialWebsite",
-      cmd: "manage.py runserver 0.0.0.0:8000",
+      script: "manage.py",
       interpreter: "python3.7",
-      args: "",
+      args: ["runserver","0.0.0.0:8000"],
+      wait_ready:true,
       autorestart: true,
-      watch: true,
       pid: "/path/to/pid/file.pid",
       instances: 1,
       sudo: true
