@@ -2,8 +2,8 @@ module.exports = {
   apps: [
     {
       name: "officialWebsite",
-      cmd: "manage.py runserver",
-      interpreter: "python3",
+      cmd: "manage.py runserver 0.0.0.0:8000",
+      interpreter: "python3.7",
       args: "",
       autorestart: true,
       watch: true,
