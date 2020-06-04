@@ -6,8 +6,8 @@ npm-error.log
 vagrant/env_local.sh
 **/*.pyc
 **/__pycache__
-
-
+*.ppk
+dsc-deploy
 
 !.github
 
