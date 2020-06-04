@@ -5,7 +5,8 @@ module.exports = {
       user: "dsc-deploy",
       host: ["35.213.186.79"],
       ref: "origin/master",
-      repo: "https://github.com/developer-student-club-thapar/officialWebsite",
+      repo:
+        "https://github.com/developer-student-club-thapar/officialWebsite.git",
       path: "/home/dsc-deploy/officialWebsite-production",
       "post-setup":
         "pip3 install poetry && poetry install && python manage.py migrate",
