@@ -1,7 +1,7 @@
 module.exports = {
   deploy: {
     production: {
-      key: "./dsc-deploy.ppk",
+      key: "./deploy/dsc-deploy.ppk",
       user: "dsc-deploy",
       host: ["35.213.186.79"],
       ref: "origin/master",
