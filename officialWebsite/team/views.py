@@ -4,7 +4,7 @@ from . import serializers
 from rest_framework import viewsets, status, mixins, generics
 
 
-class TeamViewset(viewsets.ModelViewSet):
+class TeamViewset(generics.ListAPIView):
     """Manage teams in the database"""
 
     serializer_class = serializers.TeamSerializer

@@ -4,7 +4,7 @@ from . import serializers
 from rest_framework import viewsets, status, mixins, generics
 
 
-class AchievementViewset(viewsets.ModelViewSet):
+class AchievementViewset(generics.ListAPIView):
     """Manage Achievements in the database"""
 
     serializer_class = serializers.AchievementSerializer

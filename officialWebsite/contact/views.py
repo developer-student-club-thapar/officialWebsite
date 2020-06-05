@@ -4,7 +4,7 @@ from . import serializers
 from rest_framework import viewsets, status, mixins, generics
 
 
-class ContactReqViewSet(viewsets.ModelViewSet):
+class ContactReqViewSet(generics.ListAPIView):
     """Manage contact requests in the database"""
 
     serializer_class = serializers.ContactReqSerializer

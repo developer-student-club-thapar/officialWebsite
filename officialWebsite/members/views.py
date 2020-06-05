@@ -6,7 +6,7 @@ from rest_framework import viewsets, status, mixins, generics
 # Create your views here.
 
 
-class MemberViewset(viewsets.ModelViewSet):
+class MemberViewset(generics.ListAPIView):
     """Manage members in the database"""
 
     serializer_class = serializers.MemberSerializer

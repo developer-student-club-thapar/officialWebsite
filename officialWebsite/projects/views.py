@@ -4,7 +4,7 @@ from . import serializers
 from rest_framework import viewsets, status, mixins, generics
 
 
-class ProjectViewSet(viewsets.ModelViewSet):
+class ProjectViewSet(generics.ListAPIView):
     """Manage projects in the database"""
 
     serializer_class = serializers.ProjectSerializer

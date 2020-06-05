@@ -6,7 +6,7 @@ from rest_framework import viewsets, status, mixins, generics
 # Create your views here.
 
 
-class EventViewSet(viewsets.ModelViewSet):
+class EventViewSet(generics.ListAPIView):
     """Manage Events in the database"""
 
     serializer_class = serializers.EventSerializer

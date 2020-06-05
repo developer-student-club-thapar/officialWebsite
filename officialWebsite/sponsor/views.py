@@ -4,7 +4,7 @@ from . import serializers
 from rest_framework import viewsets, status, mixins, generics
 
 
-class SponsorViewSet(viewsets.ModelViewSet):
+class SponsorViewSet(generics.ListAPIView):
     """Manage sponsors in the database"""
 
     serializer_class = serializers.SponsorSerializer
