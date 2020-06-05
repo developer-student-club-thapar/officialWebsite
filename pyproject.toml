@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "buying_selling_devops"
+name = "officialWebsite"
 version = "0.1.0"
-description = ""
+description = "This is the poetry file for officialWebsite of DSC TIET"
 authors = ["DSC TIET"]
 
 [tool.poetry.dependencies]

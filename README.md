@@ -32,14 +32,8 @@ Kindly go through the entire README.md for getting familiar with contribution st
 ## Setup and running of project (Backend)
 
 - Fork the repo and clone it.
-- Go in the repo and setup virtualenvironment using
-  `python -m virtualenv env`
-- Then activate the environment using
-  `source env/Scripts/activate` (Use only `env/Scripts/activate` if on cmd or powershell)
-- For Linux Users it will be `source env/bin/activate`
-
-- The project now uses `poetry` to manage dependencies.
-- Install [Poetry](https://python-poetry.org/docs/)
+- Install [Poetry](https://python-poetry.org/docs/) globally in your pc as
+``` pip install poetry ```
 - At the root of your project directory <br>
 
 ```bash
@@ -52,6 +46,7 @@ pre-commit install
 - After the above setup, run
 
 ```bash
+ - poetry shell
  - python manage.py makemigrations
  - python manage.py migrate
 ```
