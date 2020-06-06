@@ -89,7 +89,6 @@ class Chatbot extends Component {
                         </div>
                       </button>
                     </form>
-                    <hr style={{ width:"75%", background:"#E8E8E8" }} />
                     <p className="love" style={{ lineHeight: "0px" }}>
                       Created with ❤ by{" "}
                       <a href="https://analyticware.in/">AnalyticWare</a>
