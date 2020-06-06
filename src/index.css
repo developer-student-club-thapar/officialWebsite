@@ -32,10 +32,10 @@ code {
   z-index: 9;
 }
 .iconic {
-  width: 50px;
+  width: 29px;
   height: 50px;
   padding: -23px;
-  padding-bottom: 23px;
+  padding-bottom: 17px;
 }
 .chat_on {
   position: fixed;

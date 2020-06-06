@@ -76,36 +76,7 @@ $(document).ready(function() {
   $(".chat_on").click(function() {
     $(".Layout").toggle();
     $(".chat_on").hide(300);
-    setTimeout(function() {
-      var BotResponse1 =
-        '<img class="botAvatar" src="../src/assets/user.png"><p class="botMsg">' +
-        "Hello , This is DSC TIET" +
-        '</p><div class="clearfix"></div>';
-      $(BotResponse1)
-        .appendTo(".chats")
-        .hide()
-        .fadeIn(1000);
-    }, 1000);
-    setTimeout(function() {
-      var BotResponse2 =
-        '<img class="botAvatar" src="../src/assets/user.png"><p class="botMsg">' +
-        "How can we help you?" +
-        '</p><div class="clearfix"></div>';
-      $(BotResponse2)
-        .appendTo(".chats")
-        .hide()
-        .fadeIn(1000);
-    }, 2500);
-    setTimeout(function() {
-      var BotResponse3 =
-        '<img class="botAvatar" src="../src/assets/user.png"><p class="botMsg">' +
-        "You can ask about Team members, Teams, Lead, General Queries" +
-        '</p><div class="clearfix"></div>';
-      $(BotResponse3)
-        .appendTo(".chats")
-        .hide()
-        .fadeIn(1000);
-    }, 4000);
+    something();
   });
 
   $(".chat_close_icon").click(function() {
@@ -114,10 +85,25 @@ $(document).ready(function() {
   });
 });
 
+var something = (function() {
+  var executed = false;
+  return function() {
+      if (!executed) {
+          executed = true;
+          setTimeout(function() {
+            setBotResponse('Hello , This is DSC TIET.<br> How can we help you?');
+          }, 600);
+          setTimeout(function() {
+            setBotResponse('You can ask about Team members, Teams, Lead, General Queries');
+          }, 600);
+      }
+  };
+})();
+
 function setUserResponse(val) {
   var UserResponse =
     '<img class="userAvatar" src=' +
-    "../src/assets/userAvatar.jpg" +
+    "userAvatar.jpg" +
     '><p class="userMsg">' +
     val +
     ' </p><div class="clearfix"></div>';
@@ -135,7 +121,7 @@ function scrollToBottomOfResults() {
 
 function setBotResponse(val) {
   var BotResponse =
-    '<img class="botAvatar" src="../src/assets/user.png"><p class="botMsg">' +
+    '<img class="botAvatar" src="user.png"><p class="botMsg">' +
     val +
     '</p><div class="clearfix"></div>';
   $(BotResponse)
