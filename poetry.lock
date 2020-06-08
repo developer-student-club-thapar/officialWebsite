@@ -68,7 +68,7 @@ description = "Deletes old files."
 name = "django-cleanup"
 optional = false
 python-versions = "*"
-version = "4.0.0"
+version = "5.0.0"
 
 [[package]]
 category = "main"
@@ -467,7 +467,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "80d3ef718937f67b533b56cda7626b97bc1fb95fb6b036a57b17fb0524658f36"
+content-hash = "505384d28a5f285c075ad6d1f858dc29c6e16fcef3962b8cf339c866999ead6c"
 python-versions = "^3.7, <3.9"
 
 [metadata.files]
@@ -499,8 +499,8 @@ django = [
     {file = "Django-2.2.10.tar.gz", hash = "sha256:1226168be1b1c7efd0e66ee79b0e0b58b2caa7ed87717909cd8a57bb13a7079a"},
 ]
 django-cleanup = [
-    {file = "django-cleanup-4.0.0.tar.gz", hash = "sha256:412c3f9417ddaaaa561b60237b109550b16e556db92d4616278fc7e1ad9ab0a4"},
-    {file = "django_cleanup-4.0.0-py2.py3-none-any.whl", hash = "sha256:b2bdb590eccc1a8e0688d5c6224080d3bb4a77e5bad1688fbe452d8c3454d755"},
+    {file = "django-cleanup-5.0.0.tar.gz", hash = "sha256:84f0c0e0a74545adae4c944a76ccf8fb0c195dddccf3b7195c59267abb7763dd"},
+    {file = "django_cleanup-5.0.0-py2.py3-none-any.whl", hash = "sha256:de5948e74e00fc74d19bf15e062477b45090ba467587f45b2459eae8f97bc4f4"},
 ]
 django-cors-headers = [
     {file = "django-cors-headers-3.3.0.tar.gz", hash = "sha256:73d654950b5f5e7e4f67c05183d2169d4f7518ceb87734eb0d68f9e43be59f1c"},
