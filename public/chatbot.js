@@ -88,15 +88,17 @@ $(document).ready(function() {
 var something = (function() {
   var executed = false;
   return function() {
-      if (!executed) {
-          executed = true;
-          setTimeout(function() {
-            setBotResponse('Hello , This is DSC TIET.<br> How can we help you?');
-          }, 600);
-          setTimeout(function() {
-            setBotResponse('You can ask about Team members, Teams, Lead, General Queries');
-          }, 600);
-      }
+    if (!executed) {
+      executed = true;
+      setTimeout(function() {
+        setBotResponse("Hello , This is DSC TIET.<br> How can we help you?");
+      }, 600);
+      setTimeout(function() {
+        setBotResponse(
+          "You can ask about Team members, Teams, Lead, General Queries"
+        );
+      }, 600);
+    }
   };
 })();
 
