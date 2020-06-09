@@ -7,8 +7,6 @@ vagrant/env_local.sh
 **/*.pyc
 **/__pycache__
 *.ppk
-ubuntu
-
 !.github
 
 # vi
