@@ -1,7 +1,7 @@
 module.exports = {
   deploy: {
     production: {
-      key: "./deploy/ubuntu",
+      key: "./ubuntu",
       user: "ubuntu",
       host: ["api.dsctiet.tech"],
       ref: "origin/master",
