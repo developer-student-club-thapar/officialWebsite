@@ -3,7 +3,6 @@ dist: xenial
 group: edge
 jobs:
     include:
-    
     # Run JS tests
     - language: node_js
       # The Node version here must be kept in sync with that in `package.json`.
@@ -48,3 +47,18 @@ jobs:
         - pip install pre-commit
       script:
         - pre-commit run --all-files
+
+    - stage: backendDeploy
+      language: node_js
+      node_js: '12.16.1'
+      before_install:
+        - cd deploy
+        - openssl aes-256-cbc -K $encrypted_24bf68e341ce_key -iv $encrypted_24bf68e341ce_iv -in ubuntu.enc -out ubuntu -d
+      install:
+        - npm install -g pm2@latest
+      script:
+        - sudo pm2 deploy ./deploy.config.js production 
+
+stages:
+- name: backendDeploy
+if: type = push AND branch = master
