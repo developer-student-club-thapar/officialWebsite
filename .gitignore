@@ -36,4 +36,5 @@ env/
 service-account.json
 media
 
+# Backend key for deployment
 ubuntu
