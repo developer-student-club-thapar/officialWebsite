@@ -5,6 +5,7 @@ module.exports = {
       user: "ubuntu",
       host: ["api.dsctiet.tech"],
       ref: "origin/master",
+      ssh_options: "StrictHostKeyChecking=no",
       repo:
         "https://github.com/developer-student-club-thapar/officialWebsite.git",
       path: "/home/ubuntu/officialWebsite-production",
