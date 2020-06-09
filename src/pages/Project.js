@@ -106,8 +106,9 @@ const ProjectsAlt = () => {
                 variant="h6"
                 style={{ color: "grey", paddingTop: "20px" }}
               >
-                We at DSC TIET believe in doing it and learning via projects. That's why, we have 
-                amazing projects that we are working on. Go ahead and look for their details.
+                We at DSC TIET believe in doing it and learning via projects.
+                That's why, we have amazing projects that we are working on. Go
+                ahead and look for their details.
               </Typography>
             </Grid>
             <Hidden smDown>
