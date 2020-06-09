@@ -2,6 +2,7 @@ dist: xenial
 group: edge
 jobs:
   include:
+  - stage: test
   - language: node_js
     node_js: 12.16.1
     cache: yarn
@@ -50,5 +51,6 @@ jobs:
     script:
     - sudo pm2 deploy ./deploy.config.js production
 stages:
+- name: test
 - name: backendDeploy
 if: type = push AND branch = master
