@@ -48,7 +48,7 @@ jobs:
     install:
     - npm -g install pm2@latest
     script:
-    - pm2 deploy ./deploy.config.js production
+    - pm2 deploy ./deploy/deploy.config.js production
 stages:
 - name: backendDeploy
   if: type = push AND branch = master
