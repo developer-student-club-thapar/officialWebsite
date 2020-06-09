@@ -55,4 +55,5 @@ jobs:
 stages:
 - name: Tests
 - name: BackendDeploy
-  if: branch = master
+    if: type = push
+    if: branch = master
