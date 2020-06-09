@@ -44,7 +44,8 @@ jobs:
     node_js: 12.16.1
     before_install:
     - cd deploy
-    - openssl aes-256-cbc -K $encrypted_24bf68e341ce_key -iv $encrypted_24bf68e341ce_iv -in ubuntu.enc -out ubuntu -d
+    - openssl aes-256-cbc -K $encrypted_24bf68e341ce_key -iv $encrypted_24bf68e341ce_iv
+      -in ubuntu.enc -out ubuntu -d
     install:
     - npm install -g pm2@latest
     script:
@@ -53,3 +54,6 @@ stages:
 - name: backendDeploy
   if: type = push AND branch = master
 - name: test
+before_install:
+- openssl aes-256-cbc -K $encrypted_24bf68e341ce_key -iv $encrypted_24bf68e341ce_iv
+  -in ubuntu.enc -out ubuntu -d
