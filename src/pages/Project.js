@@ -108,7 +108,8 @@ const ProjectsAlt = () => {
               >
                 We at DSC TIET believe in doing it and learning via projects.
                 That's why, we have amazing projects that we are working on. Go
-                ahead and look for their details.
+                ahead and look for their details. Feel free to contribute on
+                GitHub!
               </Typography>
             </Grid>
             <Hidden smDown>
