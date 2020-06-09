@@ -3,43 +3,45 @@ group: edge
 jobs:
   include:
   - stage: Tests
-    - language: node_js
-      node_js: 12.16.1
-      cache: yarn
-      before_install:
-      - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.22.0
-      - export PATH="$HOME/.yarn/bin:$PATH"
-      install:
-      - yarn install --frozen-lockfile
-      script:
-      - yarn format
-      - yarn build
-      deploy:
-        provider: pages
-        skip_cleanup: true
-        github_token: "$GITHUB_TOKEN"
-        local-dir: build
-        on:
-          branch: master
-    - language: python
-      python: '3.7'
-      cache: pip
-      install:
-      - pip install poetry
-      - poetry install
-      script:
-      - python manage.py check --deploy
-      - python manage.py makemigrations
-      - python manage.py migrate
-      - python manage.py test
-    - language: python
-      python: '3.7'
-      cache: pip
-      install:
-      - pip install pre-commit
-      script:
-      - pre-commit run --all-files
-  - stage: backendDeploy
+    language: node_js
+    node_js: 12.16.1
+    cache: yarn
+    before_install:
+    - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.22.0
+    - export PATH="$HOME/.yarn/bin:$PATH"
+    install:
+    - yarn install --frozen-lockfile
+    script:
+    - yarn format
+    - yarn build
+    deploy:
+      provider: pages
+      skip_cleanup: true
+      github_token: "$GITHUB_TOKEN"
+      local-dir: build
+      on:
+        branch: master
+  - stage: Tests
+    language: python
+    python: '3.7'
+    cache: pip
+    install:
+    - pip install poetry
+    - poetry install
+    script:
+    - python manage.py check --deploy
+    - python manage.py makemigrations
+    - python manage.py migrate
+    - python manage.py test
+  - stage: Tests
+    language: python
+    python: '3.7'
+    cache: pip
+    install:
+    - pip install pre-commit
+    script:
+    - pre-commit run --all-files
+  - stage: BackendDeploy
     language: node_js
     node_js: 12.16.1
     cache: npm
@@ -52,5 +54,5 @@ jobs:
     - pm2 deploy ./deploy/deploy.config.js production
 stages:
 - name: Tests
-- name: backendDeploy
+- name: BackendDeploy
   if: type = push AND branch = master
