@@ -51,5 +51,5 @@ jobs:
     - sudo pm2 deploy ./deploy.config.js production
 stages:
 - name: backendDeploy
-if: type = push AND branch = master
+  if: type = push AND branch = master
 - name: test
