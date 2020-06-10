@@ -22,14 +22,6 @@ jobs:
     script:
     - yarn format
     - yarn build
-    deploy:
-      provider: pages
-      skip_cleanup: true
-      github_token: "$GITHUB_TOKEN"
-      local-dir: build
-      on:
-      - branch: master
-      - type: push
 
   - stage: Tests
     name: Backend Tests
