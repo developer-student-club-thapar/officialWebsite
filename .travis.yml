@@ -1,5 +1,11 @@
 dist: xenial
 group: edge
+
+stages:
+  - name: Tests
+  - name: BackendDeploy
+    if: branch = master AND type = push AND fork=false
+
 jobs:
   include:
   - stage: Tests
@@ -20,7 +26,8 @@ jobs:
       github_token: "$GITHUB_TOKEN"
       local-dir: build
       on:
-        branch: master
+      - branch: master
+      - type: push
   - stage: Tests
     language: python
     python: '3.7'
@@ -52,7 +59,4 @@ jobs:
     - npm -g install pm2@latest
     script:
     - pm2 deploy ./deploy/deploy.config.js production
-stages:
-- name: Tests
-- name: BackendDeploy
-  if: branch = master AND type = push
+
