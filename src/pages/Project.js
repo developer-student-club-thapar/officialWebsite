@@ -12,10 +12,10 @@ import Test from "../assets/undraw_scrum_board_cesn.svg";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import ProjectImg from "../assets/undraw_code_typing_7jnv.svg";
 import Loader from "./Loader";
 import axios from "axios";
 import Footer from "../components/Footer";
+import ProjectAnimation from "../components/ProjectAnimation";
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
@@ -122,12 +122,7 @@ const ProjectsAlt = () => {
                 xl={6}
                 style={{ paddingTop: "100px" }}
               >
-                <img
-                  src={ProjectImg}
-                  alt="event_img"
-                  height="60%"
-                  width="100%"
-                />
+                <ProjectAnimation />
               </Grid>
             </Hidden>
           </Grid>
