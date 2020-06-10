@@ -12,7 +12,7 @@
 
 # [officialWebsite](https://dsctiet.tech)
 
-[![Build Status](https://travis-ci.com/developer-student-club-thapar/officialWebsite.svg?branch=master)](https://travis-ci.com/github/developer-student-club-thapar/officialWebsite)  [![Slack Status](https://img.shields.io/badge/slack-chat-purple.svg?logo=slack)](https://dscthapar-gspatiala.slack.com/join/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M) [![GitHub issues](https://img.shields.io/github/issues/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/issues)
+[![Build Status](https://travis-ci.org/developer-student-club-thapar/officialWebsite.svg?branch=master)](https://travis-ci.com/github/developer-student-club-thapar/officialWebsite)  [![Slack Status](https://img.shields.io/badge/slack-chat-purple.svg?logo=slack)](https://dscthapar-gspatiala.slack.com/join/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M) [![GitHub issues](https://img.shields.io/github/issues/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/issues)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 ![Size](https://github-size-badge.herokuapp.com/developer-student-club-thapar/officialWebsite.svg)
 ![Website](https://img.shields.io/website?down_color=red&down_message=Error%21&up_message=It%27s%20up%21&url=https%3A%2F%2Fdsctiet.tech%2F)
