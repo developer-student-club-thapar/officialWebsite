@@ -3,12 +3,14 @@ group: edge
 
 stages:
   - name: Tests
-  - name: BackendDeploy
-    if: branch = master AND type = push AND fork=false
+  - name: Deployment
+    if: branch = master AND type = push AND fork = false
 
 jobs:
   include:
+
   - stage: Tests
+    name: Frontend Tests
     language: node_js
     node_js: 12.16.1
     cache: yarn
@@ -28,7 +30,9 @@ jobs:
       on:
       - branch: master
       - type: push
+
   - stage: Tests
+    name: Backend Tests
     language: python
     python: '3.7'
     cache: pip
@@ -40,7 +44,9 @@ jobs:
     - python manage.py makemigrations
     - python manage.py migrate
     - python manage.py test
+
   - stage: Tests
+    name: Linting Tests
     language: python
     python: '3.7'
     cache: pip
@@ -48,7 +54,30 @@ jobs:
     - pip install pre-commit
     script:
     - pre-commit run --all-files
-  - stage: BackendDeploy
+
+  - stage: Deployment
+    name: Frontend Deployment
+    language: node_js
+    node_js: 12.16.1
+    cache: yarn
+    before_install:
+    - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.22.0
+    - export PATH="$HOME/.yarn/bin:$PATH"
+    install:
+    - yarn install --frozen-lockfile
+    script:
+    - yarn build
+    deploy:
+      provider: pages
+      skip_cleanup: true
+      github_token: "$GITHUB_TOKEN"
+      local-dir: build
+      on:
+      - branch: master
+      - type: push
+
+  - stage: Deployment
+    name: Backend Deployment
     language: node_js
     node_js: 12.16.1
     cache: npm
