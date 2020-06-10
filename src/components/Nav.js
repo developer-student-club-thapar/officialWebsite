@@ -107,7 +107,6 @@ const NavAlt = props => {
               >
                 &nbsp; DSC TIET
               </Typography>
-
               <div className={classes.grow} />
               <div className={classes.sectionDesktop}>
                 <div style={{ paddingRight: "10px" }}>
