@@ -7,7 +7,6 @@ import Typography from "@material-ui/core/Typography";
 import Slide from "react-reveal/Slide";
 import { Container, CssBaseline, Hidden } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
-import Events from "../assets/events.svg";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
 import Test from "../assets/undraw_scrum_board_cesn.svg";
@@ -17,6 +16,7 @@ import Fade from "@material-ui/core/Fade";
 import Loader from "./Loader";
 import axios from "axios";
 import Footer from "../components/Footer";
+import EventAnimation from "../components/EventAnimation";
 
 axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 
@@ -124,9 +124,9 @@ const EventsAlt = () => {
               md={6}
               lg={6}
               xl={6}
-              style={{ paddingTop: "120px", paddingLeft: "150px" }}
+              style={{ paddingTop: "80px", paddingLeft: "150px" }}
             >
-              <img src={Events} alt="event_img" height="60%" width="100%" />
+              <EventAnimation />
             </Grid>
           </Hidden>
         </Grid>
