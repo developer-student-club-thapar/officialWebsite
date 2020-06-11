@@ -17,7 +17,7 @@ import axios from "axios";
 import Footer from "../components/Footer";
 import ProjectAnimation from "../components/ProjectAnimation";
 
-axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
+axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 
 const useStyles = makeStyles(theme => ({
   root: {

@@ -19,7 +19,7 @@ import Loader from "./Loader";
 import axios from "axios";
 import Footer from "../components/Footer";
 
-axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
+axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 
 const useStyles = makeStyles(theme => ({
   root: {

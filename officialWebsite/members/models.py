@@ -86,7 +86,7 @@ class MemberRegistration(models.Model):
 
         send_mail(
             'Member Registration Password',
-            f'Hi, {self.name}. Welcome to DSC-TIET. Your username is {self.username} and password is {password}. We recommend to change your password upon login. You can login using https://dsctiet.pythonanywhere.com/admin',
+            f'Hi, {self.name}. Welcome to DSC-TIET. Your username is {self.username} and password is {password}. We recommend to change your password upon login. You can login using https://api.dsctiet.tech/admin',
             'noreplydsctiet@gmail.com',
             [f'{self.email}'],
             fail_silently=False,

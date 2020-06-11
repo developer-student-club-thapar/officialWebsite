@@ -16,7 +16,7 @@ import axios from "axios";
 import Loader from "./Loader";
 import Footer from "../components/Footer";
 
-axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
+axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -201,7 +201,7 @@ const Team = () => {
                 <div style={{ paddingBottom: "100px" }}>
                   <Avatar
                     alt={item.name}
-                    src={`https://dsctiet.pythonanywhere.com${item.image}`}
+                    src={item.image}
                     className={classes.large}
                     style={{ paddingBottom: "0px" }}
                   />
@@ -302,7 +302,7 @@ const Team = () => {
                 <div style={{ paddingBottom: "100px" }}>
                   <Avatar
                     alt={item.name}
-                    src={`https://dsctiet.pythonanywhere.com/${item.image}`}
+                    src={item.image}
                     className={classes.large}
                     style={{ paddingBottom: "0px" }}
                   />
