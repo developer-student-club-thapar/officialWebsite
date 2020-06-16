@@ -22,6 +22,7 @@ import WhatshotIcon from "@material-ui/icons/Whatshot";
 import Slack from "../assets/slack.png";
 import ThaparImg from "../assets/ThaparUniversity_1.jpg";
 import Footer from "../components/Footer";
+import styles from "./styles/home.module.css";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -143,7 +144,6 @@ const useStyles = makeStyles(theme => ({
 
 const Home = props => {
   const classes = useStyles();
-
   return (
     <Fragment>
       <CssBaseline />
@@ -283,6 +283,7 @@ const Home = props => {
                   marginRight: "10px",
                   cursor: "pointer"
                 }}
+                className={styles.link}
                 onClick={() => {
                   window.open("https://www.facebook.com/dscthapar/");
                 }}
@@ -305,6 +306,7 @@ const Home = props => {
                   marginRight: "10px",
                   cursor: "pointer"
                 }}
+                className={styles.link}
                 onClick={() => {
                   window.open("https://www.instagram.com/dsc.tiet/");
                 }}
@@ -327,6 +329,7 @@ const Home = props => {
                   marginRight: "10px",
                   cursor: "pointer"
                 }}
+                className={styles.link}
                 onClick={() => {
                   window.open("https://twitter.com/dsctiet?s=09");
                 }}
@@ -349,6 +352,7 @@ const Home = props => {
                   marginRight: "10px",
                   cursor: "pointer"
                 }}
+                className={styles.link}
                 onClick={() => {
                   window.open(
                     "https://www.youtube.com/channel/UCl235NVnbWqqCT7NQAIUzVQ"
@@ -373,6 +377,7 @@ const Home = props => {
                   marginRight: "10px",
                   cursor: "pointer"
                 }}
+                className={styles.link}
                 onClick={() => {
                   window.open(
                     "https://medium.com/developer-student-clubs-tiet"
@@ -397,6 +402,7 @@ const Home = props => {
                   marginRight: "10px",
                   cursor: "pointer"
                 }}
+                className={styles.link}
                 onClick={() => {
                   window.open(
                     "https://www.linkedin.com/company/developer-student-club-thapar/?viewAsMember=true"
