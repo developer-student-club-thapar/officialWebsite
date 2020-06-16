@@ -120,11 +120,6 @@ const NavAlt = props => {
                   </Link>
                 </div>
                 <div style={{ paddingRight: "10px" }}>
-                  <Link to="#" className={classes.button}>
-                    Resources
-                  </Link>
-                </div>
-                <div style={{ paddingRight: "10px" }}>
                   <Link to="/projects" className={classes.button}>
                     Projects
                   </Link>
