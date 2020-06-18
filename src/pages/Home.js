@@ -14,10 +14,10 @@ import header from "../assets/header.png";
 import Paper from "@material-ui/core/Paper";
 import GestureIcon from "@material-ui/icons/Gesture";
 import Team from "../assets/team.webp";
-import Projects from "../assets/projects.webp";
-import EventCardImg from "../assets/events-colorful-typography-banner-260nw-1356206768.webp";
-import Sponsorships from "../assets/sponsorships.jpeg";
-import ProjectImg from "../assets/project-planning-header@2x.png";
+import Projects from "../assets/projects.jpg";
+import EventCardImg from "../assets/events.svg";
+import Sponsorships from "../assets/Sponsership.svg";
+import ProjectImg from "../assets/Projects.svg";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import Slack from "../assets/slack.png";
 import ThaparImg from "../assets/ThaparUniversity_1.jpg";
@@ -231,10 +231,10 @@ const Home = props => {
 
               <br />
               <br />
-              <Button variant="contained" color="primary">
+              {/* <Button variant="contained" color="primary">
                 {" "}
                 Sign up
-              </Button>
+              </Button> */}
               <br />
               <br />
               <h6
@@ -670,7 +670,8 @@ const Home = props => {
                       component="p"
                     >
                       Get Brand exposure and elevate your business identity
-                      within the Community.
+                      within the Community.You can help us by funding our
+                      projects too!
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -704,8 +705,14 @@ const Home = props => {
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <Button variant="outlined" color="primary">
-                    Send Proposal
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    onClick={() => {
+                      props.history.push("/projects");
+                    }}
+                  >
+                    Learn More
                   </Button>
                 </CardActions>
               </Card>
