@@ -68,16 +68,3 @@ jobs:
       - branch: master
       - type: push
 
-  - stage: Deployment
-    name: Backend Deployment
-    language: node_js
-    node_js: 12.16.1
-    cache: npm
-    before_install:
-    - openssl aes-256-cbc -K $encrypted_24bf68e341ce_key -iv $encrypted_24bf68e341ce_iv -in ubuntu.enc -out ubuntu -d
-    - chmod 400 ./ubuntu
-    install:
-    - npm -g install pm2@latest
-    script:
-    - pm2 deploy ./deploy/deploy.config.js production
-

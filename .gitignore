@@ -6,7 +6,6 @@ npm-error.log
 vagrant/env_local.sh
 **/*.pyc
 **/__pycache__
-*.ppk
 !.github
 
 # vi
@@ -35,4 +34,4 @@ service-account.json
 media
 
 # Backend key for deployment
-ubuntu
+dsc_tiet
