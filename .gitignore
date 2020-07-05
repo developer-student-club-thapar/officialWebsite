@@ -35,3 +35,6 @@ media
 
 # Backend key for deployment
 dsc_tiet
+
+# Backend socket file ignore
+run/
