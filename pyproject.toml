@@ -14,7 +14,7 @@ django-filter = "2.2.0"
 djangorestframework = "3.10.3"
 Markdown = "3.2.2"
 Pillow = "7.1.1"
-pre-commit = "2.4.0"
+pre-commit = "2.6.0"
 requests = "^2.23.0"
 protobuf = "3.11.3"
 django-storages = {extras = ["google"], version = "^1.9.1"}
