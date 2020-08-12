@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, HashRouter as Router, Route } from "react-router-dom";
+import "materialize-css/dist/css/materialize.min.css";
 import MobileNav from "./components/MobileNav";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
@@ -8,7 +9,6 @@ import Project from "./pages/Project";
 import Resources from "./pages/Resources";
 import Team from "./pages/Team";
 import Chatbot from "./components/Chatbot";
-import "materialize-css/dist/css/materialize.min.css";
 
 const App = () => {
   return (
