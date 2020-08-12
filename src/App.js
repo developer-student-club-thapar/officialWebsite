@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, HashRouter as Router, Route } from "react-router-dom";
+import "materialize-css/dist/css/materialize.min.css";
 import MobileNav from "./components/MobileNav";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
