@@ -8,6 +8,7 @@ import Project from "./pages/Project";
 import Resources from "./pages/Resources";
 import Team from "./pages/Team";
 import Chatbot from "./components/Chatbot";
+import "materialize-css/dist/css/materialize.min.css";
 
 const App = () => {
   return (
