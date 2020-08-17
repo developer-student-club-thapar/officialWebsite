@@ -8,6 +8,7 @@ import Events from "./pages/Events";
 import Project from "./pages/Project";
 import Resources from "./pages/Resources";
 import Team from "./pages/Team";
+import Recruitments from "./pages/Recruitments";
 import Chatbot from "./components/Chatbot";
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route exact path="/projects" component={Project} />
           <Route exact path="/resources" component={Resources} />
           <Route exact path="/team" component={Team} />
+          <Route exact path="/recruitments" component={Recruitments} />
         </Switch>
         <Chatbot />
       </div>

@@ -154,6 +154,11 @@ const NavAlt = props => {
                     Podcast
                   </Link>
                 </div>
+                <div style={{ paddingRight: "10px" }}>
+                  <Link to="/recruitments" className={classes.button}>
+                    Recruitments
+                  </Link>
+                </div>
               </div>
             </Toolbar>
           </Container>
