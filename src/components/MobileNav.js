@@ -19,6 +19,7 @@ import CodeIcon from "@material-ui/icons/Code";
 import GroupIcon from "@material-ui/icons/Group";
 import BookIcon from "@material-ui/icons/Book";
 import ChatIcon from "@material-ui/icons/Chat";
+import WorkIcon from '@material-ui/icons/Work';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -76,7 +77,7 @@ const Nav = props => {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        {["Home", "Events", "Projects", "Team", "Blog", "Podcast"].map(
+        {["Home", "Events", "Projects", "Team", "Blog", "Podcast", "Recruitments"].map(
           (text, index) => (
             <ListItem
               button
@@ -104,6 +105,7 @@ const Nav = props => {
                 {index === 3 && <GroupIcon />}
                 {index === 4 && <BookIcon />}
                 {index === 5 && <ChatIcon />}
+                {index === 6 && <WorkIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
