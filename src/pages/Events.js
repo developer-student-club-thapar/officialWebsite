@@ -107,13 +107,11 @@ const EventsAlt = () => {
               variant="h6"
               style={{ color: "grey", paddingTop: "20px" }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Events are a great way to share knowledge and indulge in great
+              discussions with your peers. DSC TIET has hosted a variety of
+              events to teach important skills and improve the coding culture of
+              our college. Check out our previous events here and stay tuned for
+              future events!
             </Typography>
           </Grid>
           <Hidden smDown>
