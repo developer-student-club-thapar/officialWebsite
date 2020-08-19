@@ -122,7 +122,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   main: {
-    overflowX: "hidden"
+    // overflowX: "hidden",
   },
   CardGrid: {
     [theme.breakpoints.down("md")]: {
