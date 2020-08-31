@@ -17,7 +17,7 @@ Pillow = "7.1.1"
 pre-commit = "2.4.0"
 requests = "^2.23.0"
 protobuf = "3.11.3"
-django-storages = {extras = ["google"], version = "^1.9.1"}
+django-storages = {extras = ["google"], version = "^1.10"}
 google-cloud-storage = "^1.28.1"
 
 [tool.black]
