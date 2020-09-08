@@ -20,18 +20,18 @@ import GroupIcon from "@material-ui/icons/Group";
 import BookIcon from "@material-ui/icons/Book";
 import ChatIcon from "@material-ui/icons/Chat";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2)
   },
   title: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   toolbar: {
-    display: "flex",
+    display: "flex"
   },
   button: {
     justifyContent: "space-around",
@@ -40,22 +40,22 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.5em",
     fontWeight: "300",
     textDecoration: "none",
-    color: "black",
+    color: "black"
   },
   list: {
-    width: 250,
+    width: 250
   },
   fullList: {
-    width: "auto",
-  },
+    width: "auto"
+  }
 }));
 
-const Nav = (props) => {
+const Nav = props => {
   const classes = useStyles();
 
   const [sideDrawer, setSideDrawer] = React.useState(false);
 
-  const toggleDrawer = (open) => (event) => {
+  const toggleDrawer = open => event => {
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
@@ -69,7 +69,7 @@ const Nav = (props) => {
   const list = () => (
     <div
       className={clsx(classes.list, {
-        [classes.fullList]: false,
+        [classes.fullList]: false
       })}
       role="presentation"
       onClick={toggleDrawer(false)}
@@ -81,7 +81,7 @@ const Nav = (props) => {
             <ListItem
               button
               key={text}
-              onClick={(e) => {
+              onClick={e => {
                 if (text === "Podcast") {
                   e.preventDefault();
                   window.location.href = "https://raw-talent.webflow.io/";
