@@ -11,5 +11,9 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(model_name='team', name='heads', field=models.ManyToManyField(blank=True, limit_choices_to={'team': 1}, related_name='heads', to='members.Member'),),
+        migrations.AlterField(
+            model_name='team',
+            name='heads',
+            field=models.ManyToManyField(blank=True, limit_choices_to={'team': 1}, related_name='heads', to='members.Member'),
+        ),
     ]

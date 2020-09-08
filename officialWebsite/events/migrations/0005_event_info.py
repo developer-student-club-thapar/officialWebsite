@@ -10,5 +10,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(model_name='event', name='info', field=models.TextField(default=''), preserve_default=False,),
+        migrations.AddField(
+            model_name='event',
+            name='info',
+            field=models.TextField(default=''),
+            preserve_default=False,
+        ),
     ]

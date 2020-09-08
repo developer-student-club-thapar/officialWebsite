@@ -10,7 +10,20 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name='event', name='date_time',),
-        migrations.AddField(model_name='event', name='date', field=models.DateField(default='2020-02-02'), preserve_default=False,),
-        migrations.AddField(model_name='event', name='time', field=models.TimeField(default='22:00:00'), preserve_default=False,),
+        migrations.RemoveField(
+            model_name='event',
+            name='date_time',
+        ),
+        migrations.AddField(
+            model_name='event',
+            name='date',
+            field=models.DateField(default='2020-02-02'),
+            preserve_default=False,
+        ),
+        migrations.AddField(
+            model_name='event',
+            name='time',
+            field=models.TimeField(default='22:00:00'),
+            preserve_default=False,
+        ),
     ]

@@ -11,6 +11,14 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(model_name='team', name='heads', field=models.ManyToManyField(blank=True, related_name='heads', to='members.Member'),),
-        migrations.AlterField(model_name='team', name='members', field=models.ManyToManyField(blank=True, related_name='members', to='members.Member'),),
+        migrations.AddField(
+            model_name='team',
+            name='heads',
+            field=models.ManyToManyField(blank=True, related_name='heads', to='members.Member'),
+        ),
+        migrations.AlterField(
+            model_name='team',
+            name='members',
+            field=models.ManyToManyField(blank=True, related_name='members', to='members.Member'),
+        ),
     ]
