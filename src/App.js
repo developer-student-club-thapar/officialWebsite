@@ -23,7 +23,6 @@ const App = () => {
           <Route exact path="/projects" component={Project} />
           <Route exact path="/resources" component={Resources} />
           <Route exact path="/team" component={Team} />
-          <Route exact path="/recruitments" component={Recruitments} />
         </Switch>
         <Chatbot />
       </div>
