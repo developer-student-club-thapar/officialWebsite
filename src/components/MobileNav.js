@@ -19,20 +19,19 @@ import CodeIcon from "@material-ui/icons/Code";
 import GroupIcon from "@material-ui/icons/Group";
 import BookIcon from "@material-ui/icons/Book";
 import ChatIcon from "@material-ui/icons/Chat";
-import WorkIcon from "@material-ui/icons/Work";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   toolbar: {
-    display: "flex"
+    display: "flex",
   },
   button: {
     justifyContent: "space-around",
@@ -41,22 +40,22 @@ const useStyles = makeStyles(theme => ({
     fontSize: "1.5em",
     fontWeight: "300",
     textDecoration: "none",
-    color: "black"
+    color: "black",
   },
   list: {
-    width: 250
+    width: 250,
   },
   fullList: {
-    width: "auto"
-  }
+    width: "auto",
+  },
 }));
 
-const Nav = props => {
+const Nav = (props) => {
   const classes = useStyles();
 
   const [sideDrawer, setSideDrawer] = React.useState(false);
 
-  const toggleDrawer = open => event => {
+  const toggleDrawer = (open) => (event) => {
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
@@ -70,53 +69,46 @@ const Nav = props => {
   const list = () => (
     <div
       className={clsx(classes.list, {
-        [classes.fullList]: false
+        [classes.fullList]: false,
       })}
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        {[
-          "Home",
-          "Events",
-          "Projects",
-          "Team",
-          "Blog",
-          "Podcast",
-          "Recruitments"
-        ].map((text, index) => (
-          <ListItem
-            button
-            key={text}
-            onClick={e => {
-              if (text === "Podcast") {
-                e.preventDefault();
-                window.location.href = "https://raw-talent.webflow.io/";
-                return null;
-              } else if (text === "Blog") {
-                e.preventDefault();
-                window.location.href =
-                  "https://medium.com/developer-student-clubs-tiet";
-                return null;
-              }
-              text !== "Home"
-                ? props.history.push(`/${text.toLowerCase()}`)
-                : props.history.push("/");
-            }}
-          >
-            <ListItemIcon>
-              {index === 0 && <HomeIcon />}
-              {index === 1 && <EventIcon />}
-              {index === 2 && <CodeIcon />}
-              {index === 3 && <GroupIcon />}
-              {index === 4 && <BookIcon />}
-              {index === 5 && <ChatIcon />}
-              {index === 6 && <WorkIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        {["Home", "Events", "Projects", "Team", "Blog", "Podcast"].map(
+          (text, index) => (
+            <ListItem
+              button
+              key={text}
+              onClick={(e) => {
+                if (text === "Podcast") {
+                  e.preventDefault();
+                  window.location.href = "https://raw-talent.webflow.io/";
+                  return null;
+                } else if (text === "Blog") {
+                  e.preventDefault();
+                  window.location.href =
+                    "https://medium.com/developer-student-clubs-tiet";
+                  return null;
+                }
+                text !== "Home"
+                  ? props.history.push(`/${text.toLowerCase()}`)
+                  : props.history.push("/");
+              }}
+            >
+              <ListItemIcon>
+                {index === 0 && <HomeIcon />}
+                {index === 1 && <EventIcon />}
+                {index === 2 && <CodeIcon />}
+                {index === 3 && <GroupIcon />}
+                {index === 4 && <BookIcon />}
+                {index === 5 && <ChatIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          )
+        )}
       </List>
     </div>
   );
