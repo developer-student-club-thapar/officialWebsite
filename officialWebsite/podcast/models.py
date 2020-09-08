@@ -72,7 +72,7 @@ class PodcastLink(Link):
 
 class PodcastGuestLink(models.Model):
     """
-        Podcast Guest Other Site Links
+    Podcast Guest Other Site Links
     """
 
     guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT)

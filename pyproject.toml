@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "buying_selling_devops"
+name = "official-website-dsc"
 version = "0.1.0"
 description = ""
 authors = ["DSC TIET"]
