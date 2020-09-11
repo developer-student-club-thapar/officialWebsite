@@ -10,9 +10,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='member',
-            name='email',
-            field=models.EmailField(blank=True, max_length=254),
-        ),
+        migrations.AddField(model_name='member', name='email', field=models.EmailField(blank=True, max_length=254),),
     ]
