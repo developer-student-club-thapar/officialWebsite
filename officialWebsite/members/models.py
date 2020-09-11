@@ -11,9 +11,11 @@ from django.core.mail import send_mail
 
 class Member(models.Model):
 
+    ROLE_CHOICES = (('Lead', 'Lead'), ('Core', 'Core'))
+
     name = models.CharField(max_length=255)
     user = models.ForeignKey(User, related_name='users', on_delete=models.CASCADE)
-    role = models.CharField(max_length=255, blank=True)
+    role = models.CharField(max_length=255, choices=ROLE_CHOICES)
     email = models.EmailField()
     github_url = models.URLField(blank=True)
     linkedin_url = models.URLField(blank=True)
@@ -24,7 +26,8 @@ class Member(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.id:
-            self.image = self.compressImage(self.image)
+            if self.image:
+                self.image = self.compressImage(self.image)
         super(Member, self).save(*args, **kwargs)
 
     def compressImage(self, image):
