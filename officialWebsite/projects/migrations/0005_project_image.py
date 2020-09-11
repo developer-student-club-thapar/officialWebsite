@@ -10,9 +10,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='project',
-            name='image',
-            field=models.ImageField(blank=True, upload_to='project-images/'),
-        ),
+        migrations.AddField(model_name='project', name='image', field=models.ImageField(blank=True, upload_to='project-images/'),),
     ]

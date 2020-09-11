@@ -10,14 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='podcast',
-            name='image',
-            field=models.ImageField(null=True, upload_to='podcast_image/'),
-        ),
-        migrations.AlterField(
-            model_name='podcastseries',
-            name='logo',
-            field=models.ImageField(upload_to='podcast_logo/'),
-        ),
+        migrations.AddField(model_name='podcast', name='image', field=models.ImageField(null=True, upload_to='podcast_image/'),),
+        migrations.AlterField(model_name='podcastseries', name='logo', field=models.ImageField(upload_to='podcast_logo/'),),
     ]
