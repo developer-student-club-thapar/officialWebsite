@@ -10,7 +10,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name="event", name="date_time",),
+        migrations.RemoveField(
+            model_name="event",
+            name="date_time",
+        ),
         migrations.AddField(
             model_name="event",
             name="date",

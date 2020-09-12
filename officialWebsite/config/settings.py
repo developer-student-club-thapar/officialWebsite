@@ -9,7 +9,8 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 environ.Env.read_env(env_file=os.path.join(BASE_DIR, "../.env"))
 
 SECRET_KEY = env(
-    "SECRET_KEY", default="secret-key-of-at-least-50-characters-to-pass-check-deploy",
+    "SECRET_KEY",
+    default="secret-key-of-at-least-50-characters-to-pass-check-deploy",
 )
 
 DEBUG = env.bool("DEBUG", default=True)
@@ -86,9 +87,15 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
 ]
 
 LANGUAGE_CODE = "en-us"

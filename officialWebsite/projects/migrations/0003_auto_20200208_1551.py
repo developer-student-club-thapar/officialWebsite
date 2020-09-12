@@ -17,7 +17,9 @@ class Migration(migrations.Migration):
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name="project", name="extra", field=models.TextField(blank=True),
+            model_name="project",
+            name="extra",
+            field=models.TextField(blank=True),
         ),
         migrations.AlterField(
             model_name="project",

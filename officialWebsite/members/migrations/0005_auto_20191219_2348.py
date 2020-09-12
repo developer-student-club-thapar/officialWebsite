@@ -11,18 +11,28 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
-            model_name="member", name="dev_url", field=models.URLField(blank=True),
+            model_name="member",
+            name="dev_url",
+            field=models.URLField(blank=True),
         ),
         migrations.AlterField(
-            model_name="member", name="github_url", field=models.URLField(blank=True),
+            model_name="member",
+            name="github_url",
+            field=models.URLField(blank=True),
         ),
         migrations.AlterField(
-            model_name="member", name="linkedin_url", field=models.URLField(blank=True),
+            model_name="member",
+            name="linkedin_url",
+            field=models.URLField(blank=True),
         ),
         migrations.AlterField(
-            model_name="member", name="medium_url", field=models.URLField(blank=True),
+            model_name="member",
+            name="medium_url",
+            field=models.URLField(blank=True),
         ),
         migrations.AlterField(
-            model_name="member", name="twitter_url", field=models.URLField(blank=True),
+            model_name="member",
+            name="twitter_url",
+            field=models.URLField(blank=True),
         ),
     ]
