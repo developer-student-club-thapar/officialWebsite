@@ -25,23 +25,39 @@ admin.site.site_title = "DSC-TIET"
 admin.site.index_title = "DSC-TIET"
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('register/', views.register, name='register'),
-    path('admin/', admin.site.urls),
-    path('api/members/', include('officialWebsite.members.urls')),
-    path('api/team/', include('officialWebsite.team.urls')),
-    path('api/achievements/', include('officialWebsite.achievement.urls')),
-    path('api/events/', include('officialWebsite.events.urls')),
-    path('api/projects/', include('officialWebsite.projects.urls')),
-    path('api/faq/', include('officialWebsite.faq.urls')),
-    path('api/sponsor/', include('officialWebsite.sponsor.urls')),
-    path('api/contactus/', include('officialWebsite.contact.urls')),
-    path('api/resources/', include('officialWebsite.resources.urls')),
-    path('api/leads/', views.LeadListView.as_view()),
-    path('admin/password_reset/', auth_views.PasswordResetView.as_view(), name='admin_password_reset'),
-    path('admin/password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
-    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
-    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    path("", views.home, name="home"),
+    path("register/", views.register, name="register"),
+    path("admin/", admin.site.urls),
+    path("api/members/", include("officialWebsite.members.urls")),
+    path("api/team/", include("officialWebsite.team.urls")),
+    path("api/achievements/", include("officialWebsite.achievement.urls")),
+    path("api/events/", include("officialWebsite.events.urls")),
+    path("api/projects/", include("officialWebsite.projects.urls")),
+    path("api/faq/", include("officialWebsite.faq.urls")),
+    path("api/sponsor/", include("officialWebsite.sponsor.urls")),
+    path("api/contactus/", include("officialWebsite.contact.urls")),
+    path("api/resources/", include("officialWebsite.resources.urls")),
+    path("api/leads/", views.LeadListView.as_view()),
+    path(
+        "admin/password_reset/",
+        auth_views.PasswordResetView.as_view(),
+        name="admin_password_reset",
+    ),
+    path(
+        "admin/password_reset/done/",
+        auth_views.PasswordResetDoneView.as_view(),
+        name="password_reset_done",
+    ),
+    path(
+        "reset/<uidb64>/<token>/",
+        auth_views.PasswordResetConfirmView.as_view(),
+        name="password_reset_confirm",
+    ),
+    path(
+        "reset/done/",
+        auth_views.PasswordResetCompleteView.as_view(),
+        name="password_reset_complete",
+    ),
 ]
 
 if settings.DEBUG:

@@ -12,10 +12,10 @@ class PodcastGuest(models.Model):
     name = models.CharField(max_length=256)
     organisation = models.CharField(max_length=128)
     about = models.CharField(max_length=128)
-    image = models.ImageField(upload_to='podcast_guest/', blank=True)
+    image = models.ImageField(upload_to="podcast_guest/", blank=True)
 
     def __str__(self):
-        return f'{self.name} from {self.organisation}'
+        return f"{self.name} from {self.organisation}"
 
 
 class PodcastSeries(models.Model):
@@ -26,10 +26,10 @@ class PodcastSeries(models.Model):
     name = models.CharField(max_length=256)
     hosted = models.ManyToManyField(Member)
     note = models.CharField(max_length=1000)
-    logo = models.ImageField(upload_to='podcast_logo/')
+    logo = models.ImageField(upload_to="podcast_logo/")
 
     def __str__(self):
-        return f'{self.name}'
+        return f"{self.name}"
 
 
 class Podcast(models.Model):
@@ -43,10 +43,10 @@ class Podcast(models.Model):
     recorded_on = models.DateTimeField(null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     published = models.BooleanField(default=True)
-    image = models.ImageField(upload_to='podcast_image/', null=True)
+    image = models.ImageField(upload_to="podcast_image/", null=True)
 
     def __str__(self):
-        return f'{self.series.name} : {self.no}'
+        return f"{self.series.name} : {self.no}"
 
 
 class Link(models.Model):
@@ -67,7 +67,7 @@ class PodcastLink(Link):
     podcast = models.ForeignKey(Podcast, on_delete=models.PROTECT)
 
     def __str__(self):
-        return f'{self.podcast.name} : {self.no}'
+        return f"{self.podcast.name} : {self.no}"
 
 
 class PodcastGuestLink(models.Model):
@@ -78,4 +78,4 @@ class PodcastGuestLink(models.Model):
     guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT)
 
     def __str__(self):
-        return f'{self.guest.name} : {self.no}'
+        return f"{self.guest.name} : {self.no}"

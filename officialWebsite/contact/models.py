@@ -12,14 +12,18 @@ class ContactRequest(models.Model):
 
     def save(self, *args, **kwargs):
         send_mail(
-            'Contact Request', f'Hi, {self.name}. We have received your request. You will be contacted shortly', 'noreplydsctiet@gmail.com', [f'{self.email}'], fail_silently=True,
+            "Contact Request",
+            f"Hi, {self.name}. We have received your request. You will be contacted shortly",
+            "noreplydsctiet@gmail.com",
+            [f"{self.email}"],
+            fail_silently=True,
         )
 
         send_mail(
-            'New Contact request',
-            f'A new contact request has been received from {self.name} ({self.email}). Please check out at https://api.dsctiet.tech/admin',
-            'noreplydsctiet@gmail.com',
-            [f'dsctiet@gmail.com'],
+            "New Contact request",
+            f"A new contact request has been received from {self.name} ({self.email}). Please check out at https://api.dsctiet.tech/admin",
+            "noreplydsctiet@gmail.com",
+            [f"dsctiet@gmail.com"],
             fail_silently=True,
         )
 

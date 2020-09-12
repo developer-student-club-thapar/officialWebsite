@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.SponsorViewSet.as_view()),
+    path("", views.SponsorViewSet.as_view()),
 ]

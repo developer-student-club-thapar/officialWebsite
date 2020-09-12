@@ -12,7 +12,7 @@ from django.core.mail import send_mail
 class Member(models.Model):
 
     name = models.CharField(max_length=255)
-    user = models.ForeignKey(User, related_name='users', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name="users", on_delete=models.CASCADE)
     role = models.CharField(max_length=255, blank=True)
     email = models.EmailField()
     github_url = models.URLField(blank=True)
@@ -20,7 +20,7 @@ class Member(models.Model):
     twitter_url = models.URLField(blank=True)
     medium_url = models.URLField(blank=True)
     dev_url = models.URLField(blank=True)
-    image = models.ImageField(upload_to='profile-images/', blank=True)
+    image = models.ImageField(upload_to="profile-images/", blank=True)
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -31,9 +31,16 @@ class Member(models.Model):
         imageTemproary = Image.open(image)
         outputIoStream = BytesIO()
         # imageTemproaryResized = imageTemproary.resize((1020, 573))
-        imageTemproary.save(outputIoStream, format='JPEG', quality=60)
+        imageTemproary.save(outputIoStream, format="JPEG", quality=60)
         outputIoStream.seek(0)
-        image = InMemoryUploadedFile(outputIoStream, 'ImageField', "%s.jpg" % image.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIoStream), None)
+        image = InMemoryUploadedFile(
+            outputIoStream,
+            "ImageField",
+            "%s.jpg" % image.name.split(".")[0],
+            "image/jpeg",
+            sys.getsizeof(outputIoStream),
+            None,
+        )
         return image
 
     def __str__(self):
@@ -49,16 +56,18 @@ class MemberRegistration(models.Model):
     twitter_url = models.URLField(blank=True)
     medium_url = models.URLField(blank=True)
     dev_url = models.URLField(blank=True)
-    image = models.ImageField(upload_to='temp-images/', blank=True)
+    image = models.ImageField(upload_to="temp-images/", blank=True)
 
     def save(self, *args, **kwargs):
         password = User.objects.make_random_password(length=10)
-        user = User.objects.create_user(username=self.username, email=self.email, password=password, is_staff=True)
+        user = User.objects.create_user(
+            username=self.username, email=self.email, password=password, is_staff=True
+        )
         # user.is_staff = True
-        group = Group.objects.get(name='members')
+        group = Group.objects.get(name="members")
         group.user_set.add(user)
 
-        if self.image == '':
+        if self.image == "":
             member = Member.objects.create(
                 name=self.name,
                 user=user,
@@ -68,7 +77,7 @@ class MemberRegistration(models.Model):
                 twitter_url=self.twitter_url,
                 medium_url=self.medium_url,
                 dev_url=self.dev_url,
-                image='default.jpeg',
+                image="default.jpeg",
             )
         else:
 
@@ -85,14 +94,16 @@ class MemberRegistration(models.Model):
             )
 
         send_mail(
-            'Member Registration Password',
-            f'Hi, {self.name}. Welcome to DSC-TIET. Your username is {self.username} and password is {password}. We recommend to change your password upon login. You can login using https://api.dsctiet.tech/admin',
-            'noreplydsctiet@gmail.com',
-            [f'{self.email}'],
+            "Member Registration Password",
+            f"Hi, {self.name}. Welcome to DSC-TIET. Your username is {self.username} and password is {password}. We recommend to change your password upon login. You can login using https://api.dsctiet.tech/admin",
+            "noreplydsctiet@gmail.com",
+            [f"{self.email}"],
             fail_silently=False,
         )
 
-        super(MemberRegistration, self).save(*args, **kwargs)  # Call the real save() method
+        super(MemberRegistration, self).save(
+            *args, **kwargs
+        )  # Call the real save() method
 
     def __str__(self):
         return self.name

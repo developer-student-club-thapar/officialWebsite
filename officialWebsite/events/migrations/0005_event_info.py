@@ -6,9 +6,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('events', '0004_auto_20200207_2347'),
+        ("events", "0004_auto_20200207_2347"),
     ]
 
     operations = [
-        migrations.AddField(model_name='event', name='info', field=models.TextField(default=''), preserve_default=False,),
+        migrations.AddField(
+            model_name="event",
+            name="info",
+            field=models.TextField(default=""),
+            preserve_default=False,
+        ),
     ]

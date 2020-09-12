@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.AchievementViewset.as_view(), name="achievements"),
+    path("", views.AchievementViewset.as_view(), name="achievements"),
 ]
