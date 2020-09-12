@@ -10,5 +10,5 @@ class AchievementSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Achievement
-        fields = ('id', 'title', 'sub_title', 'content', 'members')
-        read_only_fields = ('id',)
+        fields = ("id", "title", "sub_title", "content", "members")
+        read_only_fields = ("id",)

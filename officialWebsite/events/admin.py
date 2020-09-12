@@ -17,7 +17,7 @@ class EventAdmin(admin.ModelAdmin):
     inlines = [
         TopicInline,
     ]
-    exclude = ('topics',)
+    exclude = ("topics",)
 
 
 admin.site.register(models.Event, EventAdmin)

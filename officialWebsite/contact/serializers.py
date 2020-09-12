@@ -7,5 +7,5 @@ class ContactReqSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.ContactRequest
-        fields = ('id', 'name', 'email', 'message')
-        read_only_fields = ('id',)
+        fields = ("id", "name", "email", "message")
+        read_only_fields = ("id",)

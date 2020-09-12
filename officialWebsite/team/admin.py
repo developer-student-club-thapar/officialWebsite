@@ -32,8 +32,8 @@ class TeamAdmin(admin.ModelAdmin):
         MembershipInline,
     ]
     exclude = (
-        'heads',
-        'members',
+        "heads",
+        "members",
     )
 
 

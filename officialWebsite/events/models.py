@@ -15,14 +15,14 @@ class Event(models.Model):
     venue = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
     info = models.TextField()
-    topics = models.ManyToManyField(Topic, related_name='topics', blank=True)
+    topics = models.ManyToManyField(Topic, related_name="topics", blank=True)
     link = models.URLField(blank=True)
     docs = models.URLField(blank=True)
     headline_event = models.BooleanField(default=False)
-    image = models.ImageField(upload_to='event-images/', blank=True)
+    image = models.ImageField(upload_to="event-images/", blank=True)
 
     class Meta:
-        ordering = ['-date']
+        ordering = ["-date"]
 
     def __str__(self):
         return self.title

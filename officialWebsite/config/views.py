@@ -10,12 +10,12 @@ from rest_framework.response import Response
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, "home.html")
 
 
 def register(request):
     # LogEntry.objects.all().delete()
-    user = authenticate(username='member_registrations', password='testpassword')
+    user = authenticate(username="member_registrations", password="testpassword")
     login(request, user)
     return HttpResponseRedirect("/admin/")
 

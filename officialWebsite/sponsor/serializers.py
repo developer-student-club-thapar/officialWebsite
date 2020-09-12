@@ -9,5 +9,5 @@ class SponsorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Sponsor
-        fields = ('id', 'name', 'image', 'url')
-        read_only_fields = ('id',)
+        fields = ("id", "name", "image", "url")
+        read_only_fields = ("id",)

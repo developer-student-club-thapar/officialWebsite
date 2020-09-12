@@ -11,17 +11,25 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Member',
+            name="Member",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('role', models.CharField(max_length=255)),
-                ('github_url', models.URLField()),
-                ('linkedin_url', models.URLField()),
-                ('twitter_url', models.URLField()),
-                ('medium_url', models.URLField()),
-                ('dev_url', models.URLField()),
-                ('image', models.ImageField(blank=True, upload_to='profile-images/')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255)),
+                ("role", models.CharField(max_length=255)),
+                ("github_url", models.URLField()),
+                ("linkedin_url", models.URLField()),
+                ("twitter_url", models.URLField()),
+                ("medium_url", models.URLField()),
+                ("dev_url", models.URLField()),
+                ("image", models.ImageField(blank=True, upload_to="profile-images/")),
             ],
         ),
     ]

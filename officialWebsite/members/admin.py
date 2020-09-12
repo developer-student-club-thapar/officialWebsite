@@ -24,7 +24,7 @@ class MemberAdmin(admin.ModelAdmin):
         elif obj == None:
             return False
         elif obj.user == request.user:
-            self.readonly_fields = ['user', 'role']
+            self.readonly_fields = ["user", "role"]
             return True
         else:
             return False

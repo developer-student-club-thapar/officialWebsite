@@ -6,9 +6,9 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('events', '0006_event_image'),
+        ("events", "0006_event_image"),
     ]
 
     operations = [
-        migrations.AlterModelOptions(name='event', options={'ordering': ['-date']},),
+        migrations.AlterModelOptions(name="event", options={"ordering": ["-date"]},),
     ]

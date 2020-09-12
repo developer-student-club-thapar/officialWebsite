@@ -6,10 +6,19 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('members', '0003_auto_20191212_1428'),
-        ('team', '0004_remove_team_members'),
+        ("members", "0003_auto_20191212_1428"),
+        ("team", "0004_remove_team_members"),
     ]
 
     operations = [
-        migrations.AlterField(model_name='team', name='heads', field=models.ManyToManyField(blank=True, limit_choices_to={'team': 1}, related_name='heads', to='members.Member'),),
+        migrations.AlterField(
+            model_name="team",
+            name="heads",
+            field=models.ManyToManyField(
+                blank=True,
+                limit_choices_to={"team": 1},
+                related_name="heads",
+                to="members.Member",
+            ),
+        ),
     ]

@@ -6,12 +6,27 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('projects', '0002_remove_project_team'),
+        ("projects", "0002_remove_project_team"),
     ]
 
     operations = [
-        migrations.AddField(model_name='project', name='github_link', field=models.URLField(default='adfsf.com'), preserve_default=False,),
-        migrations.AlterField(model_name='project', name='extra', field=models.TextField(blank=True),),
-        migrations.AlterField(model_name='project', name='faculty', field=models.CharField(blank=True, max_length=255),),
-        migrations.AlterField(model_name='project', name='funding', field=models.CharField(blank=True, max_length=255),),
+        migrations.AddField(
+            model_name="project",
+            name="github_link",
+            field=models.URLField(default="adfsf.com"),
+            preserve_default=False,
+        ),
+        migrations.AlterField(
+            model_name="project", name="extra", field=models.TextField(blank=True),
+        ),
+        migrations.AlterField(
+            model_name="project",
+            name="faculty",
+            field=models.CharField(blank=True, max_length=255),
+        ),
+        migrations.AlterField(
+            model_name="project",
+            name="funding",
+            field=models.CharField(blank=True, max_length=255),
+        ),
     ]
