@@ -68,15 +68,15 @@ jobs:
       - branch: master
       - type: push
 
-  - stage: Deployment
-    name: Backend Deployment
-    language: python
-    python: '3.8'
-    cache: pip
-    before_install:
-    - openssl aes-256-cbc -K $encrypted_0ac492343b18_key -iv $encrypted_0ac492343b18_iv -in dsc_tiet.enc -out dsc_tiet -d
-    - chmod 400 ./dsc_tiet
-    install:
-    - pip install ansible
-    script:
-    - ansible-playbook playbooks/deploy.yml
+  # - stage: Deployment
+  #   name: Backend Deployment
+  #   language: python
+  #   python: '3.8'
+  #   cache: pip
+  #   before_install:
+  #   - openssl aes-256-cbc -K $encrypted_0ac492343b18_key -iv $encrypted_0ac492343b18_iv -in dsc_tiet.enc -out dsc_tiet -d
+  #   - chmod 400 ./dsc_tiet
+  #   install:
+  #   - pip install ansible
+  #   script:
+  #   - ansible-playbook playbooks/deploy.yml
