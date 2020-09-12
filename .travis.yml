@@ -29,8 +29,8 @@ jobs:
     python: '3.7'
     cache: pip
     install:
-    - pip install poetry
-    - poetry install
+    - pip install pipenv
+    - pipenv install
     script:
     - python manage.py check --deploy
     - python manage.py makemigrations
