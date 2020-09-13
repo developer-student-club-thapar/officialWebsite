@@ -8,7 +8,6 @@ import Events from "./pages/Events";
 import Project from "./pages/Project";
 import Resources from "./pages/Resources";
 import Team from "./pages/Team";
-import Recruitments from "./pages/Recruitments";
 import Chatbot from "./components/Chatbot";
 
 const App = () => {

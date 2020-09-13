@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -20,6 +20,7 @@ import Sponsorships from "../assets/Sponsership.svg";
 import ProjectImg from "../assets/Projects.svg";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import Slack from "../assets/slack.png";
+import Discord from "../assets/discord.png";
 import ThaparImg from "../assets/ThaparUniversity_1.jpg";
 import Footer from "../components/Footer";
 import styles from "./styles/home.module.css";
@@ -126,7 +127,8 @@ const useStyles = makeStyles(theme => ({
   },
   CardGrid: {
     [theme.breakpoints.down("md")]: {
-      marginTop: "40px"
+      marginTop: "40px",
+      justifyContent: "center"
     }
   },
   ThaparImgGrid: {
@@ -144,6 +146,9 @@ const useStyles = makeStyles(theme => ({
 
 const Home = props => {
   const classes = useStyles();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Fragment>
       <CssBaseline />
@@ -161,9 +166,13 @@ const Home = props => {
             <img
               src={dsclogo}
               alt="logo"
-              height="20%"
-              width="40%"
-              style={{ display: "inline-block", marginTop: "50px" }}
+              style={{
+                display: "inline-block",
+                marginTop: "50px",
+                objectFit: "contain",
+                height: "20%",
+                width: "40%"
+              }}
             />
             <h4 style={{ display: "inline-block", color: "#5A5A5A" }}>
               Developer Students Club
@@ -615,7 +624,7 @@ const Home = props => {
           </Grid>
 
           <Grid container spacing={3} className={classes.CardGrid}>
-            <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+            <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
               <Card className={classes.root}>
                 <CardActionArea>
                   <CardMedia
@@ -651,7 +660,7 @@ const Home = props => {
                 </CardActions>
               </Card>
             </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+            <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
               <Card className={classes.root}>
                 <CardActionArea>
                   <CardMedia
@@ -682,7 +691,7 @@ const Home = props => {
                 </CardActions>
               </Card>
             </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+            <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
               <Card className={classes.root}>
                 <CardActionArea>
                   <CardMedia
@@ -722,10 +731,14 @@ const Home = props => {
           <br />
           <br />
           <Grid container spacing={2}>
-            <Grid item lg={6} xl={6}>
+            <Grid item xs={12}>
               <h5 style={{ color: "#3C4858", fontWeight: "500" }}>
                 Join the conversation
               </h5>
+            </Grid>
+          </Grid>
+          <Grid container spacing={2}>
+            <Grid item lg={6} xl={6}>
               <br />
 
               <h6 style={{ color: "#565656" }}>
@@ -744,6 +757,25 @@ const Home = props => {
                 }}
               >
                 Join us on <img src={Slack} height="30px" alt="slack" />
+              </Button>
+            </Grid>
+            <Grid item lg={6} xl={6}>
+              <br />
+
+              <h6 style={{ color: "#565656" }}>
+                Join our Discord Channel to know more about the Activities,
+                Sessions and other fun stuff.
+              </h6>
+
+              <br />
+              <Button
+                variant="contained"
+                style={{ backgroundColor: "#2C2F23", color: "white" }}
+                onClick={() => {
+                  window.open("https://discord.com/invite/3C4TESX");
+                }}
+              >
+                Join us on <img src={Discord} height="30px" alt="discord" />
               </Button>
             </Grid>
           </Grid>
