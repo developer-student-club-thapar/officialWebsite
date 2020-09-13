@@ -8,7 +8,7 @@ import image from "../assets/undraw_positive_attitude_xaae.svg";
 
 axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 
-const TeamNew = () => {
+const Team = () => {
   const classes = useStyles();
   const [leads, setLeads] = useState(null);
   const [team, setTeam] = useState(null);
@@ -76,4 +76,4 @@ const TeamNew = () => {
   );
 };
 
-export default TeamNew;
+export default Team;
