@@ -12,7 +12,7 @@
 
 # [officialWebsite](https://dsctiet.tech)
 
-[![Build Status](https://travis-ci.org/developer-student-club-thapar/officialWebsite.svg?branch=master)](https://travis-ci.com/github/developer-student-club-thapar/officialWebsite)  [![Slack Status](https://img.shields.io/badge/slack-chat-purple.svg?logo=slack)](https://dscthapar-gspatiala.slack.com/join/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M) [![GitHub issues](https://img.shields.io/github/issues/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/issues)
+[![Build Status](https://travis-ci.org/developer-student-club-thapar/officialWebsite.svg?branch=master)](https://travis-ci.com/github/developer-student-club-thapar/officialWebsite) [![Discord](https://discordapp.com/api/guilds/151219753434742784/widget.png)](https://discord.gg/3C4TESX) [![GitHub issues](https://img.shields.io/github/issues/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/issues)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 ![Size](https://github-size-badge.herokuapp.com/developer-student-club-thapar/officialWebsite.svg)
 ![Website](https://img.shields.io/website?down_color=red&down_message=Error%21&up_message=It%27s%20up%21&url=https%3A%2F%2Fdsctiet.tech%2F)
@@ -32,18 +32,23 @@ Kindly go through the entire README.md for getting familiar with contribution st
 ## Setup and running of project (Backend)
 
 - Fork the repo and clone it.
-- Go in the repo and setup virtualenvironment using
-  `python -m virtualenv env`
-- Then activate the environment using
-  `source env/Scripts/activate` (Use only `env/Scripts/activate` if on cmd or powershell)
-- For Linux Users it will be `source env/bin/activate`
-
-- The project now uses `poetry` to manage dependencies.
-- Install [Poetry](https://python-poetry.org/docs/)
+- The project now uses `pipenv` to manage dependencies.
+- Install [Pipenv](https://pypi.org/project/pipenv/) using the following command:
+```bash
+pip install pipenv
+```
+- Navigate to the project directory and initialize the environment using the following command -
+```bash
+pipenv shell --python 3.8
+```
+- The above step also activates the environment, for activating the environment in subsequent sessions type the following command:
+```bash
+pipenv shell
+```
 - At the root of your project directory <br>
 
 ```bash
-poetry install
+pipenv install
 pre-commit install
 ```
 
@@ -98,7 +103,7 @@ We follow a systematic Git Workflow -
 
 ### Note
 
-- As the project now uses poetry to manage dependencies, you need to run `poetry add <package_name>` to install the new package.
+- As the project now uses pipenv to manage dependencies, you need to run `pipenv install <package_name>` to install the new package.
 - Use only `yarn add package_name` to add new packages to the frontend part.
 
 ## Contributors ✨
@@ -128,4 +133,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 All feedback and suggestions are welcome!
 
-- 💬 Join the community on [Slack](https://dscthapar-gspatiala.slack.com/join/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M)
+- 💬 Join the community on [Discord](https://discord.gg/3C4TESX)
