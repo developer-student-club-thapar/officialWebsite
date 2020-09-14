@@ -11,7 +11,7 @@ from django.core.mail import send_mail
 
 class Member(models.Model):
 
-    ROLE_CHOICES = (("Lead", "Lead"), ("Core", "Core"))
+    ROLE_CHOICES = (("Lead", "Lead"), ("Core", "Core"), ("Co-Lead", "Co-Lead"))
 
     name = models.CharField(max_length=255)
     user = models.ForeignKey(User, related_name="users", on_delete=models.CASCADE)
