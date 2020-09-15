@@ -38,6 +38,7 @@ urlpatterns = [
     path("api/contactus/", include("officialWebsite.contact.urls")),
     path("api/resources/", include("officialWebsite.resources.urls")),
     path("api/leads/", views.LeadListView.as_view()),
+    path("api/co-leads/", views.CoLeadListView.as_view()),
     path(
         "admin/password_reset/",
         auth_views.PasswordResetView.as_view(),

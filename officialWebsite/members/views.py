@@ -10,4 +10,4 @@ class MemberViewset(generics.ListAPIView):
     """Manage members in the database"""
 
     serializer_class = serializers.MemberSerializer
-    queryset = models.Member.objects.all()
+    queryset = models.Member.objects.all().filter(role__icontains="Core")

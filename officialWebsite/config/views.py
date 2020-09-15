@@ -29,3 +29,14 @@ class LeadListView(APIView):
         leads = Member.objects.all().filter(role__icontains="Lead")
         serializer = MemberSerializer(leads, many=True)
         return Response(serializer.data)
+
+
+class CoLeadListView(APIView):
+    """
+    List all leads
+    """
+
+    def get(self, request, format=None):
+        leads = Member.objects.all().filter(role__icontains="Co-Lead")
+        serializer = MemberSerializer(leads, many=True)
+        return Response(serializer.data)
