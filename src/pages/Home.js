@@ -25,67 +25,67 @@ import ThaparImg from "../assets/ThaparUniversity_1.jpg";
 import Footer from "../components/Footer";
 import styles from "./styles/home.module.css";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 380,
     height: 450,
     marginLeft: "-25px",
     [theme.breakpoints.down("md")]: {
       width: "auto",
-      marginLeft: "0px"
-    }
+      marginLeft: "0px",
+    },
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: "center",
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
   },
 
   button: {
     backgroundColor: "#746B6B",
-    color: "white"
+    color: "white",
   },
   rootCard: {
     maxWidth: 350,
-    height: 400
+    height: 400,
   },
   rootCardMobile: {
     width: "auto",
-    height: 400
+    height: 400,
   },
   media: {
-    height: 270
+    height: 270,
   },
   grid: {
     height: 350,
     overflowY: "hidden",
     overflowX: "hidden",
-    marginTop: "20px"
+    marginTop: "20px",
   },
   modal: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     width: 400,
-    margin: "auto"
+    margin: "auto",
   },
   paperModal: {
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3)
+    padding: theme.spacing(2, 4, 3),
   },
   item: {
-    width: 200
+    width: 200,
   },
   map: {
-    width: 400
+    width: 400,
   },
   gridImg: {
     textAlign: "center",
     [theme.breakpoints.down("md")]: {
       textAlign: "left",
-      marginTop: "40px"
-    }
+      marginTop: "40px",
+    },
   },
   TeamImg: {
     height: "80%",
@@ -94,8 +94,8 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("md")]: {
       height: "80%",
       width: "100%",
-      borderRadius: "4px"
-    }
+      borderRadius: "4px",
+    },
   },
   TeamImg2: {
     height: "80%",
@@ -104,23 +104,23 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("sm")]: {
       height: "80%",
       width: "90%",
-      borderRadius: "4px"
+      borderRadius: "4px",
     },
     [theme.breakpoints.only("md")]: {
       height: "80%",
       width: "100%",
-      borderRadius: "4px"
-    }
+      borderRadius: "4px",
+    },
   },
   gridImg2: {
     [theme.breakpoints.down("sm")]: {
-      textAlign: "center"
-    }
+      textAlign: "center",
+    },
   },
   TeamGrid: {
     [theme.breakpoints.down("md")]: {
-      marginLeft: "20px"
-    }
+      marginLeft: "20px",
+    },
   },
   main: {
     // overflowX: "hidden",
@@ -128,23 +128,23 @@ const useStyles = makeStyles(theme => ({
   CardGrid: {
     [theme.breakpoints.down("md")]: {
       marginTop: "40px",
-      justifyContent: "center"
-    }
+      justifyContent: "center",
+    },
   },
   ThaparImgGrid: {
     height: "100%",
     width: "90%",
     borderRadius: "4px",
     [theme.breakpoints.down("sm")]: {
-      width: "100%"
+      width: "100%",
     },
     [theme.breakpoints.only("md")]: {
-      width: "140%"
-    }
-  }
+      width: "140%",
+    },
+  },
 }));
 
-const Home = props => {
+const Home = (props) => {
   const classes = useStyles();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -171,7 +171,7 @@ const Home = props => {
                 marginTop: "50px",
                 objectFit: "contain",
                 height: "20%",
-                width: "40%"
+                width: "40%",
               }}
             />
             <h4 style={{ display: "inline-block", color: "#5A5A5A" }}>
@@ -188,7 +188,10 @@ const Home = props => {
           </Hidden>
         </Grid>
       </Container>
-      <Paper elevation={4} style={{ position: "relative", top: "-20px" }}>
+      <Paper
+        elevation={4}
+        style={{ position: "relative", top: "-20px", padding: "0px 16px" }}
+      >
         <Container fixed>
           <Grid container spacing={2} style={{ paddingTop: "40px" }}>
             <Grid item xs={12}>
@@ -209,7 +212,7 @@ const Home = props => {
                   height: "50px",
                   borderRadius: "50%",
                   textAlign: "center",
-                  display: "inline-block"
+                  display: "inline-block",
                 }}
               >
                 <GestureIcon style={{ color: "white", marginTop: "14px" }} />
@@ -218,7 +221,7 @@ const Home = props => {
                 style={{
                   display: "inline-block",
                   marginLeft: "10px",
-                  color: "#363535"
+                  color: "#363535",
                 }}
               >
                 What we do?
@@ -290,7 +293,7 @@ const Home = props => {
                   textAlign: "center",
                   display: "inline-block",
                   marginRight: "10px",
-                  cursor: "pointer"
+                  cursor: "pointer",
                 }}
                 className={styles.link}
                 onClick={() => {
@@ -313,7 +316,7 @@ const Home = props => {
                   textAlign: "center",
                   display: "inline-block",
                   marginRight: "10px",
-                  cursor: "pointer"
+                  cursor: "pointer",
                 }}
                 className={styles.link}
                 onClick={() => {
@@ -336,7 +339,7 @@ const Home = props => {
                   textAlign: "center",
                   display: "inline-block",
                   marginRight: "10px",
-                  cursor: "pointer"
+                  cursor: "pointer",
                 }}
                 className={styles.link}
                 onClick={() => {
@@ -359,7 +362,7 @@ const Home = props => {
                   textAlign: "center",
                   display: "inline-block",
                   marginRight: "10px",
-                  cursor: "pointer"
+                  cursor: "pointer",
                 }}
                 className={styles.link}
                 onClick={() => {
@@ -384,7 +387,7 @@ const Home = props => {
                   textAlign: "center",
                   display: "inline-block",
                   marginRight: "10px",
-                  cursor: "pointer"
+                  cursor: "pointer",
                 }}
                 className={styles.link}
                 onClick={() => {
@@ -409,7 +412,7 @@ const Home = props => {
                   textAlign: "center",
                   display: "inline-block",
                   marginRight: "10px",
-                  cursor: "pointer"
+                  cursor: "pointer",
                 }}
                 className={styles.link}
                 onClick={() => {
@@ -442,7 +445,7 @@ const Home = props => {
                       color: "#E4B419",
                       width: "100px",
                       height: "40px",
-                      borderRadius: "8px"
+                      borderRadius: "8px",
                     }}
                   >
                     <h6
@@ -450,7 +453,7 @@ const Home = props => {
                         fontWeight: "500",
                         fontSize: "20px",
                         paddingTop: "8px",
-                        paddingLeft: "6px"
+                        paddingLeft: "6px",
                       }}
                     >
                       Seminars
@@ -476,7 +479,7 @@ const Home = props => {
                       color: "#0c50b6",
                       width: "125px",
                       height: "40px",
-                      borderRadius: "8px"
+                      borderRadius: "8px",
                     }}
                   >
                     <h6
@@ -484,7 +487,7 @@ const Home = props => {
                         fontWeight: "500",
                         fontSize: "20px",
                         paddingTop: "8px",
-                        paddingLeft: "8px"
+                        paddingLeft: "8px",
                       }}
                     >
                       Study Jams
@@ -512,7 +515,7 @@ const Home = props => {
                       color: "#DF4D13",
                       width: "90px",
                       height: "40px",
-                      borderRadius: "8px"
+                      borderRadius: "8px",
                     }}
                   >
                     <h6
@@ -520,7 +523,7 @@ const Home = props => {
                         fontWeight: "500",
                         fontSize: "20px",
                         paddingTop: "8px",
-                        paddingLeft: "6px"
+                        paddingLeft: "6px",
                       }}
                     >
                       Projects
@@ -546,7 +549,7 @@ const Home = props => {
                       color: "#0BB853",
                       width: "125px",
                       height: "40px",
-                      borderRadius: "8px"
+                      borderRadius: "8px",
                     }}
                   >
                     <h6
@@ -554,7 +557,7 @@ const Home = props => {
                         fontWeight: "500",
                         fontSize: "20px",
                         paddingTop: "8px",
-                        paddingLeft: "8px"
+                        paddingLeft: "8px",
                       }}
                     >
                       Hackathons
@@ -579,7 +582,7 @@ const Home = props => {
                     height: "50px",
                     borderRadius: "50%",
                     textAlign: "center",
-                    display: "inline-block"
+                    display: "inline-block",
                   }}
                 >
                   <WhatshotIcon style={{ color: "white", marginTop: "14px" }} />
@@ -588,7 +591,7 @@ const Home = props => {
                   style={{
                     display: "inline-block",
                     marginLeft: "10px",
-                    color: "#363535"
+                    color: "#363535",
                   }}
                 >
                   The Team
