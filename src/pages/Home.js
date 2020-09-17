@@ -125,6 +125,9 @@ const useStyles = makeStyles(theme => ({
   main: {
     // overflowX: "hidden",
   },
+  hidden: {
+    display: "none",
+  },
   CardGrid: {
     [theme.breakpoints.down("md")]: {
       marginTop: "40px",
@@ -145,12 +148,27 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Home = props => {
+  let imageCount = 0;
+  const [loading, setLoading] = useState(true);
   const classes = useStyles();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
+  const handleImageLoading = () => {
+    imageCount++;
+    console.log("image loader", imageCount);
+    if (imageCount === 7) {
+      setLoading(false);
+      imageCount = 0;
+    }
+  };
   return (
     <Fragment>
+       <div className={`${loading ? "" : classes.hidden}`}>
+        <Loader />
+      </div>
+      <div className={`${loading ? classes.hidden : ""}`}>
       <CssBaseline />
       <Container fixed className={classes.main}>
         <Grid container spacing={2} className={classes.grid}>
@@ -841,6 +859,7 @@ const Home = props => {
         </Grid>
       </Grid>
       <Footer />
+      </div>
     </Fragment>
   );
 };
