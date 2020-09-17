@@ -188,7 +188,7 @@ const Home = props => {
           </Hidden>
         </Grid>
       </Container>
-      <Paper elevation={4} style={{ position: "relative", top: "-20px" }}>
+      <Paper elevation={4} style={{ position: "relative", top: "-20px", padding:"0px 16px" }}>
         <Container fixed>
           <Grid container spacing={2} style={{ paddingTop: "40px" }}>
             <Grid item xs={12}>
