@@ -5,6 +5,7 @@ import { useStyles } from "./styles/TeamStyles";
 import Loader from "./Loader";
 import TeamMemberCard from "../components/TeamMemberCard";
 import image from "../assets/undraw_positive_attitude_xaae.svg";
+import Layout from "../toggle/Layout";
 
 axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 
@@ -33,46 +34,48 @@ const Team = () => {
     return <Loader />;
   }
   return (
-    <>
-      <Container fixed>
-        <CssBaseline />
-        <Grid container spacing={2} className={classes.headingContainer}>
-          <Grid item xs={12} className={classes.headingItem}>
-            <Typography variant="h2" className={classes.heading}>
-              Meet the Team
-            </Typography>
+    <Layout>
+      <>
+        <Container fixed>
+          <CssBaseline />
+          <Grid container spacing={2} className={classes.headingContainer}>
+            <Grid item xs={12} className={classes.headingItem}>
+              <Typography variant="h2" className={classes.heading}>
+                Meet the Team
+              </Typography>
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container spacing={2} className={classes.leadContainer}>
-          {leads &&
-            leads.map((item, index) => (
-              <Grid item xs={12} sm={9} lg={4} key={index}>
-                <TeamMemberCard item={item} />
-              </Grid>
-            ))}
-        </Grid>
-        <Grid container spacing={2} justify="center">
-          <Grid item xs={12} sm={12} lg={6}>
-            <img src={image} alt="core-img" className={classes.coreImage} />
+          <Grid container spacing={2} className={classes.leadContainer}>
+            {leads &&
+              leads.map((item, index) => (
+                <Grid item xs={12} sm={9} lg={4} key={index}>
+                  <TeamMemberCard item={item} />
+                </Grid>
+              ))}
           </Grid>
-        </Grid>
-        <Grid container spacing={2}>
-          <Grid item xs={12} className={classes.headingItem}>
-            <Typography variant="h3" className={classes.heading}>
-              Core Team
-            </Typography>
+          <Grid container spacing={2} justify="center">
+            <Grid item xs={12} sm={12} lg={6}>
+              <img src={image} alt="core-img" className={classes.coreImage} />
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container spacing={2} className={classes.leadContainer}>
-          {team &&
-            team[0].members.map((item, index) => (
-              <Grid item xs={12} sm={9} lg={4} key={index}>
-                <TeamMemberCard item={item} />
-              </Grid>
-            ))}
-        </Grid>
-      </Container>
-    </>
+          <Grid container spacing={2}>
+            <Grid item xs={12} className={classes.headingItem}>
+              <Typography variant="h3" className={classes.heading}>
+                Core Team
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid container spacing={2} className={classes.leadContainer}>
+            {team &&
+              team[0].members.map((item, index) => (
+                <Grid item xs={12} sm={9} lg={4} key={index}>
+                  <TeamMemberCard item={item} />
+                </Grid>
+              ))}
+          </Grid>
+        </Container>
+      </>
+    </Layout>
   );
 };
 

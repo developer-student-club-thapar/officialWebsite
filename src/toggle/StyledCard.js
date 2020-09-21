@@ -1,17 +1,17 @@
-import { Paper } from "@material-ui/core";
+import { Card } from "@material-ui/core";
 import styled from "styled-components";
 import style from "styled-theming";
 
 const getBackground = style("mode", {
-  light: "#fafafa",
-  dark: "#202020",
+  light: "white",
+  dark: "#111",
 });
 const getForeground = style("mode", {
   light: "#000",
   dark: "#EEE",
 });
 
-export const StyledPaper = styled(Paper)`
+export const StyledCard = styled(Card)`
   background-color: ${getBackground};
   color: ${getForeground};
 `;

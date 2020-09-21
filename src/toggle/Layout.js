@@ -7,7 +7,7 @@ const Layout = (props) => {
   const theme = useTheme();
   const getBackground = style("mode", {
     light: "#fafafa",
-    dark: "#111",
+    dark: "#202020",
   });
   const getForeground = style("mode", {
     light: "#5A5A5A",

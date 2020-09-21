@@ -4,14 +4,14 @@ import style from "styled-theming";
 
 const getBackground = style("mode", {
   light: "#fafafa",
-  dark: "#202020",
+  dark: "#111",
 });
 const getForeground = style("mode", {
   light: "#000",
   dark: "#EEE",
 });
 
-export const StyledPaper = styled(Paper)`
+export const StyledPaperTeam = styled(Paper)`
   background-color: ${getBackground};
   color: ${getForeground};
 `;

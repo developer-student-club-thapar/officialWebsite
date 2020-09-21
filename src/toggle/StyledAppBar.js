@@ -1,4 +1,4 @@
-import { Paper } from "@material-ui/core";
+import { AppBar } from "@material-ui/core";
 import styled from "styled-components";
 import style from "styled-theming";
 
@@ -11,7 +11,7 @@ const getForeground = style("mode", {
   dark: "#EEE",
 });
 
-export const StyledPaper = styled(Paper)`
+export const StyledAppBar = styled(AppBar)`
   background-color: ${getBackground};
   color: ${getForeground};
 `;

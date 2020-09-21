@@ -1,57 +1,57 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import { Container } from "@material-ui/core";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import dsclogo from "../assets/dsc_logo.png";
 import styled from "styled-components";
 import "../components/styles/NavBar.css";
+import { StyledTypographyNav } from "../toggle/StyledTypographyNav";
+import Layout from "../toggle/Layout";
+import { StyledAppBar } from "../toggle/StyledAppBar";
+import { StyledLink } from "../toggle/StyledLink";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   grow: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
   title: {
     display: "none",
-    color: "#3C4858",
     [theme.breakpoints.up("sm")]: {
-      display: "block"
-    }
+      display: "block",
+    },
   },
 
   sectionDesktop: {
     display: "none",
 
     [theme.breakpoints.up("md")]: {
-      display: "flex"
-    }
+      display: "flex",
+    },
   },
   sectionMobile: {
     display: "flex",
     [theme.breakpoints.up("md")]: {
-      display: "none"
-    }
+      display: "none",
+    },
   },
   button: {
     justifyContent: "space-between",
     fontSize: "1.2em",
     fontWeight: "300",
     textDecoration: "none",
-    color: "black"
   },
   logo: {
     height: "30px",
-    objectFit: "contain"
-  }
+    objectFit: "contain",
+  },
 }));
 
-const NavAlt = props => {
-  window.onscroll = function() {
+const NavAlt = (props) => {
+  window.onscroll = function () {
     if (props.location.pathname === "/") {
       scrollFunction();
     }
@@ -83,83 +83,80 @@ const NavAlt = props => {
   }, [props]);
 
   return (
-    <div className={classes.grow}>
-      <ResponsiveDiv>
-        <AppBar
-          position="fixed"
-          style={{ backgroundColor: "white" }}
-          id="appbar"
-          className="fill"
-        >
-          <Container fixed>
-            <Toolbar>
-              <img
-                src={dsclogo}
-                alt="logo"
-                className={classes.logo}
-                id="logo"
-              />
-              <Typography
-                className={classes.title}
-                variant="h6"
-                noWrap
-                id="text"
-              >
-                &nbsp; DSC TIET
-              </Typography>
-              <div className={classes.grow} />
-              <div className={classes.sectionDesktop}>
-                <div style={{ paddingRight: "10px" }}>
-                  <Link to="/" className={classes.button}>
-                    Home
-                  </Link>
+    <Layout>
+      <div className={classes.grow}>
+        <ResponsiveDiv>
+          <StyledAppBar position="fixed" id="appbar" className="fill">
+            <Container fixed>
+              <Toolbar>
+                <img
+                  src={dsclogo}
+                  alt="logo"
+                  className={classes.logo}
+                  id="logo"
+                />
+                <StyledTypographyNav
+                  className={classes.title}
+                  variant="h6"
+                  noWrap
+                  id="text"
+                >
+                  &nbsp; DSC TIET
+                </StyledTypographyNav>
+                <div className={classes.grow} />
+                <div className={classes.sectionDesktop}>
+                  <div style={{ paddingRight: "10px" }}>
+                    <StyledLink to="/" className={classes.button}>
+                      Home
+                    </StyledLink>
+                  </div>
+                  <div style={{ paddingRight: "10px" }}>
+                    <StyledLink to="/events" className={classes.button}>
+                      Events
+                    </StyledLink>
+                  </div>
+                  <div style={{ paddingRight: "10px" }}>
+                    <StyledLink to="/projects" className={classes.button}>
+                      Projects
+                    </StyledLink>
+                  </div>
+                  <div style={{ paddingRight: "10px" }}>
+                    <StyledLink to="/team" className={classes.button}>
+                      Team
+                    </StyledLink>
+                  </div>
+                  <div style={{ paddingRight: "10px" }}>
+                    <StyledLink
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href =
+                          "https://medium.com/developer-student-clubs-tiet";
+                      }}
+                      target="_blank"
+                      className={classes.button}
+                    >
+                      Blog
+                    </StyledLink>
+                  </div>
+                  <div style={{ paddingRight: "10px" }}>
+                    <StyledLink
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = "https://raw-talent.webflow.io/";
+                      }}
+                      target="_blank"
+                      className={classes.button}
+                    >
+                      Podcast
+                    </StyledLink>
+                  </div>
                 </div>
-                <div style={{ paddingRight: "10px" }}>
-                  <Link to="/events" className={classes.button}>
-                    Events
-                  </Link>
-                </div>
-                <div style={{ paddingRight: "10px" }}>
-                  <Link to="/projects" className={classes.button}>
-                    Projects
-                  </Link>
-                </div>
-                <div style={{ paddingRight: "10px" }}>
-                  <Link to="/team" className={classes.button}>
-                    Team
-                  </Link>
-                </div>
-                <div style={{ paddingRight: "10px" }}>
-                  <Link
-                    onClick={e => {
-                      e.preventDefault();
-                      window.location.href =
-                        "https://medium.com/developer-student-clubs-tiet";
-                    }}
-                    target="_blank"
-                    className={classes.button}
-                  >
-                    Blog
-                  </Link>
-                </div>
-                <div style={{ paddingRight: "10px" }}>
-                  <Link
-                    onClick={e => {
-                      e.preventDefault();
-                      window.location.href = "https://raw-talent.webflow.io/";
-                    }}
-                    target="_blank"
-                    className={classes.button}
-                  >
-                    Podcast
-                  </Link>
-                </div>
-              </div>
-            </Toolbar>
-          </Container>
-        </AppBar>
-      </ResponsiveDiv>
-    </div>
+              </Toolbar>
+            </Container>
+          </StyledAppBar>
+        </ResponsiveDiv>
+      </div>
+    </Layout>
   );
 };
 
