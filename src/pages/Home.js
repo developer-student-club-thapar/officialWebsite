@@ -628,7 +628,7 @@ const Home = props => {
 
           <Grid container spacing={3} className={classes.CardGrid}>
             <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
-              <Card className={classes.root}>
+              <Card className={classes.root} style={{ margin: "auto" }}>
                 <CardActionArea>
                   <CardMedia
                     className={classes.media}
@@ -664,7 +664,7 @@ const Home = props => {
               </Card>
             </Grid>
             <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
-              <Card className={classes.root}>
+              <Card className={classes.root} style={{ margin: "auto" }}>
                 <CardActionArea>
                   <CardMedia
                     className={classes.media}
@@ -695,7 +695,7 @@ const Home = props => {
               </Card>
             </Grid>
             <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
-              <Card className={classes.root}>
+              <Card className={classes.root} style={{ margin: "auto" }}>
                 <CardActionArea>
                   <CardMedia
                     className={classes.media}
