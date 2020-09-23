@@ -59,11 +59,6 @@ const useStyles = makeStyles(theme => ({
     // border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3)
-  },
-  cardAction: {
-    "&:focus": {
-      backgroundColor: "#ffffff"
-    }
   }
 }));
 
@@ -150,7 +145,7 @@ const ProjectsAlt = () => {
                 <Hidden smDown>
                   <Slide bottom>
                     <Card className={classes.rootCard}>
-                      <CardActionArea className={classes.cardAction}>
+                      <CardActionArea>
                         <CardMedia
                           className={classes.media}
                           image={item.image === null ? Test : item.image}
