@@ -141,6 +141,11 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.only("md")]: {
       width: "140%"
     }
+  },
+  cardAction: {
+    "&:focus": {
+      backgroundColor: "#ffffff"
+    }
   }
 }));
 
@@ -629,7 +634,7 @@ const Home = props => {
           <Grid container spacing={3} className={classes.CardGrid}>
             <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
               <Card className={classes.root} style={{ margin: "auto" }}>
-                <CardActionArea>
+                <CardActionArea className={classes.cardAction}>
                   <CardMedia
                     className={classes.media}
                     image={EventCardImg}
@@ -665,7 +670,7 @@ const Home = props => {
             </Grid>
             <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
               <Card className={classes.root} style={{ margin: "auto" }}>
-                <CardActionArea>
+                <CardActionArea className={classes.cardAction}>
                   <CardMedia
                     className={classes.media}
                     image={Sponsorships}
@@ -696,7 +701,7 @@ const Home = props => {
             </Grid>
             <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
               <Card className={classes.root} style={{ margin: "auto" }}>
-                <CardActionArea>
+                <CardActionArea className={classes.cardAction}>
                   <CardMedia
                     className={classes.media}
                     image={ProjectImg}
