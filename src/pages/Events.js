@@ -4,7 +4,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Slide from "react-reveal/Slide";
-import { Container, CssBaseline, Hidden } from "@material-ui/core";
+import { Container, CssBaseline, Hidden, Card } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -64,6 +64,11 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
+  cardAction: {
+    "&:focus": {
+      backgroundColor: "#ffffff",
+    },
+  },
 }));
 
 const EventsAlt = () => {
@@ -104,16 +109,66 @@ const EventsAlt = () => {
               xl={6}
               style={{ paddingTop: "100px" }}
             >
-              <Typography variant="h3" style={{ fontWeight: "bold" }}>
-                Events
-              </Typography>
-              <StyledTypography variant="h6" style={{ paddingTop: "20px" }}>
-                Events are a great way to share knowledge and indulge in great
-                discussions with your peers. DSC TIET has hosted a variety of
-                events to teach important skills and improve the coding culture
-                of our college. Check out our previous events here and stay
-                tuned for future events!
-              </StyledTypography>
+              <Hidden smDown>
+                <Slide bottom>
+                  <Card className={classes.rootCard}>
+                    <CardActionArea className={classes.cardAction}>
+                      <CardMedia
+                        className={classes.media}
+                        image={item.image === null ? Test : item.image}
+                        title="Event"
+                      />
+                      <CardContent style={{ height: "125px" }}>
+                        <Typography gutterBottom variant="h5" component="h2">
+                          {item.title}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                        >
+                          Venue: {item.venue} <br />
+                          Time: {item.time} <br />
+                          Link : <a href={item.link}>Link</a>
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Slide>
+              </Hidden>
+              <Hidden mdUp>
+                <Slide bottom>
+                  <Card
+                    className={classes.rootCardMobile}
+                    onClick={() => {
+                      setKey(index);
+                      setOpen(true);
+                    }}
+                  >
+                    <CardActionArea>
+                      <CardMedia
+                        className={classes.media}
+                        image={item.image === null ? Test : item.image}
+                        title="Event"
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                          {item.title}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                        >
+                          Venue: {item.venue} <br />
+                          Time: {item.time} <br />
+                          Link : <a href={item.link}>Link</a>
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Slide>
+              </Hidden>
             </Grid>
             <Hidden smDown>
               <Grid
