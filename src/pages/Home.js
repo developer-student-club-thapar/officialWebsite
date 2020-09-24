@@ -10,6 +10,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
 import dsclogo from "../assets/dsc_logo.png";
 import header from "../assets/header.png";
+import headerdark from '../assets/headerdark.png';
 import Paper from "@material-ui/core/Paper";
 import GestureIcon from "@material-ui/icons/Gesture";
 import Team from "../assets/team.webp";
@@ -31,6 +32,7 @@ import { Styledheading } from "../toggle/StyledComponents";
 import Layout from "../toggle/Layout";
 import { StyledCard } from "../toggle/StyledComponents";
 import { StyledTypographyCard } from "../toggle/StyledComponents";
+import useTheme from '../useTheme';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -161,6 +163,7 @@ const Home = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const theme= useTheme();
   return (
     <Layout>
       <Fragment>
@@ -197,7 +200,9 @@ const Home = (props) => {
             </Grid>
             <Hidden only="xs">
               <Grid item xs={false} sm={6} md={8} lg={8} xl={8}>
-                <img src={header} alt="header" width="100%" height="95%" />
+              {theme.mode === "dark" ?  <img src={headerdark} alt="header" width="100%" height="95%" /> 
+              :   <img src={header} alt="header" width="100%" height="95%" />
+              }
               </Grid>
             </Hidden>
           </Grid>
