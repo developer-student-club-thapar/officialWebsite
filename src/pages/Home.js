@@ -149,6 +149,11 @@ const useStyles = makeStyles((theme) => ({
       width: "140%",
     },
   },
+  cardAction: {
+    "&:focus": {
+      backgroundColor: "#ffffff",
+    },
+  },
 }));
 
 const Home = (props) => {
@@ -637,8 +642,8 @@ const Home = (props) => {
 
             <Grid container spacing={3} className={classes.CardGrid}>
               <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
-                <StyledCard className={classes.root}>
-                  <CardActionArea>
+                <StyledCard className={classes.root} style={{ margin: "auto" }}>
+                  <CardActionArea className={classes.cardAction}>
                     <CardMedia
                       className={classes.media}
                       image={EventCardImg}
@@ -669,8 +674,8 @@ const Home = (props) => {
                 </StyledCard>
               </Grid>
               <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
-                <StyledCard className={classes.root}>
-                  <CardActionArea>
+                <StyledCard className={classes.root} style={{ margin: "auto" }}>
+                  <CardActionArea className={classes.cardAction}>
                     <CardMedia
                       className={classes.media}
                       image={Sponsorships}
@@ -696,8 +701,8 @@ const Home = (props) => {
                 </StyledCard>
               </Grid>
               <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
-                <StyledCard className={classes.root}>
-                  <CardActionArea>
+                <StyledCard className={classes.root} style={{ margin: "auto" }}>
+                  <CardActionArea className={classes.cardAction}>
                     <CardMedia
                       className={classes.media}
                       image={ProjectImg}
@@ -772,7 +777,7 @@ const Home = (props) => {
                   variant="contained"
                   style={{ backgroundColor: "#2C2F23", color: "white" }}
                   onClick={() => {
-                    window.open("https://discord.com/invite/3C4TESX");
+                    window.open("https://discord.com/invite/Ma9ZAGJ");
                   }}
                 >
                   Join us on <img src={Discord} height="30px" alt="discord" />
