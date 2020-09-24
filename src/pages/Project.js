@@ -108,113 +108,29 @@ const ProjectsAlt = () => {
                 xl={6}
                 style={{ paddingTop: "100px" }}
               >
-                <ProjectAnimation />
+                <Typography variant="h3" style={{ fontWeight: "bold" }}>
+                  Projects
+                </Typography>
+                <StyledTypography variant="h6" style={{ paddingTop: "20px" }}>
+                  We at DSC TIET believe in doing it and learning via projects.
+                  That's why, we have amazing projects that we are working on.
+                  Go ahead and look for their details. Feel free to contribute
+                  on GitHub!
+                </StyledTypography>
               </Grid>
-              {/* </Hidden> */}
-            </Grid>
-            <Grid container spacing={2}>
-              {projects.map((item, index) => (
-                <>
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
-                    md={4}
-                    lg={4}
-                    xl={4}
-                    style={{}}
-                    key={item.id}
-                    onClick={() => {
-                      setKey(index);
-                      setOpen(true);
-                    }}
-                  >
-                    <Hidden smDown>
-                      <Slide bottom>
-                        <Card className={classes.rootCard}>
-                          <CardActionArea className={classes.cardAction}>
-                            <CardMedia
-                              className={classes.media}
-                              image={item.image === null ? Test : item.image}
-                              title="Project"
-                            />
-                            <CardContent style={{ height: "125px" }}>
-                              <Typography
-                                gutterBottom
-                                variant="h5"
-                                component="h2"
-                              >
-                                {item.name}
-                              </Typography>
-                              <Typography
-                                variant="body2"
-                                color="textSecondary"
-                                component="p"
-                              >
-                                Project Lead: {item.project_lead.name} <br />
-                                Github Link :<a href={item.github_link}>Link</a>
-                                <br />
-                                <br />
-                              </Typography>
-                            </CardContent>
-                          </CardActionArea>
-                        </Card>
-                      </Slide>
-                    </Hidden>
-                    <Hidden mdUp>
-                      <Slide bottom>
-                        <Card
-                          className={classes.rootCardMobile}
-                          onClick={() => {
-                            setKey(index);
-                            setOpen(true);
-                          }}
-                        >
-                          <CardActionArea>
-                            <CardMedia
-                              className={classes.media}
-                              image={item.image === null ? Test : item.image}
-                              title="Project"
-                            />
-                            <CardContent>
-                              <Typography
-                                gutterBottom
-                                variant="h5"
-                                component="h2"
-                              >
-                                {item.name}
-                              </Typography>
-                              <Typography
-                                variant="body2"
-                                color="textSecondary"
-                                component="p"
-                              >
-                                Project Lead: {item.project_lead.name} <br />
-                                Github Link :<a href={item.github_link}>Link</a>
-                                <br />
-                                <br />
-                              </Typography>
-                            </CardContent>
-                          </CardActionArea>
-                        </Card>
-                      </Slide>
-                    </Hidden>
-                  </Grid>
-                  <Hidden smDown>
-                    <Grid
-                      item
-                      xs={false}
-                      sm={false}
-                      md={6}
-                      lg={6}
-                      xl={6}
-                      style={{ paddingTop: "100px" }}
-                    >
-                      <ProjectAnimation />
-                    </Grid>
-                  </Hidden>
-                </>
-              ))}
+              <Hidden smDown>
+                <Grid
+                  item
+                  xs={false}
+                  sm={false}
+                  md={6}
+                  lg={6}
+                  xl={6}
+                  style={{ paddingTop: "100px" }}
+                >
+                  <ProjectAnimation />
+                </Grid>
+              </Hidden>
             </Grid>
             <Grid container spacing={2}>
               {projects.map((item, index) => (
@@ -235,7 +151,7 @@ const ProjectsAlt = () => {
                   <Hidden smDown>
                     <Slide bottom>
                       <StyledCard className={classes.rootCard}>
-                        <CardActionArea>
+                        <CardActionArea className={classes.cardAction}>
                           <CardMedia
                             className={classes.media}
                             image={item.image === null ? Test : item.image}
@@ -269,7 +185,7 @@ const ProjectsAlt = () => {
                           setOpen(true);
                         }}
                       >
-                        <CardActionArea>
+                        <CardActionArea className={classes.cardAction}>
                           <CardMedia
                             className={classes.media}
                             image={item.image === null ? Test : item.image}
