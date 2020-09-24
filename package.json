@@ -21,6 +21,7 @@
     "google-maps-react": "^2.0.6",
     "materialize-css": "^1.0.0",
     "react": "^16.13.1",
+    "react-dark-mode-toggle": "^0.0.9",
     "react-dom": "^16.13.1",
     "react-fontawesome": "^1.7.1",
     "react-lottie": "^1.2.3",

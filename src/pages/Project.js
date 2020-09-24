@@ -15,10 +15,10 @@ import Loader from "./Loader";
 import axios from "axios";
 import Footer from "../components/Footer";
 import ProjectAnimation from "../components/ProjectAnimation";
-import { StyledTypography } from "../toggle/StyledTypography";
+import { StyledTypography } from "../toggle/StyledComponents";
 import Layout from "../toggle/Layout";
-import { StyledCard } from "../toggle/StyledCard";
-import { StyledTypographyCard } from "../toggle/StyledTypographyCard";
+import { StyledCard } from "../toggle/StyledComponents";
+import { StyledTypographyCard } from "../toggle/StyledComponents";
 
 axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 

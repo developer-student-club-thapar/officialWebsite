@@ -1,7 +1,7 @@
 import React from "react";
 import { Avatar } from "@material-ui/core";
 import { useStyles } from "./styles/TeamMemberCardStyles";
-import { StyledPaperTeam } from "../toggle/StyledPaperTeam";
+import { StyledPaperTeam } from "../toggle/StyledComponents";
 const TeamMemberCard = ({ item }) => {
   const classes = useStyles();
   return (

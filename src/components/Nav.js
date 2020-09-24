@@ -6,10 +6,10 @@ import { withRouter } from "react-router-dom";
 import dsclogo from "../assets/dsc_logo.png";
 import styled from "styled-components";
 import "../components/styles/NavBar.css";
-import { StyledTypographyNav } from "../toggle/StyledTypographyNav";
+import { StyledTypographyNav } from "../toggle/StyledComponents";
 import Layout from "../toggle/Layout";
-import { StyledAppBar } from "../toggle/StyledAppBar";
-import { StyledLink } from "../toggle/StyledLink";
+import { StyledAppBar } from "../toggle/StyledComponents";
+import { StyledLink } from "../toggle/StyledComponents";
 
 const useStyles = makeStyles((theme) => ({
   grow: {

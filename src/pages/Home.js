@@ -24,13 +24,13 @@ import ThaparImg from "../assets/ThaparUniversity_1.jpg";
 import Footer from "../components/Footer";
 import styles from "./styles/home.module.css";
 import ToggleButton from "../ToggleButton";
-import { StyledPaper } from "../toggle/StyledPaper";
-import { Styledh5 } from "../toggle/Styledh5";
-import { Styledh6 } from "../toggle/Styledh6";
-import { Styledheading } from "../toggle/Styledheading";
+import { StyledPaper } from "../toggle/StyledComponents";
+import { Styledh5 } from "../toggle/StyledComponents";
+import { Styledh6 } from "../toggle/StyledComponents";
+import { Styledheading } from "../toggle/StyledComponents";
 import Layout from "../toggle/Layout";
-import { StyledCard } from "../toggle/StyledCard";
-import { StyledTypographyCard } from "../toggle/StyledTypographyCard";
+import { StyledCard } from "../toggle/StyledComponents";
+import { StyledTypographyCard } from "../toggle/StyledComponents";
 
 const useStyles = makeStyles((theme) => ({
   root: {
