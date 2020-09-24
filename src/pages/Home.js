@@ -10,7 +10,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
 import dsclogo from "../assets/dsc_logo.png";
 import header from "../assets/header.png";
-import headerdark from '../assets/headerdark.png';
+import headerdark from "../assets/headerdark.png";
 import Paper from "@material-ui/core/Paper";
 import GestureIcon from "@material-ui/icons/Gesture";
 import Team from "../assets/team.webp";
@@ -29,10 +29,11 @@ import { StyledPaper } from "../toggle/StyledComponents";
 import { Styledh5 } from "../toggle/StyledComponents";
 import { Styledh6 } from "../toggle/StyledComponents";
 import { Styledheading } from "../toggle/StyledComponents";
-import Layout from "../toggle/Layout";
 import { StyledCard } from "../toggle/StyledComponents";
 import { StyledTypographyCard } from "../toggle/StyledComponents";
-import useTheme from '../useTheme';
+import useTheme from "../useTheme";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import style from "styled-theming";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -163,9 +164,28 @@ const Home = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const theme= useTheme();
+
+  const theme = useTheme();
+
+  const getBackground = style("mode", {
+    light: "#fafafa",
+    dark: "#202020",
+  });
+  const getForeground = style("mode", {
+    light: "#5A5A5A",
+    dark: "#EEE",
+  });
+
+  const GlobalStyle = createGlobalStyle`
+  body{ 
+    background-color: ${getBackground};
+    color: ${getForeground};
+  }
+  `;
+
   return (
-    <Layout>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Fragment>
         <CssBaseline />
         <Container fixed className={classes.main}>
@@ -200,9 +220,16 @@ const Home = (props) => {
             </Grid>
             <Hidden only="xs">
               <Grid item xs={false} sm={6} md={8} lg={8} xl={8}>
-              {theme.mode === "dark" ?  <img src={headerdark} alt="header" width="100%" height="95%" /> 
-              :   <img src={header} alt="header" width="100%" height="95%" />
-              }
+                {theme.mode === "dark" ? (
+                  <img
+                    src={headerdark}
+                    alt="header"
+                    width="100%"
+                    height="95%"
+                  />
+                ) : (
+                  <img src={header} alt="header" width="100%" height="95%" />
+                )}
               </Grid>
             </Hidden>
           </Grid>
@@ -852,7 +879,7 @@ const Home = (props) => {
         </Grid>
         <Footer />
       </Fragment>
-    </Layout>
+    </ThemeProvider>
   );
 };
 

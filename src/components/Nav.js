@@ -4,10 +4,10 @@ import Toolbar from "@material-ui/core/Toolbar";
 import { Container } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
 import dsclogo from "../assets/dsc_logo.png";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import "../components/styles/NavBar.css";
 import { StyledTypographyNav } from "../toggle/StyledComponents";
-import Layout from "../toggle/Layout";
+import useTheme from "../useTheme";
 import { StyledAppBar } from "../toggle/StyledComponents";
 import { StyledLink } from "../toggle/StyledComponents";
 
@@ -82,8 +82,10 @@ const NavAlt = (props) => {
     }
   }, [props]);
 
+  const theme = useTheme();
+
   return (
-    <Layout>
+    <ThemeProvider theme={theme}>
       <div className={classes.grow}>
         <ResponsiveDiv>
           <StyledAppBar position="fixed" id="appbar" className="fill">
@@ -156,7 +158,7 @@ const NavAlt = (props) => {
           </StyledAppBar>
         </ResponsiveDiv>
       </div>
-    </Layout>
+    </ThemeProvider>
   );
 };
 
