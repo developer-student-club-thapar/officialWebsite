@@ -4,16 +4,14 @@ import Toolbar from "@material-ui/core/Toolbar";
 import { Container } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
 import dsclogo from "../assets/dsc_logo.png";
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 import "../components/styles/NavBar.css";
-import useTheme from "../useTheme";
 import {
   StyledAppBar,
   StyledLink,
   StyledTypographyNav,
 } from "../toggle/StyledComponents";
-import ToggleMode from '../toggle/ToggleButton';
-import Layout from '../toggle/Layout';
+import ToggleMode from "../toggle/ToggleButton";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -61,7 +59,6 @@ const NavAlt = (props) => {
     }
   };
 
-
   function scrollFunction() {
     if (
       document.body.scrollTop > 0.08 ||
@@ -87,86 +84,80 @@ const NavAlt = (props) => {
     }
   }, [props]);
 
-  const theme = useTheme();
-
   return (
-    <ThemeProvider theme={theme}>
-    <Layout>
-      <div className={classes.grow}>
-        <ResponsiveDiv>
-          <StyledAppBar position="fixed" id="appbar" className="fill">
-            <Container fixed>
-              <Toolbar>
-                <img
-                  src={dsclogo}
-                  alt="logo"
-                  className={classes.logo}
-                  id="logo"
-                />
-                <StyledTypographyNav
-                  className={classes.title}
-                  variant="h6"
-                  noWrap
-                  id="text"
-                >
-                  &nbsp; DSC TIET
-                </StyledTypographyNav>
-                <div className={classes.grow} />
-                <div className={classes.sectionDesktop}>
-                  <div style={{ paddingRight: "10px" }}>
-                    <StyledLink to="/" className={classes.button}>
-                      Home
-                    </StyledLink>
-                  </div>
-                  <div style={{ paddingRight: "10px" }}>
-                    <StyledLink to="/events" className={classes.button}>
-                      Events
-                    </StyledLink>
-                  </div>
-                  <div style={{ paddingRight: "10px" }}>
-                    <StyledLink to="/projects" className={classes.button}>
-                      Projects
-                    </StyledLink>
-                  </div>
-                  <div style={{ paddingRight: "10px" }}>
-                    <StyledLink to="/team" className={classes.button}>
-                      Team
-                    </StyledLink>
-                  </div>
-                  <div style={{ paddingRight: "10px" }}>
-                    <StyledLink
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.location.href =
-                          "https://medium.com/developer-student-clubs-tiet";
-                      }}
-                      target="_blank"
-                      className={classes.button}
-                    >
-                      Blog
-                    </StyledLink>
-                  </div>
-                  <div style={{ paddingRight: "10px" }}>
-                    <StyledLink
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.location.href = "https://raw-talent.webflow.io/";
-                      }}
-                      target="_blank"
-                      className={classes.button}
-                    >
-                      Podcast
-                    </StyledLink>
-                  </div>
-                  <ToggleMode />
+    <div className={classes.grow}>
+      <ResponsiveDiv>
+        <StyledAppBar position="fixed" id="appbar" className="fill">
+          <Container fixed>
+            <Toolbar>
+              <img
+                src={dsclogo}
+                alt="logo"
+                className={classes.logo}
+                id="logo"
+              />
+              <StyledTypographyNav
+                className={classes.title}
+                variant="h6"
+                noWrap
+                id="text"
+              >
+                &nbsp; DSC TIET
+              </StyledTypographyNav>
+              <div className={classes.grow} />
+              <div className={classes.sectionDesktop}>
+                <div style={{ paddingRight: "10px" }}>
+                  <StyledLink to="/" className={classes.button}>
+                    Home
+                  </StyledLink>
                 </div>
-              </Toolbar>
-            </Container>
-          </StyledAppBar>
-        </ResponsiveDiv>
-      </div>
-      </Layout>
-    </ThemeProvider>
+                <div style={{ paddingRight: "10px" }}>
+                  <StyledLink to="/events" className={classes.button}>
+                    Events
+                  </StyledLink>
+                </div>
+                <div style={{ paddingRight: "10px" }}>
+                  <StyledLink to="/projects" className={classes.button}>
+                    Projects
+                  </StyledLink>
+                </div>
+                <div style={{ paddingRight: "10px" }}>
+                  <StyledLink to="/team" className={classes.button}>
+                    Team
+                  </StyledLink>
+                </div>
+                <div style={{ paddingRight: "10px" }}>
+                  <StyledLink
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href =
+                        "https://medium.com/developer-student-clubs-tiet";
+                    }}
+                    target="_blank"
+                    className={classes.button}
+                  >
+                    Blog
+                  </StyledLink>
+                </div>
+                <div style={{ paddingRight: "10px" }}>
+                  <StyledLink
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = "https://raw-talent.webflow.io/";
+                    }}
+                    target="_blank"
+                    className={classes.button}
+                  >
+                    Podcast
+                  </StyledLink>
+                </div>
+                <ToggleMode />
+              </div>
+            </Toolbar>
+          </Container>
+        </StyledAppBar>
+      </ResponsiveDiv>
+    </div>
   );
 };
 
