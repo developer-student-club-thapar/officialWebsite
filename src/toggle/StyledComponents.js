@@ -1,4 +1,4 @@
-import { Paper, Typography, AppBar, Card } from "@material-ui/core";
+import { Paper, Typography, AppBar, Card, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import style from "styled-theming";
@@ -122,4 +122,18 @@ const headingcolor = style("mode", {
 });
 export const Styledheading = styled.h5`
   color: ${headingcolor};
+`;
+
+const getGridBackground = style("mode", {
+  light: "#fafafa",
+  dark: "#48494B",
+});
+const getGridForeground = style("mode", {
+  light: "#5A5A5A",
+  dark: "#EEE",
+});
+
+export const StyledGrid = styled(Grid)`
+  background-color: ${getGridBackground};
+  color: ${getGridForeground};
 `;

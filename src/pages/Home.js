@@ -24,16 +24,19 @@ import Discord from "../assets/discord.png";
 import ThaparImg from "../assets/ThaparUniversity_1.jpg";
 import Footer from "../components/Footer";
 import styles from "./styles/home.module.css";
-import ToggleButton from "../ToggleButton";
-import { StyledPaper } from "../toggle/StyledComponents";
-import { Styledh5 } from "../toggle/StyledComponents";
-import { Styledh6 } from "../toggle/StyledComponents";
-import { Styledheading } from "../toggle/StyledComponents";
-import { StyledCard } from "../toggle/StyledComponents";
-import { StyledTypographyCard } from "../toggle/StyledComponents";
+import ToggleButton from "../toggle/ToggleButton";
+import {
+  StyledPaper,
+  Styledh5,
+  Styledh6,
+  Styledheading,
+  StyledTypographyCard,
+  StyledCard,
+} from "../toggle/StyledComponents";
 import useTheme from "../useTheme";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import style from "styled-theming";
+import Layout from '../toggle/Layout';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -185,7 +188,7 @@ const Home = (props) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+     <Layout>
       <Fragment>
         <CssBaseline />
         <Container fixed className={classes.main}>
@@ -213,7 +216,7 @@ const Home = (props) => {
               <h4 style={{ display: "inline-block" }}>
                 Developer Students Club
               </h4>
-              <ToggleButton />
+              {/* <ToggleButton /> */}
               <h6 style={{ display: "inline-block" }}>
                 Thapar Institute of Engineering and Technology
               </h6>
@@ -879,6 +882,7 @@ const Home = (props) => {
         </Grid>
         <Footer />
       </Fragment>
+      </Layout>
     </ThemeProvider>
   );
 };

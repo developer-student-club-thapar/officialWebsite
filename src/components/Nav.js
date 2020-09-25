@@ -6,10 +6,14 @@ import { withRouter } from "react-router-dom";
 import dsclogo from "../assets/dsc_logo.png";
 import styled, { ThemeProvider } from "styled-components";
 import "../components/styles/NavBar.css";
-import { StyledTypographyNav } from "../toggle/StyledComponents";
 import useTheme from "../useTheme";
-import { StyledAppBar } from "../toggle/StyledComponents";
-import { StyledLink } from "../toggle/StyledComponents";
+import {
+  StyledAppBar,
+  StyledLink,
+  StyledTypographyNav,
+} from "../toggle/StyledComponents";
+import ToggleMode from '../toggle/ToggleButton';
+import Layout from '../toggle/Layout';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -57,6 +61,7 @@ const NavAlt = (props) => {
     }
   };
 
+
   function scrollFunction() {
     if (
       document.body.scrollTop > 0.08 ||
@@ -86,6 +91,7 @@ const NavAlt = (props) => {
 
   return (
     <ThemeProvider theme={theme}>
+    <Layout>
       <div className={classes.grow}>
         <ResponsiveDiv>
           <StyledAppBar position="fixed" id="appbar" className="fill">
@@ -152,12 +158,14 @@ const NavAlt = (props) => {
                       Podcast
                     </StyledLink>
                   </div>
+                  <ToggleMode />
                 </div>
               </Toolbar>
             </Container>
           </StyledAppBar>
         </ResponsiveDiv>
       </div>
+      </Layout>
     </ThemeProvider>
   );
 };

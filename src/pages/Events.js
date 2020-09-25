@@ -16,9 +16,11 @@ import Loader from "./Loader";
 import axios from "axios";
 import Footer from "../components/Footer";
 import EventAnimation from "../components/EventAnimation";
-import { StyledTypography } from "../toggle/StyledComponents";
-import { StyledCard } from "../toggle/StyledComponents";
-import { StyledTypographyCard } from "../toggle/StyledComponents";
+import {
+  StyledTypography,
+  StyledCard,
+  StyledTypographyCard,
+} from "../toggle/StyledComponents";
 import Layout from "../toggle/Layout";
 
 axios.defaults.baseURL = "https://api.dsctiet.tech/api";
