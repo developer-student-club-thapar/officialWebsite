@@ -14,7 +14,6 @@ const ToggleMode = (props) => {
   };
 
   useEffect(() => {
-    console.log(props.theme);
     if (props.theme.mode === "dark") {
       setChecked(true);
     } else if (props.theme.mode === "light") {
