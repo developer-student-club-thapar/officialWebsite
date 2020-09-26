@@ -1,32 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { ThemeConsumer } from "styled-components";
+import { ThemeConsumer, withTheme } from "styled-components";
 import "./Toggle.css";
-import useTheme from "../useTheme";
 
-const ToggleMode = () => {
+const ToggleMode = (props) => {
   const [checked, setChecked] = useState(false);
 
-  // const toggleChecked = () => {
-  //   setChecked((prev) => !prev);
-  // };
-
   const toggleChecked = (theme) => {
-    if (theme.mode === "dark") {
-      setChecked(true);
-    } else if (theme.mode === "light") {
-      setChecked(false);
-    }
+    theme.setTheme(
+      theme.mode === "dark"
+        ? { ...theme, mode: "light", paper: "light" }
+        : { ...theme, mode: "dark", paper: "dark" }
+    );
   };
 
-  const themeMode = useTheme();
-
   useEffect(() => {
-    if (themeMode.mode === "dark") {
+    console.log(props.theme);
+    if (props.theme.mode === "dark") {
       setChecked(true);
-    } else if (themeMode.mode === "light") {
+    } else if (props.theme.mode === "light") {
       setChecked(false);
     }
-  }, []);
+  }, [props.theme]);
+
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -36,16 +31,7 @@ const ToggleMode = () => {
             id={`react-switch-new`}
             type="checkbox"
             checked={checked}
-            onChange={() => {
-              toggleChecked(theme);
-            }}
-            onClick={(e) =>
-              theme.setTheme(
-                theme.mode === "dark"
-                  ? { ...theme, mode: "light", paper: "light" }
-                  : { ...theme, mode: "dark", paper: "dark" }
-              )
-            }
+            onClick={(e) => toggleChecked(theme)}
           />
           <label className="react-switch-label" htmlFor={`react-switch-new`}>
             <span className={`react-switch-button`} />
@@ -56,4 +42,4 @@ const ToggleMode = () => {
   );
 };
 
-export default ToggleMode;
+export default withTheme(ToggleMode);
