@@ -1,10 +1,18 @@
-import { Paper, Typography, AppBar, Card, Grid } from "@material-ui/core";
+import {
+  Paper,
+  Typography,
+  AppBar,
+  Card,
+  Grid,
+  List,
+  ListItemIcon,
+} from "@material-ui/core";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import style from "styled-theming";
 
 const getBackground = style("mode", {
-  light: "#fafafa",
+  light: "#ffffff",
   dark: "#202020",
 });
 const getForeground = style("mode", {
@@ -17,7 +25,7 @@ export const StyledPaper = styled(Paper)`
 `;
 
 const getFooterBackground = style("mode", {
-  light: "#f9f9f9",
+  light: "#ffffff",
   dark: "#202020",
 });
 const getFooterForeground = style("mode", {
@@ -38,7 +46,7 @@ export const StyledLink = styled(Link)`
 `;
 
 const getTeamBackground = style("mode", {
-  light: "#fafafa",
+  light: "#ffffff",
   dark: "#111",
 });
 const getTeamForeground = style("mode", {
@@ -75,7 +83,7 @@ export const StyledTypographyNav = styled(Typography)`
 `;
 
 const getAppBarBackground = style("mode", {
-  light: "#fafafa",
+  light: "#ffffff",
   dark: "#202020",
 });
 const getAppBarForeground = style("mode", {
@@ -124,8 +132,16 @@ export const Styledheading = styled.h5`
   color: ${headingcolor};
 `;
 
+const h4color = style("mode", {
+  light: "#3C4858",
+  dark: "#EEE",
+});
+export const Styledh4 = styled.h4`
+  color: ${h4color};
+`;
+
 const getGridBackground = style("mode", {
-  light: "#fafafa",
+  light: "#ffffff",
   dark: "#48494B",
 });
 const getGridForeground = style("mode", {
@@ -136,4 +152,50 @@ const getGridForeground = style("mode", {
 export const StyledGrid = styled(Grid)`
   background-color: ${getGridBackground};
   color: ${getGridForeground};
+`;
+
+const getTypographyHeadingForeground = style("mode", {
+  light: "black",
+  dark: "#EEE",
+});
+export const StyledTypographyheading = styled(Typography)`
+  color: ${getTypographyHeadingForeground};
+`;
+
+const getTypographyLinkForeground = style("mode", {
+  light: "rgba(0,0,0,0.54)",
+  dark: "#EEE",
+});
+export const StyledTypographyLink = styled(Typography)`
+  color: ${getTypographyLinkForeground};
+`;
+
+const getDivForeground = style("mode", {
+  light: "rgba(0,0,0,0.54)",
+  dark: "#EEE",
+});
+export const StyledDiv = styled.div`
+  color: ${getDivForeground};
+`;
+
+const getListBackground = style("mode", {
+  light: "#ffffff",
+  dark: "#202020",
+});
+const getListForeground = style("mode", {
+  light: "#000",
+  dark: "#EEE",
+});
+export const StyledList = styled(List)`
+  background-color: ${getListBackground};
+  color: ${getListForeground};
+`;
+
+const getListItemIconForeground = style("mode", {
+  light: "#000",
+  dark: "#EEE",
+});
+export const StyledListItemIcon = styled(ListItemIcon)`
+  background-color: ${getListBackground};
+  color: ${getListItemIconForeground};
 `;

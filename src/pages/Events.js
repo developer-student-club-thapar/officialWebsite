@@ -17,9 +17,10 @@ import axios from "axios";
 import Footer from "../components/Footer";
 import EventAnimation from "../components/EventAnimation";
 import {
-  StyledTypography,
+  StyledTypographyLink,
   StyledCard,
-  StyledTypographyCard,
+  StyledTypographyheading,
+  StyledTypography,
 } from "../toggle/StyledComponents";
 import { createGlobalStyle } from "styled-components";
 import style from "styled-theming";
@@ -128,9 +129,12 @@ const EventsAlt = () => {
             xl={6}
             style={{ paddingTop: "100px" }}
           >
-            <Typography variant="h3" style={{ fontWeight: "bold" }}>
+            <StyledTypographyheading
+              variant="h3"
+              style={{ fontWeight: "bold" }}
+            >
               Events
-            </Typography>
+            </StyledTypographyheading>
             <StyledTypography variant="h6" style={{ paddingTop: "20px" }}>
               Events are a great way to share knowledge and indulge in great
               discussions with your peers. DSC TIET has hosted a variety of
@@ -182,11 +186,11 @@ const EventsAlt = () => {
                         <Typography gutterBottom variant="h5" component="h2">
                           {item.title}
                         </Typography>
-                        <StyledTypographyCard variant="body2" component="p">
+                        <StyledTypographyLink variant="body2" component="p">
                           Venue: {item.venue} <br />
                           Time: {item.time} <br />
                           Link : <a href={item.link}>Link</a>
-                        </StyledTypographyCard>
+                        </StyledTypographyLink>
                       </CardContent>
                     </CardActionArea>
                   </StyledCard>
@@ -211,11 +215,11 @@ const EventsAlt = () => {
                         <Typography gutterBottom variant="h5" component="h2">
                           {item.title}
                         </Typography>
-                        <StyledTypography variant="body2" component="p">
+                        <StyledTypographyLink variant="body2" component="p">
                           Venue: {item.venue} <br />
                           Time: {item.time} <br />
                           Link : <a href={item.link}>Link</a>
-                        </StyledTypography>
+                        </StyledTypographyLink>
                       </CardContent>
                     </CardActionArea>
                   </StyledCard>

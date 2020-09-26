@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, CssBaseline, Grid, Typography } from "@material-ui/core";
+import { Container, CssBaseline, Grid } from "@material-ui/core";
 import { useStyles } from "./styles/TeamStyles";
 import Loader from "./Loader";
 import TeamMemberCard from "../components/TeamMemberCard";
@@ -8,6 +8,7 @@ import image from "../assets/undraw_positive_attitude_xaae.svg";
 import FooterAlt from "../components/Footer";
 import style from "styled-theming";
 import { createGlobalStyle } from "styled-components";
+import { StyledTypographyheading } from "../toggle/StyledComponents";
 
 axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 
@@ -58,9 +59,9 @@ const Team = () => {
         <CssBaseline />
         <Grid container spacing={2} className={classes.headingContainer}>
           <Grid item xs={12} className={classes.headingItem}>
-            <Typography variant="h2" className={classes.heading}>
+            <StyledTypographyheading variant="h2" className={classes.heading}>
               Meet the Team
-            </Typography>
+            </StyledTypographyheading>
           </Grid>
         </Grid>
         <Grid container spacing={2} className={classes.leadContainer}>
@@ -78,9 +79,9 @@ const Team = () => {
         </Grid>
         <Grid container spacing={2}>
           <Grid item xs={12} className={classes.headingItem}>
-            <Typography variant="h3" className={classes.heading}>
+            <StyledTypographyheading variant="h3" className={classes.heading}>
               Core Team
-            </Typography>
+            </StyledTypographyheading>
           </Grid>
         </Grid>
         <Grid container spacing={2} className={classes.leadContainer}>

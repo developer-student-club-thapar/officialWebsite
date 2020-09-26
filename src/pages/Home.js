@@ -29,8 +29,9 @@ import {
   Styledh5,
   Styledh6,
   Styledheading,
-  StyledTypographyCard,
+  StyledTypographyLink,
   StyledCard,
+  Styledh4,
 } from "../toggle/StyledComponents";
 
 import { createGlobalStyle, ThemeConsumer } from "styled-components";
@@ -241,9 +242,9 @@ const Home = (props) => {
         <Container fixed>
           <Grid container spacing={2} style={{ paddingTop: "40px" }}>
             <Grid item xs={12}>
-              <Styledheading style={{ fontWeight: "500" }}>
+              <Styledh4 style={{ fontWeight: "500" }}>
                 About The Program
-              </Styledheading>
+              </Styledh4>
             </Grid>
           </Grid>
           <br />
@@ -684,10 +685,10 @@ const Home = (props) => {
                       Events
                     </Typography>
                     <br />
-                    <StyledTypographyCard variant="body2" component="p">
+                    <StyledTypographyLink variant="body2" component="p">
                       Attend Study Jams/ Hackathons/ Developer Conferences to
                       learn more about the latest technologies.
-                    </StyledTypographyCard>
+                    </StyledTypographyLink>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
@@ -716,11 +717,11 @@ const Home = (props) => {
                       Sponsorships
                     </Typography>
                     <br />
-                    <StyledTypographyCard variant="body2" component="p">
+                    <StyledTypographyLink variant="body2" component="p">
                       Get Brand exposure and elevate your business identity
                       within the Community.You can help us by funding our
                       projects too!
-                    </StyledTypographyCard>
+                    </StyledTypographyLink>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
@@ -743,9 +744,9 @@ const Home = (props) => {
                       Projects
                     </Typography>
                     <br />
-                    <StyledTypographyCard variant="body2" component="p">
+                    <StyledTypographyLink variant="body2" component="p">
                       Help us make some really cool projects by funding us.
-                    </StyledTypographyCard>
+                    </StyledTypographyLink>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>

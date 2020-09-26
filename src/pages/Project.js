@@ -18,7 +18,8 @@ import ProjectAnimation from "../components/ProjectAnimation";
 import {
   StyledTypography,
   StyledCard,
-  StyledTypographyCard,
+  StyledTypographyheading,
+  StyledTypographyLink,
 } from "../toggle/StyledComponents";
 import { createGlobalStyle } from "styled-components";
 import style from "styled-theming";
@@ -127,9 +128,12 @@ const ProjectsAlt = () => {
               xl={6}
               style={{ paddingTop: "100px" }}
             >
-              <Typography variant="h3" style={{ fontWeight: "bold" }}>
+              <StyledTypographyheading
+                variant="h3"
+                style={{ fontWeight: "bold" }}
+              >
                 Projects
-              </Typography>
+              </StyledTypographyheading>
               <StyledTypography variant="h6" style={{ paddingTop: "20px" }}>
                 We at DSC TIET believe in doing it and learning via projects.
                 That's why, we have amazing projects that we are working on. Go
@@ -180,12 +184,12 @@ const ProjectsAlt = () => {
                           <Typography gutterBottom variant="h5" component="h2">
                             {item.name}
                           </Typography>
-                          <StyledTypographyCard variant="body2" component="p">
+                          <StyledTypographyLink variant="body2" component="p">
                             Project Lead: {item.project_lead.name} <br />
                             Github Link :<a href={item.github_link}>Link</a>
                             <br />
                             <br />
-                          </StyledTypographyCard>
+                          </StyledTypographyLink>
                         </CardContent>
                       </CardActionArea>
                     </StyledCard>
@@ -210,7 +214,7 @@ const ProjectsAlt = () => {
                           <Typography gutterBottom variant="h5" component="h2">
                             {item.name}
                           </Typography>
-                          <StyledTypographyCard
+                          <StyledTypographyLink
                             variant="body2"
                             color="textSecondary"
                             component="p"
@@ -219,7 +223,7 @@ const ProjectsAlt = () => {
                             Github Link :<a href={item.github_link}>Link</a>
                             <br />
                             <br />
-                          </StyledTypographyCard>
+                          </StyledTypographyLink>
                         </CardContent>
                       </CardActionArea>
                     </StyledCard>
