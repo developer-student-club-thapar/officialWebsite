@@ -14,6 +14,6 @@ export default function useTheme(
   }, [theme]);
   return {
     ...theme,
-    setTheme: ({ setTheme, ...theme }) => _setTheme(theme),
+    setTheme: ({ setTheme, ...theme }) => _setTheme(theme)
   };
 }

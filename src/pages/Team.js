@@ -14,11 +14,11 @@ axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 
 const getBackground = style("mode", {
   light: "#fafafa",
-  dark: "#202020",
+  dark: "#202020"
 });
 const getForeground = style("mode", {
   light: "#5A5A5A",
-  dark: "#EEE",
+  dark: "#EEE"
 });
 
 const GlobalStyle = createGlobalStyle`
