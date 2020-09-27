@@ -29,7 +29,7 @@ urlpatterns = [
     path("register/", views.register, name="register"),
     path("admin/", admin.site.urls),
     path("api/members/", include("officialWebsite.members.urls")),
-    path("api/team/", include("officialWebsite.team.urls")),
+    path("api/archive/", include("officialWebsite.team.urls")),
     path("api/achievements/", include("officialWebsite.achievement.urls")),
     path("api/events/", include("officialWebsite.events.urls")),
     path("api/projects/", include("officialWebsite.projects.urls")),
