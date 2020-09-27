@@ -9,7 +9,6 @@ import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import HomeIcon from "@material-ui/icons/Home";
 import EventIcon from "@material-ui/icons/Event";
@@ -23,22 +22,22 @@ import {
   StyledDiv,
   StyledAppBar,
   StyledList,
-  StyledListItemIcon,
+  StyledListItemIcon
 } from "../toggle/StyledComponents";
 import ToggleMode from "../toggle/ToggleButton";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2)
   },
   title: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   toolbar: {
-    display: "flex",
+    display: "flex"
   },
   button: {
     justifyContent: "space-around",
@@ -47,23 +46,23 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.5em",
     fontWeight: "300",
     textDecoration: "none",
-    color: "black",
+    color: "black"
   },
   list: {
-    width: 250,
+    width: 250
   },
   fullList: {
-    width: "auto",
-  },
+    width: "auto"
+  }
 }));
 
 const getBackground = style("mode", {
   light: "#fafafa",
-  dark: "#202020",
+  dark: "#202020"
 });
 const getForeground = style("mode", {
   light: "#5A5A5A",
-  dark: "#EEE",
+  dark: "#EEE"
 });
 
 const GlobalStyle = createGlobalStyle`
@@ -74,17 +73,17 @@ const GlobalStyle = createGlobalStyle`
   `;
 const getBg = style("mode", {
   light: "#ffffff",
-  dark: "#202020",
+  dark: "#202020"
 });
 const StyledSwipeableDrawer = styled(SwipeableDrawer)`
   background-color: ${getBg};
 `;
-const Nav = (props) => {
+const Nav = props => {
   const classes = useStyles();
 
   const [sideDrawer, setSideDrawer] = React.useState(false);
 
-  const toggleDrawer = (open) => (event) => {
+  const toggleDrawer = open => event => {
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
@@ -98,7 +97,7 @@ const Nav = (props) => {
   const list = () => (
     <div
       className={clsx(classes.list, {
-        [classes.fullList]: false,
+        [classes.fullList]: false
       })}
       role="presentation"
       onClick={toggleDrawer(false)}
@@ -110,7 +109,7 @@ const Nav = (props) => {
             <ListItem
               button
               key={text}
-              onClick={(e) => {
+              onClick={e => {
                 if (text === "Podcast") {
                   e.preventDefault();
                   window.location.href = "https://raw-talent.webflow.io/";
@@ -163,7 +162,7 @@ const Nav = (props) => {
               </Typography>
               <ToggleMode
                 style={{
-                  float: "right",
+                  float: "right"
                 }}
               />
             </Toolbar>
