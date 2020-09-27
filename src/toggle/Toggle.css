@@ -14,11 +14,11 @@
   background: grey;
   border-radius: 100px;
   position: relative;
-  transition: background-color .2s;
+  transition: background-color 0.2s;
 }
 
 .react-switch-label .react-switch-button {
-  content: '';
+  content: "";
   position: absolute;
   top: 2px;
   left: 2px;
@@ -33,7 +33,6 @@
 .react-switch-checkbox:checked + .react-switch-label .react-switch-button {
   left: calc(100% - 2px);
   transform: translateX(-100%);
-  
 }
 
 .react-switch-label:active .react-switch-button {

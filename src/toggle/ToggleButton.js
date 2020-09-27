@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { ThemeConsumer, withTheme } from "styled-components";
 import "./Toggle.css";
 
-const ToggleMode = (props) => {
+const ToggleMode = props => {
   const [checked, setChecked] = useState(false);
 
-  const toggleChecked = (theme) => {
+  const toggleChecked = theme => {
     theme.setTheme(
       theme.mode === "dark"
         ? { ...theme, mode: "light", paper: "light" }
@@ -23,14 +23,14 @@ const ToggleMode = (props) => {
 
   return (
     <ThemeConsumer>
-      {(theme) => (
+      {theme => (
         <>
           <input
             className="react-switch-checkbox"
             id={`react-switch-new`}
             type="checkbox"
             checked={checked}
-            onClick={(e) => toggleChecked(theme)}
+            onClick={e => toggleChecked(theme)}
           />
           <label className="react-switch-label" htmlFor={`react-switch-new`}>
             <span className={`react-switch-button`} />

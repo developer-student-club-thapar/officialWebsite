@@ -9,51 +9,51 @@ import "../components/styles/NavBar.css";
 import {
   StyledAppBar,
   StyledLink,
-  StyledTypographyNav,
+  StyledTypographyNav
 } from "../toggle/StyledComponents";
 import ToggleMode from "../toggle/ToggleButton";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   grow: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2)
   },
   title: {
     display: "none",
     [theme.breakpoints.up("sm")]: {
-      display: "block",
-    },
+      display: "block"
+    }
   },
 
   sectionDesktop: {
     display: "none",
 
     [theme.breakpoints.up("md")]: {
-      display: "flex",
-    },
+      display: "flex"
+    }
   },
   sectionMobile: {
     display: "flex",
     [theme.breakpoints.up("md")]: {
-      display: "none",
-    },
+      display: "none"
+    }
   },
   button: {
     justifyContent: "space-between",
     fontSize: "1.2em",
     fontWeight: "300",
-    textDecoration: "none",
+    textDecoration: "none"
   },
   logo: {
     height: "30px",
-    objectFit: "contain",
-  },
+    objectFit: "contain"
+  }
 }));
 
-const NavAlt = (props) => {
-  window.onscroll = function () {
+const NavAlt = props => {
+  window.onscroll = function() {
     if (props.location.pathname === "/") {
       scrollFunction();
     }
@@ -128,7 +128,7 @@ const NavAlt = (props) => {
                 </div>
                 <div style={{ paddingRight: "10px" }}>
                   <StyledLink
-                    onClick={(e) => {
+                    onClick={e => {
                       e.preventDefault();
                       window.location.href =
                         "https://medium.com/developer-student-clubs-tiet";
@@ -141,7 +141,7 @@ const NavAlt = (props) => {
                 </div>
                 <div style={{ paddingRight: "10px" }}>
                   <StyledLink
-                    onClick={(e) => {
+                    onClick={e => {
                       e.preventDefault();
                       window.location.href = "https://raw-talent.webflow.io/";
                     }}

@@ -19,68 +19,68 @@ import {
   StyledTypography,
   StyledCard,
   StyledTypographyheading,
-  StyledTypographyLink,
+  StyledTypographyLink
 } from "../toggle/StyledComponents";
 import { createGlobalStyle } from "styled-components";
 import style from "styled-theming";
 
 axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: "center",
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.secondary
   },
 
   button: {
     backgroundColor: "#746B6B",
-    color: "white",
+    color: "white"
   },
   rootCard: {
     maxWidth: 350,
-    height: 350,
+    height: 350
   },
   rootCardMobile: {
     width: "auto",
-    height: 350,
+    height: 350
   },
   media: {
-    height: 230,
+    height: 230
   },
   grid: {
-    height: 550,
+    height: 550
   },
   modal: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     width: 400,
-    margin: "auto",
+    margin: "auto"
   },
   paperModal: {
     backgroundColor: theme.palette.background.paper,
     // border: '2px solid #000',
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    padding: theme.spacing(2, 4, 3)
   },
   cardAction: {
     "&:focus": {
-      backgroundColor: "#ffffff",
-    },
-  },
+      backgroundColor: "#ffffff"
+    }
+  }
 }));
 
 const getBackground = style("mode", {
   light: "#fafafa",
-  dark: "#202020",
+  dark: "#202020"
 });
 const getForeground = style("mode", {
   light: "#5A5A5A",
-  dark: "#EEE",
+  dark: "#EEE"
 });
 
 const GlobalStyle = createGlobalStyle`
@@ -241,7 +241,7 @@ const ProjectsAlt = () => {
             closeAfterTransition
             BackdropComponent={Backdrop}
             BackdropProps={{
-              timeout: 500,
+              timeout: 500
             }}
           >
             <Fade in={open}>
@@ -252,7 +252,7 @@ const ProjectsAlt = () => {
                   <br />
                   <h5>Members:</h5>
                   {key != null
-                    ? projects[key].members.map((item) => (
+                    ? projects[key].members.map(item => (
                         <li>
                           <span> {item.name}</span>
                         </li>
