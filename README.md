@@ -119,9 +119,11 @@ Thanks goes to these wonderful people for helping us set up this project. Cheers
     <td align="center"><a href="https://sourcerer.io/animesh-007"><img src="https://avatars0.githubusercontent.com/u/53366877?v=4" width="100px;" alt=""/><br /><sub><b>Animesh Gupta</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=animesh-007" title="Documentation">📖</a> <a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=animesh-007" title="Code">💻</a></td>
     <td align="center"><a href="http://kush-blog.netlify.com"><img src="https://avatars2.githubusercontent.com/u/40840079?v=4" width="100px;" alt=""/><br /><sub><b>Kush Daga</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=kush-daga" title="Code">💻</a> <a href="#design-kush-daga" title="Design">🎨</a></td>
     <td align="center"><a href="http://shubhank-saxena.github.io"><img src="https://avatars3.githubusercontent.com/u/29003047?v=4" width="100px;" alt=""/><br /><sub><b>Shubhank Saxena</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=shubhank-saxena" title="Code">💻</a> <a href="#design-shubhank-saxena" title="Design">🎨</a> <a href="#maintenance-shubhank-saxena" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/Priya2123"><img src="https://avatars3.githubusercontent.com/u/55858346?v=4" width="100px;" alt=""/><br /><sub><b>Priya Aggarwal</b></sub></a><br /><a href="#design-Priya2123" title="Design">🎨</a> <a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=Priya2123" title="Code">💻</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
