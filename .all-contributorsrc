@@ -75,6 +75,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jaskeerat789",
+      "name": "Jaskeerat Singh Randhawa",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/38110126?v=4",
+      "profile": "https://novoresume.com/a/jaskee789.1",
+      "contributions": [
+        "code",
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
