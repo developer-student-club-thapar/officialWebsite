@@ -124,6 +124,7 @@ Thanks goes to these wonderful people for helping us set up this project. Cheers
   </tr>
   <tr>
     <td align="center"><a href="https://novoresume.com/a/jaskee789.1"><img src="https://avatars3.githubusercontent.com/u/38110126?v=4" width="100px;" alt=""/><br /><sub><b>Jaskeerat Singh Randhawa</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=jaskeerat789" title="Code">💻</a> <a href="#infra-jaskeerat789" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/parth-shah-97911416a/"><img src="https://avatars0.githubusercontent.com/u/43181887?v=4" width="100px;" alt=""/><br /><sub><b>Parth Sujalkumar Shah</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=parthsujalshah" title="Code">💻</a></td>
   </tr>
 </table>
 
