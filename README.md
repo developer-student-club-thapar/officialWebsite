@@ -122,6 +122,9 @@ Thanks goes to these wonderful people for helping us set up this project. Cheers
     <td align="center"><a href="https://github.com/Priya2123"><img src="https://avatars3.githubusercontent.com/u/55858346?v=4" width="100px;" alt=""/><br /><sub><b>Priya Aggarwal</b></sub></a><br /><a href="#design-Priya2123" title="Design">🎨</a> <a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=Priya2123" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/DivjyotSingh"><img src="https://avatars1.githubusercontent.com/u/56316275?v=4" width="100px;" alt=""/><br /><sub><b>Divjyot Singh</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=DivjyotSingh" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://novoresume.com/a/jaskee789.1"><img src="https://avatars3.githubusercontent.com/u/38110126?v=4" width="100px;" alt=""/><br /><sub><b>Jaskeerat Singh Randhawa</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=jaskeerat789" title="Code">💻</a> <a href="#infra-jaskeerat789" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
