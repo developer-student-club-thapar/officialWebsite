@@ -1,13 +1,13 @@
 import React from "react";
-import { Paper, Avatar } from "@material-ui/core";
+import { Avatar } from "@material-ui/core";
 import { useStyles } from "./styles/TeamMemberCardStyles";
-
+import { StyledPaperTeam, StyledDiv } from "../toggle/StyledComponents";
 const TeamMemberCard = ({ item }) => {
   const classes = useStyles();
   return (
     <>
-      <Paper className={classes.paper} elevation={3}>
-        <div style={{ paddingBottom: "100px" }}>
+      <StyledPaperTeam className={classes.paper} elevation={3}>
+        <StyledDiv style={{ paddingBottom: "100px" }}>
           <h5 className={classes.name}>
             {item.name.length > 16 ? item.name.slice(0, 16) : item.name}
           </h5>
@@ -64,8 +64,8 @@ const TeamMemberCard = ({ item }) => {
               style={{ paddingBottom: "0px" }}
             />
           </div>
-        </div>
-      </Paper>
+        </StyledDiv>
+      </StyledPaperTeam>
     </>
   );
 };

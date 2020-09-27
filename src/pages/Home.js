@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
@@ -11,6 +10,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
 import dsclogo from "../assets/dsc_logo.png";
 import header from "../assets/header.png";
+import headerdark from "../assets/headerdark.png";
 import Paper from "@material-ui/core/Paper";
 import GestureIcon from "@material-ui/icons/Gesture";
 import Team from "../assets/team.webp";
@@ -24,6 +24,18 @@ import Discord from "../assets/discord.png";
 import ThaparImg from "../assets/ThaparUniversity_1.jpg";
 import Footer from "../components/Footer";
 import styles from "./styles/home.module.css";
+import {
+  StyledPaper,
+  Styledh5,
+  Styledh6,
+  Styledheading,
+  StyledTypographyLink,
+  StyledCard,
+  Styledh4
+} from "../toggle/StyledComponents";
+
+import { createGlobalStyle, ThemeConsumer, withTheme } from "styled-components";
+import style from "styled-theming";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -146,6 +158,11 @@ const useStyles = makeStyles(theme => ({
     "&:focus": {
       backgroundColor: "#ffffff"
     }
+  },
+  cardActionDark: {
+    "&:focus": {
+      backgroundColor: "#202020"
+    }
   }
 }));
 
@@ -154,8 +171,26 @@ const Home = props => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const getBackground = style("mode", {
+    light: "#fafafa",
+    dark: "#202020"
+  });
+  const getForeground = style("mode", {
+    light: "#5A5A5A",
+    dark: "#EEE"
+  });
+
+  const GlobalStyle = createGlobalStyle`
+  body{
+    background-color: ${getBackground};
+    color: ${getForeground};
+  }
+  `;
+
   return (
     <Fragment>
+      <GlobalStyle />
       <CssBaseline />
       <Container fixed className={classes.main}>
         <Grid container spacing={2} className={classes.grid}>
@@ -179,30 +214,42 @@ const Home = props => {
                 width: "40%"
               }}
             />
-            <h4 style={{ display: "inline-block", color: "#5A5A5A" }}>
-              Developer Students Club
-            </h4>
-            <h6 style={{ display: "inline-block", color: "#5A5A5A" }}>
+            <h4 style={{ display: "inline-block" }}>Developer Students Club</h4>
+            {/* <ToggleButton /> */}
+            <h6 style={{ display: "inline-block" }}>
               Thapar Institute of Engineering and Technology
             </h6>
           </Grid>
           <Hidden only="xs">
-            <Grid item xs={false} sm={6} md={8} lg={8} xl={8}>
-              <img src={header} alt="header" width="100%" height="95%" />
-            </Grid>
+            <ThemeConsumer>
+              {theme => (
+                <Grid item xs={false} sm={6} md={8} lg={8} xl={8}>
+                  {theme.mode === "dark" ? (
+                    <img
+                      src={headerdark}
+                      alt="header"
+                      width="100%"
+                      height="95%"
+                    />
+                  ) : (
+                    <img src={header} alt="header" width="100%" height="95%" />
+                  )}
+                </Grid>
+              )}
+            </ThemeConsumer>
           </Hidden>
         </Grid>
       </Container>
-      <Paper
+      <StyledPaper
         elevation={4}
         style={{ position: "relative", top: "-20px", padding: "0px 16px" }}
       >
         <Container fixed>
           <Grid container spacing={2} style={{ paddingTop: "40px" }}>
             <Grid item xs={12}>
-              <h4 style={{ color: "#3C4858", fontWeight: "500" }}>
+              <Styledh4 style={{ fontWeight: "500" }}>
                 About The Program
-              </h4>
+              </Styledh4>
             </Grid>
           </Grid>
           <br />
@@ -222,29 +269,28 @@ const Home = props => {
               >
                 <GestureIcon style={{ color: "white", marginTop: "14px" }} />
               </Paper>
-              <h5
+              <Styledh5
                 style={{
                   display: "inline-block",
-                  marginLeft: "10px",
-                  color: "#363535"
+                  marginLeft: "10px"
                 }}
               >
                 What we do?
-              </h5>
+              </Styledh5>
               <br />
               <br />
 
-              <h6 style={{ color: "#565656" }}>
+              <Styledh6>
                 Google collaborates with university students who are passionate
                 about growing developer communities.
-              </h6>
+              </Styledh6>
 
-              <h6 style={{ color: "#565656" }}>
+              <Styledh6>
                 Developer Student Club powered by Google Developers is an
                 initiative to grow their knowledge on developer technologies and
                 more through peer to peer workshops and events, and gain
                 relevant industry experience.
-              </h6>
+              </Styledh6>
 
               <br />
               <br />
@@ -269,20 +315,20 @@ const Home = props => {
           </Grid>
           <Grid container spacing={5}>
             <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
-              <h5 style={{ color: "#3C4858", fontWeight: "500" }}>
+              <Styledheading style={{ fontWeight: "500" }}>
                 What DSC TIET does?
-              </h5>
+              </Styledheading>
               <br />
 
-              <h6 style={{ color: "#565656" }}>
+              <Styledh6>
                 Developer Student Club TIET is inspired by the Google
                 Developers' Family.
-              </h6>
+              </Styledh6>
 
-              <h6 style={{ color: "#565656" }}>
+              <Styledh6>
                 The motive is to create a local ecosystem of Developers in and
                 around the Campus. And having fun doing it.
-              </h6>
+              </Styledh6>
 
               <br />
               <br />
@@ -464,9 +510,9 @@ const Home = props => {
                       Seminars
                     </h6>
                   </Paper>
-                  <h6 style={{ width: "200px", color: "#565656" }}>
+                  <Styledh6 style={{ width: "200px" }}>
                     Get updated with the latest news and announcements.
-                  </h6>
+                  </Styledh6>
                 </Grid>
                 <Grid
                   item
@@ -498,9 +544,9 @@ const Home = props => {
                       Study Jams
                     </h6>
                   </Paper>
-                  <h6 style={{ width: "200px", color: "#565656" }}>
+                  <Styledh6 style={{ width: "200px" }}>
                     Hands-on experience with the community members.
-                  </h6>
+                  </Styledh6>
                 </Grid>
               </Grid>
               <Grid container spacing={2}>
@@ -534,9 +580,9 @@ const Home = props => {
                       Projects
                     </h6>
                   </Paper>
-                  <h6 style={{ width: "200px", color: "#565656" }}>
+                  <Styledh6 style={{ width: "200px" }}>
                     Projects with a social impact that help a lot of people.
-                  </h6>
+                  </Styledh6>
                 </Grid>
                 <Grid
                   item
@@ -568,9 +614,9 @@ const Home = props => {
                       Hackathons
                     </h6>
                   </Paper>
-                  <h6 style={{ width: "200px", color: "#565656" }}>
+                  <Styledh6 style={{ width: "200px" }}>
                     Dream. Explore. Wonder. Build it Together.
-                  </h6>
+                  </Styledh6>
                 </Grid>
               </Grid>
             </Grid>
@@ -592,30 +638,29 @@ const Home = props => {
                 >
                   <WhatshotIcon style={{ color: "white", marginTop: "14px" }} />
                 </Paper>
-                <h5
+                <Styledh5
                   style={{
                     display: "inline-block",
-                    marginLeft: "10px",
-                    color: "#363535"
+                    marginLeft: "10px"
                   }}
                 >
                   The Team
-                </h5>
+                </Styledh5>
                 <br />
                 <br />
 
-                <h6 style={{ color: "#565656" }}>
+                <Styledh6>
                   These are the amazing bunch of people who make the community
                   what it is. Who are the Backbone of Developer Student Club,
                   TIET and ensure that we can forge ahead
                   <span style={{ color: "#3F51B5" }}> #WhateverItTakes!</span>
-                </h6>
+                </Styledh6>
 
-                <h6 style={{ color: "#565656" }}>
+                <Styledh6>
                   They take the time out from their daily grind to give back to
                   the members and empower them to become bigger
                   (Metaphorically). And Better.
-                </h6>
+                </Styledh6>
 
                 <br />
 
@@ -633,8 +678,14 @@ const Home = props => {
 
           <Grid container spacing={3} className={classes.CardGrid}>
             <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
-              <Card className={classes.root} style={{ margin: "auto" }}>
-                <CardActionArea className={classes.cardAction}>
+              <StyledCard className={classes.root} style={{ margin: "auto" }}>
+                <CardActionArea
+                  className={
+                    props.theme.mode === "dark"
+                      ? classes.cardActionDark
+                      : classes.cardAction
+                  }
+                >
                   <CardMedia
                     className={classes.media}
                     image={EventCardImg}
@@ -645,14 +696,10 @@ const Home = props => {
                       Events
                     </Typography>
                     <br />
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
+                    <StyledTypographyLink variant="body2" component="p">
                       Attend Study Jams/ Hackathons/ Developer Conferences to
                       learn more about the latest technologies.
-                    </Typography>
+                    </StyledTypographyLink>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
@@ -666,11 +713,17 @@ const Home = props => {
                     Learn More
                   </Button>
                 </CardActions>
-              </Card>
+              </StyledCard>
             </Grid>
             <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
-              <Card className={classes.root} style={{ margin: "auto" }}>
-                <CardActionArea className={classes.cardAction}>
+              <StyledCard className={classes.root} style={{ margin: "auto" }}>
+                <CardActionArea
+                  className={
+                    props.theme.mode === "dark"
+                      ? classes.cardActionDark
+                      : classes.cardAction
+                  }
+                >
                   <CardMedia
                     className={classes.media}
                     image={Sponsorships}
@@ -681,15 +734,11 @@ const Home = props => {
                       Sponsorships
                     </Typography>
                     <br />
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
+                    <StyledTypographyLink variant="body2" component="p">
                       Get Brand exposure and elevate your business identity
                       within the Community.You can help us by funding our
                       projects too!
-                    </Typography>
+                    </StyledTypographyLink>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
@@ -697,11 +746,17 @@ const Home = props => {
                     Send Proposal
                   </Button>
                 </CardActions>
-              </Card>
+              </StyledCard>
             </Grid>
             <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
-              <Card className={classes.root} style={{ margin: "auto" }}>
-                <CardActionArea className={classes.cardAction}>
+              <StyledCard className={classes.root} style={{ margin: "auto" }}>
+                <CardActionArea
+                  className={
+                    props.theme.mode === "dark"
+                      ? classes.cardActionDark
+                      : classes.cardAction
+                  }
+                >
                   <CardMedia
                     className={classes.media}
                     image={ProjectImg}
@@ -712,13 +767,9 @@ const Home = props => {
                       Projects
                     </Typography>
                     <br />
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
+                    <StyledTypographyLink variant="body2" component="p">
                       Help us make some really cool projects by funding us.
-                    </Typography>
+                    </StyledTypographyLink>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
@@ -732,7 +783,7 @@ const Home = props => {
                     Learn More
                   </Button>
                 </CardActions>
-              </Card>
+              </StyledCard>
             </Grid>
           </Grid>
 
@@ -740,19 +791,19 @@ const Home = props => {
           <br />
           <Grid container spacing={2}>
             <Grid item xs={12}>
-              <h5 style={{ color: "#3C4858", fontWeight: "500" }}>
+              <Styledheading style={{ fontWeight: "500" }}>
                 Join the conversation
-              </h5>
+              </Styledheading>
             </Grid>
           </Grid>
           <Grid container spacing={2}>
             <Grid item lg={6} xl={6}>
               <br />
 
-              <h6 style={{ color: "#565656" }}>
+              <Styledh6>
                 Join our Slack Channel to know more about the Activities,
                 Sessions and other fun stuff.
-              </h6>
+              </Styledh6>
 
               <br />
               <Button
@@ -770,17 +821,17 @@ const Home = props => {
             <Grid item lg={6} xl={6}>
               <br />
 
-              <h6 style={{ color: "#565656" }}>
+              <Styledh6>
                 Join our Discord Channel to know more about the Activities,
                 Sessions and other fun stuff.
-              </h6>
+              </Styledh6>
 
               <br />
               <Button
                 variant="contained"
                 style={{ backgroundColor: "#2C2F23", color: "white" }}
                 onClick={() => {
-                  window.open("https://discord.gg/Ma9ZAGJ");
+                  window.open("https://discord.com/invite/Ma9ZAGJ");
                 }}
               >
                 Join us on <img src={Discord} height="30px" alt="discord" />
@@ -800,19 +851,19 @@ const Home = props => {
               />
             </Grid>
             <Grid item lg={6} xl={6}>
-              <h5 style={{ color: "#3C4858", fontWeight: "500" }}>
+              <Styledheading style={{ fontWeight: "500" }}>
                 About TIET
-              </h5>
+              </Styledheading>
               <br />
 
-              <h6 style={{ color: "#565656" }}>
+              <Styledh6>
                 Thapar Institute of Engineering and Technology, previously known
                 as Thapar University, is a private institute deemed to be
                 university, in Patiala. It was founded in 1956 by Karam Chand
                 Thapar. The institute has been granted full autonomy and the
                 status of deemed-to-be-university by the University Grants
                 Commission.
-              </h6>
+              </Styledh6>
 
               <br />
               <h6
@@ -830,7 +881,7 @@ const Home = props => {
           <br />
           <br />
         </Container>
-      </Paper>
+      </StyledPaper>
       <Grid
         container
         spacing={0}
@@ -853,4 +904,4 @@ const Home = props => {
   );
 };
 
-export default Home;
+export default withTheme(Home);

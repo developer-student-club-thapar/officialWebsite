@@ -1,13 +1,17 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import { Container } from "@material-ui/core";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import dsclogo from "../assets/dsc_logo.png";
 import styled from "styled-components";
 import "../components/styles/NavBar.css";
+import {
+  StyledAppBar,
+  StyledLink,
+  StyledTypographyNav
+} from "../toggle/StyledComponents";
+import ToggleMode from "../toggle/ToggleButton";
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -18,7 +22,6 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     display: "none",
-    color: "#3C4858",
     [theme.breakpoints.up("sm")]: {
       display: "block"
     }
@@ -41,8 +44,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "space-between",
     fontSize: "1.2em",
     fontWeight: "300",
-    textDecoration: "none",
-    color: "black"
+    textDecoration: "none"
   },
   logo: {
     height: "30px",
@@ -85,12 +87,7 @@ const NavAlt = props => {
   return (
     <div className={classes.grow}>
       <ResponsiveDiv>
-        <AppBar
-          position="fixed"
-          style={{ backgroundColor: "white" }}
-          id="appbar"
-          className="fill"
-        >
+        <StyledAppBar position="fixed" id="appbar" className="fill">
           <Container fixed>
             <Toolbar>
               <img
@@ -99,38 +96,38 @@ const NavAlt = props => {
                 className={classes.logo}
                 id="logo"
               />
-              <Typography
+              <StyledTypographyNav
                 className={classes.title}
                 variant="h6"
                 noWrap
                 id="text"
               >
                 &nbsp; DSC TIET
-              </Typography>
+              </StyledTypographyNav>
               <div className={classes.grow} />
               <div className={classes.sectionDesktop}>
                 <div style={{ paddingRight: "10px" }}>
-                  <Link to="/" className={classes.button}>
+                  <StyledLink to="/" className={classes.button}>
                     Home
-                  </Link>
+                  </StyledLink>
                 </div>
                 <div style={{ paddingRight: "10px" }}>
-                  <Link to="/events" className={classes.button}>
+                  <StyledLink to="/events" className={classes.button}>
                     Events
-                  </Link>
+                  </StyledLink>
                 </div>
                 <div style={{ paddingRight: "10px" }}>
-                  <Link to="/projects" className={classes.button}>
+                  <StyledLink to="/projects" className={classes.button}>
                     Projects
-                  </Link>
+                  </StyledLink>
                 </div>
                 <div style={{ paddingRight: "10px" }}>
-                  <Link to="/team" className={classes.button}>
+                  <StyledLink to="/team" className={classes.button}>
                     Team
-                  </Link>
+                  </StyledLink>
                 </div>
                 <div style={{ paddingRight: "10px" }}>
-                  <Link
+                  <StyledLink
                     onClick={e => {
                       e.preventDefault();
                       window.location.href =
@@ -140,10 +137,10 @@ const NavAlt = props => {
                     className={classes.button}
                   >
                     Blog
-                  </Link>
+                  </StyledLink>
                 </div>
                 <div style={{ paddingRight: "10px" }}>
-                  <Link
+                  <StyledLink
                     onClick={e => {
                       e.preventDefault();
                       window.location.href = "https://raw-talent.webflow.io/";
@@ -152,12 +149,13 @@ const NavAlt = props => {
                     className={classes.button}
                   >
                     Podcast
-                  </Link>
+                  </StyledLink>
                 </div>
+                <ToggleMode />
               </div>
             </Toolbar>
           </Container>
-        </AppBar>
+        </StyledAppBar>
       </ResponsiveDiv>
     </div>
   );

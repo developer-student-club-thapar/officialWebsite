@@ -18,7 +18,10 @@ export const useStyles = makeStyles(theme => ({
   },
   leadContainer: {
     marginTop: "5%",
-    justifyContent: "space-around"
+    justifyContent: "space-around",
+    [theme.breakpoints.only("xs")]: {
+      justifyContent: "center"
+    }
   },
   coreImage: {
     height: "375px",
