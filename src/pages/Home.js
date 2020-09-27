@@ -19,7 +19,6 @@ import EventCardImg from "../assets/events.svg";
 import Sponsorships from "../assets/Sponsership.svg";
 import ProjectImg from "../assets/Projects.svg";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
-import Slack from "../assets/slack.png";
 import Discord from "../assets/discord.png";
 import ThaparImg from "../assets/ThaparUniversity_1.jpg";
 import Footer from "../components/Footer";
@@ -746,27 +745,6 @@ const Home = props => {
             </Grid>
           </Grid>
           <Grid container spacing={2}>
-            <Grid item lg={6} xl={6}>
-              <br />
-
-              <h6 style={{ color: "#565656" }}>
-                Join our Slack Channel to know more about the Activities,
-                Sessions and other fun stuff.
-              </h6>
-
-              <br />
-              <Button
-                variant="contained"
-                style={{ backgroundColor: "#4A154B", color: "white" }}
-                onClick={() => {
-                  window.open(
-                    "https://join.slack.com/t/dscthapar-gspatiala/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M"
-                  );
-                }}
-              >
-                Join us on <img src={Slack} height="30px" alt="slack" />
-              </Button>
-            </Grid>
             <Grid item lg={6} xl={6}>
               <br />
 
