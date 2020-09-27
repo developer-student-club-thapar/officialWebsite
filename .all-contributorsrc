@@ -56,6 +56,16 @@
         "design",
         "maintenance"
       ]
+    },
+    {
+      "login": "Priya2123",
+      "name": "Priya Aggarwal",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/55858346?v=4",
+      "profile": "https://github.com/Priya2123",
+      "contributions": [
+        "design",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
