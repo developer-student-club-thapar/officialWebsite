@@ -70,7 +70,7 @@ const Team = () => {
         <Grid container spacing={2} className={classes.leadContainer}>
           {leads &&
             leads.map((item, index) => (
-              <Grid item xs={12} sm={9} lg={4} key={index}>
+              <Grid item xs={11} sm={9} lg={4} key={index}>
                 <TeamMemberCard item={item} />
               </Grid>
             ))}
@@ -78,7 +78,7 @@ const Team = () => {
         <Grid container spacing={2} className={classes.leadContainer}>
           {coleads &&
             coleads.map((item, index) => (
-              <Grid item xs={12} sm={9} lg={4} key={index}>
+              <Grid item xs={11} sm={9} lg={4} key={index}>
                 <TeamMemberCard item={item} />
               </Grid>
             ))}
@@ -98,7 +98,7 @@ const Team = () => {
         <Grid container spacing={2} className={classes.leadContainer}>
           {team &&
             team.map((item, index) => (
-              <Grid item xs={12} sm={9} lg={4} key={index}>
+              <Grid item xs={11} sm={9} lg={4} key={index}>
                 <TeamMemberCard item={item} />
               </Grid>
             ))}
