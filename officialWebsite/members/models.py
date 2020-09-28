@@ -15,7 +15,7 @@ class Member(models.Model):
 
     name = models.CharField(max_length=255)
     user = models.ForeignKey(User, related_name="users", on_delete=models.CASCADE)
-    role = models.CharField(max_length=255, choices=ROLE_CHOICES)
+    role = models.CharField(max_length=255, choices=ROLE_CHOICES, null=True, blank=True)
     email = models.EmailField()
     github_url = models.URLField(blank=True)
     linkedin_url = models.URLField(blank=True)
