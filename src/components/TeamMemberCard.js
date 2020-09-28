@@ -8,9 +8,7 @@ const TeamMemberCard = ({ item }) => {
     <>
       <StyledPaperTeam className={classes.paper} elevation={3}>
         <StyledDiv style={{ paddingBottom: "100px" }}>
-          <h5 className={classes.name}>
-            {item.name.length > 16 ? item.name.slice(0, 16) : item.name}
-          </h5>
+          <h5 className={classes.name}>{item.name}</h5>
           <h6 className={classes.role}>
             {item.role ? item.role : "Developer"}
           </h6>
@@ -31,7 +29,7 @@ const TeamMemberCard = ({ item }) => {
                 style={{ paddingRight: "8px" }}
               >
                 <i
-                  class="fab fa-github-square fa-2x"
+                  className="fab fa-github-square fa-2x"
                   style={{ color: "grey" }}
                 />
               </a>

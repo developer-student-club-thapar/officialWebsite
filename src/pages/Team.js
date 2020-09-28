@@ -32,16 +32,19 @@ const Team = () => {
   const classes = useStyles();
   const [leads, setLeads] = useState(null);
   const [team, setTeam] = useState(null);
+  const [coleads, setColeads] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
-    const res = await axios.get("/team/");
-    const response = await axios.get("/leads/");
-    setTeam(res.data);
-    setLeads(response.data);
+    const memberRes = await axios.get("/members/");
+    const leadResponse = await axios.get("/leads/");
+    const coleadResponse = await axios.get("/co-leads/");
+    setTeam(memberRes.data);
+    setLeads(leadResponse.data);
+    setColeads(coleadResponse.data);
     setLoading(false);
     // console.log(team);
-    console.log(leads);
+    console.log(memberRes.data);
   };
 
   useEffect(() => {
@@ -72,6 +75,14 @@ const Team = () => {
               </Grid>
             ))}
         </Grid>
+        <Grid container spacing={2} className={classes.leadContainer}>
+          {coleads &&
+            coleads.map((item, index) => (
+              <Grid item xs={12} sm={9} lg={4} key={index}>
+                <TeamMemberCard item={item} />
+              </Grid>
+            ))}
+        </Grid>
         <Grid container spacing={2} justify="center">
           <Grid item xs={12} sm={12} lg={6}>
             <img src={image} alt="core-img" className={classes.coreImage} />
@@ -86,7 +97,7 @@ const Team = () => {
         </Grid>
         <Grid container spacing={2} className={classes.leadContainer}>
           {team &&
-            team[0].members.map((item, index) => (
+            team.map((item, index) => (
               <Grid item xs={12} sm={9} lg={4} key={index}>
                 <TeamMemberCard item={item} />
               </Grid>

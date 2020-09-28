@@ -32,6 +32,10 @@ export const useStyles = makeStyles(theme => ({
     marginLeft: "110px",
     width: "200px",
     fontWeight: "bold",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+
     [theme.breakpoints.only("xs")]: {
       fontSize: "1.4rem"
     }
