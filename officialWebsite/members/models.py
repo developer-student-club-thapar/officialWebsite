@@ -70,31 +70,17 @@ class MemberRegistration(models.Model):
         group = Group.objects.get(name="members")
         group.user_set.add(user)
 
-        if self.image == "":
-            member = Member.objects.create(
-                name=self.name,
-                user=user,
-                email=self.email,
-                github_url=self.github_url,
-                linkedin_url=self.linkedin_url,
-                twitter_url=self.twitter_url,
-                medium_url=self.medium_url,
-                dev_url=self.dev_url,
-                image="default.jpeg",
-            )
-        else:
-
-            member = Member.objects.create(
-                name=self.name,
-                user=user,
-                email=self.email,
-                github_url=self.github_url,
-                linkedin_url=self.linkedin_url,
-                twitter_url=self.twitter_url,
-                medium_url=self.medium_url,
-                dev_url=self.dev_url,
-                image=self.image,
-            )
+        member = Member.objects.create(
+            name=self.name,
+            user=user,
+            email=self.email,
+            github_url=self.github_url,
+            linkedin_url=self.linkedin_url,
+            twitter_url=self.twitter_url,
+            medium_url=self.medium_url,
+            dev_url=self.dev_url,
+            image=self.image,
+        )
 
         send_mail(
             "Member Registration Password",
