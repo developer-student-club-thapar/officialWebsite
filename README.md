@@ -98,17 +98,17 @@ We follow a systematic Git Workflow -
 
 - Write clear meaningful git commit messages (Do read [this](http://chris.beams.io/posts/git-commit/)).
 - Make sure your PR's description contains GitHub's special keyword references that automatically close the related issue when the PR is merged. (Check [this](https://github.com/blog/1506-closing-issues-via-pull-requests) for more info)
-- When you make very very minor changes to a PR of yours (like for example fixing a failing Travis build or some small style corrections or minor changes requested by reviewers) make sure you squash your commits afterward so that you don't have an absurd number of commits for a very small fix. (Learn how to squash at [here](https://davidwalsh.name/squash-commits-git))
-- When you're submitting a PR for a UI-related issue, it would be really awesome if you add a screenshot of your change or a link to a deployment where it can be tested out along with your PR. It makes it very easy for the reviewers and you'll also get reviews quicker.
+- If you're making very, very small changes to your PR (such as fixing a failed Travis build, or making some minor style corrections or minor changes requested by reviewers), make sure you squeeze your commits afterwards, so you don't have an absurd number of commits for a very small fix. (Learn how to squash at [here](https://davidwalsh.name/squash-commits-git))
+- If you are submitting a PR for a UI-related topic, it would be really awesome if you could add a screenshot of your change or a link to a deployment where it can be tested along with your PR. This makes it very easy for reviewers and you will also get reviews faster.
 
 ### Note
 
-- As the project now uses pipenv to manage dependencies, you need to run `pipenv install <package_name>` to install the new package.
+- Since the project now uses pipenv to manage dependencies, you must run `pipenv install <package_name>` to install the new package.
 - Use only `yarn add package_name` to add new packages to the frontend part.
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people for helping us set up this project. Cheers!
+We would like to thank these wonderful people who helped us to build this project. Cheers!
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -132,7 +132,7 @@ Thanks goes to these wonderful people for helping us set up this project. Cheers
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors)specification. Contributions of any kind welcome!
+This project follows the specification of [all-contributors](https://github.com/all-contributors/all-contributors). Contributions of any kind are welcome!
 
 ## Community
 
