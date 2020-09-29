@@ -14,7 +14,9 @@ class Member(models.Model):
     ROLE_CHOICES = (("Lead", "Lead"), ("Core", "Core"), ("Co-Lead", "Co-Lead"))
 
     name = models.CharField(max_length=255)
-    user = models.ForeignKey(User, related_name="users", on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, related_name="users", on_delete=models.CASCADE, blank=True, null=True
+    )
     role = models.CharField(max_length=255, choices=ROLE_CHOICES, null=True, blank=True)
     email = models.EmailField()
     github_url = models.URLField(blank=True)
