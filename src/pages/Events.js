@@ -194,12 +194,15 @@ const EventsAlt = props => {
                         image={item.image === null ? Test : item.image}
                         title="Event"
                       />
-                      <CardContent style={{ height: "125px" }}>
-                        <Typography gutterBottom variant="h5" component="h2">
-                          {item.title}
+                      <CardContent style={{ height: "130px" }}>
+                        <Typography variant="h5" component="h2">
+                          <StyledTypography style={{ paddingBottom: "3px" }}>
+                            {item.title}
+                          </StyledTypography>
                         </Typography>
                         <StyledTypographyLink variant="body2" component="p">
                           Venue: {item.venue} <br />
+                          Date: {item.date} <br />
                           Time: {item.time} <br />
                           Link : <a href={item.link}>Link</a>
                         </StyledTypographyLink>
@@ -230,11 +233,14 @@ const EventsAlt = props => {
                         title="Event"
                       />
                       <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                          {item.title}
+                        <Typography variant="h5" component="h2">
+                          <StyledTypography style={{ paddingBottom: "3px" }}>
+                            {item.title}
+                          </StyledTypography>
                         </Typography>
                         <StyledTypographyLink variant="body2" component="p">
                           Venue: {item.venue} <br />
+                          Date: {item.date} <br />
                           Time: {item.time} <br />
                           Link : <a href={item.link}>Link</a>
                         </StyledTypographyLink>
