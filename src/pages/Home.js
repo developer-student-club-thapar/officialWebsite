@@ -786,39 +786,6 @@ const Home = props => {
               </StyledCard>
             </Grid>
           </Grid>
-
-          <br />
-          <br />
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <Styledheading style={{ fontWeight: "500" }}>
-                Join the conversation
-              </Styledheading>
-            </Grid>
-          </Grid>
-          <Grid container spacing={2}>
-            <Grid item lg={6} xl={6}>
-              <br />
-
-              <Styledh6>
-                Join our Slack Channel to know more about the Activities,
-                Sessions and other fun stuff.
-              </Styledh6>
-
-              <br />
-              <Button
-                variant="contained"
-                style={{ backgroundColor: "#4A154B", color: "white" }}
-                onClick={() => {
-                  window.open(
-                    "https://join.slack.com/t/dscthapar-gspatiala/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M"
-                  );
-                }}
-              >
-                Join us on <img src={Slack} height="30px" alt="slack" />
-              </Button>
-            </Grid>
-            <Grid item lg={6} xl={6}>
               <br />
 
               <Styledh6>
