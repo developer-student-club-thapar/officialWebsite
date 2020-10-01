@@ -1,7 +1,8 @@
 .fill a {
   transition: 0.4s;
   text-decoration: none;
-  margin: 0 10px;
+  padding: 0 10px;
+  margin: 0;
 }
 .fill a:hover {
   background-color: #3c4858;
