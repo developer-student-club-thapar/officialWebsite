@@ -5,7 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import { withRouter } from "react-router-dom";
+import { Link , withRouter } from "react-router-dom";
 import styled from "styled-components";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import ListItem from "@material-ui/core/ListItem";
@@ -53,6 +53,11 @@ const useStyles = makeStyles(theme => ({
   },
   fullList: {
     width: "auto"
+  },
+  NoStyleLink : {
+    textDecoration : 'none',
+    color : 'inherit',
+    display : 'contents'
   }
 }));
 
@@ -157,9 +162,11 @@ const Nav = props => {
               >
                 <MenuIcon />
               </IconButton>
+              <Link to= '/#' className={classes.NoStyleLink} >
               <Typography variant="h6" className={classes.title}>
                 DSC TIET
               </Typography>
+              </Link>
               <ToggleMode
                 style={{
                   float: "right"

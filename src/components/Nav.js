@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Container } from "@material-ui/core";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import dsclogo from "../assets/dsc_logo.png";
 import styled from "styled-components";
 import "../components/styles/NavBar.css";
@@ -49,6 +49,11 @@ const useStyles = makeStyles(theme => ({
   logo: {
     height: "30px",
     objectFit: "contain"
+  },
+  NoStyleLink : {
+    textDecoration : 'none',
+    color : 'inherit',
+    display : 'contents'
   }
 }));
 
@@ -90,6 +95,7 @@ const NavAlt = props => {
         <StyledAppBar position="fixed" id="appbar" className="fill">
           <Container fixed>
             <Toolbar>
+              <Link to= '/#' className={classes.NoStyleLink} >
               <img
                 src={dsclogo}
                 alt="logo"
@@ -104,6 +110,7 @@ const NavAlt = props => {
               >
                 &nbsp; DSC TIET
               </StyledTypographyNav>
+              </Link>
               <div className={classes.grow} />
               <div className={classes.sectionDesktop}>
                 <div style={{ paddingRight: "10px" }}>
