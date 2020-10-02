@@ -160,7 +160,7 @@ const Nav = props => {
               <Link to="/" style={{ display: "contents", color: "inherit" }}>
                 <Typography variant="h6" className={classes.title}>
                   DSC TIET
-              </Typography>
+                </Typography>
               </Link>
               <ToggleMode
                 style={{

@@ -104,7 +104,7 @@ const NavAlt = props => {
                   id="text"
                 >
                   &nbsp; DSC TIET
-              </StyledTypographyNav>
+                </StyledTypographyNav>
               </StyledLink>
               <div className={classes.grow} />
               <div className={classes.sectionDesktop}>
