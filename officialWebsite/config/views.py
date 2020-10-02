@@ -26,7 +26,7 @@ class LeadListView(APIView):
     """
 
     def get(self, request, format=None):
-        leads = Member.objects.all().filter(role__icontains="Lead")
+        leads = Member.objects.all().filter(role__iexact="Lead")
         serializer = MemberSerializer(leads, many=True)
         return Response(serializer.data)
 

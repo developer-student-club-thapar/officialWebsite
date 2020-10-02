@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Slide from "react-reveal/Slide";
@@ -16,6 +15,15 @@ import Loader from "./Loader";
 import axios from "axios";
 import Footer from "../components/Footer";
 import ProjectAnimation from "../components/ProjectAnimation";
+import {
+  StyledTypography,
+  StyledCard,
+  StyledTypographyheading,
+  StyledTypographyLink,
+  StyledModalDiv
+} from "../toggle/StyledComponents";
+import { createGlobalStyle, withTheme } from "styled-components";
+import style from "styled-theming";
 
 axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 
@@ -64,10 +72,31 @@ const useStyles = makeStyles(theme => ({
     "&:focus": {
       backgroundColor: "#ffffff"
     }
+  },
+  cardActionDark: {
+    "&:focus": {
+      backgroundColor: "#202020"
+    }
   }
 }));
 
-const ProjectsAlt = () => {
+const getBackground = style("mode", {
+  light: "#fafafa",
+  dark: "#202020"
+});
+const getForeground = style("mode", {
+  light: "#5A5A5A",
+  dark: "#EEE"
+});
+
+const GlobalStyle = createGlobalStyle`
+  body{
+    background-color: ${getBackground};
+    color: ${getForeground};
+  }
+  `;
+
+const ProjectsAlt = props => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -92,6 +121,7 @@ const ProjectsAlt = () => {
   } else {
     return (
       <Fragment>
+        <GlobalStyle />
         <CssBaseline />
         <Container fixed>
           <Grid container spacing={2} className={classes.grid}>
@@ -104,18 +134,18 @@ const ProjectsAlt = () => {
               xl={6}
               style={{ paddingTop: "100px" }}
             >
-              <Typography variant="h3" style={{ fontWeight: "bold" }}>
-                Projects
-              </Typography>
-              <Typography
-                variant="h6"
-                style={{ color: "grey", paddingTop: "20px" }}
+              <StyledTypographyheading
+                variant="h3"
+                style={{ fontWeight: "bold" }}
               >
+                Projects
+              </StyledTypographyheading>
+              <StyledTypography variant="h6" style={{ paddingTop: "20px" }}>
                 We at DSC TIET believe in doing it and learning via projects.
                 That's why, we have amazing projects that we are working on. Go
                 ahead and look for their details. Feel free to contribute on
                 GitHub!
-              </Typography>
+              </StyledTypography>
             </Grid>
             <Hidden smDown>
               <Grid
@@ -149,8 +179,14 @@ const ProjectsAlt = () => {
               >
                 <Hidden smDown>
                   <Slide bottom>
-                    <Card className={classes.rootCard}>
-                      <CardActionArea className={classes.cardAction}>
+                    <StyledCard className={classes.rootCard}>
+                      <CardActionArea
+                        className={
+                          props.theme.mode === "dark"
+                            ? classes.cardActionDark
+                            : classes.cardAction
+                        }
+                      >
                         <CardMedia
                           className={classes.media}
                           image={item.image === null ? Test : item.image}
@@ -160,31 +196,33 @@ const ProjectsAlt = () => {
                           <Typography gutterBottom variant="h5" component="h2">
                             {item.name}
                           </Typography>
-                          <Typography
-                            variant="body2"
-                            color="textSecondary"
-                            component="p"
-                          >
+                          <StyledTypographyLink variant="body2" component="p">
                             Project Lead: {item.project_lead.name} <br />
                             Github Link :<a href={item.github_link}>Link</a>
                             <br />
                             <br />
-                          </Typography>
+                          </StyledTypographyLink>
                         </CardContent>
                       </CardActionArea>
-                    </Card>
+                    </StyledCard>
                   </Slide>
                 </Hidden>
                 <Hidden mdUp>
                   <Slide bottom>
-                    <Card
+                    <StyledCard
                       className={classes.rootCardMobile}
                       onClick={() => {
                         setKey(index);
                         setOpen(true);
                       }}
                     >
-                      <CardActionArea>
+                      <CardActionArea
+                        className={
+                          props.theme.mode === "dark"
+                            ? classes.cardActionDark
+                            : classes.cardAction
+                        }
+                      >
                         <CardMedia
                           className={classes.media}
                           image={item.image === null ? Test : item.image}
@@ -194,7 +232,7 @@ const ProjectsAlt = () => {
                           <Typography gutterBottom variant="h5" component="h2">
                             {item.name}
                           </Typography>
-                          <Typography
+                          <StyledTypographyLink
                             variant="body2"
                             color="textSecondary"
                             component="p"
@@ -203,10 +241,10 @@ const ProjectsAlt = () => {
                             Github Link :<a href={item.github_link}>Link</a>
                             <br />
                             <br />
-                          </Typography>
+                          </StyledTypographyLink>
                         </CardContent>
                       </CardActionArea>
-                    </Card>
+                    </StyledCard>
                   </Slide>
                 </Hidden>
               </Grid>
@@ -225,7 +263,7 @@ const ProjectsAlt = () => {
             }}
           >
             <Fade in={open}>
-              <div className={classes.paperModal}>
+              <StyledModalDiv className={classes.paperModal}>
                 <p id="transition-modal-description">
                   <h5>Project Description:</h5>
                   {key != null ? projects[key].description : ""}
@@ -239,7 +277,7 @@ const ProjectsAlt = () => {
                       ))
                     : ""}
                 </p>
-              </div>
+              </StyledModalDiv>
             </Fade>
           </Modal>
         </Container>
@@ -251,4 +289,4 @@ const ProjectsAlt = () => {
   }
 };
 
-export default ProjectsAlt;
+export default withTheme(ProjectsAlt);

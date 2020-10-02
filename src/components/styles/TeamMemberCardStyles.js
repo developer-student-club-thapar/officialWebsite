@@ -11,7 +11,8 @@ export const useStyles = makeStyles(theme => ({
       width: "100%"
     },
     [theme.breakpoints.only("xs")]: {
-      height: "120px"
+      height: "120px",
+      width: "100%"
     },
     "&:hover": {
       transition: "all .25s linear",
@@ -32,8 +33,13 @@ export const useStyles = makeStyles(theme => ({
     marginLeft: "110px",
     width: "200px",
     fontWeight: "bold",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+
     [theme.breakpoints.only("xs")]: {
-      fontSize: "1.4rem"
+      fontSize: "1.4rem",
+      width: "130px"
     }
   },
   role: {

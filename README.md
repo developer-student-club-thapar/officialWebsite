@@ -98,17 +98,17 @@ We follow a systematic Git Workflow -
 
 - Write clear meaningful git commit messages (Do read [this](http://chris.beams.io/posts/git-commit/)).
 - Make sure your PR's description contains GitHub's special keyword references that automatically close the related issue when the PR is merged. (Check [this](https://github.com/blog/1506-closing-issues-via-pull-requests) for more info)
-- When you make very very minor changes to a PR of yours (like for example fixing a failing Travis build or some small style corrections or minor changes requested by reviewers) make sure you squash your commits afterward so that you don't have an absurd number of commits for a very small fix. (Learn how to squash at [here](https://davidwalsh.name/squash-commits-git))
-- When you're submitting a PR for a UI-related issue, it would be really awesome if you add a screenshot of your change or a link to a deployment where it can be tested out along with your PR. It makes it very easy for the reviewers and you'll also get reviews quicker.
+- If you're making very, very small changes to your PR (such as fixing a failed Travis build, or making some minor style corrections or minor changes requested by reviewers), make sure you squeeze your commits afterwards, so you don't have an absurd number of commits for a very small fix. (Learn how to squash at [here](https://davidwalsh.name/squash-commits-git))
+- If you are submitting a PR for a UI-related topic, it would be really awesome if you could add a screenshot of your change or a link to a deployment where it can be tested along with your PR. This makes it very easy for reviewers and you will also get reviews faster.
 
 ### Note
 
-- As the project now uses pipenv to manage dependencies, you need to run `pipenv install <package_name>` to install the new package.
+- Since the project now uses pipenv to manage dependencies, you must run `pipenv install <package_name>` to install the new package.
 - Use only `yarn add package_name` to add new packages to the frontend part.
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people for helping us set up this project. Cheers!
+We would like to thank these wonderful people who helped us to build this project. Cheers!
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -119,13 +119,21 @@ Thanks goes to these wonderful people for helping us set up this project. Cheers
     <td align="center"><a href="https://sourcerer.io/animesh-007"><img src="https://avatars0.githubusercontent.com/u/53366877?v=4" width="100px;" alt=""/><br /><sub><b>Animesh Gupta</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=animesh-007" title="Documentation">📖</a> <a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=animesh-007" title="Code">💻</a></td>
     <td align="center"><a href="http://kush-blog.netlify.com"><img src="https://avatars2.githubusercontent.com/u/40840079?v=4" width="100px;" alt=""/><br /><sub><b>Kush Daga</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=kush-daga" title="Code">💻</a> <a href="#design-kush-daga" title="Design">🎨</a></td>
     <td align="center"><a href="http://shubhank-saxena.github.io"><img src="https://avatars3.githubusercontent.com/u/29003047?v=4" width="100px;" alt=""/><br /><sub><b>Shubhank Saxena</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=shubhank-saxena" title="Code">💻</a> <a href="#design-shubhank-saxena" title="Design">🎨</a> <a href="#maintenance-shubhank-saxena" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/Priya2123"><img src="https://avatars3.githubusercontent.com/u/55858346?v=4" width="100px;" alt=""/><br /><sub><b>Priya Aggarwal</b></sub></a><br /><a href="#design-Priya2123" title="Design">🎨</a> <a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=Priya2123" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/DivjyotSingh"><img src="https://avatars1.githubusercontent.com/u/56316275?v=4" width="100px;" alt=""/><br /><sub><b>Divjyot Singh</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=DivjyotSingh" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://novoresume.com/a/jaskee789.1"><img src="https://avatars3.githubusercontent.com/u/38110126?v=4" width="100px;" alt=""/><br /><sub><b>Jaskeerat Singh Randhawa</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=jaskeerat789" title="Code">💻</a> <a href="#infra-jaskeerat789" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/parth-shah-97911416a/"><img src="https://avatars0.githubusercontent.com/u/43181887?v=4" width="100px;" alt=""/><br /><sub><b>Parth Sujalkumar Shah</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=parthsujalshah" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/bughunter9"><img src="https://avatars1.githubusercontent.com/u/65765070?v=4" width="100px;" alt=""/><br /><sub><b>MANROOP PARMAR</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=bughunter9" title="Code">💻</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors)specification. Contributions of any kind welcome!
+This project follows the specification of [all-contributors](https://github.com/all-contributors/all-contributors). Contributions of any kind are welcome!
 
 ## Community
 

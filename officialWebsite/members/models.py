@@ -14,8 +14,10 @@ class Member(models.Model):
     ROLE_CHOICES = (("Lead", "Lead"), ("Core", "Core"), ("Co-Lead", "Co-Lead"))
 
     name = models.CharField(max_length=255)
-    user = models.ForeignKey(User, related_name="users", on_delete=models.CASCADE)
-    role = models.CharField(max_length=255, choices=ROLE_CHOICES)
+    user = models.ForeignKey(
+        User, related_name="users", on_delete=models.CASCADE, blank=True, null=True
+    )
+    role = models.CharField(max_length=255, choices=ROLE_CHOICES, null=True, blank=True)
     email = models.EmailField()
     github_url = models.URLField(blank=True)
     linkedin_url = models.URLField(blank=True)
@@ -52,7 +54,7 @@ class Member(models.Model):
 
 class MemberRegistration(models.Model):
     name = models.CharField(max_length=255)
-    username = models.CharField(max_length=50)
+    # username = models.CharField(max_length=50)
     email = models.EmailField()
     github_url = models.URLField(blank=True)
     linkedin_url = models.URLField(blank=True)
@@ -62,47 +64,33 @@ class MemberRegistration(models.Model):
     image = models.ImageField(upload_to="temp-images/", blank=True)
 
     def save(self, *args, **kwargs):
-        password = User.objects.make_random_password(length=10)
-        user = User.objects.create_user(
-            username=self.username, email=self.email, password=password, is_staff=True
-        )
+        # password = User.objects.make_random_password(length=10)
+        # user = User.objects.create_user(
+        #     username=self.username, email=self.email, password=password, is_staff=True
+        # )
         # user.is_staff = True
-        group = Group.objects.get(name="members")
-        group.user_set.add(user)
+        # group = Group.objects.get(name="members")
+        # group.user_set.add(user)
 
-        if self.image == "":
-            member = Member.objects.create(
-                name=self.name,
-                user=user,
-                email=self.email,
-                github_url=self.github_url,
-                linkedin_url=self.linkedin_url,
-                twitter_url=self.twitter_url,
-                medium_url=self.medium_url,
-                dev_url=self.dev_url,
-                image="default.jpeg",
-            )
-        else:
+        member = Member.objects.create(
+            name=self.name,
+            # user=user,
+            email=self.email,
+            github_url=self.github_url,
+            linkedin_url=self.linkedin_url,
+            twitter_url=self.twitter_url,
+            medium_url=self.medium_url,
+            dev_url=self.dev_url,
+            image=self.image,
+        )
 
-            member = Member.objects.create(
-                name=self.name,
-                user=user,
-                email=self.email,
-                github_url=self.github_url,
-                linkedin_url=self.linkedin_url,
-                twitter_url=self.twitter_url,
-                medium_url=self.medium_url,
-                dev_url=self.dev_url,
-                image=self.image,
-            )
-
-        send_mail(
+        """ send_mail(
             "Member Registration Password",
             f"Hi, {self.name}. Welcome to DSC-TIET. Your username is {self.username} and password is {password}. We recommend to change your password upon login. You can login using https://api.dsctiet.tech/admin",
             "noreplydsctiet@gmail.com",
             [f"{self.email}"],
             fail_silently=False,
-        )
+        ) """
 
         super(MemberRegistration, self).save(
             *args, **kwargs

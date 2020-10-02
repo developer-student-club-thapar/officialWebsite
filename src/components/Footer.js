@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import Logo from "../assets/unnamed.png";
 import { Container, Hidden } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { StyledPaperFooter } from "../toggle/StyledComponents";
 
 const useStyles = makeStyles(theme => ({
   img: {
@@ -17,13 +17,12 @@ const FooterAlt = () => {
   const classes = useStyles();
   return (
     <Fragment>
-      <Paper
+      <StyledPaperFooter
         elevation={0}
         style={{
           borderStyle: "solid",
           borderWidth: "1px 0px 0px 0px",
-          borderColor: "grey",
-          backgroundColor: "#f9f9f9"
+          borderColor: "grey"
         }}
       >
         <Container fixed>
@@ -69,7 +68,7 @@ const FooterAlt = () => {
             </Grid>
           </Grid>
         </Container>
-      </Paper>
+      </StyledPaperFooter>
     </Fragment>
   );
 };

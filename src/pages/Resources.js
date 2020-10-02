@@ -147,8 +147,12 @@ const ResourcesAlt = () => {
                       image={Test}
                       title="Event"
                     />
-                    <CardContent style={{ height: "125px" }}>
-                      <Typography gutterBottom variant="h5" component="h2">
+                    <CardContent style={{ height: "130px" }}>
+                      <Typography
+                        variant="h5"
+                        component="h2"
+                        style={{ paddingBottom: "3px" }}
+                      >
                         {item.title}
                       </Typography>
                       <Typography
@@ -157,6 +161,7 @@ const ResourcesAlt = () => {
                         component="p"
                       >
                         Venue: {item.venue} <br />
+                        Date: {item.date} <br />
                         Time: {item.time} <br />
                         Link : <a href={item.link}>Link</a>
                       </Typography>

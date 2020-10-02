@@ -56,6 +56,53 @@
         "design",
         "maintenance"
       ]
+    },
+    {
+      "login": "Priya2123",
+      "name": "Priya Aggarwal",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/55858346?v=4",
+      "profile": "https://github.com/Priya2123",
+      "contributions": [
+        "design",
+        "code"
+      ]
+    },
+    {
+      "login": "DivjyotSingh",
+      "name": "Divjyot Singh",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/56316275?v=4",
+      "profile": "https://github.com/DivjyotSingh",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jaskeerat789",
+      "name": "Jaskeerat Singh Randhawa",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/38110126?v=4",
+      "profile": "https://novoresume.com/a/jaskee789.1",
+      "contributions": [
+        "code",
+        "infra"
+      ]
+    },
+    {
+      "login": "parthsujalshah",
+      "name": "Parth Sujalkumar Shah",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/43181887?v=4",
+      "profile": "https://www.linkedin.com/in/parth-shah-97911416a/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "bughunter9",
+      "name": "MANROOP PARMAR",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/65765070?v=4",
+      "profile": "https://github.com/bughunter9",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
