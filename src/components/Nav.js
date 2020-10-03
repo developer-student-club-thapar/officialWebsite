@@ -108,27 +108,27 @@ const NavAlt = props => {
               </StyledLink>
               <div className={classes.grow} />
               <div className={classes.sectionDesktop}>
-                <div style={{ paddingRight: "10px" }}>
+                <div>
                   <StyledLink to="/" className={classes.button}>
                     Home
                   </StyledLink>
                 </div>
-                <div style={{ paddingRight: "10px" }}>
+                <div>
                   <StyledLink to="/events" className={classes.button}>
                     Events
                   </StyledLink>
                 </div>
-                <div style={{ paddingRight: "10px" }}>
+                <div>
                   <StyledLink to="/projects" className={classes.button}>
                     Projects
                   </StyledLink>
                 </div>
-                <div style={{ paddingRight: "10px" }}>
+                <div>
                   <StyledLink to="/team" className={classes.button}>
                     Team
                   </StyledLink>
                 </div>
-                <div style={{ paddingRight: "10px" }}>
+                <div>
                   <StyledLink
                     onClick={e => {
                       e.preventDefault();
@@ -141,7 +141,7 @@ const NavAlt = props => {
                     Blog
                   </StyledLink>
                 </div>
-                <div style={{ paddingRight: "10px" }}>
+                <div style={{ marginRight: "10px" }}>
                   <StyledLink
                     onClick={e => {
                       e.preventDefault();
