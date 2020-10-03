@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const NavAlt = props => {
-  window.onscroll = function () {
+  window.onscroll = function() {
     if (props.location.pathname === "/") {
       scrollFunction();
     }
