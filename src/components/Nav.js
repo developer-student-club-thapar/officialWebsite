@@ -90,7 +90,7 @@ const NavAlt = props => {
         <StyledAppBar position="fixed" id="appbar" className="fill">
           <Container fixed>
             <Toolbar>
-              <StyledLink to="/" style={{ display : "contents" }}>
+              <StyledLink to="/" style={{ display: "contents" }}>
                 <img
                   src={dsclogo}
                   alt="logo"
