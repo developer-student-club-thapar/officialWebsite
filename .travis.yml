@@ -1,4 +1,6 @@
 dist: xenial
+os: linux
+language: ruby
 group: edge
 
 stages:
@@ -61,9 +63,10 @@ jobs:
     - yarn build
     deploy:
       provider: pages
-      skip_cleanup: true
-      github_token: "$GITHUB_TOKEN"
-      local-dir: build
+      cleanup: true
+      token: "$GITHUB_TOKEN"
+      local_dir: build
+      strategy: git
       on:
       - branch: master
       - type: push
