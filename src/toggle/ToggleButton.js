@@ -1,10 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { ThemeConsumer, withTheme } from "styled-components";
+import { makeStyles } from "@material-ui/core";
+import daymode from "../assets/day-mode.svg";
+import nightmode from "../assets/night-mode.svg";
 import "./Toggle.css";
+
+const useStyles = makeStyles({
+  themeToggleWrapper: {
+    background: props => (props?.theme.mode === "dark" ? "#e7e7e7" : "#202020"),
+    cursor: "pointer"
+  },
+  themeTextLabel: {
+    color: props => (props?.theme.mode === "dark" ? "#202020" : "#e7e7e7"),
+    marginLeft: props => props?.theme.mode === "light" && "auto",
+    marginRight: props => props?.theme.mode === "dark" && "auto",
+    padding: "0 .5rem",
+    fontSize: ".9rem",
+    fontWeight: 800,
+    cursor: "inherit"
+  },
+  themeToggleIcon: {
+    width: "100%"
+  }
+});
 
 const ToggleMode = props => {
   const [checked, setChecked] = useState(false);
-
+  const classes = useStyles(props);
   const toggleChecked = theme => {
     theme.setTheme(
       theme.mode === "dark"
@@ -30,10 +52,22 @@ const ToggleMode = props => {
             id={`react-switch-new`}
             type="checkbox"
             checked={checked}
-            onClick={e => toggleChecked(theme)}
           />
-          <label className="react-switch-label" htmlFor={`react-switch-new`}>
-            <span className={`react-switch-button`} />
+          <label
+            onClick={e => toggleChecked(theme)}
+            className={`react-switch-label ${classes.themeToggleWrapper}`}
+            htmlFor={`react-switch-new`}
+          >
+            <label className={classes.themeTextLabel}>
+              {checked ? "Light" : "Dark"}
+            </label>
+            <span className="react-switch-button">
+              <img
+                src={checked ? daymode : nightmode}
+                alt="theme mode logo"
+                className={classes.themeToggleIcon}
+              />
+            </span>
           </label>
         </>
       )}
