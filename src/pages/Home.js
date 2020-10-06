@@ -65,7 +65,9 @@ const useStyles = makeStyles(theme => ({
     height: 400
   },
   media: {
-    height: 270
+    height: 250,
+    margin: theme.spacing(1, 2),
+    backgroundSize: "contain"
   },
   grid: {
     height: 350,
@@ -679,6 +681,9 @@ const Home = props => {
             <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
               <StyledCard className={classes.root} style={{ margin: "auto" }}>
                 <CardActionArea
+                  onClick={() => {
+                    props.history.push("/events");
+                  }}
                   className={
                     props.theme.mode === "dark"
                       ? classes.cardActionDark
@@ -750,6 +755,9 @@ const Home = props => {
             <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
               <StyledCard className={classes.root} style={{ margin: "auto" }}>
                 <CardActionArea
+                  onClick={() => {
+                    props.history.push("/projects");
+                  }}
                   className={
                     props.theme.mode === "dark"
                       ? classes.cardActionDark

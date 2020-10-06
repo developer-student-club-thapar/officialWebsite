@@ -44,7 +44,7 @@ const Team = () => {
     setColeads(coleadResponse.data);
     setLoading(false);
     // console.log(team);
-    console.log(memberRes.data);
+    // console.log(memberRes.data);
   };
 
   useEffect(() => {
