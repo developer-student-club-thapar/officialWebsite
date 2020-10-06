@@ -76,7 +76,6 @@ The page will reload if you make edits.<br />
 
 ## Contribution to the project
 
-------------
 
 <div align="center">
 
