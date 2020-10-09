@@ -1,8 +1,14 @@
 from django.contrib import admin
 from . import models
 from django.contrib.auth.models import User
+from import_export import resources
+from .models import Member
+
 
 # Register your models here.
+class MemberResource(resources.ModelResource):
+    class Meta:
+        model = Member
 
 
 class MemberAdmin(admin.ModelAdmin):
