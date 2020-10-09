@@ -3,7 +3,7 @@ from . import models
 from . import serializers
 from . import utils
 from rest_framework import viewsets, status, mixins, generics
-from utils import download_csv
+from .utils import download_csv
 
 # Create your views here.
 def export_csv(request):
