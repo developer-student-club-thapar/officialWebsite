@@ -677,7 +677,13 @@ const Home = props => {
 
           <Grid container spacing={3} className={classes.CardGrid}>
             <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
-              <StyledCard className={classes.root} style={{ margin: "auto" }}>
+              <StyledCard
+                className={classes.root}
+                style={{ margin: "auto" }}
+                onClick={() => {
+                  props.history.push("/events");
+                }}
+              >
                 <CardActionArea
                   className={
                     props.theme.mode === "dark"
@@ -702,13 +708,7 @@ const Home = props => {
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <Button
-                    variant="outlined"
-                    color="primary"
-                    onClick={() => {
-                      props.history.push("/events");
-                    }}
-                  >
+                  <Button variant="outlined" color="primary">
                     Learn More
                   </Button>
                 </CardActions>
@@ -748,7 +748,13 @@ const Home = props => {
               </StyledCard>
             </Grid>
             <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
-              <StyledCard className={classes.root} style={{ margin: "auto" }}>
+              <StyledCard
+                className={classes.root}
+                style={{ margin: "auto" }}
+                onClick={() => {
+                  props.history.push("/projects");
+                }}
+              >
                 <CardActionArea
                   className={
                     props.theme.mode === "dark"
@@ -772,13 +778,7 @@ const Home = props => {
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <Button
-                    variant="outlined"
-                    color="primary"
-                    onClick={() => {
-                      props.history.push("/projects");
-                    }}
-                  >
+                  <Button variant="outlined" color="primary">
                     Learn More
                   </Button>
                 </CardActions>
