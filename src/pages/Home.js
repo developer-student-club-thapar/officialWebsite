@@ -15,6 +15,7 @@ import Paper from "@material-ui/core/Paper";
 import GestureIcon from "@material-ui/icons/Gesture";
 import Team from "../assets/team.webp";
 import Projects from "../assets/projects.jpg";
+import Marker from "../assets/marker.png";
 import EventCardImg from "../assets/events.svg";
 import Sponsorships from "../assets/Sponsership.svg";
 import ProjectImg from "../assets/Projects.svg";
@@ -23,6 +24,7 @@ import Discord from "../assets/discord.png";
 import ThaparImg from "../assets/ThaparUniversity_1.jpg";
 import Footer from "../components/Footer";
 import styles from "./styles/home.module.css";
+import GoogleMapReact from 'google-map-react';
 import {
   StyledPaper,
   Styledh5,
@@ -35,6 +37,34 @@ import {
 
 import { createGlobalStyle, ThemeConsumer, withTheme } from "styled-components";
 import style from "styled-theming";
+
+const ThapadUniversity = [30.352904, 76.363558];
+
+const defaultPropsMaps = {
+  center: [30.352904, 76.363558],
+  zoom: 15,
+  greatPlaceCoords: { lat: 59.724465, lng: 30.080121 }
+};
+
+const AnyReactComponent = ({ text }) => <div
+  style={{
+    display: 'flex',
+    justifyContent: "center",
+    alignItems: "center"
+  }}>
+  <div style={{
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    padding: 4,
+    color: "#1d1d1d",
+  }}>{text}</div>
+  <img
+    src={Marker}
+    alt="Marker"
+    style={{
+      height: 54
+    }} />
+</div>;
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -189,6 +219,87 @@ const Home = props => {
   }
   `;
 
+  const mapStyle = [
+    { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
+    { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
+    { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+    {
+      featureType: 'administrative.locality',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#d59563' }]
+    },
+    {
+      featureType: 'poi',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#d59563' }]
+    },
+    {
+      featureType: 'poi.park',
+      elementType: 'geometry',
+      stylers: [{ color: '#263c3f' }]
+    },
+    {
+      featureType: 'poi.park',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#6b9a76' }]
+    },
+    {
+      featureType: 'road',
+      elementType: 'geometry',
+      stylers: [{ color: '#38414e' }]
+    },
+    {
+      featureType: 'road',
+      elementType: 'geometry.stroke',
+      stylers: [{ color: '#212a37' }]
+    },
+    {
+      featureType: 'road',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#9ca5b3' }]
+    },
+    {
+      featureType: 'road.highway',
+      elementType: 'geometry',
+      stylers: [{ color: '#746855' }]
+    },
+    {
+      featureType: 'road.highway',
+      elementType: 'geometry.stroke',
+      stylers: [{ color: '#1f2835' }]
+    },
+    {
+      featureType: 'road.highway',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#f3d19c' }]
+    },
+    {
+      featureType: 'transit',
+      elementType: 'geometry',
+      stylers: [{ color: '#2f3948' }]
+    },
+    {
+      featureType: 'transit.station',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#d59563' }]
+    },
+    {
+      featureType: 'water',
+      elementType: 'geometry',
+      stylers: [{ color: '#17263c' }]
+    },
+    {
+      featureType: 'water',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#515c6d' }]
+    },
+    {
+      featureType: 'water',
+      elementType: 'labels.text.stroke',
+      stylers: [{ color: '#17263c' }]
+    }
+  ]
+
   return (
     <Fragment>
       <GlobalStyle />
@@ -233,8 +344,8 @@ const Home = props => {
                       height="95%"
                     />
                   ) : (
-                    <img src={header} alt="header" width="100%" height="95%" />
-                  )}
+                      <img src={header} alt="header" width="100%" height="95%" />
+                    )}
                 </Grid>
               )}
             </ThemeConsumer>
@@ -874,7 +985,21 @@ const Home = props => {
         style={{ marginTop: "-10px", height: "400px" }}
       >
         <Grid item xs={12}>
-          <iframe
+          <GoogleMapReact
+            center={defaultPropsMaps.center}
+            zoom={defaultPropsMaps.zoom}
+            options={{
+              styles: props.theme.mode === "dark" && mapStyle
+            }}
+            bootstrapURLKeys={{ key: "AIzaSyB3JAqF0AMxgbfnGtt0R5Yk0MaBe9p1P5s" }}
+          >
+            <AnyReactComponent
+              lat={ThapadUniversity[0]}
+              lng={ThapadUniversity[1]}
+              text="Thapad University"
+            />
+          </GoogleMapReact>
+          {/* <iframe
             width="100%"
             height="400"
             frameBorder="0"
@@ -882,7 +1007,7 @@ const Home = props => {
             src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJxbWHSlMvEDkRs4LjN9M-Hdo&key=AIzaSyB3JAqF0AMxgbfnGtt0R5Yk0MaBe9p1P5s"
             allowFullScreen
             title="Map"
-          ></iframe>
+          ></iframe> */}
         </Grid>
       </Grid>
       <Footer />
