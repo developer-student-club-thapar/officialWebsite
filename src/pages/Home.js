@@ -24,7 +24,7 @@ import Discord from "../assets/discord.png";
 import ThaparImg from "../assets/ThaparUniversity_1.jpg";
 import Footer from "../components/Footer";
 import styles from "./styles/home.module.css";
-import GoogleMapReact from 'google-map-react';
+import GoogleMapReact from "google-map-react";
 import {
   StyledPaper,
   Styledh5,
@@ -46,25 +46,33 @@ const defaultPropsMaps = {
   greatPlaceCoords: { lat: 59.724465, lng: 30.080121 }
 };
 
-const AnyReactComponent = ({ text }) => <div
-  style={{
-    display: 'flex',
-    justifyContent: "center",
-    alignItems: "center"
-  }}>
-  <div style={{
-    backgroundColor: "#ffffff",
-    borderRadius: 4,
-    padding: 4,
-    color: "#1d1d1d",
-  }}>{text}</div>
-  <img
-    src={Marker}
-    alt="Marker"
+const AnyReactComponent = ({ text }) => (
+  <div
     style={{
-      height: 54
-    }} />
-</div>;
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }}
+  >
+    <div
+      style={{
+        backgroundColor: "#ffffff",
+        borderRadius: 4,
+        padding: 4,
+        color: "#1d1d1d"
+      }}
+    >
+      {text}
+    </div>
+    <img
+      src={Marker}
+      alt="Marker"
+      style={{
+        height: 54
+      }}
+    />
+  </div>
+);
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -220,85 +228,85 @@ const Home = props => {
   `;
 
   const mapStyle = [
-    { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
-    { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
-    { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+    { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+    { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+    { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
     {
-      featureType: 'administrative.locality',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#d59563' }]
+      featureType: "administrative.locality",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#d59563" }]
     },
     {
-      featureType: 'poi',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#d59563' }]
+      featureType: "poi",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#d59563" }]
     },
     {
-      featureType: 'poi.park',
-      elementType: 'geometry',
-      stylers: [{ color: '#263c3f' }]
+      featureType: "poi.park",
+      elementType: "geometry",
+      stylers: [{ color: "#263c3f" }]
     },
     {
-      featureType: 'poi.park',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#6b9a76' }]
+      featureType: "poi.park",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#6b9a76" }]
     },
     {
-      featureType: 'road',
-      elementType: 'geometry',
-      stylers: [{ color: '#38414e' }]
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [{ color: "#38414e" }]
     },
     {
-      featureType: 'road',
-      elementType: 'geometry.stroke',
-      stylers: [{ color: '#212a37' }]
+      featureType: "road",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#212a37" }]
     },
     {
-      featureType: 'road',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#9ca5b3' }]
+      featureType: "road",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#9ca5b3" }]
     },
     {
-      featureType: 'road.highway',
-      elementType: 'geometry',
-      stylers: [{ color: '#746855' }]
+      featureType: "road.highway",
+      elementType: "geometry",
+      stylers: [{ color: "#746855" }]
     },
     {
-      featureType: 'road.highway',
-      elementType: 'geometry.stroke',
-      stylers: [{ color: '#1f2835' }]
+      featureType: "road.highway",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#1f2835" }]
     },
     {
-      featureType: 'road.highway',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#f3d19c' }]
+      featureType: "road.highway",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#f3d19c" }]
     },
     {
-      featureType: 'transit',
-      elementType: 'geometry',
-      stylers: [{ color: '#2f3948' }]
+      featureType: "transit",
+      elementType: "geometry",
+      stylers: [{ color: "#2f3948" }]
     },
     {
-      featureType: 'transit.station',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#d59563' }]
+      featureType: "transit.station",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#d59563" }]
     },
     {
-      featureType: 'water',
-      elementType: 'geometry',
-      stylers: [{ color: '#17263c' }]
+      featureType: "water",
+      elementType: "geometry",
+      stylers: [{ color: "#17263c" }]
     },
     {
-      featureType: 'water',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#515c6d' }]
+      featureType: "water",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#515c6d" }]
     },
     {
-      featureType: 'water',
-      elementType: 'labels.text.stroke',
-      stylers: [{ color: '#17263c' }]
+      featureType: "water",
+      elementType: "labels.text.stroke",
+      stylers: [{ color: "#17263c" }]
     }
-  ]
+  ];
 
   return (
     <Fragment>
@@ -344,8 +352,8 @@ const Home = props => {
                       height="95%"
                     />
                   ) : (
-                      <img src={header} alt="header" width="100%" height="95%" />
-                    )}
+                    <img src={header} alt="header" width="100%" height="95%" />
+                  )}
                 </Grid>
               )}
             </ThemeConsumer>
@@ -991,7 +999,9 @@ const Home = props => {
             options={{
               styles: props.theme.mode === "dark" && mapStyle
             }}
-            bootstrapURLKeys={{ key: "AIzaSyB3JAqF0AMxgbfnGtt0R5Yk0MaBe9p1P5s" }}
+            bootstrapURLKeys={{
+              key: "AIzaSyB3JAqF0AMxgbfnGtt0R5Yk0MaBe9p1P5s"
+            }}
           >
             <AnyReactComponent
               lat={ThapadUniversity[0]}
