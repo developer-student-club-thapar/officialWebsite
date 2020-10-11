@@ -10,7 +10,7 @@
 <a href="https://facebook.com/dscthapar"><img src="https://github.com/aritraroy/social-icons/blob/master/facebook-icon.png?raw=true" width="60"></a>
 <a href="https://instagram.com/dsc.tiet"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
 
-# [officialWebsite](https://dsctiet.tech)
+## Website: [dsctiet.tech](https://dsctiet.tech)
 
 [![Build Status](https://travis-ci.org/developer-student-club-thapar/officialWebsite.svg?branch=master)](https://travis-ci.com/github/developer-student-club-thapar/officialWebsite) [![Discord](https://img.shields.io/discord/743751114851090475.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/Ma9ZAGJ)
 [![](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/download/releases/3.8.0/) 
@@ -29,9 +29,6 @@ This is the repo for the official Website of DSC Thapar Institute of Engineering
 Kindly go through the entire README.md for getting familiar with contribution steps
 
 # Installation and Setup
-
-------------
-
 ## Setup and running of project (Backend)
 
 - Fork the repo and clone it.
@@ -82,7 +79,6 @@ The page will reload if you make edits.<br />
 
 ## Contribution to the project
 
-------------
 
 <div align="center">
 
