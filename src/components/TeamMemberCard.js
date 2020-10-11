@@ -12,7 +12,7 @@ function stringToColor(string) {
     hash = string.charCodeAt(i) + ((hash << 5) - hash);
   }
 
-  let color = '#';
+  let color = "#";
 
   for (i = 0; i < 3; i += 1) {
     const value = (hash >> (i * 8)) & 0xff;
@@ -22,7 +22,6 @@ function stringToColor(string) {
 
   return color;
 }
-
 
 const TeamMemberCard = ({ item }) => {
   const classes = useStyles();
@@ -78,14 +77,13 @@ const TeamMemberCard = ({ item }) => {
           </div>
           <div style={{ paddingBottom: "100px" }}>
             <Avatar
-
               alt={item.name}
               src={item.image}
               className={classes.large}
               style={{
                 paddingBottom: "0px",
                 color: "#ffffff",
-                backgroundColor: stringToColor(item.name),
+                backgroundColor: stringToColor(item.name)
               }}
             />
           </div>

@@ -1,8 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import PersonIcon from '@material-ui/icons/Person';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import IconButton from '@material-ui/core/IconButton';
+import PersonIcon from "@material-ui/icons/Person";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import IconButton from "@material-ui/core/IconButton";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Slide from "react-reveal/Slide";
@@ -18,7 +18,7 @@ import Loader from "./Loader";
 import axios from "axios";
 import Footer from "../components/Footer";
 import ProjectAnimation from "../components/ProjectAnimation";
-import CardActions from '@material-ui/core/CardActions';
+import CardActions from "@material-ui/core/CardActions";
 
 import {
   StyledTypography,
@@ -47,15 +47,15 @@ const useStyles = makeStyles(theme => ({
     color: "white"
   },
   rootCard: {
-    maxWidth: 350,
+    maxWidth: 350
   },
   rootCardMobile: {
-    width: "auto",
+    width: "auto"
   },
   media: {
     height: 230,
     margin: 10,
-    backgroundSize: "contain",
+    backgroundSize: "contain"
   },
   grid: {
     height: 550
@@ -82,7 +82,7 @@ const useStyles = makeStyles(theme => ({
     "&:focus": {
       backgroundColor: "#202020"
     }
-  },
+  }
 }));
 
 const getBackground = style("mode", {
@@ -202,8 +202,19 @@ const ProjectsAlt = props => {
                             {item.name}
                           </Typography>
                           <StyledTypographyLink variant="body2" component="p">
-                            <div style={{ display: 'flex', justifyContent: "flex-start", alignItems: "center", marginTop: 10, }}>
-                              <PersonIcon color="#fff" style={{ marginRight: 10, }} /> {item.project_lead.name} <br />
+                            <div
+                              style={{
+                                display: "flex",
+                                justifyContent: "flex-start",
+                                alignItems: "center",
+                                marginTop: 10
+                              }}
+                            >
+                              <PersonIcon
+                                color="#fff"
+                                style={{ marginRight: 10 }}
+                              />{" "}
+                              {item.project_lead.name} <br />
                             </div>
                           </StyledTypographyLink>
                         </CardContent>
@@ -282,10 +293,10 @@ const ProjectsAlt = props => {
                   <h5>Members:</h5>
                   {key != null
                     ? projects[key].members.map(item => (
-                      <li>
-                        <span> {item.name}</span>
-                      </li>
-                    ))
+                        <li>
+                          <span> {item.name}</span>
+                        </li>
+                      ))
                     : ""}
                 </p>
               </StyledModalDiv>
