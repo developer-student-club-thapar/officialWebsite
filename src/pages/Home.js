@@ -865,9 +865,11 @@ const Home = props => {
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <Button variant="outlined" color="primary">
-                    Send Proposal
-                  </Button>
+                  <a href="mailto:dsc.tiet@gmail.com">
+                    <Button variant="outlined" color="primary">
+                      Send Proposal
+                    </Button>
+                  </a>
                 </CardActions>
               </StyledCard>
             </Grid>
