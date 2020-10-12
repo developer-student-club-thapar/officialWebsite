@@ -334,7 +334,7 @@ const Home = props => {
                 width: "40%"
               }}
             />
-            <h4 style={{ display: "inline-block" }}>Developer Students Club</h4>
+            <h4 style={{ display: "inline-block" }}>Developer Student Clubs</h4>
             {/* <ToggleButton /> */}
             <h6 style={{ display: "inline-block" }}>
               Thapar Institute of Engineering and Technology
