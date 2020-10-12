@@ -97,31 +97,29 @@ const GlobalStyle = createGlobalStyle`
   }
   `;
 
-const EventsAlt = props => {
+const EventsAlt = ({ theme, ...props }) => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
+  const [open, setOpen] = useState(false);
   const [events, setEvents] = useState([]);
   const [key, setKey] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const handleClose = () => setOpen(false);
+
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("/events/");
-      setEvents(result.data);
+      const { data = [] } = await axios.get("/events/");
+      setEvents(data);
       setLoading(false);
     };
     fetchData();
   }, []);
-  if (loading) {
-    return <Loader />;
-  }
-  return (
-    <Fragment>
+
+  return loading ? (
+    <Loader />
+  ) : (
+    <>
       <GlobalStyle />
       <CssBaseline />
       <Container fixed>
@@ -164,93 +162,94 @@ const EventsAlt = props => {
           </Hidden>
         </Grid>
         <Grid container spacing={2}>
-          {events.map((item, index) => (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              lg={4}
-              xl={4}
-              style={{}}
-              key={item.id}
-              onClick={() => {
-                setKey(index);
-                setOpen(true);
-              }}
-            >
-              <Hidden smDown>
-                <Slide bottom>
-                  <StyledCard className={classes.rootCard}>
-                    <CardActionArea
-                      className={
-                        props.theme.mode === "dark"
-                          ? classes.cardActionDark
-                          : classes.cardAction
-                      }
+          {events.map(
+            ({ id, image = Test, title, venue, date, time, link }, index) => (
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                lg={4}
+                xl={4}
+                key={id}
+                onClick={() => {
+                  setKey(index);
+                  setOpen(true);
+                }}
+              >
+                <Hidden smDown>
+                  <Slide bottom>
+                    <StyledCard className={classes.rootCard}>
+                      <CardActionArea
+                        className={
+                          theme.mode === "dark"
+                            ? classes.cardActionDark
+                            : classes.cardAction
+                        }
+                      >
+                        <CardMedia
+                          className={classes.media}
+                          image={image}
+                          title="Event"
+                        />
+                        <CardContent style={{ height: "130px" }}>
+                          <Typography variant="h5" component="h2">
+                            <StyledTypography style={{ paddingBottom: "3px" }}>
+                              {title}
+                            </StyledTypography>
+                          </Typography>
+                          <StyledTypographyLink variant="body2" component="p">
+                            Venue: {venue} <br />
+                            Date: {date} <br />
+                            Time: {time} <br />
+                            Link : <a href={link}>Link</a>
+                          </StyledTypographyLink>
+                        </CardContent>
+                      </CardActionArea>
+                    </StyledCard>
+                  </Slide>
+                </Hidden>
+                <Hidden mdUp>
+                  <Slide bottom>
+                    <StyledCard
+                      className={classes.rootCardMobile}
+                      onClick={() => {
+                        setKey(index);
+                        setOpen(true);
+                      }}
                     >
-                      <CardMedia
-                        className={classes.media}
-                        image={item.image === null ? Test : item.image}
-                        title="Event"
-                      />
-                      <CardContent style={{ height: "130px" }}>
-                        <Typography variant="h5" component="h2">
-                          <StyledTypography style={{ paddingBottom: "3px" }}>
-                            {item.title}
-                          </StyledTypography>
-                        </Typography>
-                        <StyledTypographyLink variant="body2" component="p">
-                          Venue: {item.venue} <br />
-                          Date: {item.date} <br />
-                          Time: {item.time} <br />
-                          Link : <a href={item.link}>Link</a>
-                        </StyledTypographyLink>
-                      </CardContent>
-                    </CardActionArea>
-                  </StyledCard>
-                </Slide>
-              </Hidden>
-              <Hidden mdUp>
-                <Slide bottom>
-                  <StyledCard
-                    className={classes.rootCardMobile}
-                    onClick={() => {
-                      setKey(index);
-                      setOpen(true);
-                    }}
-                  >
-                    <CardActionArea
-                      className={
-                        props.theme.mode === "dark"
-                          ? classes.cardActionDark
-                          : classes.cardAction
-                      }
-                    >
-                      <CardMedia
-                        className={classes.media}
-                        image={item.image === null ? Test : item.image}
-                        title="Event"
-                      />
-                      <CardContent>
-                        <Typography variant="h5" component="h2">
-                          <StyledTypography style={{ paddingBottom: "3px" }}>
-                            {item.title}
-                          </StyledTypography>
-                        </Typography>
-                        <StyledTypographyLink variant="body2" component="p">
-                          Venue: {item.venue} <br />
-                          Date: {item.date} <br />
-                          Time: {item.time} <br />
-                          Link : <a href={item.link}>Link</a>
-                        </StyledTypographyLink>
-                      </CardContent>
-                    </CardActionArea>
-                  </StyledCard>
-                </Slide>
-              </Hidden>
-            </Grid>
-          ))}
+                      <CardActionArea
+                        className={
+                          theme.mode === "dark"
+                            ? classes.cardActionDark
+                            : classes.cardAction
+                        }
+                      >
+                        <CardMedia
+                          className={classes.media}
+                          image={image}
+                          title="Event"
+                        />
+                        <CardContent>
+                          <Typography variant="h5" component="h2">
+                            <StyledTypography style={{ paddingBottom: "3px" }}>
+                              {title}
+                            </StyledTypography>
+                          </Typography>
+                          <StyledTypographyLink variant="body2" component="p">
+                            Venue: {venue} <br />
+                            Date: {date} <br />
+                            Time: {time} <br />
+                            Link : <a href={link}>Link</a>
+                          </StyledTypographyLink>
+                        </CardContent>
+                      </CardActionArea>
+                    </StyledCard>
+                  </Slide>
+                </Hidden>
+              </Grid>
+            )
+          )}
         </Grid>
         <Modal
           aria-labelledby="transition-modal-title"
@@ -268,7 +267,7 @@ const EventsAlt = props => {
             <StyledModalDiv className={classes.paperModal}>
               <p id="transition-modal-description">
                 <h5>Topics Covered:</h5>
-                {key != null
+                {key
                   ? events[key].topics.map(item => (
                       <li>
                         <span>&nbsp;{item.name}</span>
@@ -277,7 +276,7 @@ const EventsAlt = props => {
                   : ""}
                 <br />
                 <h5>Description:</h5>
-                {key != null ? events[key].info : ""}
+                {key ? events[key].info : ""}
               </p>
               <Button variant="contained" color="primary">
                 Resources
@@ -289,7 +288,7 @@ const EventsAlt = props => {
       <br />
       <br />
       <Footer />
-    </Fragment>
+    </>
   );
 };
 
