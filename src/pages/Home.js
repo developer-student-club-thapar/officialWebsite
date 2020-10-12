@@ -38,7 +38,7 @@ import {
 import { createGlobalStyle, ThemeConsumer, withTheme } from "styled-components";
 import style from "styled-theming";
 
-const ThapadUniversity = [30.352904, 76.363558];
+const ThaparUniversity = [30.352904, 76.363558];
 
 const defaultPropsMaps = {
   center: [30.352904, 76.363558],
@@ -1004,9 +1004,9 @@ const Home = props => {
             }}
           >
             <AnyReactComponent
-              lat={ThapadUniversity[0]}
-              lng={ThapadUniversity[1]}
-              text="Thapad University"
+              lat={ThaparUniversity[0]}
+              lng={ThaparUniversity[1]}
+              text="Thapar University"
             />
           </GoogleMapReact>
           {/* <iframe

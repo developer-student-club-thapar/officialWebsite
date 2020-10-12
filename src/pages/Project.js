@@ -1,5 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import PersonIcon from "@material-ui/icons/Person";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import IconButton from "@material-ui/core/IconButton";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Slide from "react-reveal/Slide";
@@ -15,6 +18,8 @@ import Loader from "./Loader";
 import axios from "axios";
 import Footer from "../components/Footer";
 import ProjectAnimation from "../components/ProjectAnimation";
+import CardActions from "@material-ui/core/CardActions";
+
 import {
   StyledTypography,
   StyledCard,
@@ -42,15 +47,15 @@ const useStyles = makeStyles(theme => ({
     color: "white"
   },
   rootCard: {
-    maxWidth: 350,
-    height: 350
+    maxWidth: 350
   },
   rootCardMobile: {
-    width: "auto",
-    height: 350
+    width: "auto"
   },
   media: {
-    height: 230
+    height: 230,
+    margin: 10,
+    backgroundSize: "contain"
   },
   grid: {
     height: 550
@@ -172,10 +177,6 @@ const ProjectsAlt = props => {
                 xl={4}
                 style={{}}
                 key={item.id}
-                onClick={() => {
-                  setKey(index);
-                  setOpen(true);
-                }}
               >
                 <Hidden smDown>
                   <Slide bottom>
@@ -186,6 +187,10 @@ const ProjectsAlt = props => {
                             ? classes.cardActionDark
                             : classes.cardAction
                         }
+                        onClick={() => {
+                          setKey(index);
+                          setOpen(true);
+                        }}
                       >
                         <CardMedia
                           className={classes.media}
@@ -197,13 +202,30 @@ const ProjectsAlt = props => {
                             {item.name}
                           </Typography>
                           <StyledTypographyLink variant="body2" component="p">
-                            Project Lead: {item.project_lead.name} <br />
-                            Github Link :<a href={item.github_link}>Link</a>
-                            <br />
-                            <br />
+                            <div
+                              style={{
+                                display: "flex",
+                                justifyContent: "flex-start",
+                                alignItems: "center",
+                                marginTop: 10
+                              }}
+                            >
+                              <PersonIcon
+                                color="#fff"
+                                style={{ marginRight: 10 }}
+                              />{" "}
+                              {item.project_lead.name} <br />
+                            </div>
                           </StyledTypographyLink>
                         </CardContent>
                       </CardActionArea>
+                      <CardActions>
+                        <a href={item.github_link}>
+                          <IconButton aria-label="Github" color="primary">
+                            <GitHubIcon fill="#fff" />
+                          </IconButton>
+                        </a>
+                      </CardActions>
                     </StyledCard>
                   </Slide>
                 </Hidden>
