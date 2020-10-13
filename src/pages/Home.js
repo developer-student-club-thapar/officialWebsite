@@ -16,7 +16,7 @@ import GestureIcon from "@material-ui/icons/Gesture";
 import Team from "../assets/team.webp";
 import Projects from "../assets/projects.jpg";
 import Marker from "../assets/marker.png";
-import EventCardImg from "../assets/events.svg";
+import EventCardImg from "../assets/event.jpg";
 import Sponsorships from "../assets/Sponsership.svg";
 import ProjectImg from "../assets/Projects.svg";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
@@ -352,8 +352,8 @@ const Home = props => {
                       height="95%"
                     />
                   ) : (
-                    <img src={header} alt="header" width="100%" height="95%" />
-                  )}
+                      <img src={header} alt="header" width="100%" height="95%" />
+                    )}
                 </Grid>
               )}
             </ThemeConsumer>
