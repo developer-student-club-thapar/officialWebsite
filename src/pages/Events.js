@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
+import Link from '@material-ui/core/Link';
 import Typography from "@material-ui/core/Typography";
 import Slide from "react-reveal/Slide";
 import { Container, CssBaseline, Hidden } from "@material-ui/core";
@@ -25,6 +26,9 @@ import {
 } from "../toggle/StyledComponents";
 import { createGlobalStyle, withTheme } from "styled-components";
 import style from "styled-theming";
+import EventIcon from '@material-ui/icons/Event';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import moment from 'moment';
 
 axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 
@@ -44,11 +48,11 @@ const useStyles = makeStyles(theme => ({
   },
   rootCard: {
     maxWidth: 350,
-    height: 350
+    height: 395
   },
   rootCardMobile: {
     width: "auto",
-    height: 350
+    height: 420
   },
   media: {
     height: 230
@@ -192,18 +196,23 @@ const EventsAlt = ({ theme, ...props }) => {
                           image={image}
                           title="Event"
                         />
-                        <CardContent style={{ height: "130px" }}>
-                          <Typography variant="h5" component="h2">
-                            <StyledTypography style={{ paddingBottom: "3px" }}>
-                              {title}
-                            </StyledTypography>
-                          </Typography>
-                          <StyledTypographyLink variant="body2" component="p">
-                            Venue: {venue} <br />
-                            Date: {date} <br />
-                            Time: {time} <br />
-                            Link : <a href={link}>Link</a>
-                          </StyledTypographyLink>
+                        <CardContent style={{ height: "170px" }}>
+                          <Grid container direction="column" >
+                            <Typography variant="h5" component="h2">
+                              <StyledTypography style={{ paddingBottom: "3px", fontSize: 18, fontWeight: "bold" }}>
+                                {title}
+                              </StyledTypography>
+                            </Typography>
+                            <Grid container direction="row" style={{padding: 2}}>
+                              <Grid style={{padding: 3}}><StyledTypography><EventIcon/> </StyledTypography></Grid>
+                              <Grid style={{padding: 3}}><StyledTypography>{moment(date).format('ddd MMM Do')} at {moment((date+" "+time)).format('h:mm A')}</StyledTypography></Grid>
+                            </Grid>
+                            <Grid container direction="row" style={{padding: 2}}>
+                              <Grid style={{padding: 3}}><StyledTypography><LocationOnIcon/></StyledTypography></Grid>
+                              <Grid style={{padding: 3}}><StyledTypography>{venue}</StyledTypography></Grid>
+                            </Grid>
+                              <Link href={link}><Button>Learn More</Button></Link>
+                          </Grid>
                         </CardContent>
                       </CardActionArea>
                     </StyledCard>
@@ -230,18 +239,23 @@ const EventsAlt = ({ theme, ...props }) => {
                           image={image}
                           title="Event"
                         />
-                        <CardContent>
-                          <Typography variant="h5" component="h2">
-                            <StyledTypography style={{ paddingBottom: "3px" }}>
-                              {title}
-                            </StyledTypography>
-                          </Typography>
-                          <StyledTypographyLink variant="body2" component="p">
-                            Venue: {venue} <br />
-                            Date: {date} <br />
-                            Time: {time} <br />
-                            Link : <a href={link}>Link</a>
-                          </StyledTypographyLink>
+                        <CardContent style={{ height: "170px" }}>
+                          <Grid container direction="column" justify="space-between">
+                            <Typography variant="h5" component="h2">
+                              <StyledTypography style={{ paddingBottom: "3px", fontSize: 18, fontWeight: "bold"  }}>
+                                {title}
+                              </StyledTypography>
+                            </Typography>
+                            <Grid container direction="row" style={{padding: 2}}>
+                              <Grid style={{padding: 3}}><StyledTypography><EventIcon/> </StyledTypography></Grid>
+                              <Grid style={{padding: 3}}><StyledTypography>{moment(date).format('ddd MMM Do')} at {moment((date+" "+time)).format('h:mm A')}</StyledTypography></Grid>
+                            </Grid>
+                            <Grid container direction="row" style={{padding: 2}}>
+                              <Grid style={{padding: 3}}><StyledTypography><LocationOnIcon/></StyledTypography></Grid>
+                              <Grid style={{padding: 3}}><StyledTypography>{venue}</StyledTypography></Grid>
+                            </Grid>
+                              <Link href={link}><Button>Learn More</Button></Link>
+                          </Grid>
                         </CardContent>
                       </CardActionArea>
                     </StyledCard>
