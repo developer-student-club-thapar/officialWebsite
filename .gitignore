@@ -38,3 +38,6 @@ dsc_tiet
 
 # Backend socket file ignore
 run/
+
+# Frontend eslint config file
+.eslintrc.json
