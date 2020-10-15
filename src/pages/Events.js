@@ -1,93 +1,96 @@
-import React, { Fragment, useEffect, useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import Slide from "react-reveal/Slide";
-import { Container, CssBaseline, Hidden } from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardMedia from "@material-ui/core/CardMedia";
-import Test from "../assets/undraw_scrum_board_cesn.svg";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-import Loader from "./Loader";
-import axios from "axios";
-import Footer from "../components/Footer";
-import EventAnimation from "../components/EventAnimation";
+import React, { Fragment, useEffect, useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Link from '@material-ui/core/Link';
+import Typography from '@material-ui/core/Typography';
+import Slide from 'react-reveal/Slide';
+import { Container, CssBaseline, Hidden } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardMedia from '@material-ui/core/CardMedia';
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
+import axios from 'axios';
+import { createGlobalStyle, withTheme } from 'styled-components';
+import style from 'styled-theming';
+import EventIcon from '@material-ui/icons/Event';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import moment from 'moment';
 import {
-  StyledTypographyLink,
   StyledCard,
   StyledTypographyheading,
   StyledTypography,
-  StyledModalDiv
-} from "../toggle/StyledComponents";
-import { createGlobalStyle, withTheme } from "styled-components";
-import style from "styled-theming";
+  StyledModalDiv,
+} from '../toggle/StyledComponents';
+import EventAnimation from '../components/EventAnimation';
+import Footer from '../components/Footer';
+import Loader from './Loader';
+import Test from '../assets/undraw_scrum_board_cesn.svg';
 
-axios.defaults.baseURL = "https://api.dsctiet.tech/api";
+axios.defaults.baseURL = 'https://api.dsctiet.tech/api';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
   },
 
   button: {
-    backgroundColor: "#746B6B",
-    color: "white"
+    backgroundColor: '#746B6B',
+    color: 'white',
   },
   rootCard: {
     maxWidth: 350,
-    height: 350
+    height: 395,
   },
   rootCardMobile: {
-    width: "auto",
-    height: 350
+    width: 'auto',
+    height: 420,
   },
   media: {
-    height: 230
+    height: 230,
   },
   grid: {
-    height: 550
+    height: 550,
   },
   modal: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     width: 400,
-    margin: "auto"
+    margin: 'auto',
   },
   paperModal: {
     backgroundColor: theme.palette.background.paper,
     // border: '2px solid #000',
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3)
+    padding: theme.spacing(2, 4, 3),
   },
   cardAction: {
-    "&:focus": {
-      backgroundColor: "#ffffff"
-    }
+    '&:focus': {
+      backgroundColor: '#ffffff',
+    },
   },
   cardActionDark: {
-    "&:focus": {
-      backgroundColor: "#202020"
-    }
-  }
+    '&:focus': {
+      backgroundColor: '#202020',
+    },
+  },
 }));
 
-const getBackground = style("mode", {
-  light: "#fafafa",
-  dark: "#202020"
+const getBackground = style('mode', {
+  light: '#fafafa',
+  dark: '#202020',
 });
-const getForeground = style("mode", {
-  light: "#5A5A5A",
-  dark: "#EEE"
+const getForeground = style('mode', {
+  light: '#5A5A5A',
+  dark: '#EEE',
 });
 
 const GlobalStyle = createGlobalStyle`
@@ -109,7 +112,7 @@ const EventsAlt = ({ theme, ...props }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data = [] } = await axios.get("/events/");
+      const { data = [] } = await axios.get('/events/');
       setEvents(data);
       setLoading(false);
     };
@@ -131,15 +134,15 @@ const EventsAlt = ({ theme, ...props }) => {
             md={6}
             lg={6}
             xl={6}
-            style={{ paddingTop: "100px" }}
+            style={{ paddingTop: '100px' }}
           >
             <StyledTypographyheading
               variant="h3"
-              style={{ fontWeight: "bold" }}
+              style={{ fontWeight: 'bold' }}
             >
               Events
             </StyledTypographyheading>
-            <StyledTypography variant="h6" style={{ paddingTop: "20px" }}>
+            <StyledTypography variant="h6" style={{ paddingTop: '20px' }}>
               Events are a great way to share knowledge and indulge in great
               discussions with your peers. DSC TIET has hosted a variety of
               events to teach important skills and improve the coding culture of
@@ -155,7 +158,7 @@ const EventsAlt = ({ theme, ...props }) => {
               md={6}
               lg={6}
               xl={6}
-              style={{ paddingTop: "80px", paddingLeft: "150px" }}
+              style={{ paddingTop: '80px', paddingLeft: '150px' }}
             >
               <EventAnimation />
             </Grid>
@@ -163,7 +166,9 @@ const EventsAlt = ({ theme, ...props }) => {
         </Grid>
         <Grid container spacing={2}>
           {events.map(
-            ({ id, image = Test, title, venue, date, time, link }, index) => (
+            ({
+              id, image = Test, title, venue, date, time, link,
+            }, index) => (
               <Grid
                 item
                 xs={12}
@@ -182,7 +187,7 @@ const EventsAlt = ({ theme, ...props }) => {
                     <StyledCard className={classes.rootCard}>
                       <CardActionArea
                         className={
-                          theme.mode === "dark"
+                          theme.mode === 'dark'
                             ? classes.cardActionDark
                             : classes.cardAction
                         }
@@ -192,18 +197,42 @@ const EventsAlt = ({ theme, ...props }) => {
                           image={image}
                           title="Event"
                         />
-                        <CardContent style={{ height: "130px" }}>
-                          <Typography variant="h5" component="h2">
-                            <StyledTypography style={{ paddingBottom: "3px" }}>
-                              {title}
-                            </StyledTypography>
-                          </Typography>
-                          <StyledTypographyLink variant="body2" component="p">
-                            Venue: {venue} <br />
-                            Date: {date} <br />
-                            Time: {time} <br />
-                            Link : <a href={link}>Link</a>
-                          </StyledTypographyLink>
+                        <CardContent style={{ height: '170px' }}>
+                          <Grid container direction="column">
+                            <Typography variant="h5" component="h2">
+                              <StyledTypography style={{ paddingBottom: '3px', fontSize: 18, fontWeight: 'bold' }}>
+                                {title}
+                              </StyledTypography>
+                            </Typography>
+                            <Grid container direction="row" style={{ padding: 2 }}>
+                              <Grid style={{ padding: 3 }}>
+                                <StyledTypography>
+                                  <EventIcon />
+                                  {' '}
+                                </StyledTypography>
+                              </Grid>
+                              <Grid style={{ padding: 3 }}>
+                                <StyledTypography>
+                                  {moment(date).format('ddd MMM Do')}
+                                  {' '}
+                                  at
+                                  {' '}
+                                  {moment((`${date} ${time}`)).format('h:mm A')}
+                                </StyledTypography>
+                              </Grid>
+                            </Grid>
+                            <Grid container direction="row" style={{ padding: 2 }}>
+                              <Grid style={{ padding: 3 }}>
+                                <StyledTypography><LocationOnIcon /></StyledTypography>
+                              </Grid>
+                              <Grid style={{ padding: 3 }}>
+                                <StyledTypography>{venue}</StyledTypography>
+                              </Grid>
+                            </Grid>
+                            <Link href={link}>
+                              <Button>Learn More</Button>
+                            </Link>
+                          </Grid>
                         </CardContent>
                       </CardActionArea>
                     </StyledCard>
@@ -220,7 +249,7 @@ const EventsAlt = ({ theme, ...props }) => {
                     >
                       <CardActionArea
                         className={
-                          theme.mode === "dark"
+                          theme.mode === 'dark'
                             ? classes.cardActionDark
                             : classes.cardAction
                         }
@@ -230,25 +259,49 @@ const EventsAlt = ({ theme, ...props }) => {
                           image={image}
                           title="Event"
                         />
-                        <CardContent>
-                          <Typography variant="h5" component="h2">
-                            <StyledTypography style={{ paddingBottom: "3px" }}>
-                              {title}
-                            </StyledTypography>
-                          </Typography>
-                          <StyledTypographyLink variant="body2" component="p">
-                            Venue: {venue} <br />
-                            Date: {date} <br />
-                            Time: {time} <br />
-                            Link : <a href={link}>Link</a>
-                          </StyledTypographyLink>
+                        <CardContent style={{ height: '170px' }}>
+                          <Grid container direction="column" justify="space-between">
+                            <Typography variant="h5" component="h2">
+                              <StyledTypography style={{ paddingBottom: '3px', fontSize: 18, fontWeight: 'bold' }}>
+                                {title}
+                              </StyledTypography>
+                            </Typography>
+                            <Grid container direction="row" style={{ padding: 2 }}>
+                              <Grid style={{ padding: 3 }}>
+                                <StyledTypography>
+                                  <EventIcon />
+                                  {' '}
+                                </StyledTypography>
+                              </Grid>
+                              <Grid style={{ padding: 3 }}>
+                                <StyledTypography>
+                                  {moment(date).format('ddd MMM Do')}
+                                  {' '}
+                                  at
+                                  {' '}
+                                  {moment((`${date} ${time}`)).format('h:mm A')}
+                                </StyledTypography>
+                              </Grid>
+                            </Grid>
+                            <Grid container direction="row" style={{ padding: 2 }}>
+                              <Grid style={{ padding: 3 }}>
+                                <StyledTypography><LocationOnIcon /></StyledTypography>
+                              </Grid>
+                              <Grid style={{ padding: 3 }}>
+                                <StyledTypography>{venue}</StyledTypography>
+                              </Grid>
+                            </Grid>
+                            <Link href={link}>
+                              <Button>Learn More</Button>
+                            </Link>
+                          </Grid>
                         </CardContent>
                       </CardActionArea>
                     </StyledCard>
                   </Slide>
                 </Hidden>
               </Grid>
-            )
+            ),
           )}
         </Grid>
         <Modal
@@ -260,7 +313,7 @@ const EventsAlt = ({ theme, ...props }) => {
           closeAfterTransition
           BackdropComponent={Backdrop}
           BackdropProps={{
-            timeout: 500
+            timeout: 500,
           }}
         >
           <Fade in={open}>
@@ -268,15 +321,17 @@ const EventsAlt = ({ theme, ...props }) => {
               <p id="transition-modal-description">
                 <h5>Topics Covered:</h5>
                 {key
-                  ? events[key].topics.map(item => (
-                      <li>
-                        <span>&nbsp;{item.name}</span>
-                      </li>
-                    ))
-                  : ""}
+                  ? events[key].topics.map((item) => (
+                    <li>
+                      <span>
+                        {item.name}
+                      </span>
+                    </li>
+                  ))
+                  : ''}
                 <br />
                 <h5>Description:</h5>
-                {key ? events[key].info : ""}
+                {key ? events[key].info : ''}
               </p>
               <Button variant="contained" color="primary">
                 Resources
