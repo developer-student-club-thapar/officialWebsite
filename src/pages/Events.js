@@ -237,15 +237,11 @@ const EventsAlt = ({ theme, ...props }) => {
                                 </StyledTypography>
                               </Grid>
                               <Grid style={{ padding: 3 }}>
-                                <StyledTypography>
-                                  {venue}
-                                </StyledTypography>
+                                <StyledTypography>{venue}</StyledTypography>
                               </Grid>
                             </Grid>
                             <Link href={link}>
-                              <Button>
-                                Learn More
-                              </Button>
+                              <Button>Learn More</Button>
                             </Link>
                           </Grid>
                         </CardContent>
@@ -319,15 +315,11 @@ const EventsAlt = ({ theme, ...props }) => {
                                 </StyledTypography>
                               </Grid>
                               <Grid style={{ padding: 3 }}>
-                                <StyledTypography>
-                                  {venue}
-                                </StyledTypography>
+                                <StyledTypography>{venue}</StyledTypography>
                               </Grid>
                             </Grid>
                             <Link href={link}>
-                              <Button>
-                                Learn More
-                              </Button>
+                              <Button>Learn More</Button>
                             </Link>
                           </Grid>
                         </CardContent>
