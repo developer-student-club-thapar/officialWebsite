@@ -241,7 +241,9 @@ const EventsAlt = ({ theme, ...props }) => {
                               </Grid>
                             </Grid>
                             <Link href={link}>
-                              <Button>Learn More</Button>
+                              <StyledTypography>
+                                <Button color="inherit">Learn More</Button>
+                              </StyledTypography>
                             </Link>
                           </Grid>
                         </CardContent>
@@ -319,7 +321,9 @@ const EventsAlt = ({ theme, ...props }) => {
                               </Grid>
                             </Grid>
                             <Link href={link}>
-                              <Button>Learn More</Button>
+                              <StyledTypography>
+                                <Button color="inherit">Learn More</Button>
+                              </StyledTypography>
                             </Link>
                           </Grid>
                         </CardContent>
