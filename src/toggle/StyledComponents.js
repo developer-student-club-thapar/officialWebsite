@@ -95,19 +95,6 @@ export const StyledAppBar = styled(AppBar)`
   color: ${getAppBarForeground};
 `;
 
-const getCardBackground = style("mode", {
-  light: "white",
-  dark: "#111"
-});
-const getCardForeground = style("mode", {
-  light: "#000",
-  dark: "#EEE"
-});
-export const StyledCard = styled(Card)`
-  background-color: ${getCardBackground};
-  color: ${getCardForeground};
-`;
-
 const h5color = style("mode", {
   light: "#363535",
   dark: "#EEE"

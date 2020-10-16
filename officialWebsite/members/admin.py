@@ -3,6 +3,7 @@ from . import models
 from django.contrib.auth.models import User
 from import_export import resources
 from .models import Member
+from import_export.admin import ImportExportModelAdmin
 
 
 # Register your models here.
@@ -11,9 +12,9 @@ class MemberResource(resources.ModelResource):
         model = Member
 
 
-class MemberAdmin(admin.ModelAdmin):
-
-    readonly_fields = []
+class MemberAdmin(ImportExportModelAdmin):
+    list_display = ("name", "email")
+    resource_class = MemberResource
 
     def get_queryset(self, request):
         queryset = super().get_queryset(request)
@@ -36,5 +37,5 @@ class MemberAdmin(admin.ModelAdmin):
             return False
 
 
-admin.site.register(models.Member, MemberAdmin)
+admin.site.register(Member, MemberAdmin)
 admin.site.register(models.MemberRegistration)
