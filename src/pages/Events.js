@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
@@ -18,7 +18,6 @@ import axios from "axios";
 import Footer from "../components/Footer";
 import EventAnimation from "../components/EventAnimation";
 import {
-  StyledTypographyLink,
   StyledCard,
   StyledTypographyheading,
   StyledTypography,
@@ -168,169 +167,85 @@ const EventsAlt = ({ theme, ...props }) => {
         <Grid container spacing={2}>
           {events.map(
             ({ id, image = Test, title, venue, date, time, link }, index) => (
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                lg={4}
-                xl={4}
-                key={id}
-                onClick={() => {
-                  setKey(index);
-                  setOpen(true);
-                }}
-              >
-                <Hidden smDown>
-                  <Slide bottom>
-                    <StyledCard className={classes.rootCard}>
-                      <CardActionArea
-                        className={
-                          theme.mode === "dark"
-                            ? classes.cardActionDark
-                            : classes.cardAction
-                        }
-                      >
-                        <CardMedia
-                          className={classes.media}
-                          image={image}
-                          title="Event"
-                        />
-                        <CardContent style={{ height: "170px" }}>
-                          <Grid container direction="column">
-                            <Typography variant="h5" component="h2">
-                              <StyledTypography
-                                style={{
-                                  paddingBottom: "3px",
-                                  fontSize: 18,
-                                  fontWeight: "bold"
-                                }}
-                              >
-                                {title}
-                              </StyledTypography>
-                            </Typography>
-                            <Grid
-                              container
-                              direction="row"
-                              style={{ padding: 2 }}
-                            >
-                              <Grid style={{ padding: 3 }}>
-                                <StyledTypography>
-                                  <EventIcon />{" "}
-                                </StyledTypography>
-                              </Grid>
-                              <Grid style={{ padding: 3 }}>
-                                <StyledTypography>
-                                  {moment(date).format("ddd MMM D")} at{" "}
-                                  {moment(`${date} ${time}`).format("h:mm A")}
-                                </StyledTypography>
-                              </Grid>
-                            </Grid>
-                            <Grid
-                              container
-                              direction="row"
-                              style={{ padding: 2 }}
-                            >
-                              <Grid style={{ padding: 3 }}>
-                                <StyledTypography>
-                                  <LocationOnIcon />
-                                </StyledTypography>
-                              </Grid>
-                              <Grid style={{ padding: 3 }}>
-                                <StyledTypography>{venue}</StyledTypography>
-                              </Grid>
-                            </Grid>
-                            <Link href={link}>
-                              <StyledTypography>
-                                <Button color="inherit">Learn More</Button>
-                              </StyledTypography>
-                            </Link>
-                          </Grid>
-                        </CardContent>
-                      </CardActionArea>
-                    </StyledCard>
-                  </Slide>
-                </Hidden>
-                <Hidden mdUp>
-                  <Slide bottom>
-                    <StyledCard
-                      className={classes.rootCardMobile}
+              <Grid item xs={12} sm={6} md={4} lg={4} xl={4} key={id}>
+                <Slide bottom>
+                  <StyledCard className={classes.rootCardMobile}>
+                    <CardActionArea
+                      className={
+                        theme.mode === "dark"
+                          ? classes.cardActionDark
+                          : classes.cardAction
+                      }
                       onClick={() => {
                         setKey(index);
                         setOpen(true);
                       }}
                     >
-                      <CardActionArea
-                        className={
-                          theme.mode === "dark"
-                            ? classes.cardActionDark
-                            : classes.cardAction
-                        }
-                      >
-                        <CardMedia
-                          className={classes.media}
-                          image={image}
-                          title="Event"
-                        />
-                        <CardContent>
+                      <CardMedia
+                        className={classes.media}
+                        image={image}
+                        title="Event"
+                      />
+                      <CardContent>
+                        <Grid
+                          container
+                          direction="column"
+                          justify="space-between"
+                        >
+                          <Typography variant="h5" component="h2">
+                            <StyledTypography
+                              style={{
+                                paddingBottom: "3px",
+                                fontSize: 18,
+                                fontWeight: "bold"
+                              }}
+                            >
+                              {title}
+                            </StyledTypography>
+                          </Typography>
                           <Grid
                             container
-                            direction="column"
-                            justify="space-between"
+                            direction="row"
+                            style={{ padding: 2 }}
                           >
-                            <Typography variant="h5" component="h2">
-                              <StyledTypography
-                                style={{
-                                  paddingBottom: "3px",
-                                  fontSize: 18,
-                                  fontWeight: "bold"
-                                }}
-                              >
-                                {title}
-                              </StyledTypography>
-                            </Typography>
-                            <Grid
-                              container
-                              direction="row"
-                              style={{ padding: 2 }}
-                            >
-                              <Grid style={{ padding: 3 }}>
-                                <StyledTypography>
-                                  <EventIcon />{" "}
-                                </StyledTypography>
-                              </Grid>
-                              <Grid style={{ padding: 3 }}>
-                                <StyledTypography>
-                                  {moment(date).format("ddd MMM D")} at{" "}
-                                  {moment(`${date} ${time}`).format("h:mm A")}
-                                </StyledTypography>
-                              </Grid>
-                            </Grid>
-                            <Grid
-                              container
-                              direction="row"
-                              style={{ padding: 2 }}
-                            >
-                              <Grid style={{ padding: 3 }}>
-                                <StyledTypography>
-                                  <LocationOnIcon />
-                                </StyledTypography>
-                              </Grid>
-                              <Grid style={{ padding: 3 }}>
-                                <StyledTypography>{venue}</StyledTypography>
-                              </Grid>
-                            </Grid>
-                            <Link href={link}>
+                            <Grid style={{ padding: 3 }}>
                               <StyledTypography>
-                                <Button color="inherit">Learn More</Button>
+                                <EventIcon />{" "}
                               </StyledTypography>
-                            </Link>
+                            </Grid>
+                            <Grid style={{ padding: 3 }}>
+                              <StyledTypography>
+                                {moment(date).format("ddd MMM D")} at{" "}
+                                {moment(`${date} ${time}`).format("h:mm A")}
+                              </StyledTypography>
+                            </Grid>
                           </Grid>
-                        </CardContent>
-                      </CardActionArea>
-                    </StyledCard>
-                  </Slide>
-                </Hidden>
+                          <Grid
+                            container
+                            direction="row"
+                            style={{ padding: 2 }}
+                          >
+                            <Grid style={{ padding: 3 }}>
+                              <StyledTypography>
+                                <LocationOnIcon />
+                              </StyledTypography>
+                            </Grid>
+                            <Grid style={{ padding: 3 }}>
+                              <StyledTypography>{venue}</StyledTypography>
+                            </Grid>
+                          </Grid>
+                        </Grid>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardContent style={{ paddingTop: 0, paddingBottom: 0 }}>
+                      <Link href={link}>
+                        <Button color="inherit">
+                          <StyledTypography> Learn More</StyledTypography>
+                        </Button>
+                      </Link>
+                    </CardContent>
+                  </StyledCard>
+                </Slide>
               </Grid>
             )
           )}
