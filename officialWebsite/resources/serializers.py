@@ -7,5 +7,5 @@ class ResourceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Resource
-        fields = ("id", "name", "link")
+        fields = ("id", "name", "url", "topic")
         read_only_fields = ("id",)
