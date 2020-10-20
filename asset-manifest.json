@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.16830d08.chunk.css",
+    "main.js": "/static/js/main.566ccc36.chunk.js",
+    "main.js.map": "/static/js/main.566ccc36.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6417d7bf.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6417d7bf.js.map",
+    "static/css/2.36020323.chunk.css": "/static/css/2.36020323.chunk.css",
+    "static/js/2.7663bb4c.chunk.js": "/static/js/2.7663bb4c.chunk.js",
+    "static/js/2.7663bb4c.chunk.js.map": "/static/js/2.7663bb4c.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.bc4714c5eee83763ac5685eed1e465f6.js": "/precache-manifest.bc4714c5eee83763ac5685eed1e465f6.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.36020323.chunk.css.map": "/static/css/2.36020323.chunk.css.map",
+    "static/css/main.16830d08.chunk.css.map": "/static/css/main.16830d08.chunk.css.map",
+    "static/js/2.7663bb4c.chunk.js.LICENSE.txt": "/static/js/2.7663bb4c.chunk.js.LICENSE.txt",
+    "static/media/Projects.svg": "/static/media/Projects.c94465a3.svg",
+    "static/media/Sponsership.svg": "/static/media/Sponsership.6436f6fd.svg",
+    "static/media/ThaparUniversity_1.jpg": "/static/media/ThaparUniversity_1.c7f8f002.jpg",
+    "static/media/day-mode.svg": "/static/media/day-mode.2db4b37b.svg",
+    "static/media/dsc_logo.png": "/static/media/dsc_logo.0d517ed6.png",
+    "static/media/events.svg": "/static/media/events.985f281c.svg",
+    "static/media/header.png": "/static/media/header.b6e2ce15.png",
+    "static/media/headerdark.png": "/static/media/headerdark.8ea92c5a.png",
+    "static/media/marker.png": "/static/media/marker.547320f2.png",
+    "static/media/night-mode.svg": "/static/media/night-mode.bb132e84.svg",
+    "static/media/projects.jpg": "/static/media/projects.c557ab28.jpg",
+    "static/media/team.webp": "/static/media/team.31c7575f.webp",
+    "static/media/undraw_positive_attitude_xaae.svg": "/static/media/undraw_positive_attitude_xaae.f1347d6d.svg",
+    "static/media/undraw_scrum_board_cesn.svg": "/static/media/undraw_scrum_board_cesn.fd1f6093.svg",
+    "static/media/unnamed.png": "/static/media/unnamed.20c52900.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6417d7bf.js",
+    "static/css/2.36020323.chunk.css",
+    "static/js/2.7663bb4c.chunk.js",
+    "static/css/main.16830d08.chunk.css",
+    "static/js/main.566ccc36.chunk.js"
+  ]
+}
