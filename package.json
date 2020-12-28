@@ -17,7 +17,7 @@
     "@testing-library/jest-dom": "^5.8.0",
     "@testing-library/react": "^11.0.4",
     "@testing-library/user-event": "^12.1.7",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "google-map-react": "^2.1.7",
     "google-maps-react": "^2.0.6",
     "local-storage-fallback": "^4.1.1",
