@@ -18,7 +18,7 @@ pre-commit = "*"
 requests = "*"
 protobuf = "*"
 google-cloud-storage = "*"
-django-storages = {extras = ["google"], version = "1.10.1"}
+django-storages = {extras = ["google"], version = "1.11.1"}
 
 [requires]
 python_version = "3.8"
