@@ -16,7 +16,7 @@
     "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^5.8.0",
     "@testing-library/react": "^11.0.4",
-    "@testing-library/user-event": "^12.1.7",
+    "@testing-library/user-event": "^13.2.0",
     "axios": "^0.19.2",
     "google-map-react": "^2.1.7",
     "google-maps-react": "^2.0.6",
