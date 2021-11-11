@@ -7,18 +7,8 @@ verify_ssl = true
 
 [packages]
 django = "*"
-django-cleanup = "*"
-django-cors-headers = "*"
 django-environ = "*"
-django-filter = "*"
-djangorestframework = "*"
-markdown = "*"
-pillow = "*"
 pre-commit = "*"
-requests = "*"
-protobuf = "*"
-google-cloud-storage = "*"
-django-storages = {extras = ["google"], version = "1.10.1"}
 
 [requires]
 python_version = "3.8"
