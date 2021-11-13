@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AchievementConfig(AppConfig):
+class MiscConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "officialWebsite.achievement"
+    name = "officialWebsite.misc"

@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # Backend Apps
-    "officialWebsite.achievement",
+    "officialWebsite.misc",
     "officialWebsite.projects",
     "officialWebsite.users",
 ]
