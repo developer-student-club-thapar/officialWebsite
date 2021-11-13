@@ -15,18 +15,38 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Project',
+            name="Project",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('description', models.TextField()),
-                ('image', models.ImageField(blank=True, upload_to='project-images/')),
-                ('github_link', models.URLField()),
-                ('funding', models.CharField(blank=True, max_length=255)),
-                ('faculty', models.CharField(blank=True, max_length=255)),
-                ('extra', models.TextField(blank=True)),
-                ('members', models.ManyToManyField(related_name='members', to=settings.AUTH_USER_MODEL)),
-                ('project_lead', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='lead', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255)),
+                ("description", models.TextField()),
+                ("image", models.ImageField(blank=True, upload_to="project-images/")),
+                ("github_link", models.URLField()),
+                ("funding", models.CharField(blank=True, max_length=255)),
+                ("faculty", models.CharField(blank=True, max_length=255)),
+                ("extra", models.TextField(blank=True)),
+                (
+                    "members",
+                    models.ManyToManyField(
+                        related_name="members", to=settings.AUTH_USER_MODEL
+                    ),
+                ),
+                (
+                    "project_lead",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="lead",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]
