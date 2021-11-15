@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 django-environ = "*"
 pre-commit = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.8"
