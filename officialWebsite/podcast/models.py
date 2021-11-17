@@ -62,3 +62,13 @@ class PodcastLink(Link):
     
     def __str__(self):
         return f"{self.guest.name} : {self.number}"
+
+class PodcastGuestLink(models.Model):
+    """
+    Podcast guest links to other site links
+    """
+
+    guest = models.ForeignKey(PodCastGuest, on_delete=models.PROTECT)
+    
+    def __str__(self):
+        return f"{self.guest.name} : {self.number}"
