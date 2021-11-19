@@ -2,7 +2,7 @@ from django.db import models
 from officialWebsite.users.models import User
 
 # Create your models here.
-class PodCastGuest(models.Model):
+class PodcastGuest(models.Model):
     """
     Podcast guest, name, org, fn, about and image details
     """
@@ -34,7 +34,7 @@ class Podcast(models.Model):
     """
 
     number = models.IntegerField()
-    guest = models.ForeignKey(PodCastGuest, on_delete=models.PROTECT)
+    guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT)
     series = models.ForeignKey(PodcastSeries, on_delete=models.PROTECT)
     recorded_on = models.DateTimeField(null = True)
     date_created = models.DateTimeField(auto_now_add=True)
@@ -58,7 +58,7 @@ class PodcastLink(Link):
     Podcast links to other site links
     """
 
-    guest = models.ForeignKey(PodCastGuest, on_delete=models.PROTECT)
+    guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT)
     
     def __str__(self):
         return f"{self.guest.name} : {self.number}"
@@ -68,7 +68,7 @@ class PodcastGuestLink(models.Model):
     Podcast guest links to other site links
     """
 
-    guest = models.ForeignKey(PodCastGuest, on_delete=models.PROTECT)
+    guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT)
     
     def __str__(self):
         return f"{self.guest.name} : {self.number}"
