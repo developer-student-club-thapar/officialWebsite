@@ -7,6 +7,7 @@ class event(models.Model):
     time = models.TimeField()
     venue = models.CharField(max_length=256)
     title = models.CharField(max_length=256)
+    info = models.TextField()
     topics = models.ManyToManyField(topic, blank=True)
     link = models.URLField(max_length=256)
     docs = models.URLField(max_length=256)
