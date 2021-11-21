@@ -33,6 +33,10 @@ INSTALLED_APPS = [
     "officialWebsite.misc",
     "officialWebsite.projects",
     "officialWebsite.users",
+    "officialWebsite.team",
+    "officialWebsite.event",
+    "officialWebsite.topic",
+    "officialWebsite.resource",
     "officialWebsite.podcast"
 ]
 
