@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     # Backend Apps
     "officialWebsite.misc",
     "officialWebsite.projects",
+    "officialWebsite.users",
     "officialWebsite.podcast",
 ]
 
