@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     "officialWebsite.misc",
     "officialWebsite.projects",
     "officialWebsite.users",
-    "officialWebsite.podcast",
+    "officialWebsite.podcast"
 ]
 
 MIDDLEWARE = [
