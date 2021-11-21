@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "officialWebsite.topic",
     "officialWebsite.event",
     "officialWebsite.resource",
+    "officialWebsite.podcast",
 ]
 
 MIDDLEWARE = [
