@@ -24,6 +24,7 @@ class FAQ(models.Model):
     def __str__(self):
         return self.question
 
+
 class ContactRequest(models.Model):
 
     name = models.CharField(max_length=255)
