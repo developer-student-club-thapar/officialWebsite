@@ -4,5 +4,4 @@ from . import models
 admin.site.register(models.PodcastGuest)
 admin.site.register(models.PodcastSeries)
 admin.site.register(models.Podcast)
-admin.site.register(models.PodcastLink)
-admin.site.register(models.Link)
+admin.site.register(models.PodcastGuestLink)

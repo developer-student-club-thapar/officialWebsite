@@ -40,28 +40,11 @@ class Podcast(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     published = models.BooleanField(default=True)
     image = models.ImageField(upload_to='podcast_image/', null=True)
+    link = models.URLField(max_length=255, null=True)
 
     def __str__(self):
         return f"{self.number} - {self.guest} - {self.series}"
 
-class Link(models.Model):
-    """
-    Basic model for links of any model
-    """
-
-    link = models.URLField()
-    name = models.CharField(max_length=255)
-    podcast = models.BooleanField(default=True)
-
-class PodcastLink(Link):
-    """
-    Podcast links to other site links
-    """
-
-    guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT)
-    
-    def __str__(self):
-        return f"{self.guest.name} : {self.number}"
 
 class PodcastGuestLink(models.Model):
     """
@@ -69,6 +52,8 @@ class PodcastGuestLink(models.Model):
     """
 
     guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT)
+    link = models.URLField(max_length=255)
+    link_type = models.TextField(max_length=255)
     
     def __str__(self):
-        return f"{self.guest.name} : {self.number}"
+        return f"{self.guest.name} : {self.link_type} : {self.link}"
