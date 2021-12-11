@@ -22,6 +22,7 @@ from django.contrib.auth import views as auth_views
 from officialWebsite.projects import views as project_views
 from officialWebsite.users import views as user_views
 from officialWebsite.misc import views as misc_views
+from officialWebsite.podcast import views as podcast_views
 
 admin.site.site_header = "Developer Student Club TIET"
 admin.site.site_title = "DSC-TIET"
@@ -33,6 +34,7 @@ urlpatterns = [
     path("api/co-leads/", user_views.CoLeadListView.as_view(), name="co-leads"),
     path("api/projects/", project_views.ProjectViewSet.as_view(), name="projects"),
     path("api/achievements/", misc_views.AchievementViewset.as_view(), name="achievements"),
+    path("api/podcasts/", podcast_views.PodcastViewset.as_view(), name="podcasts"),
     path(
         "admin/password_reset/",
         auth_views.PasswordResetView.as_view(),
