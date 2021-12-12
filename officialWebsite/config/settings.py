@@ -29,10 +29,19 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    # Third-party apps
+    "rest_framework",
+    
     # Backend Apps
     "officialWebsite.misc",
     "officialWebsite.projects",
     "officialWebsite.users",
+    "officialWebsite.team",
+    "officialWebsite.event",
+    "officialWebsite.topic",
+    "officialWebsite.resource",
+    "officialWebsite.podcast"
 ]
 
 MIDDLEWARE = [
