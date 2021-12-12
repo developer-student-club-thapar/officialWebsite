@@ -46,17 +46,18 @@ class TestFAQModel(TestCase):
     def test_FAQ_creation(self):
         user = sample_user()
         FAQ.objects.create(question="Test Question", answer="Test answer")
-        self.assertEqual(FAQ.question, "Test Question")
-        self.assertEqual(FAQ.answer, "Test answer")
+        self.assertEqual(FAQ.objects.get(question="Test Question").question, "Test Question")
+        self.assertEqual(FAQ.objects.get(question="Test Question").answer, "Test answer")
 
 
 class TestContactModel(TestCase):
     def TestContactCreation(self):
         user= sample_user()
         ContactRequest.objects.create(name="Test Name", email="Test@test.com", message="Test message")
-        self.assertEqual(ContactRequest.name, "Test Name")
-        self.assertEqual(ContactRequest.email, "Test@test.com")
-        self.assertEqual(ContactRequest.message, "Test message")
+        self.assertEqual(ContactRequest.objects.get(name="Test Name").name, "Test Name")
+        self.assertEqual(ContactRequest.objects.get(name="Test Name").email, "Test@test.com")
+        self.assertEqual(ContactRequest.objects.get(name="Test Name").message, "Test message")
+
     def test_send_email(self):
         mail.send_mail(
             'Subject here', 'Here is the message.',
@@ -71,5 +72,7 @@ class TestSponserModel(TestCase):
     def test_Sponser_creation(self):
         user = sample_user()
         Sponsor.objects.create(name="Test")
-        self.assertEqual(Sponsor.name, "Test")
+        self.assertEqual(Sponsor.objects.get(name="Test").name, "Test")
+
+        
 
