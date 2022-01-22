@@ -1,7 +1,9 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
-from officialWebsite.misc.models import Achievement
+from officialWebsite.misc.models import Achievement, ContactRequest, Sponsor,FAQ
+from django.core import mail
 
+mail.outbox = []
 
 def sample_user(name="Test User", email="test@xyz.com"):
     """
@@ -39,3 +41,38 @@ class AchievementModelTest(TestCase):
             .count(),
             1,
         )
+
+class TestFAQModel(TestCase):
+    def test_FAQ_creation(self):
+        user = sample_user()
+        FAQ.objects.create(question="Test Question", answer="Test answer")
+        self.assertEqual(FAQ.objects.get(question="Test Question").question, "Test Question")
+        self.assertEqual(FAQ.objects.get(question="Test Question").answer, "Test answer")
+
+
+class TestContactModel(TestCase):
+    def TestContactCreation(self):
+        user= sample_user()
+        ContactRequest.objects.create(name="Test Name", email="Test@test.com", message="Test message")
+        self.assertEqual(ContactRequest.objects.get(name="Test Name").name, "Test Name")
+        self.assertEqual(ContactRequest.objects.get(name="Test Name").email, "Test@test.com")
+        self.assertEqual(ContactRequest.objects.get(name="Test Name").message, "Test message")
+
+    def test_send_email(self):
+        mail.send_mail(
+            'Subject here', 'Here is the message.',
+            'from@example.com', [ContactRequest.email],
+            fail_silently=False,
+        )
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(mail.outbox[0].subject, 'Subject here')
+
+
+class TestSponserModel(TestCase):
+    def test_Sponser_creation(self):
+        user = sample_user()
+        Sponsor.objects.create(name="Test")
+        self.assertEqual(Sponsor.objects.get(name="Test").name, "Test")
+
+        
+

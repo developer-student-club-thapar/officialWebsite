@@ -12,3 +12,22 @@ class AchievementSerializer(serializers.ModelSerializer):
         model = models.Achievement
         fields = ("id", "title", "sub_title", "content", "members")
         read_only_fields = ("id",)
+
+
+class FAQSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.FAQ
+        fields = ("id", "question", "answer")
+        read_only_fields = ("id",)
+
+class ContactRequestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.ContactRequest
+        fields = ("id", "name", "email", "message")
+        read_only_fields = ("id",)
+
+class SponserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Sponsor
+        fields = ("id", "name", "image", "url")
+        read_only_fields = ("id",)
