@@ -5,6 +5,8 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 from PIL import Image
 from io import BytesIO
 from officialWebsite.users.managers import UserManager
+from .tokens import account_activation_token
+from django.core.mail import send_mail
 
 
 class User(AbstractBaseUser):
@@ -37,6 +39,22 @@ class User(AbstractBaseUser):
         if not self.id:
             if self.image:
                 self.image = self.compressImage(self.image)
+        send_mail(
+            "User Verification",
+            f"Click on the following link to authorize user {self.name} as {self.role}.\n  {account_activation_token.make_token(User)},  ",
+            "noreplydsctiet@gmail.com",
+            ["dsctiet@gmail.com"],
+            fail_silently=False,
+        )
+
+        send_mail(
+            "User Verification",
+            f"Thanks for registering on https://dsctiet.tech/. Your account will be verified soon.",
+            "noreplydsctiet@gmail.com",
+            [f"{User.email}"],
+            fail_silently=False,
+        )
+
         super(User, self).save(*args, **kwargs)
 
     def compressImage(self, image):

@@ -11,6 +11,7 @@ django-environ = "*"
 pre-commit = "*"
 pillow = "*"
 djangorestframework = "*"
+six = "*"
 
 [requires]
 python_version = "3.8"
