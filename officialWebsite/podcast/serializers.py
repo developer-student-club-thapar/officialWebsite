@@ -24,6 +24,7 @@ class PodcastGuestModelSerializer(serializers.ModelSerializer):
         read_only_fields = ('id',)
 
 class PodcastSerializer(serializers.ModelSerializer):
+    # Main podcast serializer
     series = PodcastSeriesSerializer(read_only=True)
     guest = PodcastGuestModelSerializer(read_only=True)
     class Meta:
