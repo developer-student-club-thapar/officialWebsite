@@ -1,9 +1,9 @@
 from django.test import TestCase
-from officialWebsite.topic.models import topic
+from officialWebsite.topic.models import Topic
 
 
 def create_topic():
-    return topic.objects.create(
+    return Topic.objects.create(
         name="Test Topic",
     )
 

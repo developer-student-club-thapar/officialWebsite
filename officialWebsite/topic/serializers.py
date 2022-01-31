@@ -1,8 +1,9 @@
 from rest_framework import serializers
-from .models import topic
+from .models import Topic
 
 
-class topicSerializer(serializers.ModelSerializer):
+class TopicSerializer(serializers.ModelSerializer):
     class Meta:
-        model = topic
-        fields = "__all__"
+        model = Topic
+        fields = ("id", "name",)
+        read_only_fields = ('id',)
