@@ -1,8 +1,11 @@
 from . import models
 from rest_framework import serializers
+from officialWebsite.users.serializers import UserSerializer
 
 class PodcastSeriesSerializer(serializers.ModelSerializer):
     # series serializer
+    hosted = UserSerializer(read_only=True, many=True)
+    # rename hosted to members
     class Meta:
         model = models.PodcastSeries
         fields = ('id', 'name', 'hosted', 'note', 'logo')
