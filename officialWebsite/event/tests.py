@@ -1,13 +1,13 @@
 from django.test import TestCase
 import django.utils.timezone as timezone
 from datetime import datetime
-from officialWebsite.event.models import event
+from officialWebsite.event.models import Event
 
 # Create your tests here.
 
 
 def create_event():
-    return event.objects.create(
+    return Event.objects.create(
         name="test_event",
         date=datetime.date.now(),
         time=timezone.now(),
