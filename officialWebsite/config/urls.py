@@ -18,11 +18,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from officialWebsite import resource
 
 from officialWebsite.projects import views as project_views
 from officialWebsite.users import views as user_views
 from officialWebsite.misc import views as misc_views
 from officialWebsite.podcast import views as podcast_views
+from officialWebsite.event import views as event_views
+from officialWebsite.resource import views as resource_views
 
 admin.site.site_header = "Developer Student Club TIET"
 admin.site.site_title = "DSC-TIET"
@@ -35,6 +38,8 @@ urlpatterns = [
     path("api/projects/", project_views.ProjectViewSet.as_view(), name="projects"),
     path("api/achievements/", misc_views.AchievementViewset.as_view(), name="achievements"),
     path("api/podcasts/", podcast_views.PodcastViewset.as_view(), name="podcasts"),
+    path("api/events/", event_views.EventViewset.as_view(), name="events"),
+    path("api/resources/", resource_views.ResourceViewset.as_view(), name="resources"),
     path(
         "admin/password_reset/",
         auth_views.PasswordResetView.as_view(),
