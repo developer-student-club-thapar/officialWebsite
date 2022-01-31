@@ -1,14 +1,14 @@
 from django.test import TestCase
-from officialWebsite.resource.models import resource
-from officialWebsite.topic.models import topic
+from officialWebsite.resource.models import Resource
+from officialWebsite.topic.models import Topic
 
 
 def create_resource():
-    return resource.objects.create(name="Test Resource", url="example.com")
+    return Resource.objects.create(name="Test Resource", url="example.com")
 
 
 def create_topic():
-    return topic.objects.create(
+    return Topic.objects.create(
         name="Test Topic",
     )
 

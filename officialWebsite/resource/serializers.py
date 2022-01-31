@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import resource
-
-
-class resourceSerializer(serializers.ModelSerializer):
+from .models import Resource
+from officialWebsite.topic.serializers import TopicSerializer
+class ResourceSerializer(serializers.ModelSerializer):
+    topics = TopicSerializer(read_only=True, many=True)
     class Meta:
-        model = resource
-        fields = "__all__"
+        model = Resource
+        fields = ("name", "url", "topics")

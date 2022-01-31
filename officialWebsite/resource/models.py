@@ -1,12 +1,12 @@
 from django.db import models
-from officialWebsite.topic.models import topic
+from officialWebsite.topic.models import Topic
 
 # Create your models here.
 
-class resource(models.Model):
+class Resource(models.Model):
     name = models.CharField(max_length=255)
     url = models.URLField(max_length=200)
-    topic = models.ForeignKey(topic, on_delete=models.CASCADE)
+    topics = models.ManyToManyField(Topic, blank=True)
 
     def __str__(self):
         return self.name
