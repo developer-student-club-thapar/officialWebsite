@@ -37,6 +37,8 @@ class User(AbstractBaseUser):
         if not self.id:
             if self.image:
                 self.image = self.compressImage(self.image)
+                # rename the file
+                self.image.name = "{}.jpg".format(self.email)
         super(User, self).save(*args, **kwargs)
 
     def compressImage(self, image):
