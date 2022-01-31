@@ -26,7 +26,7 @@ from officialWebsite.misc import views as misc_views
 from officialWebsite.podcast import views as podcast_views
 from officialWebsite.event import views as event_views
 from officialWebsite.resource import views as resource_views
-
+from officialWebsite.team import views as team_views
 admin.site.site_header = "Developer Student Club TIET"
 admin.site.site_title = "DSC-TIET"
 admin.site.index_title = "DSC-TIET"
@@ -40,6 +40,7 @@ urlpatterns = [
     path("api/podcasts/", podcast_views.PodcastViewset.as_view(), name="podcasts"),
     path("api/events/", event_views.EventViewset.as_view(), name="events"),
     path("api/resources/", resource_views.ResourceViewset.as_view(), name="resources"),
+    path("api/teams/", team_views.TeamViewset.as_view(), name="teams"),
     path(
         "admin/password_reset/",
         auth_views.PasswordResetView.as_view(),
