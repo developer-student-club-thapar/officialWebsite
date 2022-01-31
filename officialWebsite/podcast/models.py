@@ -1,6 +1,9 @@
+import sys
 from django.db import models
 from officialWebsite.users.models import User
-
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from PIL import Image
+from io import BytesIO
 # Create your models here.
 class PodcastGuest(models.Model):
     """
@@ -14,20 +17,62 @@ class PodcastGuest(models.Model):
 
     def __str__(self):
         return f"{self.name} from {self.organisation}"
+    
+    def save(self, *args, **kwargs):
+        if self.image:
+            self.image = self.compressImage(self.image)
+            # rename the file
+            self.image.name = "{}.jpg".format(self.name + "_" + self.organisation)
+        super(PodcastGuest, self).save(*args, **kwargs)
+
+    def compressImage(self, image):
+        imageTemporary = Image.open(image)
+        outputIoStream = BytesIO()
+        imageTemporary.save(outputIoStream, format="JPEG", quality=60)
+        outputIoStream.seek(0)
+        image = InMemoryUploadedFile(
+            outputIoStream,
+            "ImageField",
+            "%s.jpg" % image.name.split(".")[0],
+            "image/jpeg",
+            sys.getsizeof(outputIoStream),
+            None,
+        )
+        return image
 
 class PodcastSeries(models.Model):
     """
     Podcast series name, other details link logo and stuff
     """
-
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
     hosted = models.ManyToManyField(User)
     note = models.CharField(max_length=1000)
-    logo = models.ImageField(upload_to='podcast_logo/')
+    logo = models.ImageField(upload_to='podcast_series_logo/')
 
     def __str__(self):
         return f"{self.name}"
-    
+
+    def save(self, *args, **kwargs):
+        if self.logo:
+            self.logo = self.compressImage(self.logo)
+            # rename the file
+            self.logo.name = "{}.jpg".format(self.name)
+        super(PodcastSeries, self).save(*args, **kwargs)
+
+    def compressImage(self, image):
+        imageTemporary = Image.open(image)
+        outputIoStream = BytesIO()
+        imageTemporary.save(outputIoStream, format="JPEG", quality=60)
+        outputIoStream.seek(0)
+        image = InMemoryUploadedFile(
+            outputIoStream,
+            "ImageField",
+            "%s.jpg" % image.name.split(".")[0],
+            "image/jpeg",
+            sys.getsizeof(outputIoStream),
+            None,
+        )
+        return image
 class Podcast(models.Model):
     """
     Basic models for podcasts and its details
