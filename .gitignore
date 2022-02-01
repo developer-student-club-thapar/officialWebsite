@@ -11,6 +11,10 @@ vagrant/env_local.sh
 # vi
 *.swp
 
+# static files
+static_root/
+static/
+
 # Caches
 .eslintcache
 # PyCharm
