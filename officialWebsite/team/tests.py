@@ -1,10 +1,10 @@
 from django.test import TestCase
-from officialWebsite.team.models import team
+from officialWebsite.team.models import Team
 from django.contrib.auth import get_user_model
 
 
 def create_team():
-    return team.objects.create(
+    return Team.objects.create(
         name="Test Team",
     )
 
