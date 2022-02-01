@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     'corsheaders.middleware.CorsMiddleware',
     "django.middleware.common.CommonMiddleware",
@@ -129,12 +130,12 @@ if DEBUG:
     MEDIA_URL = "/media/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 else:
-    # cloud storage settings
-    # DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
-    # STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
-    # GS_BUCKET_NAME = env("GS_BUCKET_NAME")
-    STATIC_ROOT = "static/"
-    MEDIA_ROOT = "media/"
+    STATIC_URL = "/static/"
+    print(BASE_DIR)
+    #STATICFILES_DIRS = [os.path.join(BASE_DIR, "static_files"), os.path.join(BASE_DIR, "../static")]
+    STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
+    MEDIA_URL = "/media/"
+    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 if not DEBUG:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
