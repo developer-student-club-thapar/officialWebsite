@@ -42,3 +42,6 @@ dsc_tiet
 
 # Backend socket file ignore
 run/
+
+# pem files
+*.pem
