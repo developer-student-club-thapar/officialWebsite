@@ -1,6 +1,8 @@
 from . import models
 from . import serializers
-from rest_framework import generics
+from rest_framework import generics, Response
+
+from officialWebsite import podcast
 # Create your views here.
 """
 Podcast
@@ -10,5 +12,8 @@ PodcastGuestLink
 """
 
 class PodcastViewset(generics.ListAPIView):
-    queryset = models.Podcast.objects.all()
-    serializer_class = serializers.PodcastSerializer
+    """Manage Podcasts in the database"""
+    def get(self, request, format=None):
+        podcasts = models.Podcast.objects.all()
+        serializer = serializers.PodcastSerializer(podcasts, many=True)
+        return Response(serializer.data)

@@ -1,10 +1,11 @@
 from . import models
 from . import serializers
 from rest_framework import generics
+from rest_framework.response import Response
 
-
-class ProjectViewSet(generics.ListAPIView):
-    """Manage projects in the database"""
-
-    serializer_class = serializers.ProjectSerializer
-    queryset = models.Project.objects.all()
+class ProjectViewset(APIView):
+    """Manage Projects in the database"""
+    def get(self, request, format=None):
+        projects = models.Project.objects.all()
+        serializer = serializers.ProjectSerializer(projects, many=True)
+        return Response(serializer.data)
