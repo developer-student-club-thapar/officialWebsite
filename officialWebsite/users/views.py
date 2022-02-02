@@ -22,9 +22,10 @@ class CoLeadListView(APIView):
         serializer = UserSerializer(leads, many=True)
         return Response(serializer.data)
 
-
-class UserViewset(generics.ListAPIView):
+class UserViewset(APIView):
     """Manage members in the database"""
+    def get(self, request, format=None):
+        core = User.objects.all().filter(role__icontains="Core")
+        serializer = UserSerializer(core, many=True)
+        return Response(serializer.data)
 
-    serializer_class = UserSerializer
-    queryset = User.objects.all().filter(role__icontains="Core")
