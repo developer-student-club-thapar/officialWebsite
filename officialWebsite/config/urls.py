@@ -41,6 +41,7 @@ urlpatterns = [
     path("api/events/", event_views.EventViewset.as_view(), name="events"),
     path("api/resources/", resource_views.ResourceViewset.as_view(), name="resources"),
     path("api/teams/", team_views.TeamViewset.as_view(), name="teams"),
+    path("api/sponsors/", misc_views.SponsorViewset.as_view(), name="sponsors"),
     path(
         "admin/password_reset/",
         auth_views.PasswordResetView.as_view(),
