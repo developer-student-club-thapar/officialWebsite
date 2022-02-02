@@ -2,6 +2,7 @@ from . import models
 from . import serializers
 from rest_framework import generics
 from rest_framework.response import Response
+from rest_framework.views import APIView
 
 class ProjectViewset(APIView):
     """Manage Projects in the database"""

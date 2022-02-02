@@ -1,6 +1,7 @@
 from . import models
 from . import serializers
 from rest_framework import generics, Response
+from rest_framework.views import APIView
 
 from officialWebsite import podcast
 # Create your views here.
@@ -11,7 +12,7 @@ PodcastSeries
 PodcastGuestLink
 """
 
-class PodcastViewset(generics.ListAPIView):
+class PodcastViewset(APIView):
     """Manage Podcasts in the database"""
     def get(self, request, format=None):
         podcasts = models.Podcast.objects.all()
