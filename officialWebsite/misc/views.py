@@ -1,7 +1,7 @@
 from . import models
 from . import serializers
 from rest_framework import generics
-from rest_framework import Response
+from rest_framework.response import Response
 from rest_framework.views import APIView
 
 
@@ -27,10 +27,10 @@ class ContactRequestViewset(APIView):
         serializer = serializers.ContactRequestSerializer(contact_requests, many=True)
         return Response(serializer.data)
 
-class SponserViewset(APIView):
+class SponsorViewset(APIView):
     """Manage Achievements in the database"""
     def get(self, request, format=None):
-        sponsers = models.Sponser.objects.all()
-        serializer = serializers.SponserSerializer(sponsers, many=True)
+        sponsors = models.Sponsor.objects.all()
+        serializer = serializers.SponsorSerializer(sponsors, many=True)
         return Response(serializer.data)
 
