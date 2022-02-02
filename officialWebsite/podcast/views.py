@@ -1,6 +1,7 @@
 from . import models
 from . import serializers
-from rest_framework import generics, Response
+from rest_framework import generics
+from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from officialWebsite import podcast
