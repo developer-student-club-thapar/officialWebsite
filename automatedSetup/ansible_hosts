@@ -1,0 +1,2 @@
+[prod]
+primary ansible_host=34.131.148.139 ansible_host_user=raghav ansible_ssh_private_key=ansible
