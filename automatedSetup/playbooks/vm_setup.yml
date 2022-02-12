@@ -30,3 +30,7 @@
             sudo apt-get install python3-certbot-nginx -y
           register: certbot_install
         - debug: msg="{{ certbot_install.stdout }}"
+
+        - name: cleanup 
+          shell: |
+            rm -f get-docker.sh
