@@ -1,0 +1,11 @@
+server {
+        listen 443 ssl;
+        server_name media_api_domain.com;
+
+        location / {
+                proxy_pass https://localhost:3000;
+
+        }
+        ssl_certificate /etc/letsencrypt/live/media_api_domain.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/media_api_domain.com/privkey.pem;
+}
