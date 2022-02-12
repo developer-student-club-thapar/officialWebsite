@@ -34,3 +34,8 @@
         shell: |
           ln -s /etc/nginx/sites-available/{{ lookup('env','MEDIA_API_DOMAIN') }} /etc/nginx/sites-enabled/{{ lookup('env','MEDIA_API_DOMAIN') }}
         become: yes
+      
+      - name: Reload nginx
+        shell: |
+          systemctl restart nginx
+        become: yes
