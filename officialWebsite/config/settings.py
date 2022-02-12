@@ -139,7 +139,7 @@ else:
 
     # to access admin portal from outside
     CSRF_TRUSTED_ORIGINS=['https://*.dsctiet.tech']
-
+"""
 if not DEBUG:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
     EMAIL_HOST = "smtp.gmail.com"
@@ -148,7 +148,7 @@ if not DEBUG:
     EMAIL_USE_TLS = True
     EMAIL_USE_SSL = False
     EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
-
+"""
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
