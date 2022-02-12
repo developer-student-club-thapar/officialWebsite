@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  assets:
+    image: media_api
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - /home/raghav/media/:/app/assets/
+      - ./database:/app/database
+    environment:
+      - SECRET_KEY=<SECRET_KEY>
+      - SIGNUP=True
+      - API_URL=https://media.dsctiet.tech (Can change the url accordingly)
+
+    restart: always

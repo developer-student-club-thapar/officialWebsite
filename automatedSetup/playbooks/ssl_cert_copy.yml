@@ -33,5 +33,5 @@
         shell: |
           cp /etc/letsencrypt/live/{{ lookup('env','MEDIA_API_DOMAIN') }}/cert.pem /home/{{ lookup('env','USER') }}/Media-API/api/
           cp /etc/letsencrypt/live/{{ lookup('env','MEDIA_API_DOMAIN') }}/privkey.pem /home/{{ lookup('env','USER') }}/Media-API/api/
-          chown -R {{ lookup('env','USER') }}:{{ lookup('env','USER') }} /home/{{ lookup('env','USER') }}/officialWebsite/*.pem
+          chown -R {{ lookup('env','USER') }}:{{ lookup('env','USER') }} /home/{{ lookup('env','USER') }}/Media-API/api/*.pem
         become: yes # this makes my user a root to copy the files
