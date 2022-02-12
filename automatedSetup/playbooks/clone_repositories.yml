@@ -21,6 +21,11 @@
         shell: |
           git clone https://github.com/developer-student-club-thapar/Media-API.git
       
+      - name: Create database folders in the repo
+        shell: |
+          mkdir -p /home/{{ lookup('env','USER') }}/officialWebsite/database/
+          mkdir -p /home/{{ lookup('env','USER') }}/Media-API/database/
+      
       - name: Check if media folder is created
         stat:
           path: /home/{{ lookup('env','USER') }}/media
