@@ -1,0 +1,32 @@
+---
+    - hosts: prod
+      tasks:
+      - name: Check if officialWebsite folder is cloned
+        stat:
+          path: /home/{{ lookup('env','USER') }}/officialWebsite
+        register: officialWebsite_stat
+      
+      - name: Clone officialWebsite folder
+        when: not officialWebsite_stat.stat.exists
+        shell: |
+          git clone https://github.com/developer-student-club-thapar/officialWebsite.git
+
+      - name: Check if mediaAPI is cloned
+        stat:
+          path: /home/{{ lookup('env','USER') }}/Media-API
+        register: mediaAPI_stat
+      
+      - name: Clone mediaAPI
+        when: not mediaAPI_stat.stat.exists
+        shell: |
+          git clone https://github.com/developer-student-club-thapar/Media-API.git
+      
+      - name: Check if media folder is created
+        stat:
+          path: /home/{{ lookup('env','USER') }}/media
+        register: media_stat
+      
+      - name: Create media folder
+        when: not media_stat.stat.exists
+        shell: |
+          mkdir /home/{{ lookup('env','USER') }}/media
