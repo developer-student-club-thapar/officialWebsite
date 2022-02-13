@@ -30,7 +30,7 @@
         
         - name: Check if nginx config file exists
           stat:
-            path: /etc/nginx/sites-enabled/{{ lookup('env','DJANGO_API_DOMAIN') }}.conf
+            path: /etc/nginx/sites-enabled/{{ lookup('env','DJANGO_API_DOMAIN') }}
           register: nginx_config_exists
         
         - name: Check if nginx config file exists
