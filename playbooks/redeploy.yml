@@ -1,0 +1,48 @@
+---
+    - hosts: prod
+      tasks:
+        - name: Check officialWebsite cloned
+          stat:
+            path: /home/{{ lookup('env','USER') }}/officialWebsite
+          register: officialWebsite_cloned
+        
+        - name: Check if officialWebsite cloned
+          when: not officialWebsite_cloned.stat.exists
+          fail: "OfficialWebsite not cloned, Please run automated setup"
+        
+        - name: Check if cert.pem is copied
+          stat:
+            path: /home/{{ lookup('env','USER') }}/officialWebsite/cert.pem
+          register: ssl_cert_copied
+        
+        - name: Check if cert.pem is copied
+          when: not ssl_cert_copied.stat.exists
+          fail: "cert.pem not copied, Please check instructions"
+        
+        - name: Check if privkey.pem is copied
+          stat:
+            path: /home/{{ lookup('env','USER') }}/officialWebsite/privkey.pem
+          register: ssl_key_copied
+        
+        - name: Check if privkey.pem is copied
+          when: not ssl_key_copied.stat.exists
+          fail: "privkey.pem not copied, Please check instructions"
+        
+        - name: Check if nginx config file exists
+          stat:
+            path: /etc/nginx/sites-enabled/{{ lookup('env','DJANGO_API_DOMAIN') }}.conf
+          register: nginx_config_exists
+        
+        - name: Check if nginx config file exists
+          when: not nginx_config_exists.stat.exists
+          fail: "Nginx config file not copied, Please check instructions"
+        
+        - name: Pull repo
+          shell: |
+            cd /home/{{ lookup('env','USER') }}/officialWebsite
+            git pull
+        
+        - name: Redeploy container
+          shell: |
+            cd /home/{{ lookup('env','USER') }}/officialWebsite
+            docker-compose up --build -d

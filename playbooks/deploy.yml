@@ -1,7 +1,0 @@
----
-    - hosts: prod
-      tasks:
-        - name: Execute Deploy Script
-          shell: ~/deploy_scripts/officialWebsite
-          register: deploy_result
-        - debug: msg="{{ deploy_result.stdout }}"

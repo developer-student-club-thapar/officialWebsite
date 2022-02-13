@@ -1,0 +1,2 @@
+[prod]
+primary ansible_host=api.dsctiet.tech ansible_host_user=dsc ansible_ssh_private_key=ansible
