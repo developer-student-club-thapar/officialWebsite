@@ -2,7 +2,6 @@ dist: xenial
 group: edge
 stages:
 - name: Deployment
-  if: branch = master AND type = push AND fork = false
 jobs:
   include:
   - stage: Deployment
