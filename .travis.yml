@@ -10,7 +10,6 @@ jobs:
     - openssl aes-256-cbc -K $encrypted_b06a1a195e3f_key -iv $encrypted_b06a1a195e3f_iv
       -in ansible.enc -out ./ansible -d
     - chmod 600 ./ansible
-    
     install:
     - pip install ansible
     script:
