@@ -194,7 +194,7 @@ const ProjectsAlt = props => {
                       >
                         <CardMedia
                           className={classes.media}
-                          image={item.image === null ? Test : item.image}
+                          image={item.image === null ? Test : "https://media.dsctiet.tech"+item.image}
                           title="Project"
                         />
                         <CardContent style={{ height: "125px" }}>
@@ -247,7 +247,7 @@ const ProjectsAlt = props => {
                       >
                         <CardMedia
                           className={classes.media}
-                          image={item.image === null ? Test : item.image}
+                          image={item.image === null ? Test : "https://media.dsctiet.tech"+item.image}
                           title="Project"
                         />
                         <CardContent>
