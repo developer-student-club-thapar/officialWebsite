@@ -22,7 +22,10 @@ const FooterAlt = () => {
         style={{
           borderStyle: "solid",
           borderWidth: "1px 0px 0px 0px",
-          borderColor: "grey"
+          borderColor: "grey",
+          position: 'fixed',
+          bottom: 0,
+          width: '100%',
         }}
       >
         <Container fixed>

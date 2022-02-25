@@ -166,7 +166,7 @@ const EventsAlt = ({ theme, ...props }) => {
         </Grid>
         <Grid container spacing={2}>
           {events.map(
-            ({ id, image = Test, title, venue, date, time, link }, index) => (
+            ({ id, image, title, venue, date, time, link }, index) => (
               <Grid item xs={12} sm={6} md={4} lg={4} xl={4} key={id}>
                 <Slide bottom>
                   <StyledCard className={classes.rootCardMobile}>
@@ -183,7 +183,7 @@ const EventsAlt = ({ theme, ...props }) => {
                     >
                       <CardMedia
                         className={classes.media}
-                        image={image}
+                        image={image == null? Test : "https://media.dsctiet.tech"+image}
                         title="Event"
                       />
                       <CardContent>
