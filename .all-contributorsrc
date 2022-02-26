@@ -122,6 +122,15 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "rdotjain",
+      "name": "Rupanshi Jain",
+      "avatar_url": "https://avatars.githubusercontent.com/u/71973975?v=4",
+      "profile": "https://www.linkedin.com/in/RupanshiJain",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
