@@ -29,3 +29,11 @@ class UserViewset(APIView):
         serializer = UserSerializer(core, many=True)
         return Response(serializer.data)
 
+class MentorListView(APIView):
+    """List all mentors"""
+
+    def get(self, request, format=None):
+        mentors = User.objects.all().filter(role__icontains="Mentor")
+        serializer = UserSerializer(mentors, many=True)
+        return Response(serializer.data)
+

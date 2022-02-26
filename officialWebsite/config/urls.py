@@ -35,6 +35,7 @@ urlpatterns = [
     path("api/members/", user_views.UserViewset.as_view(), name="members"),
     path("api/leads/", user_views.LeadListView.as_view(), name="leads"),
     path("api/co-leads/", user_views.CoLeadListView.as_view(), name="co-leads"),
+    path("api/mentors/", user_views.MentorListView.as_view(), name="mentors"),
     path("api/projects/", project_views.ProjectViewSet.as_view(), name="projects"),
     path("api/achievements/", misc_views.AchievementViewset.as_view(), name="achievements"),
     path("api/podcasts/", podcast_views.PodcastViewset.as_view(), name="podcasts"),
