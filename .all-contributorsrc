@@ -131,6 +131,44 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Sahaj-Srivastava24",
+      "name": "Mad1ad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/72143774?v=4",
+      "profile": "https://github.com/Sahaj-Srivastava24",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "sanchjain",
+      "name": "sanchjain",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54800651?v=4",
+      "profile": "https://github.com/sanchjain",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "rdotjain",
+      "name": "Rupanshi Jain",
+      "avatar_url": "https://avatars.githubusercontent.com/u/71973975?v=4",
+      "profile": "https://www.linkedin.com/in/RupanshiJain",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Saurav-Shrivastav",
+      "name": "Saurav Shrivastav",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54510448?v=4",
+      "profile": "http://blog.saurav-shrivastav.tech",
+      "contributions": [
+        "code",
+        "maintenance",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
