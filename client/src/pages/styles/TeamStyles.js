@@ -22,6 +22,7 @@ export const useStyles = makeStyles(theme => ({
   },
   leadContainer: {
     marginTop: "5%",
+    width: "107%",
     justifyContent: "space-around",
     [theme.breakpoints.only("xs")]: {
       justifyContent: "center"
