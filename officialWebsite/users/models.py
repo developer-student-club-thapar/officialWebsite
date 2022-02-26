@@ -9,7 +9,7 @@ from officialWebsite.users.managers import UserManager
 
 class User(AbstractBaseUser):
 
-    ROLE_CHOICES = (("Lead", "Lead"), ("Core", "Core"), ("Co-Lead", "Co-Lead"))
+    ROLE_CHOICES = (("Lead", "Lead"), ("Core", "Core"), ("Co-Lead", "Co-Lead"), ("Mentors", "Mentors"))
 
     name = models.CharField(max_length=255)
     role = models.CharField(max_length=255, choices=ROLE_CHOICES, null=True, blank=True)
