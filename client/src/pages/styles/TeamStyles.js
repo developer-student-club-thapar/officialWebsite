@@ -16,6 +16,10 @@ export const useStyles = makeStyles(theme => ({
       fontSize: "2.6rem"
     }
   },
+  subheading: {
+    marginTop: "20px",
+    paddingBottom: "0px",
+  },
   leadContainer: {
     marginTop: "5%",
     justifyContent: "space-around",
