@@ -122,6 +122,15 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "sanchjain",
+      "name": "sanchjain",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54800651?v=4",
+      "profile": "https://github.com/sanchjain",
+      "contributions": [
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
