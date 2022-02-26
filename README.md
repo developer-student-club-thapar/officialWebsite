@@ -127,6 +127,7 @@ We would like to thank these wonderful people who helped us to build this projec
     <td align="center"><a href="https://github.com/bughunter9"><img src="https://avatars1.githubusercontent.com/u/65765070?v=4?s=100" width="100px;" alt=""/><br /><sub><b>MANROOP PARMAR</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=bughunter9" title="Code">💻</a></td>
     <td align="center"><a href="https://yash22arora.github.io/Portfolio/"><img src="https://avatars.githubusercontent.com/u/72307157?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yashvardhan Arora</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=yash22arora" title="Code">💻</a></td>
     <td align="center"><a href="http://www.linkedin.com/in/raghavtinker"><img src="https://avatars.githubusercontent.com/u/71115825?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Raghav Sharma</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=raghavTinker" title="Code">💻</a> <a href="#maintenance-raghavTinker" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/Mahima710"><img src="https://avatars.githubusercontent.com/u/69919828?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mahima710</b></sub></a><br /><a href="https://github.com/developer-student-club-thapar/officialWebsite/commits?author=Mahima710" title="Code">💻</a></td>
   </tr>
 </table>
 
