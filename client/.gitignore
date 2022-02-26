@@ -1,0 +1,47 @@
+.*/
+node_modules/
+.DS_store
+yarn-error.log
+npm-error.log
+vagrant/env_local.sh
+**/*.pyc
+**/__pycache__
+!.github
+
+# vi
+*.swp
+
+# static files
+static_root/
+static/
+
+# Caches
+.eslintcache
+# PyCharm
+*.iml
+
+# emacs
+*~
+\#*
+
+#docker custom environment
+.env
+env/
+
+# Ignore tox installation
+.tox
+
+# Ignore db file
+*.sqlite3
+
+service-account.json
+media
+
+# Backend key for deployment
+dsc_tiet
+
+# Backend socket file ignore
+run/
+
+# pem files
+*.pem
