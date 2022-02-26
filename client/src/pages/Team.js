@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import styles from './styles/team.module.css';
 import { Container, CssBaseline, Grid } from "@material-ui/core";
 import { useStyles } from "./styles/TeamStyles";
 import Loader from "./Loader";
@@ -60,6 +61,7 @@ const Team = () => {
   }
   return (
     <>
+      <div className={styles.bgConfetti}>
       <Container fixed>
         <GlobalStyle />
         <CssBaseline />
@@ -129,6 +131,7 @@ const Team = () => {
             ))}
         </Grid>
       </Container>
+      </div>
       <div style={{ marginTop: "10rem" }}>
         <FooterAlt />
       </div>

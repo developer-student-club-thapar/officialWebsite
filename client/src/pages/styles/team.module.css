@@ -1,0 +1,7 @@
+.bgConfetti
+{
+    background-image: url(../../assets/landing_confetti.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: repeat-y;
+}
