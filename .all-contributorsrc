@@ -112,6 +112,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "raghavTinker",
+      "name": "Raghav Sharma",
+      "avatar_url": "https://avatars.githubusercontent.com/u/71115825?v=4",
+      "profile": "http://www.linkedin.com/in/raghavtinker",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
