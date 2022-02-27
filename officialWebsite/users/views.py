@@ -9,7 +9,7 @@ class LeadListView(APIView):
     """List all leads"""
 
     def get(self, request, format=None):
-        leads = User.objects.all().filter(role__iexact="Lead")
+        leads = User.objects.all().filter(role__iexact="Lead").order_by("name")
         serializer = UserSerializer(leads, many=True)
         return Response(serializer.data)
 
@@ -18,14 +18,14 @@ class CoLeadListView(APIView):
     """List all leads"""
 
     def get(self, request, format=None):
-        leads = User.objects.all().filter(role__icontains="Co-Lead")
+        leads = User.objects.all().filter(role__icontains="Co-Lead").order_by("name")
         serializer = UserSerializer(leads, many=True)
         return Response(serializer.data)
 
 class UserViewset(APIView):
     """Manage members in the database"""
     def get(self, request, format=None):
-        core = User.objects.all().filter(role__icontains="Core")
+        core = User.objects.all().filter(role__icontains="Core").order_by('name')
         serializer = UserSerializer(core, many=True)
         return Response(serializer.data)
 
@@ -33,7 +33,8 @@ class MentorListView(APIView):
     """List all mentors"""
 
     def get(self, request, format=None):
-        mentors = User.objects.all().filter(role__icontains="Mentor")
+        # sort by name in ascending order
+        mentors = User.objects.all().filter(role__icontains="Mentor").order_by('name')
         serializer = UserSerializer(mentors, many=True)
         return Response(serializer.data)
 
