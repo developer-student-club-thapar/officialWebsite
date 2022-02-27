@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import styles from './styles/team.module.css';
 import { Container, CssBaseline, Grid } from "@material-ui/core";
 import { useStyles } from "./styles/TeamStyles";
 import Loader from "./Loader";
@@ -32,6 +33,7 @@ const Team = () => {
   const classes = useStyles();
   const [leads, setLeads] = useState(null);
   const [team, setTeam] = useState(null);
+  const [mentors, setMentors] = useState(null);
   const [coleads, setColeads] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -39,9 +41,11 @@ const Team = () => {
     const memberRes = await axios.get("/members/");
     const leadResponse = await axios.get("/leads/");
     const coleadResponse = await axios.get("/co-leads/");
+    const mentorResponse = await axios.get("/mentors/");
     setTeam(memberRes.data);
     setLeads(leadResponse.data);
     setColeads(coleadResponse.data);
+    setMentors(mentorResponse.data);
     setLoading(false);
     // console.log(team);
     // console.log(memberRes.data);
@@ -57,6 +61,7 @@ const Team = () => {
   }
   return (
     <>
+      <div className={styles.bgConfetti}>
       <Container fixed>
         <GlobalStyle />
         <CssBaseline />
@@ -67,9 +72,31 @@ const Team = () => {
             </StyledTypographyheading>
           </Grid>
         </Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={12} className={classes.headingItem} justify="center">
+            <StyledTypographyheading variant="h3" className={[classes.heading, classes.subheading]}>
+              Lead
+            </StyledTypographyheading>
+          </Grid>
+        </Grid>
         <Grid container spacing={2} className={classes.leadContainer}>
           {leads &&
             leads.map((item, index) => (
+              <Grid item xs={11} sm={9} lg={4} key={index}>
+                <TeamMemberCard item={item} />
+              </Grid>
+            ))}
+        </Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={12} className={classes.headingItem} justify="center">
+            <StyledTypographyheading variant="h3" className={[classes.heading, classes.subheading]}>
+              Mentors
+            </StyledTypographyheading>
+          </Grid>
+        </Grid>
+        <Grid container spacing={2} className={classes.leadContainer}>
+          {mentors &&
+            mentors.map((item, index) => (
               <Grid item xs={11} sm={9} lg={4} key={index}>
                 <TeamMemberCard item={item} />
               </Grid>
@@ -104,6 +131,7 @@ const Team = () => {
             ))}
         </Grid>
       </Container>
+      </div>
       <div style={{ marginTop: "10rem" }}>
         <FooterAlt />
       </div>

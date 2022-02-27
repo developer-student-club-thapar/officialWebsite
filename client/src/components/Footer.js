@@ -52,7 +52,7 @@ const FooterAlt = () => {
             >
               <Hidden only="xs">
                 <h6>
-                  © Copyright 2020{" "}
+                  © Copyright 2022{" "}
                   <span style={{ fontWeight: "500" }}>
                     DSC TIET | Developed with
                   </span>{" "}
@@ -61,7 +61,7 @@ const FooterAlt = () => {
               </Hidden>
               <Hidden smUp>
                 <p>
-                  © Copyright 2020{" "}
+                  © Copyright 2022{" "}
                   <span style={{ fontWeight: "500" }}>
                     DSC TIET | Developed with
                   </span>{" "}

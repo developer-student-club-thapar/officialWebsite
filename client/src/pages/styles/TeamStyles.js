@@ -16,8 +16,13 @@ export const useStyles = makeStyles(theme => ({
       fontSize: "2.6rem"
     }
   },
+  subheading: {
+    marginTop: "20px",
+    paddingBottom: "0px",
+  },
   leadContainer: {
     marginTop: "5%",
+    width: "107%",
     justifyContent: "space-around",
     [theme.breakpoints.only("xs")]: {
       justifyContent: "center"
