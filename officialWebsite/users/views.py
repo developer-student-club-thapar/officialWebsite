@@ -37,3 +37,10 @@ class MentorListView(APIView):
         serializer = UserSerializer(mentors, many=True)
         return Response(serializer.data)
 
+# create user
+class UserCreateView(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+    def perform_create(self, serializer):
+        serializer.save()
