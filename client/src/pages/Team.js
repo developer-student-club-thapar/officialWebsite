@@ -90,6 +90,21 @@ const Team = () => {
         <Grid container spacing={2}>
           <Grid item xs={12} className={classes.headingItem} justify="center">
             <StyledTypographyheading variant="h3" className={[classes.heading, classes.subheading]}>
+              Co-Leads
+            </StyledTypographyheading>
+          </Grid>
+        </Grid>
+        <Grid container spacing={2} className={classes.leadContainer}>
+          {coleads &&
+            coleads.map((item, index) => (
+              <Grid item xs={11} sm={9} lg={4} key={index}>
+                <TeamMemberCard item={item} />
+              </Grid>
+            ))}
+        </Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={12} className={classes.headingItem} justify="center">
+            <StyledTypographyheading variant="h3" className={[classes.heading, classes.subheading]}>
               Mentors
             </StyledTypographyheading>
           </Grid>
@@ -102,14 +117,7 @@ const Team = () => {
               </Grid>
             ))}
         </Grid>
-        <Grid container spacing={2} className={classes.leadContainer}>
-          {coleads &&
-            coleads.map((item, index) => (
-              <Grid item xs={11} sm={9} lg={4} key={index}>
-                <TeamMemberCard item={item} />
-              </Grid>
-            ))}
-        </Grid>
+        
         <Grid container spacing={2} justify="center">
           <Grid item xs={12} sm={12} lg={6}>
             <img src={image} alt="core-img" className={classes.coreImage} />
