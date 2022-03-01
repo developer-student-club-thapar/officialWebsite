@@ -35,25 +35,32 @@ const TeamMemberCard = ({ item }) => {
           </h6>
           <div className={classes.linkContainer}>
             <span>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={item.linkedin_url}
-                style={{ paddingRight: "8px" }}
-              >
-                <i class="fab fa-linkedin fa-2x" style={{ color: "grey" }} />
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={item.github_url}
-                style={{ paddingRight: "8px" }}
-              >
-                <i
-                  className="fab fa-github-square fa-2x"
-                  style={{ color: "grey" }}
-                />
-              </a>
+              {
+                item.linkedin_url && (<a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={item.linkedin_url}
+                  style={{ paddingRight: "8px" }}
+                >
+                  <i class="fab fa-linkedin fa-2x" style={{ color: "grey" }} />
+                </a>)
+              }
+              
+              {
+                item.github_url && ( <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={item.github_url}
+                  style={{ paddingRight: "8px" }}
+                >
+                  <i
+                    className="fab fa-github-square fa-2x"
+                    style={{ color: "grey" }}
+                  />
+                </a>)
+              }
+             {
+               item.medium_url && ( 
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -62,6 +69,10 @@ const TeamMemberCard = ({ item }) => {
               >
                 <i class="fab fa-medium fa-2x" style={{ color: "grey" }} />
               </a>
+               )
+             }
+             {
+               item.twitter_url && (
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -73,6 +84,8 @@ const TeamMemberCard = ({ item }) => {
                   style={{ color: "grey" }}
                 />
               </a>
+               )
+             }
             </span>
           </div>
           <div style={{ paddingBottom: "100px" }}>
