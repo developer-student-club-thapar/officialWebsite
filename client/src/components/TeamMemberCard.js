@@ -35,6 +35,14 @@ const TeamMemberCard = ({ item }) => {
           </h6>
           <div className={classes.linkContainer}>
             <span>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={`mailto: ${item.email}`}
+                  style={{ paddingRight: "8px" }}
+                >
+                  <i class="fa-regular fa-voicemail fa-1x" style={{ color: "grey" }} />
+                </a>
               {
                 item.linkedin_url && (<a
                   target="_blank"
@@ -44,7 +52,7 @@ const TeamMemberCard = ({ item }) => {
                 >
                   <i class="fab fa-linkedin fa-2x" style={{ color: "grey" }} />
                 </a>)
-              }
+                }
               
               {
                 item.github_url && ( <a
@@ -86,6 +94,9 @@ const TeamMemberCard = ({ item }) => {
               </a>
                )
              }
+             {/* {
+               (item.linkedin_url || item.medium_url || item.twitter_url || item.github_url) == false ?  <span>l</span> : null
+             } */}
             </span>
           </div>
           <div style={{ paddingBottom: "100px" }}>
