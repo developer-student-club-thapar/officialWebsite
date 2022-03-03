@@ -2,6 +2,8 @@ import React from "react";
 import { Avatar } from "@material-ui/core";
 import { useStyles } from "./styles/TeamMemberCardStyles";
 import { StyledPaperTeam, StyledDiv } from "../toggle/StyledComponents";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faEnvelopeSquare} from '@fortawesome/free-solid-svg-icons';
 
 function stringToColor(string) {
   let hash = 0;
@@ -41,7 +43,7 @@ const TeamMemberCard = ({ item }) => {
                   href={`mailto: ${item.email}`}
                   style={{ paddingRight: "8px" }}
                 >
-                  <i class="fa-regular fa-voicemail fa-1x" style={{ color: "grey" }} />
+                  <FontAwesomeIcon icon={faEnvelopeSquare} color="grey" size="2x"/>
                 </a>
               {
                 item.linkedin_url && (<a
