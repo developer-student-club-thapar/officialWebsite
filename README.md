@@ -1,6 +1,6 @@
 <div align = "center">
 
-<img height=200px src="./src/assets/dsc_logo.png">
+<img height=200px src="./client/src/assets/dsc_logo.png">
 
 # DEVELOPER STUDENT CLUBS TIET
 
