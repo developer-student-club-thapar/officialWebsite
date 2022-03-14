@@ -9,11 +9,10 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - /home/raghav/media/:/app/assets/
+      - /home/dsc/media/:/app/assets/
       - ./database:/app/database
     environment:
       - SECRET_KEY=<SECRET_KEY>
       - SIGNUP=True
-      - API_URL=https://media.dsctiet.tech (Can change the url accordingly)
-
+      - API_URL=https://media.dsctiet.tech
     restart: always
