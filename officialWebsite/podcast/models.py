@@ -1,6 +1,5 @@
 import sys
 from django.db import models
-from sqlalchemy import false
 from officialWebsite.users.models import User
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from PIL import Image
