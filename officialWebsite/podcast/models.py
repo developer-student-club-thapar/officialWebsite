@@ -78,7 +78,7 @@ class Podcast(models.Model):
     Basic models for podcasts and its details
     """
 
-    number = models.IntegerField()
+    number = models.IntegerField(editable=False)
     name = models.CharField(max_length=255, default="Podcast Number {}".format(number), null=True, blank=True)
     guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT, null=True, blank=True)
     series = models.ForeignKey(PodcastSeries, on_delete=models.PROTECT)
