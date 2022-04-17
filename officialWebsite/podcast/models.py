@@ -110,4 +110,4 @@ class PodcastGuestLink(models.Model):
     link_type = models.TextField(max_length=255)
     
     def __str__(self):
-        return f"{self.guest.name} : {self.link_type} : {self.link}"
+        return f"{self.link_type} : {self.link}"
