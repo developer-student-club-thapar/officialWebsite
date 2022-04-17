@@ -1,5 +1,4 @@
 import sys
-from typing_extensions import Required
 from django.db import models
 from sqlalchemy import false
 from officialWebsite.users.models import User
