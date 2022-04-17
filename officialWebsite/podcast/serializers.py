@@ -2,14 +2,6 @@ from . import models
 from rest_framework import serializers
 from officialWebsite.users.serializers import UserSerializer
 
-class PodcastSeriesSerializer(serializers.ModelSerializer):
-    # series serializer
-    hosted = UserSerializer(read_only=True, many=True)
-    # rename hosted to members
-    class Meta:
-        model = models.PodcastSeries
-        fields = ('id', 'name', 'hosted', 'note', 'logo')
-        read_only_fields = ('id',)
 class PodcastGuestLinkSerializer(serializers.ModelSerializer):
     # This serializer is for guest link
     class Meta:
@@ -28,10 +20,18 @@ class PodcastGuestModelSerializer(serializers.ModelSerializer):
 
 class PodcastSerializer(serializers.ModelSerializer):
     # Main podcast serializer
-    series = PodcastSeriesSerializer(read_only=True)
     guest = PodcastGuestModelSerializer(read_only=True)
     members = UserSerializer(read_only=True, many=True)
     class Meta:
         model = models.Podcast
-        fields = ('id', 'number', 'guest', 'series', 'members', 'recorded_on', 'date_created', 'published', 'image', 'link')
+        fields = ('id', 'number', 'guest', 'members', 'recorded_on', 'date_created', 'published', 'image', 'link')
+        read_only_fields = ('id',)
+class PodcastSeriesSerializer(serializers.ModelSerializer):
+    # series serializer
+    hosted = UserSerializer(read_only=True, many=True)
+    podcasts = PodcastSerializer(many=True)
+    # rename hosted to members
+    class Meta:
+        model = models.PodcastSeries
+        fields = ('id', 'name', 'hosted', 'note', 'logo', 'podcasts')
         read_only_fields = ('id',)
