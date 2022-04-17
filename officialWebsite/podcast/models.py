@@ -81,6 +81,7 @@ class Podcast(models.Model):
     number = models.IntegerField(editable=False)
     name = models.CharField(max_length=255, default="Podcast Number {}".format(number), null=True, blank=True)
     guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT, null=True, blank=True)
+    members = models.ManyToManyField(User)
     series = models.ForeignKey(PodcastSeries, on_delete=models.PROTECT)
     recorded_on = models.DateTimeField(null = True)
     date_created = models.DateTimeField(auto_now_add=True)
