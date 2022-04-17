@@ -79,12 +79,12 @@ class Podcast(models.Model):
     """
 
     number = models.IntegerField()
-    guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT, null=True, required=False)
+    guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT, null=True, blank=True)
     series = models.ForeignKey(PodcastSeries, on_delete=models.PROTECT)
     recorded_on = models.DateTimeField(null = True)
     date_created = models.DateTimeField(auto_now_add=True)
     published = models.BooleanField(default=True)
-    image = models.ImageField(upload_to='podcast_image/', null=True, required=False)
+    image = models.ImageField(upload_to='podcast_image/', null=True, blank=True)
     link = models.URLField(max_length=255, null=True)
 
     def __str__(self):
