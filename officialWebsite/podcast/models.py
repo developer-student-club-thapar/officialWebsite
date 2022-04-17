@@ -45,7 +45,7 @@ class PodcastSeries(models.Model):
     Podcast series name, other details link logo and stuff
     """
     name = models.CharField(max_length=255, unique=True)
-    hosted = models.ManyToManyField(User)
+    hosted = models.ManyToManyField(User, blank=True)
     note = models.CharField(max_length=1000)
     logo = models.ImageField(upload_to='podcast_series_logo/')
 
@@ -81,7 +81,7 @@ class Podcast(models.Model):
     number = models.IntegerField(editable=False)
     name = models.CharField(max_length=255, default="Podcast Number {}".format(number), null=True, blank=True)
     guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT, null=True, blank=True)
-    members = models.ManyToManyField(User)
+    members = models.ManyToManyField(User, blank=True)
     series = models.ForeignKey(PodcastSeries, on_delete=models.PROTECT)
     recorded_on = models.DateTimeField(null = True)
     date_created = models.DateTimeField(auto_now_add=True)
