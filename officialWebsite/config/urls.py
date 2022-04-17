@@ -39,6 +39,7 @@ urlpatterns = [
     path("api/projects/", project_views.ProjectViewSet.as_view(), name="projects"),
     path("api/achievements/", misc_views.AchievementViewset.as_view(), name="achievements"),
     path("api/podcasts/", podcast_views.PodcastViewset.as_view(), name="podcasts"),
+    path("api/podcast-series/", podcast_views.PodcastSeriesViewset.as_view(), name="podcast-series"),
     path("api/events/", event_views.EventViewset.as_view(), name="events"),
     path("api/resources/", resource_views.ResourceViewset.as_view(), name="resources"),
     path("api/teams/", team_views.TeamViewset.as_view(), name="teams"),
