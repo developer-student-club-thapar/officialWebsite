@@ -14,6 +14,7 @@ class PodcastGuest(models.Model):
     organisation = models.CharField(max_length=128)
     about = models.CharField(max_length=128)
     image = models.ImageField(upload_to='podcast_guest/', blank=True)
+    links = models.ManyToManyField('PodcastGuestLink', blank=True, null=True)
 
     def __str__(self):
         return f"{self.name} from {self.organisation}"
@@ -104,7 +105,7 @@ class PodcastGuestLink(models.Model):
     Podcast guest links to other site links
     """
 
-    guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT)
+    #guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT)
     link = models.URLField(max_length=255)
     link_type = models.TextField(max_length=255)
     
