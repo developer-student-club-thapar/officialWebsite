@@ -88,6 +88,12 @@ class Podcast(models.Model):
     image = models.ImageField(upload_to='podcast_image/', null=True, blank=True)
     link = models.URLField(max_length=255, null=True)
 
+    def save(self, *args, **kwargs):
+        # check the number of episodes in the series 
+        episodes_in_series = Podcast.objects.filter(series=self.series).count()
+        episodes_in_series += 1
+        self.number = episodes_in_series
+        super(Podcast, self).save(*args, **kwargs)
     def __str__(self):
         return f"{self.series} - {self.name}"
 
