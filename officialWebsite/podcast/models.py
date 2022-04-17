@@ -79,6 +79,7 @@ class Podcast(models.Model):
     """
 
     number = models.IntegerField()
+    name = models.CharField(max_length=255)
     guest = models.ForeignKey(PodcastGuest, on_delete=models.PROTECT, null=True, blank=True)
     series = models.ForeignKey(PodcastSeries, on_delete=models.PROTECT)
     recorded_on = models.DateTimeField(null = True)
@@ -88,7 +89,7 @@ class Podcast(models.Model):
     link = models.URLField(max_length=255, null=True)
 
     def __str__(self):
-        return f"{self.number} - {self.guest} - {self.series}"
+        return f"{self.series} - {self.name}"
 
 
 class PodcastGuestLink(models.Model):
