@@ -89,6 +89,7 @@ class Podcast(models.Model):
     published = models.BooleanField(default=True)
     image = models.ImageField(upload_to='podcast_image/', null=True, blank=True)
     link = models.URLField(max_length=255, null=True)
+    description = models.CharField(max_length=1000, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         # check the number of episodes in the series 
