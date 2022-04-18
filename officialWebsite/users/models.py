@@ -27,7 +27,7 @@ class User(AbstractBaseUser):
     medium_url = models.URLField(blank=True)
     dev_url = models.URLField(blank=True)
     image = models.ImageField(upload_to="profile-images/", blank=True)
-
+    year = models.ForeignKey(Year, on_delete=models.CASCADE, default=Year.get_current_year)
     is_staff = models.BooleanField(default=False, null=True)
     is_admin = models.BooleanField(default=False, null=True)
     is_active = models.BooleanField(default=True, null=True)
