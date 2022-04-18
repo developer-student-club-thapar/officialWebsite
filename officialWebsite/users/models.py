@@ -11,7 +11,7 @@ class Year(models.Model):
     
     @classmethod
     def get_current_year(cls):
-        return cls.objects.get(year=2022)
+        return cls.objects.get(year=2022).pk
     
     def __str__(self):
         return str(self.year)
