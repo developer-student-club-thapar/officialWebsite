@@ -6,7 +6,10 @@ from PIL import Image
 from io import BytesIO
 from officialWebsite.users.managers import UserManager
 
-
+class Year(models.Model):
+    year = models.IntegerField(default=2020)
+    def __str__(self):
+        return str(self.year)
 class User(AbstractBaseUser):
 
     ROLE_CHOICES = (("Lead", "Lead"), ("Core", "Core"), ("Co-Lead", "Co-Lead"), ("Mentor", "Mentor"))
