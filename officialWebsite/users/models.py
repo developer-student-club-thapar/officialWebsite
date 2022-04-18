@@ -7,7 +7,7 @@ from io import BytesIO
 from officialWebsite.users.managers import UserManager
 
 class Year(models.Model):
-    year = models.IntegerField(default=2020)
+    year = models.IntegerField(default=2022)
     
     @classmethod
     def get_current_year(cls):
@@ -34,7 +34,7 @@ class User(AbstractBaseUser):
     is_active = models.BooleanField(default=True, null=True)
     is_superuser = models.BooleanField(default=False, null=True)
 
-    year = models.ForeignKey(Year, on_delete=models.CASCADE, null=False, default=Year.get_current_year)
+    #year = models.ForeignKey(Year, on_delete=models.CASCADE, null=False, default=Year.get_current_year)
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = [
         "name",
