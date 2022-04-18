@@ -8,11 +8,10 @@ from officialWebsite.users.managers import UserManager
 
 class Year(models.Model):
     year = models.IntegerField(default=2022)
-    
+
     @classmethod
     def get_current_year(cls):
         return cls.objects.get(year=2022).pk
-    
     def __str__(self):
         return str(self.year)
 class User(AbstractBaseUser):
