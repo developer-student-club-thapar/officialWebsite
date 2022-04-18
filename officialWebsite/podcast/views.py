@@ -26,4 +26,5 @@ class PodcastSeriesViewset(APIView):
     def get(self, request, format=None):
         series = models.PodcastSeries.objects.all()
         serializer = serializers.PodcastSeriesSerializer(series, many=True)
+        
         return Response(serializer.data)

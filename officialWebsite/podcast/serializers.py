@@ -24,7 +24,7 @@ class PodcastSerializer(serializers.ModelSerializer):
     members = UserSerializer(read_only=True, many=True)
     class Meta:
         model = models.Podcast
-        fields = ('id', 'number', 'guest', 'members', 'recorded_on', 'date_created', 'published', 'image', 'link')
+        fields = ('id', 'number', 'name', 'guest', 'members', 'recorded_on', 'date_created', 'published', 'image', 'link')
         read_only_fields = ('id',)
 class PodcastSeriesSerializer(serializers.ModelSerializer):
     # series serializer
