@@ -8,6 +8,11 @@ from officialWebsite.users.managers import UserManager
 
 class Year(models.Model):
     year = models.IntegerField(default=2020)
+    
+    @classmethod
+    def get_current_year(cls):
+        return cls.objects.get(year=2022)
+    
     def __str__(self):
         return str(self.year)
 class User(AbstractBaseUser):
@@ -29,6 +34,7 @@ class User(AbstractBaseUser):
     is_active = models.BooleanField(default=True, null=True)
     is_superuser = models.BooleanField(default=False, null=True)
 
+    year = models.ForeignKey(Year, on_delete=models.CASCADE, null=False, default=Year.get_current_year)
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = [
         "name",
