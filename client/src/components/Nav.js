@@ -144,11 +144,12 @@ const NavAlt = props => {
                 </div>
                 <div style={{ marginRight: "10px" }}>
                   <StyledLink
-                    onClick={e => {
-                      e.preventDefault();
-                      window.location.href = "https://raw-talent.webflow.io/";
-                    }}
-                    target="_blank"
+                    // onClick={e => {
+                    //   e.preventDefault();
+                    //   window.location.href = "https://raw-talent.webflow.io/";
+                    // }}
+                    // target="_blank"
+                    to="/podcast"
                     className={classes.button}
                   >
                     Podcast
