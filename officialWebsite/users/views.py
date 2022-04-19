@@ -49,11 +49,13 @@ class YearListView(APIView):
     """List all the years"""
     def get(self, request, format=None):
         years = Year.objects.all().order_by('-year')
-        data = []
+        year_data = []
         for year in years:
-            data.append(year.year)
-        return Response(data)
-
+            tenure = str(year.year - 1) + "-" + str(year.year)
+            year_data.append({"tenure": tenure, "link": "https://api.dsctiet.tech/api/members/" + str(year.year) + "/"})
+        return Response(year_data)
+        print(years)
+        Response(years)
 class YearWiseMembersListView(APIView):
     """List all the years"""
     # get the year from the url
