@@ -18,7 +18,7 @@
 }
 
 .seriesList{
-    padding: 30px 60px;
+    padding: 30px 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +38,7 @@
     
 }
 
-.seriesContainer img{
+.seriesContainer .seriesImage{
     width: 50vh;
     height: 50vh;
     margin-right: 30px;
@@ -76,7 +76,37 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 10px 30px;
+    padding: 10px 20px;
     background-color: #F2F2F2;
     border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.episodeName{
+    margin: 0 5px;
+    padding-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.members{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0;
+    position: relative;
+    z-index: 10;
+}
+.memberImage{
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    margin: 0 4px;
+}
+.icon{
+    margin-right: 10px;
 }

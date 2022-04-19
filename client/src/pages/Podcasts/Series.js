@@ -8,15 +8,20 @@ const Series =({series})=>{
     
     return(
         <div className={styles.seriesContainer}>
-            <img src={'https://media.dsctiet.tech/'+series.logo} alt="logo" className={styles.logo}/>
+            <img src={'https://media.dsctiet.tech/'+series.logo} alt="logo" className={styles.seriesImage}/>
             <div className={styles.text}>
                 <h2>{series.name}</h2>
                 <p>{series.note}</p>
                 <div className={styles.episodeList}>
                     {
                         episodes.map((episode)=>{
-                            return(<Episode episode={episode}/>)
+                            return(<Episode episode={episode} key={episode.id}/>)
                         })
+                    }
+                    {
+                        episodes.length < 3?
+                        <span>More episodes incoming!</span>
+                        :null
                     }
                 </div>
             </div>

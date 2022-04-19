@@ -12,7 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+a{
+  color: unset !important;
+}
 /*===========================
      CHAT BOOT MESSENGER
    ===========================*/
