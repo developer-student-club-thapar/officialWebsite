@@ -8,16 +8,20 @@ const Podcast =() =>
 {
     axios.defaults.baseURL = "https://api.dsctiet.tech/api";
     const [loading, setLoading] = useState(true);
-    const [projects, setProjects] = useState([]);
+    const [series, setSeries] = useState([]);
     
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios.get("/podcast-series/");
-            setProjects(result.data);
+            setSeries(result.data);
             setLoading(false);
           };
           fetchData();
     },[]); 
+
+    let count = series.length;
+    console.log(count);
+    
     return(
         <div className={styles.container}>
             <div className={styles.header}>
@@ -27,9 +31,15 @@ const Podcast =() =>
                 loading?<Loader/>:
                 <div className={styles.seriesList}>
                     {
-                        projects.map((series, index)=>{
+                        series.map((series)=>{
+                            count--;
                             return(
-                                <Series key={index} series={series}/>
+                                <>
+                                    <Series key={series.id} series={series}/>
+                                    {
+                                        count>0?<hr/>:null
+                                    }
+                                </>
                             )
                         })
                     }
