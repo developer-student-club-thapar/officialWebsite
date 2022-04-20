@@ -3,6 +3,11 @@ from rest_framework.response import Response
 from rest_framework import generics
 from officialWebsite.users.models import User, Year
 from officialWebsite.users.serializers import UserSerializer
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
+
+class IsSuperUser(IsAdminUser):
+    def has_permission(self, request, view):
+        return bool(request.user and request.user.is_superuser)
 
 class LeadListView(APIView):
     """List all leads"""
@@ -80,6 +85,9 @@ class YearWiseMembersListView(APIView):
         return Response(members)
 
 class UserCreateView(generics.ListCreateAPIView):
+    # authenticated
+    permission_classes = (IsSuperUser, )
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
 

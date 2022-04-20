@@ -27,6 +27,8 @@ from officialWebsite.podcast import views as podcast_views
 from officialWebsite.event import views as event_views
 from officialWebsite.resource import views as resource_views
 from officialWebsite.team import views as team_views
+
+from rest_framework.authtoken.views import obtain_auth_token
 admin.site.site_header = "Developer Student Club TIET"
 admin.site.site_title = "DSC-TIET"
 admin.site.index_title = "DSC-TIET"
@@ -66,6 +68,7 @@ urlpatterns = [
         auth_views.PasswordResetCompleteView.as_view(),
         name="password_reset_complete",
     ),
+    path("api/auth/", include("dj_rest_auth.urls")),
     path("admin/", admin.site.urls),
 ]
 
