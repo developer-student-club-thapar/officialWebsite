@@ -15,6 +15,9 @@ code {
 a{
   color: unset !important;
 }
+a:visited{
+  color: unset;
+}
 /*===========================
      CHAT BOOT MESSENGER
    ===========================*/
