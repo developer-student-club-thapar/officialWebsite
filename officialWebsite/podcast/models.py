@@ -22,9 +22,12 @@ class PodcastGuest(models.Model):
     
     def save(self, *args, **kwargs):
         if self.image:
-            self.image = self.compressImage(self.image)
-            # rename the file
-            self.image.name = "{}.jpg".format(self.name + "_" + self.organisation)
+            try:
+                self.image = self.compressImage(self.image)
+                # rename the file
+                self.image.name = "{}.jpg".format(self.name + "_" + self.organisation)
+            except:
+                print("Image compression issue")
         super(PodcastGuest, self).save(*args, **kwargs)
 
     def compressImage(self, image):
