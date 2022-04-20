@@ -9,6 +9,9 @@ from officialWebsite.users.managers import UserManager
 class Year(models.Model):
     year = models.IntegerField(default=2022)
 
+    def get_tenure(self):
+        return str(self.year-1) + "-" + str(self.year)
+        
     @classmethod
     def get_current_year(cls):
         return cls.objects.get(year=2022).pk
