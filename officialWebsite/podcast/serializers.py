@@ -33,5 +33,5 @@ class PodcastSeriesSerializer(serializers.ModelSerializer):
     # rename hosted to members
     class Meta:
         model = models.PodcastSeries
-        fields = ('id', 'name', 'hosted', 'note', 'logo', 'podcasts')
+        fields = ('id', 'name', 'hosted', 'note', 'logo', 'link', 'podcasts')
         read_only_fields = ('id',)

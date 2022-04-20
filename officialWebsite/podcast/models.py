@@ -49,7 +49,7 @@ class PodcastSeries(models.Model):
     hosted = models.ManyToManyField(User, blank=True)
     note = models.CharField(max_length=1000)
     logo = models.ImageField(upload_to='podcast_series_logo/')
-
+    link = models.URLField(blank=True, null=True)
     def __str__(self):
         return f"{self.name}"
 
