@@ -14,6 +14,7 @@ class PodcastGuest(models.Model):
     organisation = models.CharField(max_length=128)
     about = models.CharField(max_length=128)
     image = models.ImageField(upload_to='podcast_guest/', blank=True)
+    linkedin = models.URLField(blank=True, null=True)
     links = models.ManyToManyField('PodcastGuestLink', blank=True, null=True)
 
     def __str__(self):
