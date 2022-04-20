@@ -28,6 +28,7 @@ class PodcastGuest(models.Model):
                 self.image.name = "{}.jpg".format(self.name + "_" + self.organisation)
             except:
                 print("Image compression issue")
+            ## TODO: Make a better conditional to check if the image is in the request or not
         super(PodcastGuest, self).save(*args, **kwargs)
 
     def compressImage(self, image):
