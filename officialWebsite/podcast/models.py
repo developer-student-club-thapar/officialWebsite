@@ -94,8 +94,8 @@ class Podcast(models.Model):
     def save(self, *args, **kwargs):
         # check the number of episodes in the series 
         episodes_in_series = Podcast.objects.filter(series=self.series).count()
-        episodes_in_series += 1
-        self.number = episodes_in_series
+        if not Podcast.objects.filter(name=self.name).exists():
+            self.number = episodes_in_series + 1
         super(Podcast, self).save(*args, **kwargs)
     def __str__(self):
         return f"{self.series} - {self.name}"

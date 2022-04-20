@@ -8,6 +8,7 @@ import Events from "./pages/Events";
 import Project from "./pages/Project";
 import Resources from "./pages/Resources";
 import Team from "./pages/Team";
+import Podcast from "./pages/Podcasts/Podcast";
 import { ThemeProvider } from "styled-components";
 import useTheme from "./useTheme";
 
@@ -25,6 +26,7 @@ const App = () => {
             <Route exact path="/projects" component={Project} />
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/team" component={Team} />
+            <Route exacct path="/podcast" component={Podcast}/>
           </Switch>
         </div>
       </Router>
