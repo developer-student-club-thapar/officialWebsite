@@ -18,7 +18,7 @@ const Episode =({episode})=>{
                     {
                         members.map((member)=>{
                             return(
-                                <img src={'https://media.dsctiet.tech/'+member.image} alt={member.name} title={member.name} className={styles.memberImage}/>
+                                <a href={member.github_url} target="_blank"><img src={'https://media.dsctiet.tech/'+member.image} alt={member.name} title={member.name} className={styles.memberImage}/></a>
                             )
                         })
                     }
