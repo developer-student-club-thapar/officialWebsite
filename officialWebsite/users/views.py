@@ -92,4 +92,12 @@ class UserCreateView(generics.ListCreateAPIView):
     serializer_class = UserSerializer
 
     def perform_create(self, serializer):
-        serializer.save()
+        # get the year from form data
+        # find year and if not create
+        year = Year.objects.get_or_create(year=int(self.request.data['year']))
+        print(year)
+        year = year[0]
+        if year:
+            # save year in user
+            serializer.save(year=year)
+            
