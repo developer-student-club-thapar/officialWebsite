@@ -106,7 +106,13 @@
     height: 25px;
     border-radius: 30px;
     margin: 0 4px;
+    transition: 0.4s;
 }
+.memberImage:hover{
+    transform: scale(1.5);
+    transition: 0.4s;
+}
+
 .icon{
     margin-right: 10px;
 }
