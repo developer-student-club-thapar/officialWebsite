@@ -32,6 +32,8 @@ INSTALLED_APPS = [
 
     # Third-party apps
     "rest_framework",
+    'rest_framework.authtoken',
+    "dj_rest_auth",
     'corsheaders',
     
     # Backend Apps
@@ -57,6 +59,11 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+REST_FRAMEWORK = {
+   'DEFAULT_AUTHENTICATION_CLASSES': (
+       'rest_framework.authentication.TokenAuthentication',
+   ),
+}
 ROOT_URLCONF = "officialWebsite.config.urls"
 
 TEMPLATES = [
@@ -123,6 +130,10 @@ USE_TZ = True
 
 AUTH_USER_MODEL = "users.User"
 CORS_ORIGIN_ALLOW_ALL = True
+
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_USERNAME_REQUIRED = False
+AUTHENTICATION_BACKENDS = ("django.contrib.auth.backends.ModelBackend",)
 if DEBUG:
     STATIC_URL = "/static/"
     STATICFILES_DIRS = [os.path.join(BASE_DIR, "static_files")]
@@ -155,4 +166,4 @@ if not DEBUG:
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-BULK_ADD = False
+BULK_ADD = True
