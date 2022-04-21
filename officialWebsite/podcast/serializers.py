@@ -15,7 +15,7 @@ class PodcastGuestModelSerializer(serializers.ModelSerializer):
     links = PodcastGuestLinkSerializer(many=True, read_only=True)
     class Meta:
         model = models.PodcastGuest
-        fields = ('id', 'name', 'organisation', 'about', 'image', 'links')
+        fields = ('id', 'name', 'organisation', 'linkedin', 'about', 'image', 'links')
         read_only_fields = ('id',)
 
 class PodcastSerializer(serializers.ModelSerializer):
