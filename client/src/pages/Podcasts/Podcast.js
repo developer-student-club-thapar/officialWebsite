@@ -3,12 +3,14 @@ import styles from './Podcast.module.css';
 import axios from "axios";
 import Loader from "../Loader";
 import Series from "./Series";
+import Player from "./Player";
 
 const Podcast =() =>
 {
     axios.defaults.baseURL = "https://api.dsctiet.tech/api";
     const [loading, setLoading] = useState(true);
     const [series, setSeries] = useState([]);
+    const [playerUrl, setPlayerUrl] = useState('https://anchor.fm/straight-outta-gdsc-tiet/embed/episodes/My-Friend--Imposter-e1h1sbj/a-a7o4tf9');
     
     useEffect(() => {
         const fetchData = async () => {
@@ -35,7 +37,7 @@ const Podcast =() =>
                             count--;
                             return(
                                 <>
-                                    <Series key={series.id} series={series}/>
+                                    <Series key={series.id} series={series} onSelectPodcast={setPlayerUrl}/>
                                     {
                                         count>0?<hr/>:null
                                     }
@@ -45,6 +47,7 @@ const Podcast =() =>
                     }
                 </div>
             }
+            <Player url={playerUrl}/>
         </div>
     )
 }

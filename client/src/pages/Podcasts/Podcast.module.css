@@ -82,6 +82,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    cursor: pointer;
 }
 
 .episodeName{
@@ -106,7 +107,32 @@
     height: 25px;
     border-radius: 30px;
     margin: 0 4px;
+    transition: 0.4s;
 }
+.memberImage:hover{
+    transform: scale(1.5);
+    transition: 0.4s;
+}
+
 .icon{
     margin-right: 10px;
+}
+
+.playerContainer{
+    width: 100vw;
+    background-color: rgba(196, 196, 196, 0.342);
+    backdrop-filter: blur(100px);
+    position: sticky;
+    bottom: 0px; 
+    z-index: 30;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.player{
+    position: relative;
+    margin-bottom: 0;
+    width: 50%;
 }
