@@ -64,7 +64,10 @@ class YearWiseMembersListView(APIView):
     # get the year from the url
     def get(self, request, year, format=None):
         print(year)
-        year = Year.objects.get(year=year)
+        try:
+            year = Year.objects.get(year=year)
+        except:
+            return Response({"error": "Year not found"}, status=404)
         # get leads of the year
         members = []
         # leads
