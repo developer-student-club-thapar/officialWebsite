@@ -6,7 +6,6 @@ class UserSerializer(serializers.ModelSerializer):
 
     image = serializers.ImageField()
     # get only one year
-    year = serializers.SerializerMethodField('get_year')
     class Meta:
         model = models.User
         fields = (
@@ -20,10 +19,5 @@ class UserSerializer(serializers.ModelSerializer):
             "medium_url",
             "dev_url",
             "image",
-            "year",
         )
         read_only_fields = ("id", )
-
-    def get_year(self, obj):
-        # get year 
-        return obj.year.year
