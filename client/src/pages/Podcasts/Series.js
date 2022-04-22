@@ -2,7 +2,7 @@ import styles from './Podcast.module.css';
 import React, {useEffect, useState} from "react";
 import Episode from './Episode';
 
-const Series =({series})=>{
+const Series =({series, onSelectPodcast})=>{
     
     const [episodes, setEpisodes] = useState(series.podcasts);
     
@@ -15,7 +15,7 @@ const Series =({series})=>{
                 <div className={styles.episodeList}>
                     {
                         episodes.map((episode)=>{
-                            return(<Episode episode={episode} key={episode.id}/>)
+                            return(<Episode episode={episode} key={episode.id} onSelectPodcast={onSelectPodcast}/>)
                         })
                     }
                     {

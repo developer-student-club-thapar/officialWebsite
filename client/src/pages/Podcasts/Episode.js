@@ -3,13 +3,16 @@ import React, {useEffect, useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
-const Episode =({episode})=>{
+const Episode =({episode, onSelectPodcast})=>{
     
     const [members, setMembers] = useState(episode.members);
     const [guest, setGuests] = useState(episode.guest);
     
     return(
-        <a href={episode.link} target='_blank'>
+        <a 
+        // href={episode.link} 
+        // target='_blank'
+        onClick={()=>{onSelectPodcast(episode.embed)}}>
             <div className={styles.episodeContainer}>
                 <FontAwesomeIcon icon={faPlay} size="sm" className={styles.icon} />
                 <span>{"Episode "+episode.number+" - "}</span>
