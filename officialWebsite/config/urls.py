@@ -75,7 +75,7 @@ urlpatterns = [
 if settings.BULK_ADD:
     # add url pattern to urlpatterns
     urlpatterns += [
-        path("api/create/", user_views.UserCreateView.as_view(), name="create")
+        path("api/create/", user_views.UserView.as_view(), name="create"),
     ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

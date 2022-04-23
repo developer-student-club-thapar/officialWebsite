@@ -1,8 +1,9 @@
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics
-from officialWebsite.users.models import User, Year
-from officialWebsite.users.serializers import UserSerializer
+from officialWebsite.users.models import User, Year, Position
+from officialWebsite.users.serializers import UserSerializer, UserSerializerArchive
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 
 class IsSuperUser(IsAdminUser):
@@ -65,56 +66,74 @@ class YearWiseMembersListView(APIView):
     def get(self, request, year, format=None):
         print(year)
         year = Year.objects.get(year=year)
-        # get leads of the year
         members = []
-        # leads
-        leads = User.objects.all().filter(years=year, role__iexact="Lead").order_by('name')
-        serialize = UserSerializer(leads, many=True)
-        members.append({
-            "role": "Lead",
-            "members": serialize.data
-        })
+        leads = []
+        # get all the leads in the year
+        lead_positions = Position.objects.filter(year=year, role__iexact="Lead")
+        for lead in lead_positions:
+            leads.append(lead.user)
+        # sort name
+        leads = sorted(leads, key=lambda x: x.name)
+        leads_serialized = UserSerializerArchive(leads, many=True)
+        members.append({"lead": leads_serialized.data})
 
-        # co-leads
-        co_leads = User.objects.all().filter(years=year, role__iexact="Co-Lead").order_by("name")
-        serialize = UserSerializer(co_leads, many=True)
-        members.append({
-            "role": "Co-Lead",
-            "members": serialize.data
-        })
-
-        # core
-        core = User.objects.all().filter(years=year, role__iexact="Core").order_by("name")
-        serialize = UserSerializer(core, many=True)
-        members.append({
-            "role": "Core",
-            "members": serialize.data
-        })
+        # coleads 
+        coleads = []
+        colead_positions = Position.objects.filter(year=year, role__iexact="Co-Lead")
+        for colead in colead_positions:
+            coleads.append(colead.user)
+        coleads.sort(key=lambda x: x.name)
+        coleads_serialized = UserSerializerArchive(coleads, many=True)
+        members.append({"co-lead": coleads_serialized.data})
 
         # mentors
-        mentors = User.objects.all().filter(years=year, role__iexact="Mentor").order_by("name")
-        serialize = UserSerializer(mentors, many=True)
-        members.append({
-            "role": "Mentor",
-            "members": serialize.data
-        })
+        mentors = []
+        mentor_positions = Position.objects.filter(year=year, role__iexact="Mentor")
+        for mentor in mentor_positions:
+            mentors.append(mentor.user)
+        # sort mentors by name
+        mentors.sort(key=lambda x: x.name)
+        mentors_serialized = UserSerializerArchive(mentors, many=True)
+        members.append({"mentor": mentors_serialized.data})
+
+        # core
+        core = []
+        core_positions = Position.objects.filter(year=year, role__iexact="Core")
+        for core_member in core_positions:
+            core.append(core_member.user)
+        core.sort(key=lambda x: x.name)
+        core_serialized = UserSerializerArchive(core, many=True)
+        members.append({"core": core_serialized.data})
 
         return Response(members)
+class UserView(APIView):
 
-class UserCreateView(generics.ListCreateAPIView):
-    # authenticated
-    permission_classes = (IsSuperUser, )
+    # post request
+    def post(self, request, format=None):
+        serializer = UserSerializer(data=request.data)
+        # create year
+        if serializer.is_valid():
+            year = Year.objects.get_or_create(year=request.data['year'])
+            serializer.save(years=[year[0]])
 
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+            user = User.objects.get(email=request.data['email'])
+            # create position
+            position = Position.objects.create(user=user, role=request.data['role'], year=year[0])        
+            position.save()
+            return Response(serializer.data)
+        else:
+            return Response({"message": "Error"})
 
-    def perform_create(self, serializer):
-        # get the year from form data
-        # find year and if not create
-        year = Year.objects.get_or_create(year=int(self.request.data['year']))
-        print(year)
-        year = year[0]
-        if year:
-            # save year in user
-            serializer.save(years=[year])
-            
+    # put request
+    def put(self, request, format=None):
+        # get the user
+        user = User.objects.get(email=request.data['email'])
+        year = Year.objects.get_or_create(year=request.data['year'])
+        # update the user
+        user.years.add(year[0])
+        user.save()
+
+        # create postition
+        position = Position.objects.create(user=user, role=request.data['role'], year=year[0])
+        position.save()
+        return Response({"message": "User updated"})

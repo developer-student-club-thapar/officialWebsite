@@ -6,6 +6,18 @@ from PIL import Image
 from io import BytesIO
 from officialWebsite.users.managers import UserManager
 
+class Position(models.Model):
+    """
+    Position model
+    """
+    ROLE_CHOICES = (("Lead", "Lead"), ("Core", "Core"), ("Co-Lead", "Co-Lead"), ("Mentor", "Mentor"))
+    year = models.ForeignKey('Year', on_delete=models.CASCADE)
+    role = models.CharField(max_length=255, choices=ROLE_CHOICES, null=True, blank=True) 
+    user = models.ForeignKey('User', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.name + " - " + self.year.get_tenure() + " - " + self.role
+
 class Year(models.Model):
     year = models.IntegerField(default=2022)
 
