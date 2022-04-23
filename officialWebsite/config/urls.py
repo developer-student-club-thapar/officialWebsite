@@ -35,6 +35,7 @@ admin.site.index_title = "DSC-TIET"
 
 urlpatterns = [
     path("api/members/", user_views.UserViewset.as_view(), name="members"),
+    path("api/core/", user_views.UserViewset.as_view(), name="core"),
     path("api/leads/", user_views.LeadListView.as_view(), name="leads"),
     path("api/co-leads/", user_views.CoLeadListView.as_view(), name="co-leads"),
     path("api/mentors/", user_views.MentorListView.as_view(), name="mentors"),
