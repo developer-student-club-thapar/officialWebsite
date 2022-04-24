@@ -13,8 +13,11 @@ class UserSerializer(serializers.ModelSerializer):
     years = serializers.SerializerMethodField('get_tenure_list')
 
     def get_tenure_list(self, obj):
-        return [year.year for year in obj.years.all()]
-    # get only one year
+        years = [year.year for year in obj.years.all()]
+        # max year 
+        max_year = max(years)
+        min_year = min(years) - 1
+        return str(min_year) + "-" + str(max_year)
     class Meta:
         model = models.User
         fields = (
@@ -28,7 +31,7 @@ class UserSerializer(serializers.ModelSerializer):
             "medium_url",
             "dev_url",
             "image",
-            "years", 
+            "tenure", 
         )
         read_only_fields = ("id", )
 
@@ -40,8 +43,11 @@ class UserSerializerArchive(serializers.ModelSerializer):
     years = serializers.SerializerMethodField('get_tenure_list')
 
     def get_tenure_list(self, obj):
-        return [year.year for year in obj.years.all()]
-    # get only one year
+        years = [year.year for year in obj.years.all()]
+        # max year 
+        max_year = max(years)
+        min_year = min(years) - 1
+        return str(min_year) + "-" + str(max_year)
     class Meta:
         model = models.User
         fields = (
@@ -54,6 +60,6 @@ class UserSerializerArchive(serializers.ModelSerializer):
             "medium_url",
             "dev_url",
             "image",
-            "years", 
+            "tenure", 
         )
         read_only_fields = ("id", )
