@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
     """Serialize User model"""
 
     image = serializers.ImageField()
-    years = serializers.SerializerMethodField('get_tenure_list')
+    tenure = serializers.SerializerMethodField('get_tenure_list')
 
     def get_tenure_list(self, obj):
         years = [year.year for year in obj.years.all()]
@@ -40,7 +40,7 @@ class UserSerializerArchive(serializers.ModelSerializer):
     """Serialize User model"""
 
     image = serializers.ImageField()
-    years = serializers.SerializerMethodField('get_tenure_list')
+    tenure = serializers.SerializerMethodField('get_tenure_list')
 
     def get_tenure_list(self, obj):
         years = [year.year for year in obj.years.all()]
