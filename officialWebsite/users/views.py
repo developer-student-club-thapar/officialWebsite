@@ -73,7 +73,7 @@ class YearWiseMembersListView(APIView):
         except:
             return Response({"error": "Year not found"}, status=404)
         # get leads of the year
-        members = []
+        members = {}
         leads = []
         # get all the leads in the year
         lead_positions = Position.objects.filter(year=year, role__iexact="Lead")
@@ -82,7 +82,7 @@ class YearWiseMembersListView(APIView):
         # sort name
         leads = sorted(leads, key=lambda x: x.name)
         leads_serialized = UserSerializerArchive(leads, many=True)
-        members.append({"lead": leads_serialized.data})
+        members["lead"] = leads_serialized.data
 
         # coleads 
         coleads = []
@@ -91,7 +91,7 @@ class YearWiseMembersListView(APIView):
             coleads.append(colead.user)
         coleads.sort(key=lambda x: x.name)
         coleads_serialized = UserSerializerArchive(coleads, many=True)
-        members.append({"co-lead": coleads_serialized.data})
+        members["co-lead"] =  coleads_serialized.data
 
         # mentors
         mentors = []
@@ -101,7 +101,7 @@ class YearWiseMembersListView(APIView):
         # sort mentors by name
         mentors.sort(key=lambda x: x.name)
         mentors_serialized = UserSerializerArchive(mentors, many=True)
-        members.append({"mentor": mentors_serialized.data})
+        members["mentor"] = mentors_serialized.data
 
         # core
         core = []
@@ -110,7 +110,7 @@ class YearWiseMembersListView(APIView):
             core.append(core_member.user)
         core.sort(key=lambda x: x.name)
         core_serialized = UserSerializerArchive(core, many=True)
-        members.append({"core": core_serialized.data})
+        members["core"] = core_serialized.data
 
         return Response(members)
 class UserView(APIView):
