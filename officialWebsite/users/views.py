@@ -36,7 +36,10 @@ class CoLeadListView(APIView):
 class UserViewset(APIView):
     """Manage members in the database"""
     def get(self, request, format=None):
-        max_year = Year.objects.all().order_by('-year')[0]
+        try:
+            max_year = Year.objects.all().order_by('-year')[0]
+        except:
+            max_year = None
         core = User.objects.all().filter(years=max_year, role__iexact="Core").order_by("name")
         serializer = UserSerializer(core, many=True)
         return Response(serializer.data)
@@ -133,10 +136,19 @@ class UserView(APIView):
         # get the user
         user = User.objects.get(email=request.data['email'])
         year = Year.objects.get_or_create(year=request.data['year'])
+
+        if not user:
+            return Response({"message": "User not found"})
         # update the user
         user.years.add(year[0])
         user.save()
 
+        # find position with the user and year and delete it
+        try:
+            if Position.objects.get(user=user, year=year[0]):
+                Position.objects.get(user=user, year=year[0]).delete()
+        except:
+            pass
         # create postition
         position = Position.objects.create(user=user, role=request.data['role'], year=year[0])
         position.save()
