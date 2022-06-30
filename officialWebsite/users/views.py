@@ -149,7 +149,7 @@ class UserView(APIView):
                 Position.objects.get(user=user, year=year[0]).delete()
         except:
             pass
-        # create position
+        # create postition
         position = Position.objects.create(user=user, role=request.data['role'], year=year[0])
         position.save()
         return Response({"message": "User updated"})
