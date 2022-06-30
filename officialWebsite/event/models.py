@@ -8,7 +8,9 @@ from io import BytesIO
 
 class Event(models.Model):
     date = models.DateField()
+    end_date = models.DateField(null=True, blank=True)
     time = models.TimeField()
+    end_time = models.TimeField(null=True, blank=True)
     venue = models.CharField(max_length=256)
     title = models.CharField(max_length=256)
     info = models.TextField()
