@@ -7,4 +7,4 @@ class EventSerializer(serializers.ModelSerializer):
     topics = TopicSerializer(read_only=True, many=True)
     class Meta:
         model = Event
-        fields = ('id', 'start_date', 'end_date', 'start_time', 'end_time', 'venue', 'title', 'info', 'topics', 'link', 'docs', 'headline_event', 'image')
+        fields = ('id', 'date', 'time', 'venue', 'title', 'info', 'topics', 'link', 'docs', 'headline_event', 'image')
