@@ -1,0 +1,37 @@
+---
+    - hosts: prod
+      tasks:
+      
+      - name: Check if certbot setup done for django api domain
+        stat:
+          path: /etc/letsencrypt/live/{{ lookup('env','DJANGO_API_DOMAIN') }}
+        register: certbot_setup_django
+        become: yes # this makes my user a root to check the directory
+
+      - name: Check if certbot setup done for django api domain
+        when: not certbot_setup_django.stat.exists
+        fail: "Certbot setup not done for {{ lookup('env','DJANGO_API_DOMAIN') }}"
+      
+      - name: Check if certbot setup done for mediaAPI domain
+        stat:
+          path: /etc/letsencrypt/live/{{ lookup('env','MEDIA_API_DOMAIN') }}
+        register: certbot_setup_mediaAPI
+        become: yes # this makes my user a root to check the directory
+      
+      - name: Check if certbot setup done for mediaAPI domain
+        when: not certbot_setup_mediaAPI.stat.exists
+        fail: "Certbot setup not done for {{ lookup('env','MEDIA_API_DOMAIN') }}"
+
+      - name: Copy pem files from /etc/ to officialWebsite folder
+        shell: |
+          cp /etc/letsencrypt/live/{{ lookup('env','DJANGO_API_DOMAIN') }}/cert.pem /home/{{ lookup('env','USER') }}/officialWebsite/
+          cp /etc/letsencrypt/live/{{ lookup('env','DJANGO_API_DOMAIN') }}/privkey.pem /home/{{ lookup('env','USER') }}/officialWebsite/
+          chown -R {{ lookup('env','USER') }}:{{ lookup('env','USER') }} /home/{{ lookup('env','USER') }}/officialWebsite/*.pem
+        become: yes # this makes my user a root to copy the files
+      
+      - name: Copy pem files from /etc/ to mediaAPI folder
+        shell: |
+          cp /etc/letsencrypt/live/{{ lookup('env','MEDIA_API_DOMAIN') }}/cert.pem /home/{{ lookup('env','USER') }}/Media-API/api/
+          cp /etc/letsencrypt/live/{{ lookup('env','MEDIA_API_DOMAIN') }}/privkey.pem /home/{{ lookup('env','USER') }}/Media-API/api/
+          chown -R {{ lookup('env','USER') }}:{{ lookup('env','USER') }} /home/{{ lookup('env','USER') }}/Media-API/api/*.pem
+        become: yes # this makes my user a root to copy the files

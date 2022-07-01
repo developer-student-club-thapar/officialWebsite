@@ -18,23 +18,37 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from officialWebsite import resource
 
 from officialWebsite.projects import views as project_views
 from officialWebsite.users import views as user_views
 from officialWebsite.misc import views as misc_views
 from officialWebsite.podcast import views as podcast_views
+from officialWebsite.event import views as event_views
+from officialWebsite.resource import views as resource_views
+from officialWebsite.team import views as team_views
 
+from rest_framework.authtoken.views import obtain_auth_token
 admin.site.site_header = "Developer Student Club TIET"
 admin.site.site_title = "DSC-TIET"
 admin.site.index_title = "DSC-TIET"
 
 urlpatterns = [
     path("api/members/", user_views.UserViewset.as_view(), name="members"),
+    path("api/core/", user_views.UserViewset.as_view(), name="core"),
     path("api/leads/", user_views.LeadListView.as_view(), name="leads"),
     path("api/co-leads/", user_views.CoLeadListView.as_view(), name="co-leads"),
+    path("api/mentors/", user_views.MentorListView.as_view(), name="mentors"),
+    path("api/years/", user_views.YearListView.as_view(), name="years"),
+    path("api/members/<int:year>/", user_views.YearWiseMembersListView.as_view(), name="year-wise-members"),
     path("api/projects/", project_views.ProjectViewSet.as_view(), name="projects"),
     path("api/achievements/", misc_views.AchievementViewset.as_view(), name="achievements"),
     path("api/podcasts/", podcast_views.PodcastViewset.as_view(), name="podcasts"),
+    path("api/podcast-series/", podcast_views.PodcastSeriesViewset.as_view(), name="podcast-series"),
+    path("api/events/", event_views.EventViewset.as_view(), name="events"),
+    path("api/resources/", resource_views.ResourceViewset.as_view(), name="resources"),
+    path("api/teams/", team_views.TeamViewset.as_view(), name="teams"),
+    path("api/sponsors/", misc_views.SponsorViewset.as_view(), name="sponsors"),
     path(
         "admin/password_reset/",
         auth_views.PasswordResetView.as_view(),
@@ -55,8 +69,14 @@ urlpatterns = [
         auth_views.PasswordResetCompleteView.as_view(),
         name="password_reset_complete",
     ),
+    path("api/auth/", include("dj_rest_auth.urls")),
     path("admin/", admin.site.urls),
 ]
 
+if settings.BULK_ADD:
+    # add url pattern to urlpatterns
+    urlpatterns += [
+        path("api/create/", user_views.UserView.as_view(), name="create"),
+    ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,140 @@
+@import url('https://fonts.cdnfonts.com/css/product-sans');
+.container{
+    font-family: 'Product Sans', sans-serif;
+}
+.header{
+    margin-top: 8vh;
+    background-image: url('../../assets/podcastHeader.png');
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header h1{
+    padding: 20px 30px;
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+.seriesList{
+    padding: 30px 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.seriesList hr{
+    width: 95%;
+}
+
+.seriesContainer{
+    width: 100%;
+    max-height: 50vh;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.seriesContainer .seriesImage{
+    width: 50vh;
+    height: 50vh;
+    margin-right: 30px;
+}
+
+.text{
+    height: 100%;
+    max-height: 50vh;
+    max-width: calc(50vw - 120px);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.text h2{
+    margin: 0;
+    font-size: 3rem;
+}
+
+.text p{
+    font-size: 1.3rem;
+}
+
+.episodeList{
+    width: 95%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.episodeContainer{
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #bcbcbc37;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.episodeName{
+    margin: 0 5px;
+    padding-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.members{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0;
+    position: relative;
+    z-index: 10;
+}
+.memberImage{
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    margin: 0 4px;
+    transition: 0.4s;
+}
+.memberImage:hover{
+    transform: scale(1.5);
+    transition: 0.4s;
+}
+
+.icon{
+    margin-right: 10px;
+}
+
+.playerContainer{
+    width: 100vw;
+    background-color: rgba(196, 196, 196, 0.342);
+    backdrop-filter: blur(100px);
+    position: sticky;
+    bottom: 0px; 
+    z-index: 30;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.player{
+    position: relative;
+    margin-bottom: 0;
+    width: 50%;
+    max-width: 750px;
+}

@@ -1,0 +1,44 @@
+---
+    - hosts: prod
+      tasks:
+        - name: Check if official website is cloned
+          stat:
+            path: /home/{{ lookup('env','USER') }}/officialWebsite
+          register: official_website_cloned
+
+        - name: Check if officialWebsite is cloned
+          when: not official_website_cloned.stat.exists
+          fail:
+            msg: Official Website is not cloned. Please clone it first.
+        
+        - name: Check if cert.pem copied
+          stat:
+            path: /home/{{ lookup('env','USER') }}/officialWebsite/cert.pem
+          register: cert_pem_copied
+        
+        - name: Check if key.pem copied
+          stat:
+            path: /home/{{ lookup('env','USER') }}/officialWebsite/privkey.pem
+          register: key_pem_copied
+        
+        - name: Check if cert.pem and key.pem are copied
+          when: not cert_pem_copied.stat.exists or not key_pem_copied.stat.exists
+          fail:
+            msg: cert.pem and key.pem are not copied. Please copy them first.
+        
+        - name: check nginx
+          stat:
+            path: /etc/nginx/sites-enabled/{{ lookup('env','DJANGO_API_DOMAIN') }}
+          register: nginx_enabled
+        
+        - name: check nginx
+          when: not nginx_enabled.stat.exists
+          fail:
+            msg: nginx is not enabled. Please enable it first.
+          
+        - name: Recontainerise
+          shell: |
+            cd /home/{{ lookup('env','USER') }}/officialWebsite
+            git pull
+            docker-compose down
+            docker-compose up --build -d

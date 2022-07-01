@@ -1,27 +1,36 @@
 from . import models
 from . import serializers
 from rest_framework import generics
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 
-class AchievementViewset(generics.ListAPIView):
+class AchievementViewset(APIView):
     """Manage Achievements in the database"""
+    def get(self, request, format=None):
+        achievements = models.Achievement.objects.all()
+        serializer = serializers.AchievementSerializer(achievements, many=True)
+        return Response(serializer.data)
 
-    serializer_class = serializers.AchievementSerializer
-    queryset = models.Achievement.objects.all()
 
-
-class FAQViewset(generics.ListAPIView):
+class FAQViewset(APIView):
     """Manage Achievements in the database"""
-    serializer_class = serializers.FAQSerializer
-    queryset = models.FAQ.objects.all()
+    def get(self, request, format=None):
+        faqs = models.FAQ.objects.all()
+        serializer = serializers.FAQSerializer(faqs, many=True)
+        return Response(serializer.data)
 
-class ContactRequestViewset(generics.ListAPIView):
+class ContactRequestViewset(APIView):
     """Manage Achievements in the database"""
-    serializer_class = serializers.ContactRequestSerializer
-    queryset = models.ContactRequest.objects.all()
+    def get(self, request, format=None):
+        contact_requests = models.ContactRequest.objects.all()
+        serializer = serializers.ContactRequestSerializer(contact_requests, many=True)
+        return Response(serializer.data)
 
-class SponserViewset(generics.ListAPIView):
+class SponsorViewset(APIView):
     """Manage Achievements in the database"""
-    serializer_class = serializers.SponserSerializer
-    queryset = models.Sponsor.objects.all()
+    def get(self, request, format=None):
+        sponsors = models.Sponsor.objects.all()
+        serializer = serializers.SponsorSerializer(sponsors, many=True)
+        return Response(serializer.data)
 

@@ -1,0 +1,23 @@
+---
+    - hosts: prod
+      tasks:
+      
+      - name: Copy .env file
+        copy:
+          src: .env
+          dest: /home/{{ lookup('env','USER') }}/officialWebsite/.env
+      
+      - name: Remove docker-compose.yml 
+        shell: |
+          rm /home/{{ lookup('env','USER') }}/officialWebsite/docker-compose.yml
+      
+      - name: Copy docker-compose.yml
+        copy:
+          src: django_docker_compose.yml
+          dest: /home/{{ lookup('env','USER') }}/officialWebsite/docker-compose.yml
+      
+      - name: Run docker container
+        shell: |
+          cd /home/{{ lookup('env','USER') }}/officialWebsite/
+          docker-compose up --build -d
+      

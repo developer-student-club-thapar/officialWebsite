@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  officialwebsiteapi:
+    image: officialwebsiteapi
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./database/:/app/officialWebsite/database/
+      - /home/raghav/media/:/app/officialWebsite/media/
+    restart: always

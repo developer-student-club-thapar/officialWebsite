@@ -1,0 +1,36 @@
+---
+    - hosts: prod
+      tasks:
+        - name: Install docker
+          shell: |
+            curl -fsSL https://get.docker.com -o get-docker.sh
+            sudo sh get-docker.sh
+            sudo apt-get install -y uidmap
+            dockerd-rootless-setuptool.sh
+            sudo usermod -aG docker $USER
+          register: docker_install
+        - debug: msg="{{ docker_install.stdout }}"
+
+        - name: Install nginx
+          shell: |
+            sudo apt-get install -y nginx
+            sudo systemctl enable nginx
+            sudo systemctl start nginx
+          register: nginx_install
+        - debug: msg="{{ nginx_install.stdout }}"
+
+        - name: Install docker-compose
+          shell: |
+            sudo apt-get install docker-compose -y
+          register: docker_compose_install
+        - debug: msg="{{ docker_compose_install.stdout }}"
+
+        - name: Install certbot for nginx
+          shell: |
+            sudo apt-get install python3-certbot-nginx -y
+          register: certbot_install
+        - debug: msg="{{ certbot_install.stdout }}"
+
+        - name: cleanup 
+          shell: |
+            rm -f get-docker.sh

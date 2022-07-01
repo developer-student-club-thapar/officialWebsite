@@ -26,7 +26,7 @@ class ContactRequestSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "email", "message")
         read_only_fields = ("id",)
 
-class SponserSerializer(serializers.ModelSerializer):
+class SponsorSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Sponsor
         fields = ("id", "name", "image", "url")

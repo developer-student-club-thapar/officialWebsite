@@ -1,0 +1,11 @@
+server {
+        listen 443 ssl;
+        server_name media.dsctiet.tech;
+
+        location / {
+                proxy_pass https://localhost:3000;
+
+        }
+        ssl_certificate /etc/letsencrypt/live/media.dsctiet.tech/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/media.dsctiet.tech/privkey.pem;
+}

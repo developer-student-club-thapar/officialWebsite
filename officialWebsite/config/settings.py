@@ -32,6 +32,9 @@ INSTALLED_APPS = [
 
     # Third-party apps
     "rest_framework",
+    'rest_framework.authtoken',
+    "dj_rest_auth",
+    'corsheaders',
     
     # Backend Apps
     "officialWebsite.misc",
@@ -46,7 +49,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -54,6 +59,11 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+REST_FRAMEWORK = {
+   'DEFAULT_AUTHENTICATION_CLASSES': (
+       'rest_framework.authentication.TokenAuthentication',
+   ),
+}
 ROOT_URLCONF = "officialWebsite.config.urls"
 
 TEMPLATES = [
@@ -81,7 +91,7 @@ WSGI_APPLICATION = "officialWebsite.config.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": env("DATABASE_URL", default=BASE_DIR / "database/db.sqlite3"),
     }
 }
 
@@ -119,7 +129,11 @@ USE_L10N = True
 USE_TZ = True
 
 AUTH_USER_MODEL = "users.User"
+CORS_ORIGIN_ALLOW_ALL = True
 
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_USERNAME_REQUIRED = False
+AUTHENTICATION_BACKENDS = ("django.contrib.auth.backends.ModelBackend",)
 if DEBUG:
     STATIC_URL = "/static/"
     STATICFILES_DIRS = [os.path.join(BASE_DIR, "static_files")]
@@ -127,13 +141,16 @@ if DEBUG:
     MEDIA_URL = "/media/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 else:
-    # cloud storage settings
-    # DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
-    # STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
-    # GS_BUCKET_NAME = env("GS_BUCKET_NAME")
-    STATIC_ROOT = "static/"
-    MEDIA_ROOT = "media/"
+    STATIC_URL = "/static/"
+    print(BASE_DIR)
+    #STATICFILES_DIRS = [os.path.join(BASE_DIR, "static_files"), os.path.join(BASE_DIR, "../static")]
+    STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
+    MEDIA_URL = "/media/"
+    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+    # to access admin portal from outside
+    CSRF_TRUSTED_ORIGINS=['https://*.dsctiet.tech']
+"""
 if not DEBUG:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
     EMAIL_HOST = "smtp.gmail.com"
@@ -142,9 +159,11 @@ if not DEBUG:
     EMAIL_USE_TLS = True
     EMAIL_USE_SSL = False
     EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
-
+"""
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+BULK_ADD = True

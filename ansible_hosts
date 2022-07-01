@@ -1,2 +1,2 @@
 [prod]
-primary ansible_host=34.67.51.103
+primary ansible_host=api.dsctiet.tech ansible_host_user=dsc ansible_ssh_private_key=ansible

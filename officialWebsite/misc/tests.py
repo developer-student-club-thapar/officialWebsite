@@ -68,8 +68,8 @@ class TestContactModel(TestCase):
         self.assertEqual(mail.outbox[0].subject, 'Subject here')
 
 
-class TestSponserModel(TestCase):
-    def test_Sponser_creation(self):
+class TestSponsorModel(TestCase):
+    def test_Sponsor_creation(self):
         user = sample_user()
         Sponsor.objects.create(name="Test")
         self.assertEqual(Sponsor.objects.get(name="Test").name, "Test")
