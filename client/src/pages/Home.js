@@ -928,7 +928,7 @@ const Home = props => {
                 variant="contained"
                 style={{ backgroundColor: "#2C2F23", color: "white" }}
                 onClick={() => {
-                  window.open("https://discord.com/invite/Ma9ZAGJ");
+                  window.open("https://discord.gg/TAywK8bAxA");
                 }}
               >
                 Join us on <img src={Discord} height="30px" alt="discord" />
