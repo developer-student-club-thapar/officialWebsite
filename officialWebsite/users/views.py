@@ -114,7 +114,8 @@ class YearWiseMembersListView(APIView):
 
         return Response(members)
 class UserView(APIView):
-
+    # check if authenticated
+    permission_classes = (IsAuthenticated,)
     # post request
     def post(self, request, format=None):
         serializer = UserSerializer(data=request.data)
@@ -141,6 +142,7 @@ class UserView(APIView):
             return Response({"message": "User not found"})
         # update the user
         user.years.add(year[0])
+        user.role = request.data['role']
         user.save()
 
         # find position with the user and year and delete it
