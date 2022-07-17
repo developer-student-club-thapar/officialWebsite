@@ -31,4 +31,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: dsctiet19/officialWebsiteAPI:latest
+          tags: dsctiet19/official-website-api:latest
