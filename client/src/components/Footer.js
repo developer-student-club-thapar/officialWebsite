@@ -5,12 +5,12 @@ import { Container, Hidden } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { StyledPaperFooter } from "../toggle/StyledComponents";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   img: {
     [theme.breakpoints.down("sm")]: {
-      textAlign: "center"
-    }
-  }
+      textAlign: "center",
+    },
+  },
 }));
 
 const FooterAlt = () => {
@@ -23,9 +23,9 @@ const FooterAlt = () => {
           borderStyle: "solid",
           borderWidth: "1px 0px 0px 0px",
           borderColor: "grey",
-          position: 'fixed',
+          position: "fixed",
           bottom: 0,
-          width: '100%',
+          width: "100%",
         }}
       >
         <Container fixed>

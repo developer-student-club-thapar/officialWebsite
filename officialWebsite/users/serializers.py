@@ -53,6 +53,7 @@ class UserSerializerArchive(serializers.ModelSerializer):
         fields = (
             "id",
             "name",
+            "role",
             "email",
             "github_url",
             "linkedin_url",

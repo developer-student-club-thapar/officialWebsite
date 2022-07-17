@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
+import Chip from "@material-ui/core/Chip";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Slide from "react-reveal/Slide";
@@ -21,7 +22,7 @@ import {
   StyledCard,
   StyledTypographyheading,
   StyledTypography,
-  StyledModalDiv
+  StyledModalDiv,
 } from "../toggle/StyledComponents";
 import { createGlobalStyle, withTheme } from "styled-components";
 import style from "styled-theming";
@@ -31,66 +32,66 @@ import moment from "moment";
 
 axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: "center",
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
   },
 
   button: {
     backgroundColor: "#746B6B",
-    color: "white"
+    color: "white",
   },
   rootCard: {
     maxWidth: 350,
-    height: 395
+    height: 395,
   },
   rootCardMobile: {
     width: "auto",
-    height: 420
+    height: 420,
   },
   media: {
-    height: 230
+    height: 230,
   },
   grid: {
-    height: 550
+    height: 550,
   },
   modal: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     width: 400,
-    margin: "auto"
+    margin: "auto",
   },
   paperModal: {
     backgroundColor: theme.palette.background.paper,
     // border: '2px solid #000',
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3)
+    padding: theme.spacing(2, 4, 3),
   },
   cardAction: {
     "&:focus": {
-      backgroundColor: "#ffffff"
-    }
+      backgroundColor: "#ffffff",
+    },
   },
   cardActionDark: {
     "&:focus": {
-      backgroundColor: "#202020"
-    }
-  }
+      backgroundColor: "#202020",
+    },
+  },
 }));
 
 const getBackground = style("mode", {
   light: "#fafafa",
-  dark: "#202020"
+  dark: "#202020",
 });
 const getForeground = style("mode", {
   light: "#5A5A5A",
-  dark: "#EEE"
+  dark: "#EEE",
 });
 
 const GlobalStyle = createGlobalStyle`
@@ -164,9 +165,12 @@ const EventsAlt = ({ theme, ...props }) => {
             </Grid>
           </Hidden>
         </Grid>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} style={{ margin: 18 }}>
           {events.map(
-            ({ id, image, title, venue, date, time, link }, index) => (
+            (
+              { id, image, title, venue, date, time, link, end_date, end_time },
+              index
+            ) => (
               <Grid item xs={12} sm={6} md={4} lg={4} xl={4} key={id}>
                 <Slide bottom>
                   <StyledCard className={classes.rootCardMobile}>
@@ -183,7 +187,11 @@ const EventsAlt = ({ theme, ...props }) => {
                     >
                       <CardMedia
                         className={classes.media}
-                        image={image == null? Test : "https://media.dsctiet.tech"+image}
+                        image={
+                          image == null
+                            ? Test
+                            : "https://media.dsctiet.tech" + image
+                        }
                         title="Event"
                       />
                       <CardContent>
@@ -197,7 +205,7 @@ const EventsAlt = ({ theme, ...props }) => {
                               style={{
                                 paddingBottom: "3px",
                                 fontSize: 18,
-                                fontWeight: "bold"
+                                fontWeight: "bold",
                               }}
                             >
                               {title}
@@ -215,11 +223,34 @@ const EventsAlt = ({ theme, ...props }) => {
                             </Grid>
                             <Grid style={{ padding: 3 }}>
                               <StyledTypography>
-                                {moment(date).format("ddd MMM D")} at{" "}
+                                {moment(date).format("ddd D MMM")} at{" "}
                                 {moment(`${date} ${time}`).format("h:mm A")}
                               </StyledTypography>
                             </Grid>
                           </Grid>
+                          {end_date ? (
+                            <Grid
+                              container
+                              direction="row"
+                              style={{ padding: 2, marginTop: -16 }}
+                            >
+                              <Grid style={{ padding: 3, marginLeft: 4 }}>
+                                <StyledTypography>To : </StyledTypography>
+                              </Grid>
+                              <Grid style={{ padding: 3 }}>
+                                <StyledTypography>
+                                  {moment(end_date).format("ddd D MMM")} at{" "}
+                                  {end_time
+                                    ? moment(`${end_date} ${end_time}`).format(
+                                        "h:mm A"
+                                      )
+                                    : ""}
+                                </StyledTypography>
+                              </Grid>
+                            </Grid>
+                          ) : (
+                            ""
+                          )}
                           <Grid
                             container
                             direction="row"
@@ -259,27 +290,26 @@ const EventsAlt = ({ theme, ...props }) => {
           closeAfterTransition
           BackdropComponent={Backdrop}
           BackdropProps={{
-            timeout: 500
+            timeout: 500,
           }}
         >
           <Fade in={open}>
             <StyledModalDiv className={classes.paperModal}>
               <p id="transition-modal-description">
                 <h5>Topics Covered:</h5>
-                {key
-                  ? events[key].topics.map(item => (
-                      <li>
-                        <span>&nbsp;{item.name}</span>
-                      </li>
+                {key !== null
+                  ? events[key].topics.map((item) => (
+                      <Chip
+                        label={item.name}
+                        color="primary"
+                        style={{ margin: 3, padding: 1 }}
+                      />
                     ))
                   : ""}
                 <br />
                 <h5>Description:</h5>
-                {key ? events[key].info : ""}
+                {key !== null ? events[key].info : ""}
               </p>
-              <Button variant="contained" color="primary">
-                Resources
-              </Button>
             </StyledModalDiv>
           </Fade>
         </Modal>
