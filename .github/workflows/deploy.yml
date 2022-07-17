@@ -31,3 +31,6 @@ jobs:
       - name: Deploy
         run: |
           ansible-playbook playbooks/redeploy.yml
+        env:
+          USER: ${{ secrets.USER }}
+          DJANGO_API_DOMAIN: ${{ secrets.DJANGO_API_DOMAIN }}
