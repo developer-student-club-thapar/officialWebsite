@@ -1,0 +1,33 @@
+name: Deploy
+on: 
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Decrypt ansible.gpg
+        run: |
+          gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" --output ansible ansible.gpg
+          chmod 400 ansible
+        env:
+          LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
+      
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install ansible
+      
+      - name: Deploy
+        run: |
+          ansible-playbook playbooks/redeploy.yml
