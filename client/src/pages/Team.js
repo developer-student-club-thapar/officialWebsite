@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef,useEffect, useState } from "react";
 import axios from "axios";
 import styles from './styles/team.module.css';
 import { Container, CssBaseline, FormControl, Grid, MenuItem, InputLabel } from "@material-ui/core";
@@ -34,11 +34,11 @@ const GlobalStyle = createGlobalStyle`
 const Team = () => {
   const classes = useStyles();
   const [leads, setLeads] = useState(null);
-  const [team, setTeam] = useState(null);
   const [mentors, setMentors] = useState(null);
   const [coleads, setColeads] = useState(null);
   const [core, setCore] = useState(null);
   const [loading, setLoading] = useState(true);
+  const back = useRef();
 
 
   const [year, setYear] = useState(22)
@@ -48,9 +48,21 @@ const Team = () => {
     axios.get(`/members/20${year+1}`)
     .then((res) => res.data)
     .then((data) => {
+      data.lead.forEach((lead) => {
+        lead.role = "Lead";
+      })
       setLeads(data.lead);
+      data["co-lead"].forEach((colead) => {
+        colead.role = "Co-Lead";
+      })
       setColeads(data["co-lead"])
+      data.mentor.forEach((mentor) => {
+        mentor.role = "Mentor";
+      })
       setMentors(data.mentor);
+      data.core.forEach((core) => {
+        core.role = "Core";
+      })
       setCore(data.core);
       setLoading(false);
     })
@@ -99,16 +111,16 @@ const Team = () => {
         <CssBaseline />
         <Grid container spacing={2} className={classes.headingContainer}>
           <Grid item xs={12} className={classes.headingItem}>
-            <StyledTypographyheading variant="h2" className={classes.heading}>
+            <StyledTypographyheading variant="h2" className={classes.heading} ref={back}>
               Meet the Team of 20
-              <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
+              <FormControl variant="filled" sx={{ m: 1, minWidth: 120}} classes={classes.heading} >
                   <Select
                     variant="standard"
-                    sx={{marginTop: -1.5, marginLeft:0.5 ,fontSize:"3.6rem", fontWeight: 'bold', ['@media (max-width:600px)']: {fontSize:"2.5rem"}}}
+                    sx={{marginTop: -1.4, marginLeft:0.5 ,fontSize:"3.6rem", fontWeight: 'bold', color: "#0086b3",  ['@media (max-width:600px)']: {fontSize:"2.5rem"}}}
                     value={year}
                     onChange={handleChange}
                   >
-                    {
+                    {yearList &&
                       yearList.map((year)=>{
                         return <MenuItem value={parseInt(year)}>{year}</MenuItem>
                       })
@@ -159,11 +171,11 @@ const Team = () => {
         </Grid>
         <Grid container spacing={2} className={classes.leadContainer}>
           {mentors &&
-            mentors.map((item, index) => (
+            mentors.map((item, index) => {item["role"] = "Mentor";return (
               <Grid item xs={11} sm={9} lg={4} key={index}>
                 <TeamMemberCard item={item} />
               </Grid>
-            ))}
+            )})}
         </Grid>
         
         <Grid container spacing={2} justify="center">
