@@ -12,7 +12,7 @@
 
 ## Website: [dsctiet.tech](https://dsctiet.tech)
 
-[![Build Status](https://travis-ci.org/developer-student-club-thapar/officialWebsite.svg?branch=master)](https://travis-ci.com/github/developer-student-club-thapar/officialWebsite) [![Discord](https://img.shields.io/discord/743751114851090475.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/Ma9ZAGJ)
+[![Deploy](https://github.com/developer-student-club-thapar/officialWebsite/actions/workflows/deploy.yml/badge.svg)](https://github.com/developer-student-club-thapar/officialWebsite/actions/workflows/deploy.yml) [![Discord](https://img.shields.io/discord/743751114851090475.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/Ma9ZAGJ)
 [![](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/download/releases/3.8.0/) 
 [![](https://img.shields.io/badge/node-12.19.0-blue.svg)](https://nodejs.org/en/download/releases/12.19.0/)
 [![GitHub issues](https://img.shields.io/github/issues/developer-student-club-thapar/officialWebsite?logo=github)](https://github.com/developer-student-club-thapar/officialWebsite/issues)
