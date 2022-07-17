@@ -10,8 +10,9 @@ jobs:
     secrets:
       DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
       DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-      
+
   Deploy:
+    needs: [ build_publish ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
