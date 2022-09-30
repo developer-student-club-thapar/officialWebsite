@@ -3,7 +3,7 @@
       tasks:
         - name: Check if official website is cloned
           stat:
-            path: /home/{{ lookup('env','USER') }}/officialWebsite
+            path: /home/{{ lookup('env','USER') }}/DSC/officialWebsite
           register: official_website_cloned
 
         - name: Check if officialWebsite is cloned
@@ -13,12 +13,12 @@
         
         - name: Check if cert.pem copied
           stat:
-            path: /home/{{ lookup('env','USER') }}/officialWebsite/cert.pem
+            path: /home/{{ lookup('env','USER') }}/DSC/officialWebsite/cert.pem
           register: cert_pem_copied
         
         - name: Check if key.pem copied
           stat:
-            path: /home/{{ lookup('env','USER') }}/officialWebsite/privkey.pem
+            path: /home/{{ lookup('env','USER') }}/DSC/officialWebsite/privkey.pem
           register: key_pem_copied
         
         - name: Check if cert.pem and key.pem are copied
@@ -38,7 +38,7 @@
           
         - name: Recontainerise
           shell: |
-            cd /home/{{ lookup('env','USER') }}/officialWebsite
+            cd /home/{{ lookup('env','USER') }}/DSC/officialWebsite
             git pull
             docker-compose down
             docker-compose up --build -d
