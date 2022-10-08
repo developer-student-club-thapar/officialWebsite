@@ -30,7 +30,7 @@ import EventIcon from "@material-ui/icons/Event";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import moment from "moment";
 
-axios.defaults.baseURL = "https://api.dsctiet.tech/api";
+axios.defaults.baseURL = "https://api.dsctiet.com/api";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -190,7 +190,7 @@ const EventsAlt = ({ theme, ...props }) => {
                         image={
                           image == null
                             ? Test
-                            : "https://media.dsctiet.tech" + image
+                            : "https://media.dsctiet.com" + image
                         }
                         title="Event"
                       />
