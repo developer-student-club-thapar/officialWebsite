@@ -30,7 +30,7 @@ import {
 import { createGlobalStyle, withTheme } from "styled-components";
 import style from "styled-theming";
 
-axios.defaults.baseURL = "https://api.dsctiet.tech/api";
+axios.defaults.baseURL = "https://api.dsctiet.com/api";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -194,7 +194,7 @@ const ProjectsAlt = props => {
                       >
                         <CardMedia
                           className={classes.media}
-                          image={item.image === null ? Test : "https://media.dsctiet.tech"+item.image}
+                          image={item.image === null ? Test : "https://media.dsctiet.com"+item.image}
                           title="Project"
                         />
                         <CardContent style={{ height: "125px" }}>
@@ -247,7 +247,7 @@ const ProjectsAlt = props => {
                       >
                         <CardMedia
                           className={classes.media}
-                          image={item.image === null ? Test : "https://media.dsctiet.tech"+item.image}
+                          image={item.image === null ? Test : "https://media.dsctiet.com"+item.image}
                           title="Project"
                         />
                         <CardContent>

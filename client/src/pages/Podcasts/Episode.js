@@ -21,13 +21,13 @@ const Episode =({episode, onSelectPodcast})=>{
                     {
                         members.map((member)=>{
                             return(
-                                <a href={member.github_url} target="_blank"><img src={'https://media.dsctiet.tech/'+member.image} alt={member.name} title={member.name} className={styles.memberImage}/></a>
+                                <a href={member.github_url} target="_blank"><img src={'https://media.dsctiet.com/'+member.image} alt={member.name} title={member.name} className={styles.memberImage}/></a>
                             )
                         })
                     }
                     {
                         guest?
-                        <img src={'https://media.dsctiet.tech/'+guest.image} alt={guest.name} title={guest.name} className={styles.memberImage}/>    
+                        <img src={'https://media.dsctiet.com/'+guest.image} alt={guest.name} title={guest.name} className={styles.memberImage}/>    
                         :null
                     }
                 </div>
