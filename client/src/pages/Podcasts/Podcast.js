@@ -7,7 +7,7 @@ import Player from "./Player";
 
 const Podcast =() =>
 {
-    axios.defaults.baseURL = "https://api.dsctiet.com/api";
+    axios.defaults.baseURL = "https://api.dsctiet.tech/api";
     const [loading, setLoading] = useState(true);
     const [series, setSeries] = useState([]);
     const [playerUrl, setPlayerUrl] = useState('https://anchor.fm/straight-outta-gdsc-tiet/embed/episodes/My-Friend--Imposter-e1h1sbj/a-a7o4tf9');

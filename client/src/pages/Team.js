@@ -13,7 +13,7 @@ import { StyledTypographyheading } from "../toggle/StyledComponents";
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 
-axios.defaults.baseURL = "https://api.dsctiet.com/api";
+axios.defaults.baseURL = "https://api.dsctiet.tech/api";
 
 const getBackground = style("mode", {
   light: "#fafafa",

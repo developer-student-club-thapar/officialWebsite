@@ -8,7 +8,7 @@ const Series =({series, onSelectPodcast})=>{
     
     return(
         <div className={styles.seriesContainer}>
-            <img src={'https://media.dsctiet.com/'+series.logo} alt="logo" className={styles.seriesImage}/>
+            <img src={'https://media.dsctiet.tech/'+series.logo} alt="logo" className={styles.seriesImage}/>
             <div className={styles.text}>
                 <h2>{series.name}</h2>
                 <p>{series.note}</p>
