@@ -1,2 +1,2 @@
 [prod]
-primary ansible_host=api.dsctiet.tech ansible_host_user=raghav ansible_ssh_private_key=ansible
+primary ansible_host=api.dsctiet.com ansible_host_user=raghav ansible_ssh_private_key=ansible
