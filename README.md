@@ -10,7 +10,7 @@
 <a href="https://facebook.com/dscthapar"><img src="https://github.com/aritraroy/social-icons/blob/master/facebook-icon.png?raw=true" width="60"></a>
 <a href="https://instagram.com/dsc.tiet"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
 
-## Website: [dsctiet.tech](https://dsctiet.tech)
+## Website: [dsctiet.com](https://dsctiet.com)
 
 [![Deploy](https://github.com/developer-student-club-thapar/officialWebsite/actions/workflows/deploy.yml/badge.svg)](https://github.com/developer-student-club-thapar/officialWebsite/actions/workflows/deploy.yml) [![Discord](https://img.shields.io/discord/743751114851090475.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/Ma9ZAGJ)
 [![](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/download/releases/3.8.0/) 
