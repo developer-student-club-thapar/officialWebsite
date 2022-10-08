@@ -149,7 +149,7 @@ else:
     MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
     # to access admin portal from outside
-    CSRF_TRUSTED_ORIGINS=['https://*.dsctiet.tech']
+    CSRF_TRUSTED_ORIGINS=['https://*.dsctiet.com']
 """
 if not DEBUG:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
