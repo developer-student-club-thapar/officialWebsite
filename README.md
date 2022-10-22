@@ -2,7 +2,7 @@
 
 <img height=200px src="./client/src/assets/dsc_logo.png">
 
-# DEVELOPER STUDENT CLUBS TIET
+# DEVELOPER STUDENT CLUBS
 
 <a href="https://medium.com/developer-student-clubs-tiet"><img src="https://github.com/aritraroy/social-icons/blob/master/medium-icon.png?raw=true" width="60"></a>
 <a href="https://twitter.com/dsctiet"><img src="https://github.com/aritraroy/social-icons/blob/master/twitter-icon.png?raw=true" width="60"></a>
