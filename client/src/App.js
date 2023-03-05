@@ -18,14 +18,6 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Router>
         <div className="App">
-          <canvas
-            id="my-canvas"
-            style={{
-              backgroundColor: "rgba(255,255,255,0.9)",
-              position: "fixed",
-              zIndex: 1,
-            }}
-          ></canvas>
           <MobileNav />
           <Nav />
           <Switch>
